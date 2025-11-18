@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -102,6 +103,16 @@ const ProjectDetail = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
   const project = projectData[projectId as keyof typeof projectData];
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   if (!project) {
     return (
@@ -119,14 +130,17 @@ const ProjectDetail = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative h-screen">
+      <section className="relative h-screen overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${project.heroImage})` }}
+          style={{ 
+            backgroundImage: `url(${project.heroImage})`,
+            transform: `translateY(${scrollY * 0.5}px)`
+          }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/60 to-background" />
         </div>
-        <div className="relative h-full flex items-end pb-24 px-6">
+        <div className="relative h-full flex items-end pb-24 px-6" style={{ transform: `translateY(${scrollY * 0.1}px)` }}>
           <div className="container mx-auto max-w-6xl">
             <Button
               variant="ghost"
