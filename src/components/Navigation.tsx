@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const menuItems = [
     { label: "Projects", href: "#projects" },
@@ -12,11 +15,20 @@ const Navigation = () => {
     { label: "Contact", href: "#contact" },
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const handleNavigation = (href: string) => {
+    const isProjectPage = location.pathname.startsWith("/project/");
+    
+    if (isProjectPage) {
+      // Navigate to home page with hash
+      navigate(`/${href}`);
       setIsMenuOpen(false);
+    } else {
+      // Same page scroll
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+        setIsMenuOpen(false);
+      }
     }
   };
 
@@ -33,7 +45,7 @@ const Navigation = () => {
             {menuItems.map((item) => (
               <button
                 key={item.label}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => handleNavigation(item.href)}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.label}
@@ -58,7 +70,7 @@ const Navigation = () => {
             {menuItems.map((item) => (
               <button
                 key={item.label}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => handleNavigation(item.href)}
                 className="block w-full text-left py-3 text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.label}
