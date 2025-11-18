@@ -1,15 +1,22 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   tags: string[];
+  projectId: string;
 }
 
-const ProjectCard = ({ title, description, tags }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, tags, projectId }: ProjectCardProps) => {
+  const navigate = useNavigate();
+
   return (
-    <Card className="hover-lift cursor-pointer group overflow-hidden border-border">
+    <Card 
+      className="hover-lift cursor-pointer group overflow-hidden border-border"
+      onClick={() => navigate(`/project/${projectId}`)}
+    >
       <CardContent className="p-8">
         <div className="flex items-start justify-between mb-4">
           <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
