@@ -158,22 +158,391 @@ const ProjectDetail = () => {
         </div>
       </section>
 
-      {/* Background */}
+      {/* Project Background */}
       <section className="py-24 px-6">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold mb-12 text-foreground">Background</h2>
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">商業目標</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {project.background.business}
+          <h2 className="text-4xl font-bold mb-12 text-foreground">專案背景：在市場還沒定義 AI PC 之前</h2>
+          <div className="space-y-6">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              專案啟動時，市場上對「AI PC」的想像大多停留在幾個關鍵字：有 Copilot、有 NPU、效能更強。
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              但對使用者來說，<strong className="text-foreground">AI PC 在日常工作中應該扮演什麼角色？</strong>對公司來說，<strong className="text-foreground">值得投入長期資源的 AI PC，是什麼樣的產品線？</strong>
+            </p>
+            <div className="bg-muted/30 rounded-lg p-8 my-8">
+              <p className="text-xl text-primary font-semibold">
+                「我們要的是一台會主動幫使用者工作、懂得使用脈絡的 AI PC，而不是一台只是『裝了 AI』的電腦。」
               </p>
             </div>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              這也決定了之後研究與提案的方向：不是先畫 UI，而是先<strong className="text-foreground">定義「什麼值得做？」</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Role and Mandate */}
+      <section className="py-24 px-6 bg-secondary/30">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl font-bold mb-12 text-foreground">我的任務與角色：策略型 IC，而不是畫面支援</h2>
+          
+          <div className="space-y-10">
             <div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">ESG 連結</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {project.background.esg}
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">被賦予的任務（Mandate）</h3>
+              <ul className="space-y-3 text-lg text-muted-foreground">
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span>
+                  <span>在市場標準尚未成形前，<strong className="text-foreground">幫公司描繪 2–3 年內 AI PC 的合理願景</strong></span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span>
+                  <span>用質性與量化資料，說出一個高層聽得懂、願意投資的故事</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span>
+                  <span>協助 PM 將這個願景轉化為可拿去向老闆提案的新產品機會框架</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">我的角色（My Role）</h3>
+              <p className="text-lg text-muted-foreground mb-6">
+                在這個專案中，我以 <strong className="text-foreground">Senior UX / Product Designer（個人貢獻者）</strong> 的身份，主要負責：
               </p>
+              <div className="grid md:grid-cols-3 gap-6">
+                <Card className="border-border">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold mb-3 text-primary">研究架構設計者</h4>
+                    <p className="text-muted-foreground">規劃兩階段研究：Kano 問卷量化 + 實機共創驗證</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-border">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold mb-3 text-primary">高層提案的故事設計者</h4>
+                    <p className="text-muted-foreground">整合洞察組織成 PM 可直接簡報的新產品機會敘事</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-border">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold mb-3 text-primary">UX 價值的推動者</h4>
+                    <p className="text-muted-foreground">讓輸出同時服務 PM、ID 與新創夥伴的決策需求</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Project Goals */}
+      <section className="py-24 px-6">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl font-bold mb-12 text-foreground">專案目標與 KPI：不是上線成效，而是決策質量</h2>
+          
+          <div className="space-y-10">
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">專案目標（Goals）</h3>
+              <ul className="space-y-3 text-lg text-muted-foreground">
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span>
+                  <span>找出對我們目標使用者而言，<strong className="text-foreground">真正有價值的 AI PC 功能與情境</strong></span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span>
+                  <span>幫 PM 整理一套可以拿去說服老闆的 <strong className="text-foreground">AI PC 投資論述</strong></span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span>
+                  <span>讓 ID 與硬體團隊能基於真實情境評估新技術是否值得投入</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">成果摘要（Outcomes）</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="border-l-4 border-l-primary">
+                  <CardContent className="p-6">
+                    <p className="text-muted-foreground">萃取出一份 <strong className="text-foreground">AI PC Top 10 創新功能排序清單</strong>，每項功能搭配其 Kano 類型與重要程度</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-l-4 border-l-primary">
+                  <CardContent className="p-6">
+                    <p className="text-muted-foreground">產出 AI PC 關鍵使用情境分層與 AI Agent / AI Launcher 初步概念</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-l-4 border-l-primary">
+                  <CardContent className="p-6">
+                    <p className="text-muted-foreground">協助 PM 形成具體、可行的提案骨架與投資論述</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-l-4 border-l-primary">
+                  <CardContent className="p-6">
+                    <p className="text-muted-foreground">讓 UX 團隊成為策略性專案中<strong className="text-foreground">更早被邀請的決策夥伴</strong></p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Phase 1 - Kano */}
+      <section className="py-24 px-6 bg-secondary/30">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl font-bold mb-12 text-foreground">Phase 1：用 Kano 問卷量化「什麼功能值得做？」</h2>
+          
+          <div className="space-y-10">
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">研究目的</h3>
+              <div className="bg-background/50 rounded-lg p-6">
+                <p className="text-lg text-muted-foreground">
+                  在眾多可能的 AI PC 功能中，先釐清：<strong className="text-foreground">哪些是「必須有」、哪些是「加分」、哪些是「真正能讓人眼睛一亮」？</strong>
+                </p>
+              </div>
+            </div>
+
+            {/* Image Placeholder */}
+            <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
+              <p className="text-muted-foreground">Kano 研究方法示意圖</p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">方法設計：Kano 模型問卷</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                以 Kano 模型為基礎，設計問卷項目：每個功能都以「有這功能」與「沒有這功能」兩種問題形式詢問使用者感受
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                針對多組潛在 AI PC 功能進行評估，包括：
+              </p>
+              <ul className="space-y-2 text-lg text-muted-foreground ml-6">
+                <li className="flex gap-3">
+                  <span className="text-primary">→</span>
+                  <span>自動情境切換（工作／娛樂／會議）</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">→</span>
+                  <span>AI 輔助整理文件與資料</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">→</span>
+                  <span>主動預先準備會議內容</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">→</span>
+                  <span>自動效能／散熱調節</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Image Placeholder */}
+            <div className="aspect-[16/10] bg-muted rounded-lg flex items-center justify-center">
+              <p className="text-muted-foreground">Kano 問卷設計與功能分類圖表</p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">分析與輸出</h3>
+              <div className="grid md:grid-cols-3 gap-6 mb-6">
+                <Card className="border-border">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold mb-2 text-primary">Must-be（基本型）</h4>
+                    <p className="text-sm text-muted-foreground">沒有會生氣、有了覺得理所當然</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-border">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold mb-2 text-primary">Performance（期望型）</h4>
+                    <p className="text-sm text-muted-foreground">多一點會加分，少一點會扣分</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-border">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold mb-2 text-primary">Delighter（魅力型）</h4>
+                    <p className="text-sm text-muted-foreground">有會驚喜、沒有也不會抱怨</p>
+                  </CardContent>
+                </Card>
+              </div>
+              <p className="text-lg text-muted-foreground">
+                依據使用者偏好強度與類型，組合出一個 <strong className="text-foreground">Top 10 AI PC 創新功能排序</strong>
+              </p>
+            </div>
+
+            {/* Image Placeholder */}
+            <div className="aspect-[16/9] bg-muted rounded-lg flex items-center justify-center">
+              <p className="text-muted-foreground">Top 10 AI PC 功能排序表格</p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">關鍵 Insight</h3>
+              <div className="bg-primary/10 border-l-4 border-l-primary rounded-r-lg p-6">
+                <ul className="space-y-3 text-lg text-muted-foreground">
+                  <li className="flex gap-3">
+                    <span className="text-primary">✓</span>
+                    <span>一些看似「很炫」的 AI 功能，在 Kano 分類中其實落在「Indifferent（無感）」</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-primary">✓</span>
+                    <span>多數使用者更在意減少應用程式切換、幫忙整理資訊脈絡、長時間工作的穩定性</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">這一階段對 PM / ID 的價值</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="border-border">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold mb-3 text-primary">對 PM</h4>
+                    <p className="text-muted-foreground">不再只是「覺得某功能很酷」，而是有數據支持哪些功能是一定要做、哪些是差異化賣點</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-border">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold mb-3 text-primary">對 ID</h4>
+                    <p className="text-muted-foreground">理解未來硬體創新應優先支援哪幾類被使用者視為期望或魅力的 AI 情境</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Phase 2 - Prototyping */}
+      <section className="py-24 px-6">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl font-bold mb-12 text-foreground">Phase 2：結合樣機與共創，具象化 AI PC 的使用情境</h2>
+          
+          <div className="space-y-10">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              在有了功能優先序與大方向後，我們進入第二階段：<strong className="text-foreground">用實體樣品機與團體訪談，把「未來 AI PC」演給大家看。</strong>
+            </p>
+
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">當時的技術與合作背景</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="border-border">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold mb-2 text-primary">主動式自適應散熱結構</h4>
+                    <p className="text-sm text-muted-foreground">來自新創硬體夥伴</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-border">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold mb-2 text-primary">觸控式實體鍵盤</h4>
+                    <p className="text-sm text-muted-foreground">國際新創公司</p>
+                  </CardContent>
+                </Card>
+              </div>
+              <div className="bg-background/50 rounded-lg p-6 mt-6">
+                <p className="text-lg text-muted-foreground">
+                  專案目標之一：判斷這兩項技術如何與我們定義的 AI PC 功能與情境結合，才不會只是酷炫，是真的有用？
+                </p>
+              </div>
+            </div>
+
+            {/* Image Placeholder */}
+            <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
+              <p className="text-muted-foreground">樣機工作坊現場照片</p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">活動設計：團體訪談＋共創工作坊</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                我設計了一系列 workshop，邀請內部成員與代表性使用者，一起：
+              </p>
+              <ul className="space-y-3 text-lg text-muted-foreground ml-6 mb-6">
+                <li className="flex gap-3">
+                  <span className="text-primary">→</span>
+                  <span>實際操作可調整高度的樣品機（模擬主動散熱結構）</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">→</span>
+                  <span>實際操作能感應與觸控的實體鍵盤樣機</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">→</span>
+                  <span>以「一天的工作流程」為主軸討論 AI PC 應該在哪些時刻主動幫忙</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Image Placeholder */}
+            <div className="aspect-[16/10] bg-muted rounded-lg flex items-center justify-center">
+              <p className="text-muted-foreground">工作坊流程與參與者互動照片</p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">AI Agent 與 AI Launcher 概念發想</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                在工作坊中，我引導大家從「工具」轉為「夥伴」思考：不只是「我呼叫一次 AI，它回我一次」，而是「AI Agent 能不能在你忙碌時，幫你先準備好需要的東西？」
+              </p>
+              
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                我們圍繞 <strong className="text-foreground">AI Launcher</strong> 討論各種介面形式：
+              </p>
+              <div className="grid md:grid-cols-2 gap-4 mb-6">
+                <div className="bg-secondary/50 rounded-lg p-4">
+                  <p className="text-muted-foreground">• 實體鍵盤上的特定按鍵／按壓手勢</p>
+                </div>
+                <div className="bg-secondary/50 rounded-lg p-4">
+                  <p className="text-muted-foreground">• 觸控鍵盤不同區域的觸發行為</p>
+                </div>
+                <div className="bg-secondary/50 rounded-lg p-4">
+                  <p className="text-muted-foreground">• 螢幕邊緣的滑出入口／浮層</p>
+                </div>
+                <div className="bg-secondary/50 rounded-lg p-4">
+                  <p className="text-muted-foreground">• 系統狀態觸發的主動建議</p>
+                </div>
+              </div>
+
+              {/* Image Placeholder */}
+              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center mb-6">
+                <p className="text-muted-foreground">AI Launcher 概念草圖與互動方式</p>
+              </div>
+
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                最後整理成幾組概念：
+              </p>
+              <div className="grid md:grid-cols-3 gap-6">
+                <Card className="border-l-4 border-l-primary">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold mb-2 text-primary">Before you start</h4>
+                    <p className="text-sm text-muted-foreground">預先準備型情境</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-l-4 border-l-primary">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold mb-2 text-primary">While you work</h4>
+                    <p className="text-sm text-muted-foreground">共作支援型情境</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-l-4 border-l-primary">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold mb-2 text-primary">After you finish</h4>
+                    <p className="text-sm text-muted-foreground">收斂總結型情境</p>
+                  </CardContent>
+                </Card>
+              </div>
+              <p className="text-muted-foreground mt-6">
+                每一組都對應到：具體 AI 功能、需要的硬體支援、使用者感受與價值
+              </p>
+            </div>
+
+            {/* Image Placeholder */}
+            <div className="aspect-[16/9] bg-muted rounded-lg flex items-center justify-center">
+              <p className="text-muted-foreground">AI PC 使用情境分層架構圖</p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">對 PM 的直接幫助</h3>
+              <div className="bg-primary/10 rounded-lg p-6">
+                <p className="text-lg text-muted-foreground">
+                  Phase 2 的輸出，成為 PM 的「新產品機會」簡報中的情境故事，以及評估 POC 時的<strong className="text-foreground">情境與驗收條件</strong>，而不只是規格數字
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -214,21 +583,96 @@ const ProjectDetail = () => {
         </div>
       </section>
 
-      {/* AI × ESG Value */}
+      {/* AI & ESG Usage */}
+      <section className="py-24 px-6 bg-secondary/30">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl font-bold mb-12 text-foreground">我如何在過程中運用 AI 與思考 ESG</h2>
+          
+          <div className="space-y-10">
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">AI 在我工作流程中的角色</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                在這個專案中，我不是只把 AI 當成產品功能，也把它當成設計工具的一部分：
+              </p>
+              <ul className="space-y-4 text-lg text-muted-foreground">
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span>
+                  <span>使用 GPT 協助整理 Kano 問卷中的開放式回應與訪談逐字稿，加速萃取關鍵期待與疑慮</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span>
+                  <span>請 AI 模擬不同 persona 的一天，當成工作坊情境草稿，之後再用真實資料修正</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span>
+                  <span>用生成式影像工具快速產生不同 AI Launcher / AI Agent 視覺方向，作為共創時的刺激素材</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Image Placeholder */}
+            <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
+              <p className="text-muted-foreground">AI 輔助設計流程示意圖</p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">ESG：不是這個案子的核心，但成為未來延伸視角</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                這個專案本身沒有直接標榜 ESG，但在分析 AI PC 情境時，我額外保留了兩個視角，作為未來延伸的基礎：
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="border-l-4 border-l-primary">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold mb-3 text-primary">環境（Environment）</h4>
+                    <p className="text-muted-foreground">AI 工作負載與能耗高度相關，未來可以進一步設計能耗可視化與不造成負擔的節能模式建議</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-l-4 border-l-primary">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold mb-3 text-primary">治理（Governance）</h4>
+                    <p className="text-muted-foreground">AI PC 長期收集與預測使用脈絡，勢必牽涉資料隱私與使用者信任，可延伸為「AI 透明度與控制權」的 UX 設計主題</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Reflection */}
       <section className="py-24 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold mb-12 text-foreground">AI × ESG 加值</h2>
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl font-bold mb-12 text-foreground">回顧：我從這個專案學到的事</h2>
+          
+          <div className="bg-primary/10 rounded-lg p-8 mb-8">
+            <p className="text-2xl text-foreground font-semibold leading-relaxed">
+              在沒有人知道標準答案的題目裡，UX 的價值不是提供一個「完美解答」，而是設計一個<strong className="text-primary">「有憑有據、可以被討論與迭代的未來版本」</strong>。
+            </p>
+          </div>
+
           <div className="space-y-6">
-            {project.esgValue.map((item, index) => (
-              <Card key={index} className="border-l-4 border-l-primary">
-                <CardContent className="p-8">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">
-                    {item.category}
-                  </h3>
-                  <p className="text-lg text-muted-foreground">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              在這個 AI PC 專案裡，我練習並驗證了幾件事：
+            </p>
+            <ul className="space-y-4 text-lg text-muted-foreground ml-6">
+              <li className="flex gap-3">
+                <span className="text-primary">→</span>
+                <span>研究不是為了寫厚厚的報告，而是為了讓決策有更好的問題 framing</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-primary">→</span>
+                <span>「說服高層」需要的不是更多畫面，而是更清楚的<strong className="text-foreground">故事與風險分層</strong>（Now / Next / Beyond）</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-primary">→</span>
+                <span>UX 如果能同時為 PM、ID 與新創夥伴提供可用的輸出，就能自然提升在組織裡的影響力</span>
+              </li>
+            </ul>
+            <div className="bg-secondary/50 rounded-lg p-6 mt-8">
+              <p className="text-lg text-foreground">
+                這也是我希望在未來的 Senior / Staff 等級職位中持續扮演的角色：<strong className="text-primary">讓模糊的未來變得可以對話、可以決策，也可以一步步被實現。</strong>
+              </p>
+            </div>
           </div>
         </div>
       </section>
