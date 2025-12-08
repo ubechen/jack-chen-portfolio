@@ -24,27 +24,30 @@ const Hero = () => {
       
       <div className="max-w-4xl mx-auto text-center animate-fade-in relative z-10">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground text-balance">
-          Jack｜Strategic UX / Product Designer
+          Jack｜幫團隊處理複雜題目的 Product / UX 設計夥伴
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto text-balance">
-          專注複雜系統與 B2B 產品，擅長用研究與故事協助團隊做產品決策
+          專注複雜系統與 B2B 產品，用研究與故事讓決策更踏實
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
             size="lg"
+            variant="hero"
             onClick={() => scrollToSection("#projects")}
             className="text-lg"
           >
-            View Projects
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <span className="relative z-10 flex items-center">
+              View Projects
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </span>
           </Button>
           <Button
             size="lg"
-            variant="outline"
+            variant="heroOutline"
             onClick={() => scrollToSection("#contact")}
             className="text-lg"
           >
-            Contact
+            <span className="relative z-10">Contact</span>
           </Button>
         </div>
       </div>
