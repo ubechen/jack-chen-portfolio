@@ -63,7 +63,7 @@ const ProjectDetail = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/60 to-background" />
         </div>
-        <div className="relative h-full flex items-end pb-24 px-6" style={{ transform: `translateY(${scrollY * 0.1}px)` }}>
+        <div className="relative h-full flex items-end pb-24 px-4 md:px-6" style={{ transform: `translateY(${scrollY * 0.1}px)` }}>
           <div className="container mx-auto max-w-6xl">
             <Button
               variant="ghost"
@@ -84,7 +84,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* Project Meta */}
-      <section className="py-12 px-6 bg-secondary/30">
+      <section className="py-12 px-4 md:px-6 bg-secondary/30">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-4 gap-6">
             <div>
@@ -108,7 +108,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* Section 1: Overview */}
-      <section className="py-24 px-6">
+      <section className="py-16 md:py-24 px-4 md:px-6">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold mb-12 text-foreground">
             1. Overview
@@ -142,7 +142,7 @@ const ProjectDetail = () => {
             </div>
 
             {/* Image Placeholder */}
-            <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
+            <div className="-mx-4 md:mx-0 aspect-video bg-muted md:rounded-lg flex items-center justify-center">
               <p className="text-muted-foreground">市場現況與競品分析示意圖</p>
             </div>
 
@@ -191,7 +191,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* Section 2: My Role */}
-      <section className="py-24 px-6 bg-secondary/30">
+      <section className="py-16 md:py-24 px-4 md:px-6 bg-secondary/30">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold mb-12 text-foreground">
             2. My Role
@@ -276,14 +276,14 @@ const ProjectDetail = () => {
           </div>
 
           {/* Image Placeholder */}
-          <div className="aspect-[16/9] bg-muted rounded-lg flex items-center justify-center mt-10">
+          <div className="-mx-4 md:mx-0 aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center mt-10">
             <p className="text-muted-foreground">專案角色與協作關係圖</p>
           </div>
         </div>
       </section>
 
       {/* Section 3: What we did */}
-      <section className="py-24 px-6">
+      <section className="py-16 md:py-24 px-4 md:px-6">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold mb-12 text-foreground">
             3. What we did
@@ -314,7 +314,7 @@ const ProjectDetail = () => {
               </ul>
 
               {/* Image Placeholder */}
-              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
+              <div className="-mx-4 md:mx-0 aspect-video bg-muted md:rounded-lg flex items-center justify-center">
                 <p className="text-muted-foreground">Kano 問卷設計與功能分類圖表</p>
               </div>
 
@@ -335,7 +335,7 @@ const ProjectDetail = () => {
               </div>
 
               {/* Image Placeholder */}
-              <div className="aspect-[16/10] bg-muted rounded-lg flex items-center justify-center">
+              <div className="-mx-4 md:mx-0 aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
                 <p className="text-muted-foreground">Top 10 AI PC 功能排序表格</p>
               </div>
             </div>
@@ -372,7 +372,7 @@ const ProjectDetail = () => {
               </ul>
 
               {/* Image Placeholder */}
-              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
+              <div className="-mx-4 md:mx-0 aspect-video bg-muted md:rounded-lg flex items-center justify-center">
                 <p className="text-muted-foreground">工作坊現場照片與互動過程</p>
               </div>
 
@@ -402,7 +402,7 @@ const ProjectDetail = () => {
               </div>
 
               {/* Image Placeholder */}
-              <div className="aspect-[16/9] bg-muted rounded-lg flex items-center justify-center">
+              <div className="-mx-4 md:mx-0 aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center">
                 <p className="text-muted-foreground">AI Agent 概念草圖與互動方式</p>
               </div>
             </div>
@@ -411,7 +411,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* Section 4: Challenges & Impact */}
-      <section className="py-24 px-6 bg-secondary/30">
+      <section className="py-16 md:py-24 px-4 md:px-6 bg-secondary/30">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold mb-12 text-foreground">
             4. Challenges & Impact
@@ -453,7 +453,7 @@ const ProjectDetail = () => {
             </div>
 
             {/* Image Placeholder */}
-            <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
+            <div className="-mx-4 md:mx-0 aspect-video bg-muted md:rounded-lg flex items-center justify-center">
               <p className="text-muted-foreground">專案成果與影響力示意圖</p>
             </div>
 
@@ -477,7 +477,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* Section 5: AI & ESG */}
-      <section className="py-24 px-6">
+      <section className="py-16 md:py-24 px-4 md:px-6">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold mb-12 text-foreground">
             5. How I used AI / ESG as a lens
@@ -506,7 +506,7 @@ const ProjectDetail = () => {
             </ul>
 
             {/* Image Placeholder */}
-            <div className="aspect-video bg-muted rounded-lg flex items-center justify-center mt-8">
+            <div className="-mx-4 md:mx-0 aspect-video bg-muted md:rounded-lg flex items-center justify-center mt-8">
               <p className="text-muted-foreground">AI 輔助設計流程示意圖</p>
             </div>
           </div>
@@ -548,7 +548,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* Section 6: What I learned */}
-      <section className="py-24 px-6 bg-secondary/30">
+      <section className="py-16 md:py-24 px-4 md:px-6 bg-secondary/30">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold mb-12 text-foreground">
             6. What I learned
@@ -578,7 +578,7 @@ const ProjectDetail = () => {
           </div>
 
           {/* Image Placeholder */}
-          <div className="aspect-[16/9] bg-muted rounded-lg flex items-center justify-center mt-10">
+          <div className="-mx-4 md:mx-0 aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center mt-10">
             <p className="text-muted-foreground">專案總結與個人成長回顧</p>
           </div>
         </div>
@@ -586,7 +586,7 @@ const ProjectDetail = () => {
 
       {/* Next Project */}
       {project.nextProject && (
-        <section className="py-24 px-6">
+        <section className="py-16 md:py-24 px-4 md:px-6">
           <div className="container mx-auto max-w-6xl text-center">
             <p className="text-muted-foreground mb-4">Next Project</p>
             <Button
