@@ -12,22 +12,28 @@ const Contact = () => {
           對於 AI、永續設計或包容性設計有興趣？歡迎與我聯繫討論合作機會
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button size="lg" className="text-lg">
-            <Mail className="mr-2 h-5 w-5" />
-            Send Email
+          <Button size="lg" variant="hero" className="text-lg">
+            <span className="relative z-10 flex items-center">
+              <Mail className="mr-2 h-5 w-5" />
+              Send Email
+            </span>
           </Button>
-          <Button size="lg" variant="outline" className="text-lg">
-            <Linkedin className="mr-2 h-5 w-5" />
-            LinkedIn
+          <Button size="lg" variant="heroOutline" className="text-lg">
+            <span className="relative z-10 flex items-center">
+              <Linkedin className="mr-2 h-5 w-5" />
+              LinkedIn
+            </span>
           </Button>
-          <Button size="lg" variant="outline" className="text-lg">
-            <Github className="mr-2 h-5 w-5" />
-            GitHub
+          <Button size="lg" variant="heroOutline" className="text-lg">
+            <span className="relative z-10 flex items-center">
+              <Github className="mr-2 h-5 w-5" />
+              GitHub
+            </span>
           </Button>
         </div>
         <div className="pt-12 border-t border-border">
           <p className="text-sm text-muted-foreground">
-            © 2024 Senior UX Designer. All rights reserved.
+            © 2025 Jack Chen Portfolio. All rights reserved.
           </p>
         </div>
       </div>

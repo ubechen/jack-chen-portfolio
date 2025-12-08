@@ -21,7 +21,7 @@ const AICapabilities = () => {
   ];
 
   return (
-    <section id="ai-ux" className="py-24 px-6 bg-secondary/30">
+    <section id="ai-ux" className="py-24 px-6">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-foreground">
           AI × UX 能力
