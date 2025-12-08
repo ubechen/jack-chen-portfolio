@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -251,7 +252,7 @@ const About = () => {
               <span className="mr-2">☕️🚗</span><strong className="text-foreground">咖啡成癮＋模型車收藏：</strong>現在沒時間手沖，多半靠外帶或膠囊續命；模型車則是我在忙碌生活裡保留的小小儀式感。
             </li>
             <li className="text-lg text-muted-foreground leading-relaxed">
-              <span className="mr-2">🔵📐</span><strong className="text-foreground">藍色控＋細節龜毛：</strong>偏愛冷靜的配色，也習慣把介面、文件和簡報上的小細節修到自己看得順眼為止。
+              <span className="mr-2">🔵📐</span><strong className="text-foreground">藍色控＋細節龜毛：</strong>偏愛各種藍色，也很享受在易用性測試裡debug 抓出一條條問題點並整理好。
             </li>
             <li className="text-lg text-muted-foreground leading-relaxed">
               <span className="mr-2">🎤🧱</span>習慣待在幕後穩住局面、整理不同角色的聲音；但在需要有人登場 pitch、主持工作坊或對外簡報時，也願意站到台前，讓團隊的成果被看見。
@@ -259,6 +260,8 @@ const About = () => {
           </ul>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

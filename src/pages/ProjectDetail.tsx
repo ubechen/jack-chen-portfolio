@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import aiPcHero from "@/assets/ai-pc-hero.jpg";
 
 const projectData = {
@@ -600,6 +601,8 @@ const ProjectDetail = () => {
           </div>
         </section>
       )}
+
+      <Footer />
     </div>
   );
 };
