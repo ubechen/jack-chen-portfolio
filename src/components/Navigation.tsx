@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -7,14 +7,23 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   const menuItems = [
-    { label: "About", href: "/about", isPage: true },
+    { label: "About", href: "#about", isPage: false },
     { label: "Projects", href: "#projects", isPage: false },
     { label: "Philosophy", href: "#philosophy", isPage: false },
     { label: "AI × UX", href: "#ai-ux", isPage: false },
     { label: "Contact", href: "#contact", isPage: false },
   ];
+
+  const handleLogoClick = () => {
+    if (isHomePage) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+  };
 
   const handleNavigation = (href: string, isPage: boolean) => {
     if (isPage) {
@@ -43,9 +52,16 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-semibold text-foreground">
-            UX Designer
-          </div>
+          <button
+            onClick={handleLogoClick}
+            className="text-xl font-semibold text-foreground hover:text-primary transition-colors flex items-center gap-2"
+          >
+            {isHomePage ? (
+              "Jack Chen"
+            ) : (
+              <Home className="h-5 w-5" />
+            )}
+          </button>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">

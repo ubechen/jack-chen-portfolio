@@ -12,10 +12,18 @@ const Index = () => {
       <Navigation />
       <Hero />
       <AboutPreview />
-      <Projects />
-      <Philosophy />
-      <AICapabilities />
-      <Contact />
+      <div className="bg-background">
+        <Projects />
+      </div>
+      <div className="bg-muted/30">
+        <Philosophy />
+      </div>
+      <div className="bg-background">
+        <AICapabilities />
+      </div>
+      <div className="bg-muted/50">
+        <Contact />
+      </div>
     </div>
   );
 };
