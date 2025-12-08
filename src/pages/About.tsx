@@ -155,10 +155,11 @@ const About = () => {
               <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">4</div>
               <div>
                 <h3 className="text-xl font-semibold mb-3 text-foreground">善用 AI 工具加速，而不是取代思考</h3>
-                <ul className="space-y-2">
+<ul className="space-y-2">
                   <li className="text-lg text-muted-foreground">• 用 AI 協助整理訪談與問卷開放式回答，加速看見模式與共通點</li>
                   <li className="text-lg text-muted-foreground">• 用生成式影像做概念視覺提案，讓工作坊與評估討論更具體</li>
                   <li className="text-lg text-muted-foreground">• 設計 prompt 結構或分享教學，幫助團隊熟悉並穩定運用 AI 工具</li>
+                  <li className="text-lg text-muted-foreground">• 也因此投入系統化學習，並通過 iPAS AI 應用規劃師初級與資策會生成式 AI 能力認證</li>
                 </ul>
               </div>
             </div>
@@ -218,13 +219,16 @@ const About = () => {
             那我們可以聊一聊，一起把模糊的題目走到可落地的那一步。
           </p>
           
-          <Button
+<Button
+            variant="hero"
             size="lg"
             onClick={() => scrollToSection("#contact")}
             className="text-lg"
           >
-            聯繫我
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <span className="relative z-10 flex items-center">
+              聯繫我
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </span>
           </Button>
         </div>
       </section>
@@ -236,21 +240,21 @@ const About = () => {
             A bit more about me
           </h2>
           
-          <ul className="space-y-4">
+<ul className="space-y-4">
             <li className="text-lg text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">個性偏 ISFJ 型：</strong>安靜觀察多一點、搶話少一點，重視信任和長期合作關係。
+              <span className="mr-2">🧩</span><strong className="text-foreground">個性偏 ISFJ 型：</strong>安靜觀察多一點、搶話少一點，重視信任和長期合作關係。
             </li>
             <li className="text-lg text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">新手爸爸 & 女兒奴：</strong>下班後的靈感，多半來自陪女兒玩、觀察她怎麼跟世界互動。
+              <span className="mr-2">👶</span><strong className="text-foreground">新手爸爸 & 女兒奴：</strong>下班後的靈感，多半來自陪女兒玩、觀察她怎麼跟世界互動。
             </li>
             <li className="text-lg text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">咖啡成癮＋模型車收藏：</strong>現在沒時間手沖，多半靠外帶或膠囊續命；模型車則是我在忙碌生活裡保留的小小儀式感。
+              <span className="mr-2">☕️🚗</span><strong className="text-foreground">咖啡成癮＋模型車收藏：</strong>現在沒時間手沖，多半靠外帶或膠囊續命；模型車則是我在忙碌生活裡保留的小小儀式感。
             </li>
             <li className="text-lg text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">藍色控＋細節龜毛：</strong>偏愛冷靜的配色，也習慣把介面、文件和簡報上的小細節修到自己看得順眼為止。
+              <span className="mr-2">🔵📐</span><strong className="text-foreground">藍色控＋細節龜毛：</strong>偏愛冷靜的配色，也習慣把介面、文件和簡報上的小細節修到自己看得順眼為止。
             </li>
             <li className="text-lg text-muted-foreground leading-relaxed">
-              習慣待在幕後穩住局面，整理不同角色的聲音；但在需要有人登場 pitch、主持工作坊或對外簡報時，也願意站到台前，讓團隊的成果被看見。
+              <span className="mr-2">🎤🧱</span>習慣待在幕後穩住局面、整理不同角色的聲音；但在需要有人登場 pitch、主持工作坊或對外簡報時，也願意站到台前，讓團隊的成果被看見。
             </li>
           </ul>
         </div>
