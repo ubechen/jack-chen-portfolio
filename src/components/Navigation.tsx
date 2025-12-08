@@ -9,16 +9,23 @@ const Navigation = () => {
   const location = useLocation();
 
   const menuItems = [
-    { label: "Projects", href: "#projects" },
-    { label: "Philosophy", href: "#philosophy" },
-    { label: "AI × UX", href: "#ai-ux" },
-    { label: "Contact", href: "#contact" },
+    { label: "About", href: "/about", isPage: true },
+    { label: "Projects", href: "#projects", isPage: false },
+    { label: "Philosophy", href: "#philosophy", isPage: false },
+    { label: "AI × UX", href: "#ai-ux", isPage: false },
+    { label: "Contact", href: "#contact", isPage: false },
   ];
 
-  const handleNavigation = (href: string) => {
-    const isProjectPage = location.pathname.startsWith("/project/");
+  const handleNavigation = (href: string, isPage: boolean) => {
+    if (isPage) {
+      navigate(href);
+      setIsMenuOpen(false);
+      return;
+    }
+
+    const isHomePage = location.pathname === "/";
     
-    if (isProjectPage) {
+    if (!isHomePage) {
       // Navigate to home page with hash
       navigate(`/${href}`);
       setIsMenuOpen(false);
@@ -45,7 +52,7 @@ const Navigation = () => {
             {menuItems.map((item) => (
               <button
                 key={item.label}
-                onClick={() => handleNavigation(item.href)}
+                onClick={() => handleNavigation(item.href, item.isPage)}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.label}
@@ -70,7 +77,7 @@ const Navigation = () => {
             {menuItems.map((item) => (
               <button
                 key={item.label}
-                onClick={() => handleNavigation(item.href)}
+                onClick={() => handleNavigation(item.href, item.isPage)}
                 className="block w-full text-left py-3 text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.label}
