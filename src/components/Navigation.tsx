@@ -13,7 +13,6 @@ const Navigation = () => {
   const menuItems = [
     { label: "About", href: "#about", isPage: false },
     { label: "Projects", href: "#projects", isPage: false },
-    { label: "AI × UX", href: "#ai-ux", isPage: false },
     { label: "Contact", href: "#contact", isPage: false },
   ];
 
@@ -23,12 +22,19 @@ const Navigation = () => {
       return;
     }
 
-    const sectionIds = ["about", "projects", "ai-ux", "contact"];
+    const sectionIds = ["about", "projects", "contact"];
     
     const handleScroll = () => {
       // 如果在頁面頂部（Hero 區域），清除所有 highlight
       if (window.scrollY < 200) {
         setActiveSection("");
+        return;
+      }
+      
+      // 檢查是否滾動到頁面底部，如果是則 highlight Contact
+      const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
+      if (isAtBottom) {
+        setActiveSection("#contact");
         return;
       }
       
