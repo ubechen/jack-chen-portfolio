@@ -23,7 +23,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-background/85" />
       
       <div className="max-w-4xl mx-auto text-center animate-fade-in relative z-10">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground text-balance">
+        <h1 className="text-3xl md:text-5xl font-bold mb-8 leading-snug text-foreground text-balance">
           Jack｜幫團隊處理複雜題目的 Product / UX 設計夥伴
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto text-balance">
