@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import heroImage from "@/assets/ai-pc-hero.jpg";
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
@@ -10,8 +11,18 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 pt-20">
-      <div className="max-w-4xl mx-auto text-center animate-fade-in">
+    <section 
+      className="min-h-screen flex items-center justify-center px-6 pt-20 relative"
+      style={{
+        backgroundImage: `url(${heroImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-background/85" />
+      
+      <div className="max-w-4xl mx-auto text-center animate-fade-in relative z-10">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground text-balance">
           Jack｜Strategic UX / Product Designer
         </h1>
@@ -37,6 +48,14 @@ const Hero = () => {
           </Button>
         </div>
       </div>
+      
+      {/* Scroll indicator */}
+      <button 
+        onClick={() => scrollToSection("#about")}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce text-muted-foreground hover:text-foreground transition-colors"
+      >
+        <ChevronDown className="h-8 w-8" />
+      </button>
     </section>
   );
 };

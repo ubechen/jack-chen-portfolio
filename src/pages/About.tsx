@@ -14,8 +14,8 @@ const About = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6">
+      {/* Hero Section - White background */}
+      <section className="pt-32 pb-16 px-6 bg-background">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
             About Me｜Jack
@@ -36,8 +36,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Section: 題目有沒有被問對 */}
-      <section className="py-16 px-6 bg-muted/30">
+      {/* Section: 題目有沒有被問對 - Muted background */}
+      <section className="py-16 px-6 bg-muted/40">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">
             現在我關注的不再是「UI 畫得多吸睛」，而是「題目有沒有被問對」
@@ -69,8 +69,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Section: 面對的產品與情境 */}
-      <section className="py-16 px-6">
+      {/* Section: 面對的產品與情境 - White background */}
+      <section className="py-16 px-6 bg-background">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">
             我主要面對的，是這幾種產品與情境
@@ -106,8 +106,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Section: 工作方式 */}
-      <section className="py-16 px-6 bg-muted/30">
+      {/* Section: 工作方式 - Primary accent background */}
+      <section className="py-16 px-6 bg-primary/5">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">
             我怎麼工作：Research × Story × Decision
@@ -118,37 +118,49 @@ const About = () => {
           </p>
           
           <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">1. 研究與問題釐清</h3>
-              <ul className="space-y-2 pl-6">
-                <li className="text-lg text-muted-foreground">• 規劃訪談、問卷分析、工作坊等方法</li>
-                <li className="text-lg text-muted-foreground">• 不只是蒐集 insight，而是幫忙回答：<span className="text-foreground italic">「這個問題『值不值得』花資源解決？解決後『對誰』有價值？」</span></li>
-              </ul>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-foreground">研究與問題釐清</h3>
+                <ul className="space-y-2">
+                  <li className="text-lg text-muted-foreground">• 規劃訪談、問卷分析、工作坊等方法</li>
+                  <li className="text-lg text-muted-foreground">• 不只是蒐集 insight，而是幫忙回答：<span className="text-foreground italic">「這個問題『值不值得』花資源解決？解決後『對誰』有價值？」</span></li>
+                </ul>
+              </div>
             </div>
             
-            <div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">2. 用故事把複雜的東西說清楚</h3>
-              <ul className="space-y-2 pl-6">
-                <li className="text-lg text-muted-foreground">• 把研究、數據、技術限制整理成「決策者聽得懂的語言」</li>
-                <li className="text-lg text-muted-foreground">• 習慣幫 PM 組成提案骨架，如：新產品機會敘事、功能優先序與路線圖、不同方案的風險與投資報酬假設</li>
-              </ul>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-foreground">用故事把複雜的東西說清楚</h3>
+                <ul className="space-y-2">
+                  <li className="text-lg text-muted-foreground">• 把研究、數據、技術限制整理成「決策者聽得懂的語言」</li>
+                  <li className="text-lg text-muted-foreground">• 習慣幫 PM 組成提案骨架，如：新產品機會敘事、功能優先序與路線圖、不同方案的風險與投資報酬假設</li>
+                </ul>
+              </div>
             </div>
             
-            <div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">3. 與工程與硬體團隊一起把方向落地</h3>
-              <ul className="space-y-2 pl-6">
-                <li className="text-lg text-muted-foreground">• 把情境轉成具體 flow、元件規格與狀態</li>
-                <li className="text-lg text-muted-foreground">• 與工程、ID、ME 一起確認：哪些是短期可以實作的 MVP，哪些是中期可拆解的技術路線</li>
-              </ul>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-foreground">與工程與硬體團隊一起把方向落地</h3>
+                <ul className="space-y-2">
+                  <li className="text-lg text-muted-foreground">• 把情境轉成具體 flow、元件規格與狀態</li>
+                  <li className="text-lg text-muted-foreground">• 與工程、ID、ME 一起確認：哪些是短期可以實作的 MVP，哪些是中期可拆解的技術路線</li>
+                </ul>
+              </div>
             </div>
             
-            <div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">4. 善用 AI 工具加速，而不是取代思考</h3>
-              <ul className="space-y-2 pl-6">
-                <li className="text-lg text-muted-foreground">• 用 AI 協助整理訪談與問卷開放式回答，加速看見模式與共通點</li>
-                <li className="text-lg text-muted-foreground">• 用生成式影像做概念視覺提案，讓工作坊與評估討論更具體</li>
-                <li className="text-lg text-muted-foreground">• 設計 prompt 結構或分享教學，幫助團隊熟悉並穩定運用 AI 工具</li>
-              </ul>
+            <div className="flex gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">4</div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-foreground">善用 AI 工具加速，而不是取代思考</h3>
+                <ul className="space-y-2">
+                  <li className="text-lg text-muted-foreground">• 用 AI 協助整理訪談與問卷開放式回答，加速看見模式與共通點</li>
+                  <li className="text-lg text-muted-foreground">• 用生成式影像做概念視覺提案，讓工作坊與評估討論更具體</li>
+                  <li className="text-lg text-muted-foreground">• 設計 prompt 結構或分享教學，幫助團隊熟悉並穩定運用 AI 工具</li>
+                </ul>
+              </div>
             </div>
           </div>
           
@@ -158,8 +170,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Section: 關注的主題 */}
-      <section className="py-16 px-6">
+      {/* Section: 關注的主題 - White background */}
+      <section className="py-16 px-6 bg-background">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">
             我現在關注的主題
@@ -190,8 +202,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Section: CTA */}
-      <section className="py-16 px-6 bg-muted/30">
+      {/* Section: CTA - Muted background */}
+      <section className="py-16 px-6 bg-muted/40">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
             如果你們正在找這樣的人…
@@ -217,8 +229,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Section: A bit more about me */}
-      <section className="py-16 px-6">
+      {/* Section: A bit more about me - Warm accent background */}
+      <section className="py-16 px-6 bg-primary/10">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">
             A bit more about me
