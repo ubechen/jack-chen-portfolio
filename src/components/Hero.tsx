@@ -12,13 +12,11 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center px-6 pt-20">
       <div className="max-w-4xl mx-auto text-center animate-fade-in">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground text-balance">
-          AI-native × ESG-driven
-          <br />
-          <span className="text-primary">Senior UX Designer</span>
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground text-balance">
+          Jack｜Strategic UX / Product Designer
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto text-balance">
-          我設計能兼具效率、永續、透明的科技產品
+          專注複雜系統與 B2B 產品，擅長用研究與故事協助團隊做產品決策
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
