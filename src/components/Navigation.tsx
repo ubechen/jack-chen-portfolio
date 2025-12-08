@@ -18,30 +18,46 @@ const Navigation = () => {
   ];
 
   useEffect(() => {
-    if (!isHomePage) return;
+    if (!isHomePage) {
+      setActiveSection("");
+      return;
+    }
 
     const sectionIds = ["about", "projects", "ai-ux", "contact"];
     
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(`#${entry.target.id}`);
+    const handleScroll = () => {
+      // 如果在頁面頂部（Hero 區域），清除所有 highlight
+      if (window.scrollY < 200) {
+        setActiveSection("");
+        return;
+      }
+      
+      // 找出最接近視窗頂部的區塊
+      let currentSection = "";
+      const navHeight = 80;
+      
+      for (const id of sectionIds) {
+        const element = document.getElementById(id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // 區塊頂部已經超過導航列下方，且還在視窗內
+          if (rect.top <= navHeight + 100 && rect.bottom > navHeight) {
+            currentSection = `#${id}`;
           }
-        });
-      },
-      { threshold: 0.3, rootMargin: "-80px 0px -50% 0px" }
-    );
+        }
+      }
+      
+      setActiveSection(currentSection);
+    };
 
-    sectionIds.forEach((id) => {
-      const element = document.getElementById(id);
-      if (element) observer.observe(element);
-    });
-
-    return () => observer.disconnect();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isHomePage]);
 
   const handleLogoClick = () => {
+    setActiveSection("");
     if (isHomePage) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
