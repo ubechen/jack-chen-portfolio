@@ -31,7 +31,7 @@ const Navigation = () => {
       href: "#about", 
       isPage: false,
       subItems: [
-        { label: "認識我", href: "/about" }
+        { label: "我的工作方式", href: "/about" }
       ]
     },
     { 
