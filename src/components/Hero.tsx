@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download, ChevronDown } from "lucide-react";
-import heroImage from "@/assets/ai-pc-hero.jpg";
+import heroImage from "@/assets/hero-bg.png";
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
