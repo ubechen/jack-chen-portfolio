@@ -54,30 +54,32 @@ const ProjectDetail = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative min-h-[50vh] overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
             backgroundImage: `url(${project.heroImage})`,
-            transform: `translateY(${scrollY * 0.5}px)`
+            transform: `translateY(${scrollY * 0.3}px)`
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/60 to-background" />
         </div>
-        <div className="relative h-full flex items-end pb-24 px-4 md:px-6" style={{ transform: `translateY(${scrollY * 0.1}px)` }}>
+        <div className="relative h-full flex items-end pt-32 pb-16 px-4 md:px-6">
           <div className="container mx-auto max-w-6xl">
             <Button
-              variant="ghost"
+              variant="heroOutline"
               className="mb-8"
               onClick={() => navigate("/")}
             >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Projects
+              <span className="relative z-10 flex items-center">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Projects
+              </span>
             </Button>
-            <h1 className="text-5xl md:text-7xl font-bold mb-4 text-foreground">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-foreground">
               {project.title}
             </h1>
-            <p className="text-2xl md:text-3xl text-primary mb-6">
+            <p className="text-xl md:text-2xl text-primary mb-6">
               {project.subtitle}
             </p>
           </div>
@@ -85,9 +87,9 @@ const ProjectDetail = () => {
       </section>
 
       {/* Project Meta */}
-      <section className="py-12 px-4 md:px-6 bg-secondary/30">
+      <section className="py-8 md:py-12 px-4 md:px-6 bg-secondary/30">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 mb-6">
             <div>
               <h3 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">角色</h3>
               <p className="text-foreground font-medium">{project.role}</p>
@@ -100,10 +102,10 @@ const ProjectDetail = () => {
               <h3 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">期間</h3>
               <p className="text-foreground">{project.duration}</p>
             </div>
-            <div className="md:col-span-1">
-              <h3 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">簡述</h3>
-              <p className="text-foreground text-sm leading-relaxed">{project.summary}</p>
-            </div>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">簡述</h3>
+            <p className="text-foreground leading-relaxed">{project.summary}</p>
           </div>
         </div>
       </section>
@@ -591,12 +593,15 @@ const ProjectDetail = () => {
           <div className="container mx-auto max-w-6xl text-center">
             <p className="text-muted-foreground mb-4">Next Project</p>
             <Button
-              variant="ghost"
-              className="text-3xl font-bold text-foreground hover:text-primary"
+              variant="heroOutline"
+              size="lg"
+              className="text-2xl md:text-3xl font-bold"
               onClick={() => navigate(`/project/${project.nextProject.id}`)}
             >
-              {project.nextProject.title}
-              <ArrowRight className="ml-2 h-6 w-6" />
+              <span className="relative z-10 flex items-center">
+                {project.nextProject.title}
+                <ArrowRight className="ml-2 h-6 w-6" />
+              </span>
             </Button>
           </div>
         </section>

@@ -1,18 +1,45 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Home } from "lucide-react";
+import { Menu, X, Home, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
+  const [expandedMobile, setExpandedMobile] = useState<string | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
+  const projectItems = [
+    { label: "AI PC", href: "/project/ai-pc" },
+    { label: "Drone UX", href: "/project/drone-ux" },
+    { label: "AMR Robot", href: "/project/amr-robot" },
+    { label: "ESG Board Game", href: "/project/esg-board-game" },
+    { label: "BabyFlow", href: "/project/babyflow" },
+  ];
+
   const menuItems = [
-    { label: "About", href: "#about", isPage: false },
-    { label: "Projects", href: "#projects", isPage: false },
+    { 
+      label: "About", 
+      href: "#about", 
+      isPage: false,
+      subItems: [
+        { label: "認識我", href: "/about" }
+      ]
+    },
+    { 
+      label: "Projects", 
+      href: "#projects", 
+      isPage: false,
+      subItems: projectItems
+    },
     { label: "Contact", href: "#contact", isPage: false },
   ];
 
@@ -25,20 +52,17 @@ const Navigation = () => {
     const sectionIds = ["about", "projects", "contact"];
     
     const handleScroll = () => {
-      // 如果在頁面頂部（Hero 區域），清除所有 highlight
       if (window.scrollY < 200) {
         setActiveSection("");
         return;
       }
       
-      // 檢查是否滾動到頁面底部，如果是則 highlight Contact
       const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
       if (isAtBottom) {
         setActiveSection("#contact");
         return;
       }
       
-      // 找出最接近視窗頂部的區塊
       let currentSection = "";
       const navHeight = 80;
       
@@ -46,7 +70,6 @@ const Navigation = () => {
         const element = document.getElementById(id);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // 區塊頂部已經超過導航列下方，且還在視窗內
           if (rect.top <= navHeight + 100 && rect.bottom > navHeight) {
             currentSection = `#${id}`;
           }
@@ -71,16 +94,22 @@ const Navigation = () => {
     }
   };
 
-  const handleNavigation = (href: string, isPage: boolean) => {
+  const handleNavigation = (href: string, isPage: boolean = false) => {
+    if (href.startsWith("/project/") || href === "/about") {
+      navigate(href);
+      setIsMenuOpen(false);
+      return;
+    }
+
     if (isPage) {
       navigate(href);
       setIsMenuOpen(false);
       return;
     }
 
-    const isHomePage = location.pathname === "/";
+    const currentIsHomePage = location.pathname === "/";
     
-    if (!isHomePage) {
+    if (!currentIsHomePage) {
       navigate(`/${href}`);
       setIsMenuOpen(false);
     } else {
@@ -110,6 +139,10 @@ const Navigation = () => {
     }`;
   };
 
+  const toggleMobileExpand = (label: string) => {
+    setExpandedMobile(expandedMobile === label ? null : label);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 py-4">
@@ -128,13 +161,39 @@ const Navigation = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             {menuItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => handleNavigation(item.href, item.isPage)}
-                className={getNavItemClass(item.href)}
-              >
-                {item.label}
-              </button>
+              item.subItems ? (
+                <DropdownMenu key={item.label}>
+                  <DropdownMenuTrigger className={`${getNavItemClass(item.href)} flex items-center gap-1 focus:outline-none`}>
+                    {item.label}
+                    <ChevronDown className="h-3 w-3" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start" className="bg-background border border-border shadow-lg">
+                    <DropdownMenuItem 
+                      onClick={() => handleNavigation(item.href, item.isPage)}
+                      className="cursor-pointer"
+                    >
+                      {item.label === "About" ? "About 總覽" : "Projects 總覽"}
+                    </DropdownMenuItem>
+                    {item.subItems.map((subItem) => (
+                      <DropdownMenuItem 
+                        key={subItem.label}
+                        onClick={() => handleNavigation(subItem.href)}
+                        className="cursor-pointer"
+                      >
+                        {subItem.label}
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <button
+                  key={item.label}
+                  onClick={() => handleNavigation(item.href, item.isPage)}
+                  className={getNavItemClass(item.href)}
+                >
+                  {item.label}
+                </button>
+              )
             ))}
           </div>
 
@@ -153,13 +212,45 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 animate-slide-in">
             {menuItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={() => handleNavigation(item.href, item.isPage)}
-                className={getMobileNavItemClass(item.href)}
-              >
-                {item.label}
-              </button>
+              <div key={item.label}>
+                {item.subItems ? (
+                  <>
+                    <button
+                      onClick={() => toggleMobileExpand(item.label)}
+                      className={`${getMobileNavItemClass(item.href)} flex items-center justify-between w-full`}
+                    >
+                      {item.label}
+                      <ChevronDown className={`h-4 w-4 transition-transform ${expandedMobile === item.label ? 'rotate-180' : ''}`} />
+                    </button>
+                    {expandedMobile === item.label && (
+                      <div className="pl-4 border-l border-border ml-2">
+                        <button
+                          onClick={() => handleNavigation(item.href, item.isPage)}
+                          className="block w-full text-left py-2 text-sm text-muted-foreground hover:text-foreground"
+                        >
+                          {item.label === "About" ? "About 總覽" : "Projects 總覽"}
+                        </button>
+                        {item.subItems.map((subItem) => (
+                          <button
+                            key={subItem.label}
+                            onClick={() => handleNavigation(subItem.href)}
+                            className="block w-full text-left py-2 text-sm text-muted-foreground hover:text-foreground"
+                          >
+                            {subItem.label}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <button
+                    onClick={() => handleNavigation(item.href, item.isPage)}
+                    className={getMobileNavItemClass(item.href)}
+                  >
+                    {item.label}
+                  </button>
+                )}
+              </div>
             ))}
           </div>
         )}

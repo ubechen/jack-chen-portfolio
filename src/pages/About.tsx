@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { Mail, Download } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const About = () => {
@@ -220,17 +220,23 @@ const About = () => {
             那我們可以聊一聊，一起把模糊的題目走到可落地的那一步。
           </p>
           
-<Button
-            variant="hero"
-            size="lg"
-            onClick={() => scrollToSection("#contact")}
-            className="text-lg"
-          >
-            <span className="relative z-10 flex items-center">
-              聯繫我
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </span>
-          </Button>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <a 
+              href="mailto:taiyun0614@gmail.com" 
+              className="inline-flex items-center text-lg text-primary hover:text-primary/80 transition-colors"
+            >
+              <Mail className="mr-2 h-5 w-5" />
+              taiyun0614@gmail.com
+            </a>
+            <a href="/cv.pdf" download>
+              <Button variant="hero" size="lg" className="text-lg">
+                <span className="relative z-10 flex items-center">
+                  <Download className="mr-2 h-5 w-5" />
+                  Download CV
+                </span>
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -243,19 +249,19 @@ const About = () => {
           
 <ul className="space-y-4">
             <li className="text-lg text-muted-foreground leading-relaxed">
-              <span className="mr-2">🧩</span><strong className="text-foreground">個性偏 ISFJ 型：</strong>安靜觀察多一點、搶話少一點，重視信任和長期合作關係。
+              <span className="mr-2">🧩</span><strong className="text-foreground">個性偏 ISFJ 型：</strong>安靜觀察多一點、搶話少一點，重視信任和長期合作關係
             </li>
             <li className="text-lg text-muted-foreground leading-relaxed">
-              <span className="mr-2">👶</span><strong className="text-foreground">新手爸爸 & 女兒奴：</strong>下班後的靈感，多半來自陪女兒玩、觀察她怎麼跟世界互動。
+              <span className="mr-2">👶</span><strong className="text-foreground">新手爸爸 & 女兒奴：</strong>下班最期待的就是陪女兒玩，觀察她怎麼跟世界互動，偶爾也會變成設計靈感的一部分
             </li>
             <li className="text-lg text-muted-foreground leading-relaxed">
-              <span className="mr-2">☕️🚗</span><strong className="text-foreground">咖啡成癮＋模型車收藏：</strong>現在沒時間手沖，多半靠外帶或膠囊續命；模型車則是我在忙碌生活裡保留的小小儀式感。
+              <span className="mr-2">☕️🚗</span><strong className="text-foreground">咖啡成癮＋模型車收藏：</strong>現在少手沖，多半靠外帶或膠囊續命；模型車則是在忙碌生活裡保留的小小儀式感
             </li>
             <li className="text-lg text-muted-foreground leading-relaxed">
-              <span className="mr-2">🔵📐</span><strong className="text-foreground">藍色控＋細節龜毛：</strong>偏愛各種藍色，也很享受在易用性測試裡debug 抓出一條條問題點並整理好。
+              <span className="mr-2">🔵📐</span><strong className="text-foreground">藍色控＋細節龜毛：</strong>偏愛各種藍色，也很享受在易用性測試裡當「debug 達人」，一條一條把問題點抓出來整理好
             </li>
             <li className="text-lg text-muted-foreground leading-relaxed">
-              <span className="mr-2">🎤🧱</span>習慣待在幕後穩住局面、整理不同角色的聲音；但在需要有人登場 pitch、主持工作坊或對外簡報時，也願意站到台前，讓團隊的成果被看見。
+              <span className="mr-2">🎤🧱</span><strong className="text-foreground">幕前幕後切換自如：</strong>習慣待在幕後穩住局面、整理不同角色的聲音；但在需要有人登場 pitch、主持工作坊或對外簡報時，也願意站到台前，讓團隊的成果被看見
             </li>
           </ul>
         </div>
