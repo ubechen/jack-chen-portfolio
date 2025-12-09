@@ -23,9 +23,9 @@ const Hero = () => {
       <div className="absolute inset-0" style={{ backgroundColor: 'rgba(60, 131, 246, 0.5)' }} />
       
       <div className="max-w-4xl mx-auto text-center animate-fade-in relative z-10">
-        <h1 className="text-3xl md:text-5xl font-bold mb-8 text-white text-balance leading-[1.2]">
+        <h1 className="text-3xl md:text-5xl font-bold mb-8 text-white text-balance leading-[1.2]" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)' }}>
           幫團隊處理複雜題目的 Product / UX 設計夥伴
-          <span className="block text-xl md:text-2xl font-normal text-white/80 mt-4">
+          <span className="block text-xl md:text-2xl font-normal text-white/80 mt-4" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.25)' }}>
             Jack Chen 專注複雜系統與 B2B 產品，用研究與故事讓決策更踏實
           </span>
         </h1>
