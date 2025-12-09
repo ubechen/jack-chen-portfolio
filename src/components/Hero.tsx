@@ -20,12 +20,12 @@ const Hero = () => {
       }}
     >
       {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-background/85" />
+      <div className="absolute inset-0" style={{ backgroundColor: 'rgba(60, 131, 246, 0.5)' }} />
       
       <div className="max-w-4xl mx-auto text-center animate-fade-in relative z-10">
-        <h1 className="text-3xl md:text-5xl font-bold mb-8 text-foreground text-balance leading-[1.2]">
+        <h1 className="text-3xl md:text-5xl font-bold mb-8 text-white text-balance leading-[1.2]">
           幫團隊處理複雜題目的 Product / UX 設計夥伴
-          <span className="block text-xl md:text-2xl font-normal text-muted-foreground mt-4">
+          <span className="block text-xl md:text-2xl font-normal text-white/80 mt-4">
             Jack Chen 專注複雜系統與 B2B 產品，用研究與故事讓決策更踏實
           </span>
         </h1>
@@ -56,7 +56,7 @@ const Hero = () => {
       {/* Scroll indicator */}
       <button 
         onClick={() => scrollToSection("#about")}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce text-muted-foreground hover:text-foreground transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce text-white/70 hover:text-white transition-colors"
       >
         <ChevronDown className="h-8 w-8" />
       </button>
