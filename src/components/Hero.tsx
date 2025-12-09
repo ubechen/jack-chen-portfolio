@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { Download, ChevronDown } from "lucide-react";
 import heroImage from "@/assets/ai-pc-hero.jpg";
 
 const Hero = () => {
@@ -23,12 +23,12 @@ const Hero = () => {
       <div className="absolute inset-0 bg-background/85" />
       
       <div className="max-w-4xl mx-auto text-center animate-fade-in relative z-10">
-        <h1 className="text-3xl md:text-5xl font-bold mb-8 leading-snug text-foreground text-balance">
-          Jack｜幫團隊處理複雜題目的 Product / UX 設計夥伴
+        <h1 className="text-3xl md:text-5xl font-bold mb-8 text-foreground text-balance leading-[1.2]">
+          幫團隊處理複雜題目的 Product / UX 設計夥伴
+          <span className="block text-xl md:text-2xl font-normal text-muted-foreground mt-4">
+            Jack Chen 專注複雜系統與 B2B 產品，用研究與故事讓決策更踏實
+          </span>
         </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto text-balance">
-          專注複雜系統與 B2B 產品，用研究與故事讓決策更踏實
-        </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
             size="lg"
@@ -36,19 +36,20 @@ const Hero = () => {
             onClick={() => scrollToSection("#projects")}
             className="text-lg"
           >
-            <span className="relative z-10 flex items-center">
-              View Projects
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </span>
+            <span className="relative z-10">View Projects</span>
           </Button>
-          <Button
-            size="lg"
-            variant="heroOutline"
-            onClick={() => scrollToSection("#contact")}
-            className="text-lg"
-          >
-            <span className="relative z-10">Contact</span>
-          </Button>
+          <a href="/cv.pdf" download>
+            <Button
+              size="lg"
+              variant="heroOutline"
+              className="text-lg w-full"
+            >
+              <span className="relative z-10 flex items-center">
+                <Download className="mr-2 h-5 w-5" />
+                Download CV
+              </span>
+            </Button>
+          </a>
         </div>
       </div>
       

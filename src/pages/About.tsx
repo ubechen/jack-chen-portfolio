@@ -1,8 +1,14 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Mail, Download } from "lucide-react";
+import { Mail, Download, Linkedin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+
+const MediumIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+    <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+  </svg>
+);
 
 const About = () => {
   const navigate = useNavigate();
@@ -31,9 +37,19 @@ const About = () => {
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
             比起直接開 Figma，我更習慣先透過研究、訪談和工作坊，幫團隊釐清「這題值不值得做、應該先做哪一步」。
           </p>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
             我在意的不是畫面多漂亮，而是決策能不能為公司和使用者創造足夠大的影響；如果你們正在為下一代產品方向或新技術應用找答案，我擅長用故事、數據和原型，陪團隊一起把決策變得更踏實。
           </p>
+          
+          {/* Download CV Button */}
+          <a href="/cv.pdf" download>
+            <Button variant="heroOutline" size="lg" className="text-lg">
+              <span className="relative z-10 flex items-center">
+                <Download className="mr-2 h-5 w-5" />
+                Download CV
+              </span>
+            </Button>
+          </a>
         </div>
       </section>
 
@@ -156,7 +172,7 @@ const About = () => {
               <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">4</div>
               <div>
                 <h3 className="text-xl font-semibold mb-3 text-foreground">善用 AI 工具加速，而不是取代思考</h3>
-<ul className="space-y-2">
+                <ul className="space-y-2">
                   <li className="text-lg text-muted-foreground">• 用 AI 協助整理訪談與問卷開放式回答，加速看見模式與共通點</li>
                   <li className="text-lg text-muted-foreground">• 用生成式影像做概念視覺提案，讓工作坊與評估討論更具體</li>
                   <li className="text-lg text-muted-foreground">• 設計 prompt 結構或分享教學，幫助團隊熟悉並穩定運用 AI 工具</li>
@@ -220,20 +236,24 @@ const About = () => {
             那我們可以聊一聊，一起把模糊的題目走到可落地的那一步。
           </p>
           
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <a 
-              href="mailto:taiyun0614@gmail.com" 
-              className="inline-flex items-center text-lg text-primary hover:text-primary/80 transition-colors"
-            >
-              <Mail className="mr-2 h-5 w-5" />
-              taiyun0614@gmail.com
+          {/* 3 Ghost Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a href="mailto:taiyun0614@gmail.com">
+              <Button size="lg" variant="ghost" className="text-lg w-full">
+                <Mail className="mr-2 h-5 w-5" />
+                Send Email
+              </Button>
             </a>
-            <a href="/cv.pdf" download>
-              <Button variant="hero" size="lg" className="text-lg">
-                <span className="relative z-10 flex items-center">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download CV
-                </span>
+            <a href="https://www.linkedin.com/in/tai-yun-chen/" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="ghost" className="text-lg w-full">
+                <Linkedin className="mr-2 h-5 w-5" />
+                LinkedIn
+              </Button>
+            </a>
+            <a href="https://medium.com/@taiyunchen" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="ghost" className="text-lg w-full">
+                <MediumIcon />
+                <span className="ml-2">Medium</span>
               </Button>
             </a>
           </div>
@@ -247,7 +267,7 @@ const About = () => {
             A bit more about me
           </h2>
           
-<ul className="space-y-4">
+          <ul className="space-y-4">
             <li className="text-lg text-muted-foreground leading-relaxed">
               <span className="mr-2">🧩</span><strong className="text-foreground">個性偏 ISFJ 型：</strong>安靜觀察多一點、搶話少一點，重視信任和長期合作關係
             </li>

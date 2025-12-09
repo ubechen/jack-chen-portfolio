@@ -67,14 +67,12 @@ const ProjectDetail = () => {
         <div className="relative h-full flex items-end pt-32 pb-16 px-4 md:px-6">
           <div className="container mx-auto max-w-6xl">
             <Button
-              variant="heroOutline"
-              className="mb-8"
-              onClick={() => navigate("/")}
+              variant="ghost"
+              className="mb-8 border border-white/50 text-white hover:bg-white/20 hover:text-white"
+              onClick={() => navigate("/#projects")}
             >
-              <span className="relative z-10 flex items-center">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Projects
-              </span>
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Projects
             </Button>
             <h1 className="text-4xl md:text-6xl font-bold mb-4 text-foreground">
               {project.title}
@@ -589,13 +587,13 @@ const ProjectDetail = () => {
 
       {/* Next Project */}
       {project.nextProject && (
-        <section className="py-16 md:py-24 px-4 md:px-6">
+        <section className="py-10 md:py-16 px-4 md:px-6">
           <div className="container mx-auto max-w-6xl text-center">
             <p className="text-muted-foreground mb-4">Next Project</p>
             <Button
               variant="heroOutline"
               size="lg"
-              className="text-2xl md:text-3xl font-bold"
+              className="text-2xl md:text-3xl font-bold py-6 px-10"
               onClick={() => navigate(`/project/${project.nextProject.id}`)}
             >
               <span className="relative z-10 flex items-center">

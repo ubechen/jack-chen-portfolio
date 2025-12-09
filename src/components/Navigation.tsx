@@ -3,11 +3,12 @@ import { Menu, X, Home, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,6 +17,8 @@ const Navigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const isAboutPage = location.pathname === "/about";
+  const isProjectPage = location.pathname.startsWith("/project/");
 
   const projectItems = [
     { label: "AI PC", href: "/project/ai-pc" },
@@ -121,8 +124,15 @@ const Navigation = () => {
     }
   };
 
-  const getNavItemClass = (href: string) => {
-    const isActive = activeSection === href;
+  const getNavItemClass = (href: string, isParentMenu?: boolean) => {
+    let isActive = activeSection === href;
+    
+    // Highlight based on current page
+    if (isParentMenu) {
+      if (href === "#about" && isAboutPage) isActive = true;
+      if (href === "#projects" && isProjectPage) isActive = true;
+    }
+    
     return `text-sm transition-colors ${
       isActive 
         ? "text-foreground font-semibold border-b-2 border-primary pb-1" 
@@ -130,8 +140,15 @@ const Navigation = () => {
     }`;
   };
 
-  const getMobileNavItemClass = (href: string) => {
-    const isActive = activeSection === href;
+  const getMobileNavItemClass = (href: string, isParentMenu?: boolean) => {
+    let isActive = activeSection === href;
+    
+    // Highlight based on current page
+    if (isParentMenu) {
+      if (href === "#about" && isAboutPage) isActive = true;
+      if (href === "#projects" && isProjectPage) isActive = true;
+    }
+    
     return `block w-full text-left py-3 transition-colors ${
       isActive 
         ? "text-foreground font-semibold" 
@@ -141,6 +158,11 @@ const Navigation = () => {
 
   const toggleMobileExpand = (label: string) => {
     setExpandedMobile(expandedMobile === label ? null : label);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMenuOpen(false);
+    setExpandedMobile(null);
   };
 
   return (
@@ -158,43 +180,47 @@ const Navigation = () => {
             )}
           </button>
 
-          {/* Desktop Menu */}
+          {/* Desktop Menu - Using NavigationMenu for hover trigger */}
           <div className="hidden md:flex items-center gap-8">
-            {menuItems.map((item) => (
-              item.subItems ? (
-                <DropdownMenu key={item.label}>
-                  <DropdownMenuTrigger className={`${getNavItemClass(item.href)} flex items-center gap-1 focus:outline-none`}>
-                    {item.label}
-                    <ChevronDown className="h-3 w-3" />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="start" className="bg-background border border-border shadow-lg">
-                    <DropdownMenuItem 
-                      onClick={() => handleNavigation(item.href, item.isPage)}
-                      className="cursor-pointer"
-                    >
-                      {item.label === "About" ? "About 總覽" : "Projects 總覽"}
-                    </DropdownMenuItem>
-                    {item.subItems.map((subItem) => (
-                      <DropdownMenuItem 
-                        key={subItem.label}
-                        onClick={() => handleNavigation(subItem.href)}
-                        className="cursor-pointer"
+            <NavigationMenu>
+              <NavigationMenuList className="gap-6">
+                {menuItems.map((item) => (
+                  item.subItems ? (
+                    <NavigationMenuItem key={item.label}>
+                      <NavigationMenuTrigger 
+                        className={`${getNavItemClass(item.href, true)} bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent`}
+                        onClick={() => handleNavigation(item.href, item.isPage)}
                       >
-                        {subItem.label}
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : (
-                <button
-                  key={item.label}
-                  onClick={() => handleNavigation(item.href, item.isPage)}
-                  className={getNavItemClass(item.href)}
-                >
-                  {item.label}
-                </button>
-              )
-            ))}
+                        {item.label}
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent className="bg-background border border-border shadow-lg rounded-md p-2 min-w-[160px]">
+                        <ul className="space-y-1">
+                          {item.subItems.map((subItem) => (
+                            <li key={subItem.label}>
+                              <button
+                                onClick={() => handleNavigation(subItem.href)}
+                                className="block w-full text-left px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                              >
+                                {subItem.label}
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
+                  ) : (
+                    <NavigationMenuItem key={item.label}>
+                      <button
+                        onClick={() => handleNavigation(item.href, item.isPage)}
+                        className={getNavItemClass(item.href)}
+                      >
+                        {item.label}
+                      </button>
+                    </NavigationMenuItem>
+                  )
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
 
           {/* Mobile Menu Button */}
@@ -208,51 +234,52 @@ const Navigation = () => {
           </Button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu with Overlay */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 animate-slide-in">
-            {menuItems.map((item) => (
-              <div key={item.label}>
-                {item.subItems ? (
-                  <>
+          <>
+            {/* Overlay for clicking outside to close */}
+            <div 
+              className="fixed inset-0 top-[65px] bg-black/20 z-40 md:hidden"
+              onClick={closeMobileMenu}
+            />
+            <div className="md:hidden mt-4 pb-4 animate-slide-in relative z-50 bg-background">
+              {menuItems.map((item) => (
+                <div key={item.label}>
+                  {item.subItems ? (
+                    <>
+                      <button
+                        onClick={() => toggleMobileExpand(item.label)}
+                        className={`${getMobileNavItemClass(item.href, true)} flex items-center justify-between w-full`}
+                      >
+                        {item.label}
+                        <ChevronDown className={`h-4 w-4 transition-transform ${expandedMobile === item.label ? 'rotate-180' : ''}`} />
+                      </button>
+                      {expandedMobile === item.label && (
+                        <div className="pl-4 border-l border-border ml-2">
+                          {item.subItems.map((subItem) => (
+                            <button
+                              key={subItem.label}
+                              onClick={() => handleNavigation(subItem.href)}
+                              className="block w-full text-left py-2 text-sm text-muted-foreground hover:text-foreground"
+                            >
+                              {subItem.label}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  ) : (
                     <button
-                      onClick={() => toggleMobileExpand(item.label)}
-                      className={`${getMobileNavItemClass(item.href)} flex items-center justify-between w-full`}
+                      onClick={() => handleNavigation(item.href, item.isPage)}
+                      className={getMobileNavItemClass(item.href)}
                     >
                       {item.label}
-                      <ChevronDown className={`h-4 w-4 transition-transform ${expandedMobile === item.label ? 'rotate-180' : ''}`} />
                     </button>
-                    {expandedMobile === item.label && (
-                      <div className="pl-4 border-l border-border ml-2">
-                        <button
-                          onClick={() => handleNavigation(item.href, item.isPage)}
-                          className="block w-full text-left py-2 text-sm text-muted-foreground hover:text-foreground"
-                        >
-                          {item.label === "About" ? "About 總覽" : "Projects 總覽"}
-                        </button>
-                        {item.subItems.map((subItem) => (
-                          <button
-                            key={subItem.label}
-                            onClick={() => handleNavigation(subItem.href)}
-                            className="block w-full text-left py-2 text-sm text-muted-foreground hover:text-foreground"
-                          >
-                            {subItem.label}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <button
-                    onClick={() => handleNavigation(item.href, item.isPage)}
-                    className={getMobileNavItemClass(item.href)}
-                  >
-                    {item.label}
-                  </button>
-                )}
-              </div>
-            ))}
-          </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </>
         )}
       </div>
     </nav>
