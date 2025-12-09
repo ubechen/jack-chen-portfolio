@@ -2,13 +2,6 @@ import { useState, useEffect } from "react";
 import { Menu, X, Home, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -180,47 +173,45 @@ const Navigation = () => {
             )}
           </button>
 
-          {/* Desktop Menu - Using NavigationMenu for hover trigger */}
+          {/* Desktop Menu - Custom hover dropdown */}
           <div className="hidden md:flex items-center gap-8">
-            <NavigationMenu>
-              <NavigationMenuList className="gap-6">
-                {menuItems.map((item) => (
-                  item.subItems ? (
-                    <NavigationMenuItem key={item.label}>
-                      <NavigationMenuTrigger 
-                        className={getNavItemClass(item.href, true)}
-                        onClick={() => handleNavigation(item.href, item.isPage)}
-                      >
-                        {item.label}
-                      </NavigationMenuTrigger>
-                      <NavigationMenuContent className="bg-background border border-border shadow-lg rounded-none p-2 min-w-[160px]">
-                        <ul className="space-y-1">
-                          {item.subItems.map((subItem) => (
-                            <li key={subItem.label}>
-                              <button
-                                onClick={() => handleNavigation(subItem.href)}
-                                className="block w-full text-left px-3 py-2 text-sm text-muted-foreground hover:text-primary hover:font-semibold transition-colors"
-                              >
-                                {subItem.label}
-                              </button>
-                            </li>
-                          ))}
-                        </ul>
-                      </NavigationMenuContent>
-                    </NavigationMenuItem>
-                  ) : (
-                    <NavigationMenuItem key={item.label}>
-                      <button
-                        onClick={() => handleNavigation(item.href, item.isPage)}
-                        className={getNavItemClass(item.href)}
-                      >
-                        {item.label}
-                      </button>
-                    </NavigationMenuItem>
-                  )
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
+            {menuItems.map((item) => (
+              item.subItems ? (
+                <div key={item.label} className="relative group">
+                  <button
+                    onClick={() => handleNavigation(item.href, item.isPage)}
+                    className={`${getNavItemClass(item.href, true)} flex items-center gap-1`}
+                  >
+                    {item.label}
+                    <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180" />
+                  </button>
+                  <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="bg-background border border-border shadow-lg p-2 min-w-[160px]">
+                      <ul className="space-y-1">
+                        {item.subItems.map((subItem) => (
+                          <li key={subItem.label}>
+                            <button
+                              onClick={() => handleNavigation(subItem.href)}
+                              className="block w-full text-left px-3 py-2 text-sm text-muted-foreground hover:text-primary hover:font-semibold transition-colors"
+                            >
+                              {subItem.label}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <button
+                  key={item.label}
+                  onClick={() => handleNavigation(item.href, item.isPage)}
+                  className={getNavItemClass(item.href)}
+                >
+                  {item.label}
+                </button>
+              )
+            ))}
           </div>
 
           {/* Mobile Menu Button */}
@@ -237,12 +228,12 @@ const Navigation = () => {
         {/* Mobile Menu with Overlay */}
         {isMenuOpen && (
           <>
-            {/* Overlay for clicking outside to close */}
+            {/* Transparent overlay for clicking outside to close */}
             <div 
-              className="fixed inset-0 top-[65px] z-40 md:hidden"
+              className="fixed inset-0 top-[65px] z-40 md:hidden bg-transparent"
               onClick={closeMobileMenu}
             />
-            <div className="md:hidden mt-4 pb-4 animate-slide-in relative z-50 bg-background">
+            <div className="md:hidden mt-4 pb-4 animate-slide-in relative z-50 bg-white dark:bg-background border-t border-border">
               {menuItems.map((item) => (
                 <div key={item.label}>
                   {item.subItems ? (
