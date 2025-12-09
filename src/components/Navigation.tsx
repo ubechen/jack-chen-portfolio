@@ -188,18 +188,18 @@ const Navigation = () => {
                   item.subItems ? (
                     <NavigationMenuItem key={item.label}>
                       <NavigationMenuTrigger 
-                        className={`${getNavItemClass(item.href, true)} bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent`}
+                        className={getNavItemClass(item.href, true)}
                         onClick={() => handleNavigation(item.href, item.isPage)}
                       >
                         {item.label}
                       </NavigationMenuTrigger>
-                      <NavigationMenuContent className="bg-background border border-border shadow-lg rounded-md p-2 min-w-[160px]">
+                      <NavigationMenuContent className="bg-background border border-border shadow-lg rounded-none p-2 min-w-[160px]">
                         <ul className="space-y-1">
                           {item.subItems.map((subItem) => (
                             <li key={subItem.label}>
                               <button
                                 onClick={() => handleNavigation(subItem.href)}
-                                className="block w-full text-left px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                                className="block w-full text-left px-3 py-2 text-sm text-muted-foreground hover:text-primary hover:font-semibold transition-colors"
                               >
                                 {subItem.label}
                               </button>
@@ -239,7 +239,7 @@ const Navigation = () => {
           <>
             {/* Overlay for clicking outside to close */}
             <div 
-              className="fixed inset-0 top-[65px] bg-black/20 z-40 md:hidden"
+              className="fixed inset-0 top-[65px] z-40 md:hidden"
               onClick={closeMobileMenu}
             />
             <div className="md:hidden mt-4 pb-4 animate-slide-in relative z-50 bg-background">

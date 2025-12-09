@@ -21,16 +21,16 @@ const Projects = () => {
       projectId: "amr-robot",
     },
     {
-      title: "BabyFlow",
-      description: "嬰幼兒照護應用程式，協助父母追蹤成長記錄與健康數據",
-      tags: ["Healthcare", "Mobile", "Family"],
-      projectId: "babyflow",
-    },
-    {
       title: "ESG Board Game",
       description: "ESG 教育桌遊設計，透過遊戲化學習永續發展概念",
       tags: ["Education", "Sustainability", "Gamification"],
       projectId: "esg-board-game",
+    },
+    {
+      title: "BabyFlow",
+      description: "嬰幼兒照護應用程式，協助父母追蹤成長記錄與健康數據",
+      tags: ["Healthcare", "Mobile", "Family"],
+      projectId: "babyflow",
     },
   ];
 

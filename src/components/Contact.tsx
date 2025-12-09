@@ -19,21 +19,27 @@ const Contact = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <a href="mailto:taiyun0614@gmail.com">
-            <Button size="lg" variant="ghost" className="text-lg w-full">
-              <Mail className="mr-2 h-5 w-5" />
-              Send Email
+            <Button size="lg" variant="contactLink" className="text-lg w-full">
+              <span className="relative z-10 flex items-center">
+                <Mail className="mr-2 h-5 w-5" />
+                Send Email
+              </span>
             </Button>
           </a>
           <a href="https://www.linkedin.com/in/tai-yun-chen/" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" variant="ghost" className="text-lg w-full">
-              <Linkedin className="mr-2 h-5 w-5" />
-              LinkedIn
+            <Button size="lg" variant="contactLink" className="text-lg w-full">
+              <span className="relative z-10 flex items-center">
+                <Linkedin className="mr-2 h-5 w-5" />
+                LinkedIn
+              </span>
             </Button>
           </a>
           <a href="https://medium.com/@taiyunchen" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" variant="ghost" className="text-lg w-full">
-              <MediumIcon />
-              <span className="ml-2">Medium</span>
+            <Button size="lg" variant="contactLink" className="text-lg w-full">
+              <span className="relative z-10 flex items-center">
+                <MediumIcon />
+                <span className="ml-2">Medium</span>
+              </span>
             </Button>
           </a>
         </div>
