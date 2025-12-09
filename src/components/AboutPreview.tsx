@@ -25,7 +25,7 @@ const AboutPreview = () => {
           className="text-lg"
         >
           <span className="relative z-10 flex items-center">
-            認識我的設計思維
+            我的工作方式
             <ArrowRight className="ml-2 h-5 w-5" />
           </span>
         </Button>

@@ -68,11 +68,13 @@ const ProjectDetail = () => {
           <div className="container mx-auto max-w-6xl">
             <Button
               variant="ghost"
-              className="mb-8 border border-white/50 text-white hover:bg-white/20 hover:text-white"
+              className="mb-8 relative overflow-hidden border border-white/50 text-white before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-white/20 before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100 hover:bg-transparent hover:text-white"
               onClick={() => navigate("/#projects")}
             >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Projects
+              <span className="relative z-10 flex items-center">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Projects
+              </span>
             </Button>
             <h1 className="text-4xl md:text-6xl font-bold mb-4 text-foreground">
               {project.title}
@@ -593,7 +595,7 @@ const ProjectDetail = () => {
             <Button
               variant="heroOutline"
               size="lg"
-              className="text-2xl md:text-3xl font-bold py-6 px-10"
+              className="text-2xl md:text-3xl font-bold py-8 px-12"
               onClick={() => navigate(`/project/${project.nextProject.id}`)}
             >
               <span className="relative z-10 flex items-center">
