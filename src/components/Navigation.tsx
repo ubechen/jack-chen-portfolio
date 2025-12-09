@@ -186,7 +186,7 @@ const Navigation = () => {
                     <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180" />
                   </button>
                   <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                    <div className="bg-background border border-border shadow-lg p-2 min-w-[160px]">
+                    <div className="bg-background border border-border shadow-lg p-2 min-w-[160px] rounded-lg">
                       <ul className="space-y-1">
                         {item.subItems.map((subItem) => (
                           <li key={subItem.label}>
@@ -225,52 +225,45 @@ const Navigation = () => {
           </Button>
         </div>
 
-        {/* Mobile Menu with Overlay */}
+        {/* Mobile Menu - only toggle with X button */}
         {isMenuOpen && (
-          <>
-            {/* Transparent overlay for clicking outside to close */}
-            <div 
-              className="fixed inset-0 top-[65px] z-40 md:hidden bg-transparent"
-              onClick={closeMobileMenu}
-            />
-            <div className="md:hidden mt-4 pb-4 animate-slide-in relative z-50 bg-white dark:bg-background border-t border-border">
-              {menuItems.map((item) => (
-                <div key={item.label}>
-                  {item.subItems ? (
-                    <>
-                      <button
-                        onClick={() => toggleMobileExpand(item.label)}
-                        className={`${getMobileNavItemClass(item.href, true)} flex items-center justify-between w-full`}
-                      >
-                        {item.label}
-                        <ChevronDown className={`h-4 w-4 transition-transform ${expandedMobile === item.label ? 'rotate-180' : ''}`} />
-                      </button>
-                      {expandedMobile === item.label && (
-                        <div className="pl-4 border-l border-border ml-2">
-                          {item.subItems.map((subItem) => (
-                            <button
-                              key={subItem.label}
-                              onClick={() => handleNavigation(subItem.href)}
-                              className="block w-full text-left py-2 text-sm text-muted-foreground hover:text-foreground"
-                            >
-                              {subItem.label}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </>
-                  ) : (
+          <div className="md:hidden mt-4 pb-4 animate-slide-in bg-background border-t border-border">
+            {menuItems.map((item) => (
+              <div key={item.label}>
+                {item.subItems ? (
+                  <>
                     <button
-                      onClick={() => handleNavigation(item.href, item.isPage)}
-                      className={getMobileNavItemClass(item.href)}
+                      onClick={() => toggleMobileExpand(item.label)}
+                      className={`${getMobileNavItemClass(item.href, true)} flex items-center justify-between w-full`}
                     >
                       {item.label}
+                      <ChevronDown className={`h-4 w-4 transition-transform ${expandedMobile === item.label ? 'rotate-180' : ''}`} />
                     </button>
-                  )}
-                </div>
-              ))}
-            </div>
-          </>
+                    {expandedMobile === item.label && (
+                      <div className="pl-4 border-l border-border ml-2">
+                        {item.subItems.map((subItem) => (
+                          <button
+                            key={subItem.label}
+                            onClick={() => handleNavigation(subItem.href)}
+                            className="block w-full text-left py-2 text-sm text-muted-foreground hover:text-foreground"
+                          >
+                            {subItem.label}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <button
+                    onClick={() => handleNavigation(item.href, item.isPage)}
+                    className={getMobileNavItemClass(item.href)}
+                  >
+                    {item.label}
+                  </button>
+                )}
+              </div>
+            ))}
+          </div>
         )}
       </div>
     </nav>
