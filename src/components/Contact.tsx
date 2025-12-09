@@ -18,12 +18,14 @@ const Contact = () => {
           歡迎與我聊聊合作機會
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button size="lg" variant="hero" className="text-lg">
-            <span className="relative z-10 flex items-center">
-              <Mail className="mr-2 h-5 w-5" />
-              Send Email
-            </span>
-          </Button>
+          <a href="mailto:taiyun0614@gmail.com">
+            <Button size="lg" variant="hero" className="text-lg w-full">
+              <span className="relative z-10 flex items-center">
+                <Mail className="mr-2 h-5 w-5" />
+                Send Email
+              </span>
+            </Button>
+          </a>
           <a href="https://www.linkedin.com/in/tai-yun-chen/" target="_blank" rel="noopener noreferrer">
             <Button size="lg" variant="heroOutline" className="text-lg w-full">
               <span className="relative z-10 flex items-center">
