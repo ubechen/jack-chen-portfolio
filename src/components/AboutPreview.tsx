@@ -6,7 +6,7 @@ const AboutPreview = () => {
   const navigate = useNavigate();
 
   return (
-    <section id="about" className="py-16 px-6 bg-muted">
+    <section id="about" className="py-16 px-6 bg-background">
 <div className="max-w-2xl mx-auto text-left">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground text-center">About</h2>
         <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
