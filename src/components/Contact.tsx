@@ -9,7 +9,7 @@ const MediumIcon = () => (
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 px-6">
+    <section id="contact" className="py-24 px-6 bg-background">
       <div className="container mx-auto max-w-4xl text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
           Let's Work Together
