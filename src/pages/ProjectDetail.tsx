@@ -168,9 +168,14 @@ const ProjectDetail = () => {
               </div>
 
               {/* Image Placeholder */}
-              <div className="-mx-4 md:mx-0 aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                <p className="text-muted-foreground">市場現況與競品分析示意圖</p>
-              </div>
+              <figure className="-mx-4 md:mx-0">
+                <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
+                  <p className="text-muted-foreground text-center px-4">市場現況與競品分析示意圖</p>
+                </div>
+                <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                  AI PC 市場定義與主要競品功能比較
+                </figcaption>
+              </figure>
 
               <div className="bg-secondary/50 rounded-xl p-8 my-8">
                 <h3 className="text-xl font-semibold mb-4 text-foreground">內部背景與挑戰</h3>
@@ -304,9 +309,14 @@ const ProjectDetail = () => {
             </div>
 
             {/* Image Placeholder */}
-            <div className="-mx-4 md:mx-0 aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center mt-10">
-              <p className="text-muted-foreground">專案角色與協作關係圖</p>
-            </div>
+            <figure className="-mx-4 md:mx-0 mt-10">
+              <div className="aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center">
+                <p className="text-muted-foreground text-center px-4">專案角色與協作關係圖</p>
+              </div>
+              <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                與 PM、ID、ME 及新創夥伴的協作網絡
+              </figcaption>
+            </figure>
           </div>
         </section>
       </ScrollReveal>
@@ -343,9 +353,14 @@ const ProjectDetail = () => {
               </ul>
 
               {/* Image Placeholder */}
-              <div className="-mx-4 md:mx-0 aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                <p className="text-muted-foreground">Kano 問卷設計與功能分類圖表</p>
-              </div>
+              <figure className="-mx-4 md:mx-0">
+                <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
+                  <p className="text-muted-foreground text-center px-4">Kano 問卷設計與功能分類圖表</p>
+                </div>
+                <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                  10 個潛在功能的 Kano 分類結果
+                </figcaption>
+              </figure>
 
               {/* Kano Types */}
               <div className="grid md:grid-cols-3 gap-4">
@@ -364,9 +379,14 @@ const ProjectDetail = () => {
               </div>
 
               {/* Image Placeholder */}
-              <div className="-mx-4 md:mx-0 aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
-                <p className="text-muted-foreground">Top 10 AI PC 功能排序表格</p>
-              </div>
+              <figure className="-mx-4 md:mx-0">
+                <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
+                  <p className="text-muted-foreground text-center px-4">Top 10 AI PC 功能排序表格</p>
+                </div>
+                <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                  創新功能優先序與投資建議
+                </figcaption>
+              </figure>
             </div>
           </div>
 
@@ -401,9 +421,14 @@ const ProjectDetail = () => {
               </ul>
 
               {/* Image Placeholder */}
-              <div className="-mx-4 md:mx-0 aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                <p className="text-muted-foreground">工作坊現場照片與互動過程</p>
-              </div>
+              <figure className="-mx-4 md:mx-0">
+                <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
+                  <p className="text-muted-foreground text-center px-4">工作坊現場照片與互動過程</p>
+                </div>
+                <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                  結合實機樣品的團體訪談與腦力激盪
+                </figcaption>
+              </figure>
 
               {/* 3 Scenarios */}
               <div className="bg-secondary/50 rounded-xl p-8">
@@ -431,9 +456,14 @@ const ProjectDetail = () => {
               </div>
 
               {/* Image Placeholder */}
-              <div className="-mx-4 md:mx-0 aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center">
-                <p className="text-muted-foreground">AI Agent 概念草圖與互動方式</p>
-              </div>
+              <figure className="-mx-4 md:mx-0">
+                <div className="aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center">
+                  <p className="text-muted-foreground text-center px-4">AI Agent 概念草圖與互動方式</p>
+                </div>
+                <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                  AI Launcher 與 Agent 的情境展開
+                </figcaption>
+              </figure>
             </div>
           </div>
         </div>
@@ -484,9 +514,14 @@ const ProjectDetail = () => {
             </div>
 
             {/* Image Placeholder */}
-            <div className="-mx-4 md:mx-0 aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-              <p className="text-muted-foreground">專案成果與影響力示意圖</p>
-            </div>
+            <figure className="-mx-4 md:mx-0">
+              <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
+                <p className="text-muted-foreground text-center px-4">專案成果與影響力示意圖</p>
+              </div>
+              <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                研究成果如何轉化為決策工具
+              </figcaption>
+            </figure>
 
             {/* Impact Summary */}
             <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -539,9 +574,14 @@ const ProjectDetail = () => {
             </ul>
 
             {/* Image Placeholder */}
-            <div className="-mx-4 md:mx-0 aspect-video bg-muted md:rounded-lg flex items-center justify-center mt-8">
-              <p className="text-muted-foreground">AI 輔助設計流程示意圖</p>
-            </div>
+            <figure className="-mx-4 md:mx-0 mt-8">
+              <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
+                <p className="text-muted-foreground text-center px-4">AI 輔助設計流程示意圖</p>
+              </div>
+              <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                運用生成式 AI 加速研究與共創
+              </figcaption>
+            </figure>
           </div>
 
           {/* Divider */}
@@ -613,9 +653,14 @@ const ProjectDetail = () => {
           </div>
 
           {/* Image Placeholder */}
-          <div className="-mx-4 md:mx-0 aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center mt-10">
-            <p className="text-muted-foreground">專案總結與個人成長回顧</p>
-          </div>
+          <figure className="-mx-4 md:mx-0 mt-10">
+            <div className="aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center">
+              <p className="text-muted-foreground text-center px-4">專案總結與個人成長回顧</p>
+            </div>
+            <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+              從策略探索到組織影響力提升
+            </figcaption>
+          </figure>
         </div>
       </section>
       </ScrollReveal>
