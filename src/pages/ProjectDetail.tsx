@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 import aiPcHero from "@/assets/bg_project_aipc.webp";
 
 const projectData = {
@@ -86,206 +87,212 @@ const ProjectDetail = () => {
         </div>
       </section>
 
-      {/* Project Meta */}
-      <section className="py-8 md:py-12 px-4 md:px-6 bg-secondary/30">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-3 gap-6 mb-6">
-            <div>
-              <h3 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">角色</h3>
-              <p className="text-foreground font-medium">{project.role}</p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">類型</h3>
-              <p className="text-foreground">{project.type}</p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">期間</h3>
-              <p className="text-foreground">{project.duration}</p>
-            </div>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">簡述</h3>
-            <p className="text-foreground leading-relaxed">{project.summary}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 1: Overview */}
-      <section className="py-16 md:py-24 px-4 md:px-6">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold mb-12 text-foreground">
-            1. Overview
-            <span className="block text-xl font-normal text-muted-foreground mt-2">AI PC 在市場尚未被真正說清楚時</span>
-          </h2>
-          
-          <div className="space-y-8">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              當時市場上對於「AI PC」的認知大多停留在：
-            </p>
-            
-            <ul className="space-y-3 text-lg text-muted-foreground ml-4">
-              <li className="flex gap-3">
-                <span className="text-primary">•</span>
-                <span>微軟 Copilot+ 個人助理</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-primary">•</span>
-                <span>具備 NPU，可在本地端離線處理 AI 任務</span>
-              </li>
-              <li className="flex gap-3">
-                <span className="text-primary">•</span>
-                <span>鍵盤上多了一顆 Copilot 專屬按鍵</span>
-              </li>
-            </ul>
-
-            <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6 my-8">
-              <p className="text-xl text-foreground font-medium">
-                但還沒有人說得清楚 — 對使用者而言，AI PC 在日常工作中，實際能帶來什麼幫助？
-              </p>
-            </div>
-
-            {/* Image Placeholder */}
-            <div className="-mx-4 md:mx-0 aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-              <p className="text-muted-foreground">市場現況與競品分析示意圖</p>
-            </div>
-
-            <div className="bg-secondary/50 rounded-xl p-8 my-8">
-              <h3 className="text-xl font-semibold mb-4 text-foreground">內部背景與挑戰</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                同時，內部 ID 與 ME 已設計出新型態散熱模組，並接觸國際新創夥伴（觸控實體鍵盤）；對 ODM 公司而言，更關鍵的問題是：
-              </p>
-              <p className="text-xl text-primary font-semibold">
-                值得投入長期資源的 AI PC，如何定義未來面貌？
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-semibold mb-6 text-foreground">我的任務</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                站在 UX 的位置，與不同利害關係人協作與溝通：
-              </p>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-background border border-border rounded-lg p-5">
-                  <p className="text-muted-foreground">先幫公司定義一版<mark className="bg-primary/20 text-foreground px-1 rounded">「合理又有前瞻性」</mark>的 AI PC 願景</p>
-                </div>
-                <div className="bg-background border border-border rounded-lg p-5">
-                  <p className="text-muted-foreground">用研究與故事，幫 PM 組成一套可以<mark className="bg-primary/20 text-foreground px-1 rounded">說服高層的提案基礎</mark></p>
-                </div>
-                <div className="bg-background border border-border rounded-lg p-5">
-                  <p className="text-muted-foreground">讓內部 ID 與 ME 團隊可以<mark className="bg-primary/20 text-foreground px-1 rounded">根據具體情境</mark>，而非只看規格評估新技術的價值</p>
-                </div>
-                <div className="bg-background border border-border rounded-lg p-5">
-                  <p className="text-muted-foreground">與新創夥伴用<mark className="bg-primary/20 text-foreground px-1 rounded">情境對齊</mark>可能合作方向</p>
-                </div>
+      <ScrollReveal>
+        {/* Project Meta */}
+        <section className="py-8 md:py-12 px-4 md:px-6 bg-secondary/30">
+          <div className="container mx-auto max-w-6xl">
+            <div className="grid md:grid-cols-3 gap-6 mb-6">
+              <div>
+                <h3 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">角色</h3>
+                <p className="text-foreground font-medium">{project.role}</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">類型</h3>
+                <p className="text-foreground">{project.type}</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">期間</h3>
+                <p className="text-foreground">{project.duration}</p>
               </div>
             </div>
-
-            <div className="bg-primary/10 rounded-xl p-8 mt-8">
-              <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">核心觀點</p>
-              <p className="text-2xl text-foreground font-semibold leading-relaxed">
-                「AI PC 是一台會主動幫使用者工作、懂得情境脈絡的好夥伴，而不僅是一台『裝了 AI app』的電腦」
-              </p>
-              <p className="text-muted-foreground mt-4">
-                這也決定了之後研究與提案的方向：先定義「什麼值得做？」
-              </p>
+            <div>
+              <h3 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">簡述</h3>
+              <p className="text-foreground leading-relaxed">{project.summary}</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
-      {/* Section 2: My Role */}
-      <section className="py-16 md:py-24 px-4 md:px-6 bg-secondary/30">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold mb-12 text-foreground">
-            2. My Role
-            <span className="block text-xl font-normal text-muted-foreground mt-2">服務不同對象，協助大家看清題目</span>
-          </h2>
+      <ScrollReveal delay={100}>
+        {/* Section 1: Overview */}
+        <section className="py-16 md:py-24 px-4 md:px-6">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-4xl font-bold mb-12 text-foreground">
+              1. Overview
+              <span className="block text-xl font-normal text-muted-foreground mt-2">AI PC 在市場尚未被真正說清楚時</span>
+            </h2>
+            
+            <div className="space-y-8">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                當時市場上對於「AI PC」的認知大多停留在：
+              </p>
+              
+              <ul className="space-y-3 text-lg text-muted-foreground ml-4">
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span>
+                  <span>微軟 Copilot+ 個人助理</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span>
+                  <span>具備 NPU，可在本地端離線處理 AI 任務</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary">•</span>
+                  <span>鍵盤上多了一顆 Copilot 專屬按鍵</span>
+                </li>
+              </ul>
 
-          <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-            身為 <strong className="text-foreground">Senior UX / Product Designer</strong>，我在這個專案主要扮演三個角色：
-          </p>
+              <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6 my-8">
+                <p className="text-xl text-foreground font-medium">
+                  但還沒有人說得清楚 — 對使用者而言，AI PC 在日常工作中，實際能帶來什麼幫助？
+                </p>
+              </div>
 
-          <div className="space-y-6">
-            {/* Role 1 */}
-            <Card className="border-l-4 border-l-primary overflow-hidden">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4">
-                  <span className="text-4xl font-bold text-primary/30">01</span>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-semibold mb-4 text-foreground">研究架構設計者</h3>
-                    <p className="text-muted-foreground mb-4">規劃三階段方法：</p>
-                    <div className="grid md:grid-cols-3 gap-4">
-                      <div className="bg-secondary/50 rounded-lg p-4">
-                        <p className="text-sm font-semibold text-primary mb-1">Phase 1</p>
-                        <p className="text-sm text-muted-foreground">市場調查與 TA 訪談 → 分析市場和一手/二手資料</p>
-                      </div>
-                      <div className="bg-secondary/50 rounded-lg p-4">
-                        <p className="text-sm font-semibold text-primary mb-1">Phase 2</p>
-                        <p className="text-sm text-muted-foreground">Kano 問卷與分析 → 量化不同族群對 AI PC 創新功能的優先序</p>
-                      </div>
-                      <div className="bg-secondary/50 rounded-lg p-4">
-                        <p className="text-sm font-semibold text-primary mb-1">Phase 3</p>
-                        <p className="text-sm text-muted-foreground">實機團體訪談＋腦力激盪共創 → 針對具體情境展開 AI Agent / Launcher 概念</p>
+              {/* Image Placeholder */}
+              <div className="-mx-4 md:mx-0 aspect-video bg-muted md:rounded-lg flex items-center justify-center">
+                <p className="text-muted-foreground">市場現況與競品分析示意圖</p>
+              </div>
+
+              <div className="bg-secondary/50 rounded-xl p-8 my-8">
+                <h3 className="text-xl font-semibold mb-4 text-foreground">內部背景與挑戰</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  同時，內部 ID 與 ME 已設計出新型態散熱模組，並接觸國際新創夥伴（觸控實體鍵盤）；對 ODM 公司而言，更關鍵的問題是：
+                </p>
+                <p className="text-xl text-primary font-semibold">
+                  值得投入長期資源的 AI PC，如何定義未來面貌？
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-semibold mb-6 text-foreground">我的任務</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  站在 UX 的位置，與不同利害關係人協作與溝通：
+                </p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-background border border-border rounded-lg p-5">
+                    <p className="text-muted-foreground">先幫公司定義一版<mark className="bg-primary/20 text-foreground px-1 rounded">「合理又有前瞻性」</mark>的 AI PC 願景</p>
+                  </div>
+                  <div className="bg-background border border-border rounded-lg p-5">
+                    <p className="text-muted-foreground">用研究與故事，幫 PM 組成一套可以<mark className="bg-primary/20 text-foreground px-1 rounded">說服高層的提案基礎</mark></p>
+                  </div>
+                  <div className="bg-background border border-border rounded-lg p-5">
+                    <p className="text-muted-foreground">讓內部 ID 與 ME 團隊可以<mark className="bg-primary/20 text-foreground px-1 rounded">根據具體情境</mark>，而非只看規格評估新技術的價值</p>
+                  </div>
+                  <div className="bg-background border border-border rounded-lg p-5">
+                    <p className="text-muted-foreground">與新創夥伴用<mark className="bg-primary/20 text-foreground px-1 rounded">情境對齊</mark>可能合作方向</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-primary/10 rounded-xl p-8 mt-8">
+                <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">核心觀點</p>
+                <p className="text-2xl text-foreground font-semibold leading-relaxed">
+                  「AI PC 是一台會主動幫使用者工作、懂得情境脈絡的好夥伴，而不僅是一台『裝了 AI app』的電腦」
+                </p>
+                <p className="text-muted-foreground mt-4">
+                  這也決定了之後研究與提案的方向：先定義「什麼值得做？」
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal delay={100}>
+        {/* Section 2: My Role */}
+        <section className="py-16 md:py-24 px-4 md:px-6 bg-secondary/30">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-4xl font-bold mb-12 text-foreground">
+              2. My Role
+              <span className="block text-xl font-normal text-muted-foreground mt-2">服務不同對象，協助大家看清題目</span>
+            </h2>
+
+            <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+              身為 <strong className="text-foreground">Senior UX / Product Designer</strong>，我在這個專案主要扮演三個角色：
+            </p>
+
+            <div className="space-y-6">
+              {/* Role 1 */}
+              <Card className="border-l-4 border-l-primary overflow-hidden">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4">
+                    <span className="text-4xl font-bold text-primary/30">01</span>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-semibold mb-4 text-foreground">研究架構設計者</h3>
+                      <p className="text-muted-foreground mb-4">規劃三階段方法：</p>
+                      <div className="grid md:grid-cols-3 gap-4">
+                        <div className="bg-secondary/50 rounded-lg p-4">
+                          <p className="text-sm font-semibold text-primary mb-1">Phase 1</p>
+                          <p className="text-sm text-muted-foreground">市場調查與 TA 訪談 → 分析市場和一手/二手資料</p>
+                        </div>
+                        <div className="bg-secondary/50 rounded-lg p-4">
+                          <p className="text-sm font-semibold text-primary mb-1">Phase 2</p>
+                          <p className="text-sm text-muted-foreground">Kano 問卷與分析 → 量化不同族群對 AI PC 創新功能的優先序</p>
+                        </div>
+                        <div className="bg-secondary/50 rounded-lg p-4">
+                          <p className="text-sm font-semibold text-primary mb-1">Phase 3</p>
+                          <p className="text-sm text-muted-foreground">實機團體訪談＋腦力激盪共創 → 針對具體情境展開 AI Agent / Launcher 概念</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
 
-            {/* Role 2 */}
-            <Card className="border-l-4 border-l-primary overflow-hidden">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4">
-                  <span className="text-4xl font-bold text-primary/30">02</span>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-semibold mb-4 text-foreground">故事與決策框架設計者</h3>
-                    <ul className="space-y-3 text-muted-foreground">
-                      <li className="flex gap-3">
-                        <span className="text-primary">•</span>
-                        <span>把研究結果整理成 PM 可直接拿去提案的<mark className="bg-primary/20 text-foreground px-1 rounded">「新產品機會敘事」</mark></span>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="text-primary">•</span>
-                        <span>協助把模糊的 AI 願景，拆成<mark className="bg-primary/20 text-foreground px-1 rounded">短、中、長期三層路線</mark></span>
-                      </li>
-                    </ul>
+              {/* Role 2 */}
+              <Card className="border-l-4 border-l-primary overflow-hidden">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4">
+                    <span className="text-4xl font-bold text-primary/30">02</span>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-semibold mb-4 text-foreground">故事與決策框架設計者</h3>
+                      <ul className="space-y-3 text-muted-foreground">
+                        <li className="flex gap-3">
+                          <span className="text-primary">•</span>
+                          <span>把研究結果整理成 PM 可直接拿去提案的<mark className="bg-primary/20 text-foreground px-1 rounded">「新產品機會敘事」</mark></span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="text-primary">•</span>
+                          <span>協助把模糊的 AI 願景，拆成<mark className="bg-primary/20 text-foreground px-1 rounded">短、中、長期三層路線</mark></span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
 
-            {/* Role 3 */}
-            <Card className="border-l-4 border-l-primary overflow-hidden">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4">
-                  <span className="text-4xl font-bold text-primary/30">03</span>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-semibold mb-4 text-foreground">UX 價值推進者</h3>
-                    <ul className="space-y-3 text-muted-foreground">
-                      <li className="flex gap-3">
-                        <span className="text-primary">•</span>
-                        <span>全盤考量如何同時幫助 PM、ID／ME 團隊與新創夥伴各自的決策需求</span>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="text-primary">•</span>
-                        <span>讓 UX 在之後 AI 類專案中，從<mark className="bg-primary/20 text-foreground px-1 rounded">「後期支援」</mark>轉變為<mark className="bg-primary/20 text-foreground px-1 rounded">「一開始就要一起定義題目的夥伴」</mark></span>
-                      </li>
-                    </ul>
+              {/* Role 3 */}
+              <Card className="border-l-4 border-l-primary overflow-hidden">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-4">
+                    <span className="text-4xl font-bold text-primary/30">03</span>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-semibold mb-4 text-foreground">UX 價值推進者</h3>
+                      <ul className="space-y-3 text-muted-foreground">
+                        <li className="flex gap-3">
+                          <span className="text-primary">•</span>
+                          <span>全盤考量如何同時幫助 PM、ID／ME 團隊與新創夥伴各自的決策需求</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="text-primary">•</span>
+                          <span>讓 UX 在之後 AI 類專案中，從<mark className="bg-primary/20 text-foreground px-1 rounded">「後期支援」</mark>轉變為<mark className="bg-primary/20 text-foreground px-1 rounded">「一開始就要一起定義題目的夥伴」</mark></span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+                </CardContent>
+              </Card>
+            </div>
 
-          {/* Image Placeholder */}
-          <div className="-mx-4 md:mx-0 aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center mt-10">
-            <p className="text-muted-foreground">專案角色與協作關係圖</p>
+            {/* Image Placeholder */}
+            <div className="-mx-4 md:mx-0 aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center mt-10">
+              <p className="text-muted-foreground">專案角色與協作關係圖</p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
-      {/* Section 3: What we did */}
+      <ScrollReveal delay={100}>
       <section className="py-16 md:py-24 px-4 md:px-6">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold mb-12 text-foreground">
@@ -412,7 +419,9 @@ const ProjectDetail = () => {
           </div>
         </div>
       </section>
+      </ScrollReveal>
 
+      <ScrollReveal delay={100}>
       {/* Section 4: Challenges & Impact */}
       <section className="py-16 md:py-24 px-4 md:px-6 bg-secondary/30">
         <div className="container mx-auto max-w-4xl">
@@ -478,7 +487,9 @@ const ProjectDetail = () => {
           </div>
         </div>
       </section>
+      </ScrollReveal>
 
+      <ScrollReveal delay={100}>
       {/* Section 5: AI & ESG */}
       <section className="py-16 md:py-24 px-4 md:px-6">
         <div className="container mx-auto max-w-4xl">
@@ -549,7 +560,9 @@ const ProjectDetail = () => {
           </div>
         </div>
       </section>
+      </ScrollReveal>
 
+      <ScrollReveal delay={100}>
       {/* Section 6: What I learned */}
       <section className="py-16 md:py-24 px-4 md:px-6 bg-secondary/30">
         <div className="container mx-auto max-w-4xl">
@@ -586,6 +599,7 @@ const ProjectDetail = () => {
           </div>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* Next Project */}
       {project.nextProject && (
