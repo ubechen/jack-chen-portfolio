@@ -20,7 +20,7 @@ const Hero = () => {
       }}
     >
       {/* Overlay for readability */}
-      <div className="absolute inset-0" style={{ backgroundColor: 'rgba(60, 131, 246, 0.5)' }} />
+      <div className="absolute inset-0" style={{ backgroundColor: 'rgba(15, 50, 105, 0.5)' }} />
       
       <div className="max-w-4xl mx-auto text-center animate-fade-in relative z-10">
         <h1 className="text-3xl md:text-5xl font-bold mb-8 text-white text-balance leading-[1.2] md:leading-normal" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)' }}>
