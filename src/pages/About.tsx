@@ -33,13 +33,13 @@ const About = () => {
           <div className="w-32 h-32 md:w-40 md:h-40 bg-muted rounded-full mb-8" />
           
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
-            我是 Jack，一位專注複雜系統與 B2B 產品的 Product / UX 設計師，看題目時不只站在設計端，而是從公司與產品策略的角度思考。
+            我是 Jack，一位長期深耕 B2B 與系統型產品的 Product / UX 設計師。
           </p>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
-            比起直接開 Figma，我更習慣先透過研究、訪談和工作坊，幫團隊釐清「這題值不值得做、應該先做哪一步」。
+            比起直接打開 Figma，我更在意前面的「題目有沒有問對」——會先從公司與產品策略的角度看問題，再用研究、訪談和工作坊，幫團隊釐清這題值不值得做、應該先做哪一步。
           </p>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-            我在意的不是畫面多漂亮，而是決策能不能為公司和使用者創造足夠大的影響；如果你們正在為下一代產品方向或新技術應用找答案，我擅長用故事、數據和原型，陪團隊一起把決策變得更踏實。
+            我關心的不只是畫面，而是這些設計決策能不能為公司和使用者創造足夠的影響；如果你們正在為下一代產品方向或新技術應用找答案，我擅長用故事、數據和原型，陪團隊一起把決策變得更踏實。
           </p>
           
           {/* Download CV Button */}
@@ -56,7 +56,7 @@ const About = () => {
 
       <ScrollReveal>
         {/* Section: 題目有沒有被問對 - Muted background */}
-        <section className="py-16 px-6 bg-muted/40">
+        <section className="py-16 px-6 bg-muted/70 shadow-sm">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">
               現在我關注的不再是「UI 畫得多吸睛」，而是「題目有沒有被問對」
@@ -130,7 +130,7 @@ const About = () => {
 
       <ScrollReveal delay={100}>
         {/* Section: 工作方式 - Primary accent background */}
-        <section className="py-16 px-6 bg-primary/5">
+        <section className="py-16 px-6 bg-primary/10 shadow-sm">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">
               我怎麼工作：Research × Story × Decision
@@ -231,7 +231,7 @@ const About = () => {
 
       <ScrollReveal delay={100}>
         {/* Section: CTA - Muted background */}
-        <section className="py-16 px-6 bg-muted/40">
+        <section className="py-16 px-6 bg-muted/70 shadow-sm">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-foreground">
               如果你們正在找這樣的人…
@@ -278,8 +278,28 @@ const About = () => {
       </ScrollReveal>
 
       <ScrollReveal delay={100}>
+        {/* Section: AI & Continuous Learning */}
+        <section className="py-16 px-6 bg-primary/15 shadow-sm">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">
+              AI & Continuous Learning
+            </h2>
+            
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              我把 AI 視為日常工作流程的一部分：從研究整理、情境發想到設計驗證，都會善用工具來加速，而不是取代思考。為了讓這些實務有更完整的知識基礎，我也投入系統化學習，並取得以下 AI 相關證照：
+            </p>
+            
+            <ul className="space-y-3 pl-6">
+              <li className="text-lg text-muted-foreground">• iPAS AI 應用規劃師 初級</li>
+              <li className="text-lg text-muted-foreground">• 資策會生成式 AI 能力認證</li>
+            </ul>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal delay={100}>
         {/* Section: A bit more about me - Warm accent background */}
-        <section className="py-16 px-6 bg-primary/10">
+        <section className="py-16 px-6 bg-muted/50 shadow-sm">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">
               A bit more about me

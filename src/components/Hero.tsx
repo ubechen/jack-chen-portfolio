@@ -26,7 +26,7 @@ const Hero = () => {
         <h1 className="text-3xl md:text-5xl font-bold mb-8 text-white text-balance leading-[1.2] md:leading-normal" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)' }}>
           幫團隊處理複雜題目的 Product / UX 設計夥伴
           <span className="block text-xl md:text-2xl font-normal text-white/80 mt-4 leading-[1.2] md:leading-normal" style={{ textShadow: '0 1px 4px rgba(0, 0, 0, 0.25)' }}>
-            Jack Chen 專注多角色、多流程的 B2B 產品與系統設計
+            Jack Chen 專注 B2B 與系統型產品，用研究與故事讓決策更踏實
           </span>
         </h1>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
