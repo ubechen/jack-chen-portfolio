@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download, ChevronDown } from "lucide-react";
-import heroImage from "@/assets/hero-bg.png";
+import heroImage from "@/assets/bg_index_hero.webp";
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
