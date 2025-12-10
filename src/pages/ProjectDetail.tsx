@@ -7,6 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import aiPcHero from "@/assets/bg_project_aipc.webp";
+import DroneUXContent from "@/components/projects/DroneUXContent";
 
 const projectData = {
   "ai-pc": {
@@ -20,6 +21,19 @@ const projectData = {
     nextProject: {
       id: "drone-ux",
       title: "Drone UX",
+    },
+  },
+  "drone-ux": {
+    title: "Drone UX",
+    subtitle: "打造無人機地面控制站的使用體驗",
+    heroImage: aiPcHero, // 暫用 AI PC 圖片，待替換
+    role: "Product / UX / UI Designer（跨公司協作）",
+    type: "B2B／國防與產業應用 · 控制站 UX",
+    summary: "在公司從 AMR Robot 轉向無人機市場之際，與國內無人機大廠合作，聚焦地面控制站（手持控制器＋App）的 UX 與 POC，支援國際展會 demo 與國防標案機會，後續延伸至後台管理系統。",
+    duration: "2024 Q2 – 2025 Q1",
+    nextProject: {
+      id: "amr-robot",
+      title: "AMR Robot",
     },
   },
 };
@@ -113,6 +127,11 @@ const ProjectDetail = () => {
         </section>
       </ScrollReveal>
 
+      {/* Conditional Content Rendering */}
+      {projectId === "drone-ux" && <DroneUXContent />}
+
+      {projectId === "ai-pc" && (
+      <>
       <ScrollReveal delay={100}>
         {/* Section 1: Overview */}
         <section className="py-16 md:py-24 px-4 md:px-6">
@@ -600,6 +619,8 @@ const ProjectDetail = () => {
         </div>
       </section>
       </ScrollReveal>
+      </>
+      )}
 
       {/* Next Project */}
       {project.nextProject && (
