@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import aiPcHero from "@/assets/ai-pc-hero.png";
+import aiPcHero from "@/assets/bg_project_aipc.webp";
 
 const projectData = {
   "ai-pc": {
