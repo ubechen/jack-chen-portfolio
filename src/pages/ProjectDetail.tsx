@@ -89,7 +89,7 @@ const ProjectDetail = () => {
 
       <ScrollReveal>
         {/* Project Meta */}
-        <section className="py-8 md:py-12 px-4 md:px-6 bg-secondary/30">
+        <section className="py-8 md:py-12 px-4 md:px-6 bg-muted/60 shadow-sm">
           <div className="container mx-auto max-w-6xl">
             <div className="grid md:grid-cols-3 gap-6 mb-6">
               <div>
@@ -200,7 +200,7 @@ const ProjectDetail = () => {
 
       <ScrollReveal delay={100}>
         {/* Section 2: My Role */}
-        <section className="py-16 md:py-24 px-4 md:px-6 bg-secondary/30">
+        <section className="py-16 md:py-24 px-4 md:px-6 bg-muted/60 shadow-sm">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-4xl font-bold mb-12 text-foreground">
               2. My Role
@@ -423,7 +423,7 @@ const ProjectDetail = () => {
 
       <ScrollReveal delay={100}>
       {/* Section 4: Challenges & Impact */}
-      <section className="py-16 md:py-24 px-4 md:px-6 bg-secondary/30">
+      <section className="py-16 md:py-24 px-4 md:px-6 bg-muted/60 shadow-sm">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold mb-12 text-foreground">
             4. Challenges & Impact
@@ -564,7 +564,7 @@ const ProjectDetail = () => {
 
       <ScrollReveal delay={100}>
       {/* Section 6: What I learned */}
-      <section className="py-16 md:py-24 px-4 md:px-6 bg-secondary/30">
+      <section className="py-16 md:py-24 px-4 md:px-6 bg-muted/60 shadow-sm">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold mb-12 text-foreground">
             6. What I learned
