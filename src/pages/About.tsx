@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Mail, Download, Linkedin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
+import portraitImage from "@/assets/portrait-jack.webp";
 
 const MediumIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
@@ -29,8 +30,25 @@ const About = () => {
             About Me｜Jack
           </h1>
           
-          {/* Profile placeholder */}
-          <div className="w-32 h-32 md:w-40 md:h-40 bg-muted rounded-full mb-8" />
+          {/* Profile Image with Mask */}
+          <div className="relative w-48 h-48 md:w-56 md:h-56 mb-8">
+            <div 
+              className="absolute inset-0 rounded-[30%_70%_70%_30%/30%_30%_70%_70%] overflow-hidden shadow-lg"
+              style={{
+                background: `linear-gradient(135deg, hsl(var(--primary) / 0.15), hsl(var(--primary) / 0.05))`
+              }}
+            >
+              <img 
+                src={portraitImage} 
+                alt="Jack Chen - Product / UX Designer"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {/* Decorative border ring */}
+            <div 
+              className="absolute -inset-2 rounded-[30%_70%_70%_30%/30%_30%_70%_70%] border-2 border-primary/20 -z-10"
+            />
+          </div>
           
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
             我是 Jack，一位長期深耕 B2B 與系統型產品的 Product / UX 設計師。
