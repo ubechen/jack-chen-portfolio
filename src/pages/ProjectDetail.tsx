@@ -7,6 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import aiPcHero from "@/assets/bg_project_aipc.webp";
+import droneHero from "@/assets/bg_projects_drone.webp";
 import DroneUXContent from "@/components/projects/DroneUXContent";
 
 const projectData = {
@@ -26,7 +27,7 @@ const projectData = {
   "drone-ux": {
     title: "Drone UX",
     subtitle: "打造無人機地面控制站的使用體驗",
-    heroImage: aiPcHero, // 暫用 AI PC 圖片，待替換
+    heroImage: droneHero,
     role: "Product / UX / UI Designer（跨公司協作）",
     type: "B2B／國防與產業應用 · 控制站 UX",
     summary: "在公司從 AMR Robot 轉向無人機市場之際，與國內無人機大廠合作，聚焦地面控制站（手持控制器＋App）的 UX 與 POC，支援國際展會 demo 與國防標案機會，後續延伸至後台管理系統。",
