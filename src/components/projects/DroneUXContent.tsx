@@ -72,12 +72,12 @@ const DroneUXContent = () => {
               <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6 my-8">
                 <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">短期目標</p>
                 <p className="text-xl text-foreground font-medium">
-                  做出一套 POC：能在國際無人機展上 demo，並具備投標國防部標案的基礎。
+                  做出一套 POC：能在國際無人機展上 demo，並具備投標國防部標案的基礎
                 </p>
               </div>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                因涉及軍事用途，客戶資訊高度保密，我們只能在有限資訊下，同時考量軍用與民用情境，從國際競品出發，找到 UX 的切入點，幫公司在全新領域站穩第一步。
+                因涉及軍事用途，客戶資訊高度保密，我們只能在有限資訊下，同時考量軍用與民用情境，從國際競品出發，找到 UX 的切入點，幫公司在全新領域站穩第一步
               </p>
             </div>
           </div>
@@ -458,7 +458,7 @@ const DroneUXContent = () => {
                 <div className="bg-primary/10 rounded-xl p-8">
                   <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">最終成果</p>
                   <p className="text-xl text-foreground font-semibold leading-relaxed">
-                    這套控制站不只在國際展會順利 demo，也成功取得客戶訂單，並延伸到後台管理系統的 UX 規劃（機隊管理、任務紀錄、維運）。
+                    這套控制站不只在國際展會順利 demo，也成功取得客戶訂單，並延伸到後台管理系統的 UX 規劃（機隊管理、任務紀錄、維運）
                   </p>
                 </div>
               </div>
@@ -509,7 +509,7 @@ const DroneUXContent = () => {
                 </div>
                 <div className="bg-secondary/50 rounded-lg p-4 mt-4">
                   <p className="text-foreground font-medium">
-                    <strong>Impact：</strong>控制站設計同時支援展會 demo 與國防標案初步評估，在資訊有限的條件下，專案仍能持續向前。
+                    <strong>Impact：</strong>控制站設計同時支援展會 demo 與國防標案初步評估，在資訊有限的條件下，專案仍能持續向前
                   </p>
                 </div>
               </div>
