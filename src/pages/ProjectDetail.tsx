@@ -9,6 +9,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import aiPcHero from "@/assets/bg_project_aipc.webp";
 import droneHero from "@/assets/bg_projects_drone.webp";
 import DroneUXContent from "@/components/projects/DroneUXContent";
+import AMRRobotContent from "@/components/projects/AMRRobotContent";
 
 const projectData = {
   "ai-pc": {
@@ -30,11 +31,24 @@ const projectData = {
     heroImage: droneHero,
     role: "Product / UX / UI Designer（跨公司協作）",
     type: "B2B／國防與產業應用 · 控制站 UX",
-    summary: "在公司從 AMR Robot 轉向無人機市場之際，與國內無人機大廠合作，聚焦地面控制站（手持控制器＋App）的 UX 與 POC，支援國際展會 demo 與國防標案機會，後續延伸至後台管理系統。",
+    summary: "在公司從 AMR Robot 轉向無人機市場之際，與國內無人機大廠合作，聚焦地面控制站（手持控制器＋App）的 UX 與 POC，支援國際展會 demo 與國防標案機會，後續延伸至後台管理系統",
     duration: "2024 Q2 – 2025 Q1",
     nextProject: {
       id: "amr-robot",
       title: "AMR Robot",
+    },
+  },
+  "amr-robot": {
+    title: "AMR Robot",
+    subtitle: "多場域服務型機器人產品與系統體驗設計",
+    heroImage: aiPcHero, // 暫用，待提供專屬圖片
+    role: "Product / UX / UI Designer",
+    type: "B2B2C · 服務型機器人 · 多場域解決方案",
+    summary: "在公司成立新事業單位、從零打造自家服務型機器人產品線的三年間，負責 AMR Robot 相關體驗設計：從競品研究、後台系統與機器人端 App，到品牌網站、展覽與影片。面對中國成熟競品與台灣市場不確定性，透過 UX 串連產品、系統與品牌溝通",
+    duration: "2021 – 2023",
+    nextProject: {
+      id: "esg-board-game",
+      title: "ESG Board Game",
     },
   },
 };
@@ -130,6 +144,7 @@ const ProjectDetail = () => {
 
       {/* Conditional Content Rendering */}
       {projectId === "drone-ux" && <DroneUXContent />}
+      {projectId === "amr-robot" && <AMRRobotContent />}
 
       {projectId === "ai-pc" && (
       <>
