@@ -4,20 +4,20 @@ const Projects = () => {
   const projects = [
     {
       title: "AI PC",
-      description: "智能個人電腦的使用者體驗設計，整合 AI 助手與工作流程優化",
-      tags: ["AI", "Desktop", "Productivity"],
+      description: "用研究與情境故事勾勒 AI PC 願景，定義關鍵使用體驗與功能方向",
+      tags: ["AI PC Vision", "Strategic UX", "UX Research"],
       projectId: "ai-pc",
     },
     {
       title: "Drone UX",
-      description: "無人機操控介面設計，提升飛行安全與操作效率",
-      tags: ["IoT", "Safety", "Interface"],
+      description: "與無人機廠協作，打造易上手又可靠的地面控制站 UX 與操作流程",
+      tags: ["Drone GCS UX", "Control UI", "B2B Partnering"],
       projectId: "drone-ux",
     },
     {
       title: "AMR Robot",
-      description: "自主移動機器人控制系統，實現智能物流與倉儲管理",
-      tags: ["Robotics", "Automation", "Logistics"],
+      description: "從競品研究到前後台與場域驗證，整合多場域服務機器人的完整體驗",
+      tags: ["Service Robots", "Fleet Control", "Field UX Study"],
       projectId: "amr-robot",
     },
     {
