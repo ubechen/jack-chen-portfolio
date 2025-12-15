@@ -19,7 +19,7 @@ const heroStates: HeroState[] = [
     id: "ai-pc",
     projectId: "ai-pc",
     label: "AI PC",
-    title: "AI PC Envisioning",
+    title: "AI PC｜Research & Vision",
     description: "用研究與情境故事勾勒 AI PC 願景，定義關鍵使用體驗與功能方向",
     tags: ["AI PC Vision", "Strategic UX", "UX Research"],
   },
@@ -27,7 +27,7 @@ const heroStates: HeroState[] = [
     id: "drone-ux",
     projectId: "drone-ux",
     label: "Drone UX",
-    title: "Drone UX｜Ground Control Station",
+    title: "Drone System｜Control Experience",
     description: "與無人機大廠協作，打造易上手又可靠的地面控制站 UX 與操作流程",
     tags: ["Drone GCS UX", "Control UI", "B2B Partnering"],
   },
@@ -35,7 +35,7 @@ const heroStates: HeroState[] = [
     id: "service-robots",
     projectId: "amr-robot",
     label: "Service Robots",
-    title: "AMR Robot｜Service Platform",
+    title: "AMR Robot｜Service System Design",
     description: "從競品研究到前後台與場域驗證，整合多場域服務機器人的完整體驗",
     tags: ["Service Robots", "Fleet Control", "Field UX Study"],
   },
@@ -88,7 +88,7 @@ const HeroInteractive = () => {
         {/* Mobile/Tablet Layout (< 1024px) */}
         <div className="lg:hidden flex flex-col items-center justify-center text-center space-y-8 min-h-[70vh]">
           <div className="space-y-4">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-[1.2]">
+            <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-[1.2] md:leading-[1.2]">
               幫團隊處理複雜題目的
               <br />
               Product / UX 設計夥伴
@@ -131,7 +131,7 @@ const HeroInteractive = () => {
           {/* Left side - Identity & Copy */}
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.2]">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.2] md:leading-[1.2] lg:leading-[1.2]">
                 幫團隊處理複雜題目的
                 <br />
                 Product / UX 設計夥伴
