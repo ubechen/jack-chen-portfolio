@@ -9,15 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-[hsl(var(--primary-hover))] active:bg-[hsl(var(--primary-pressed))]",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground border border-transparent",
         contactLink: "relative overflow-hidden border border-border bg-background text-foreground before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-muted before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "relative overflow-hidden bg-primary text-primary-foreground before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-black/20 before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100",
-        heroOutline: "relative overflow-hidden border border-input bg-background text-foreground before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-primary before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100 hover:text-primary-foreground hover:border-primary",
+        hero: "relative overflow-hidden bg-primary text-primary-foreground before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-[hsl(var(--primary-hover))] before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100 active:bg-[hsl(var(--primary-pressed))]",
+        heroOutline: "relative overflow-hidden border border-input bg-background text-foreground before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-primary before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100 hover:text-primary-foreground hover:border-primary active:bg-[hsl(var(--primary-pressed))]",
       },
       size: {
         default: "h-10 px-4 py-2",

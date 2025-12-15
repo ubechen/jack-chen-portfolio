@@ -35,8 +35,20 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 px-0 md:px-6 bg-muted/60">
-      <div className="container mx-auto max-w-6xl">
+    <section 
+      id="projects" 
+      className="py-24 px-0 md:px-6 relative"
+      style={{
+        backgroundImage: 'url(/images/projects-bg.jpg)',
+        backgroundAttachment: 'fixed',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundColor: 'hsl(220 14% 96%)',
+      }}
+    >
+      {/* Semi-transparent overlay for readability */}
+      <div className="absolute inset-0 bg-background/80" />
+      <div className="container mx-auto max-w-6xl relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-foreground">
           Featured Projects
         </h2>
