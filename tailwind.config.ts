@@ -121,6 +121,10 @@ export default {
             transform: "translateY(100%)"
           }
         },
+        "shimmer": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" }
+        },
         "fade-in-down": {
           "0%": {
             opacity: "0",
@@ -140,6 +144,7 @@ export default {
         "slide-up": "slide-up 0.3s ease-out forwards",
         "slide-down": "slide-down 0.3s ease-out forwards",
         "fade-in-down": "fade-in-down 0.3s ease-out",
+        "shimmer": "shimmer 1.5s infinite linear",
       },
     },
   },
