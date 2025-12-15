@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Home, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Home, ChevronDown } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -214,20 +214,32 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
+          {/* Mobile Menu Button - Animated Hamburger */}
+          <button
+            className="md:hidden relative w-10 h-10 rounded-full flex items-center justify-center hover:bg-muted active:bg-muted/80 transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
-            {isMenuOpen ? <X /> : <Menu />}
-          </Button>
+            <div className="w-5 h-4 relative flex flex-col justify-between">
+              <span className={cn(
+                "block h-0.5 w-5 bg-foreground rounded-full transition-all duration-300 origin-center",
+                isMenuOpen && "rotate-45 translate-y-[7px]"
+              )} />
+              <span className={cn(
+                "block h-0.5 w-5 bg-foreground rounded-full transition-all duration-300",
+                isMenuOpen && "opacity-0 scale-x-0"
+              )} />
+              <span className={cn(
+                "block h-0.5 w-5 bg-foreground rounded-full transition-all duration-300 origin-center",
+                isMenuOpen && "-rotate-45 -translate-y-[7px]"
+              )} />
+            </div>
+          </button>
         </div>
 
-        {/* Mobile Menu - only toggle with X button */}
+        {/* Mobile Menu - fade in from top */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 animate-slide-in bg-background border-t border-border">
+          <div className="md:hidden mt-4 pb-4 animate-fade-in-down bg-background border-t border-border">
             {menuItems.map((item) => (
               <div key={item.label}>
                 {item.subItems ? (
@@ -237,19 +249,30 @@ const Navigation = () => {
                       className={`${getMobileNavItemClass(item.href, true)} flex items-center justify-between w-full`}
                     >
                       {item.label}
-                      <ChevronDown className={`h-4 w-4 transition-transform ${expandedMobile === item.label ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={cn(
+                        "h-4 w-4 transition-transform",
+                        expandedMobile === item.label && "rotate-180"
+                      )} />
                     </button>
                     {expandedMobile === item.label && (
                       <div className="pl-4 border-l border-border ml-2">
-                        {item.subItems.map((subItem) => (
-                          <button
-                            key={subItem.label}
-                            onClick={() => handleNavigation(subItem.href)}
-                            className="block w-full text-left py-2 text-sm text-muted-foreground hover:text-foreground"
-                          >
-                            {subItem.label}
-                          </button>
-                        ))}
+                        {item.subItems.map((subItem) => {
+                          const isActiveSubItem = location.pathname === subItem.href;
+                          return (
+                            <button
+                              key={subItem.label}
+                              onClick={() => handleNavigation(subItem.href)}
+                              className={cn(
+                                "block w-full text-left py-2 text-sm transition-colors",
+                                isActiveSubItem 
+                                  ? "text-primary font-bold" 
+                                  : "text-muted-foreground hover:text-foreground"
+                              )}
+                            >
+                              {subItem.label}
+                            </button>
+                          );
+                        })}
                       </div>
                     )}
                   </>
