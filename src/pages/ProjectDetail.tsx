@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import HeroBackgroundWithSkeleton from "@/components/HeroBackgroundWithSkeleton";
 import aiPcHero from "@/assets/bg_project_aipc.webp";
 import droneHero from "@/assets/bg_projects_drone.webp";
 import DroneUXContent from "@/components/projects/DroneUXContent";
@@ -85,20 +86,16 @@ const ProjectDetail = () => {
       
       {/* Hero Section */}
       <section className="relative min-h-[50vh] overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: `url(${project.heroImage})`,
-            transform: `translateY(${scrollY * 0.3}px)`
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/60 to-background" />
-        </div>
+        <HeroBackgroundWithSkeleton 
+          src={project.heroImage}
+          scrollY={scrollY}
+        />
         <div className="relative h-full flex items-end pt-32 pb-16 px-4 md:px-6">
           <div className="container mx-auto max-w-6xl">
             <Button
               variant="ghost"
-              className="mb-8 relative overflow-hidden border border-white/50 text-white before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-white/20 before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100 hover:bg-transparent hover:text-white"
+              className="mb-8 relative overflow-hidden border border-white/50 text-white before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-white/20 before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100 hover:bg-transparent hover:text-white animate-fade-in"
+              style={{ animationDelay: '100ms', animationFillMode: 'both' }}
               onClick={() => navigate("/#projects")}
             >
               <span className="relative z-10 flex items-center">
@@ -106,10 +103,16 @@ const ProjectDetail = () => {
                 Projects
               </span>
             </Button>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-foreground">
+            <h1 
+              className="text-4xl md:text-6xl font-bold mb-4 text-foreground animate-fade-in"
+              style={{ animationDelay: '200ms', animationFillMode: 'both' }}
+            >
               {project.title}
             </h1>
-            <p className="text-xl md:text-2xl text-primary mb-6">
+            <p 
+              className="text-xl md:text-2xl text-primary mb-6 animate-fade-in"
+              style={{ animationDelay: '300ms', animationFillMode: 'both' }}
+            >
               {project.subtitle}
             </p>
           </div>

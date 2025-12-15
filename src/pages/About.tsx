@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Mail, Download, Linkedin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
+import ImageWithSkeleton from "@/components/ImageWithSkeleton";
 import portraitImage from "@/assets/portrait-jack.webp";
 
 const MediumIcon = () => (
@@ -26,22 +27,26 @@ const About = () => {
       {/* Hero Section - White background */}
       <section className="pt-32 pb-16 px-6 bg-background">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-8 text-foreground">
+          <h1 className="text-4xl md:text-5xl font-bold mb-8 text-foreground animate-fade-in">
             About Me｜Jack
           </h1>
           
           {/* Profile Image with Mask */}
-          <div className="relative w-48 h-48 md:w-56 md:h-56 mb-8">
+          <div 
+            className="relative w-48 h-48 md:w-56 md:h-56 mb-8 animate-fade-in"
+            style={{ animationDelay: '100ms', animationFillMode: 'both' }}
+          >
             <div 
               className="absolute inset-0 rounded-[30%_70%_70%_30%/30%_30%_70%_70%] overflow-hidden shadow-lg"
               style={{
                 background: `linear-gradient(135deg, hsl(var(--primary) / 0.15), hsl(var(--primary) / 0.05))`
               }}
             >
-              <img 
+              <ImageWithSkeleton 
                 src={portraitImage} 
                 alt="Jack Chen - Product / UX Designer"
                 className="w-full h-full object-cover"
+                skeletonClassName="rounded-[30%_70%_70%_30%/30%_30%_70%_70%]"
               />
             </div>
             {/* Decorative border ring */}
@@ -50,18 +55,28 @@ const About = () => {
             />
           </div>
           
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
-            我是 Jack，一位長期深耕 B2B 與系統型產品的 Product / UX 設計師。
-          </p>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
-            比起直接打開 Figma，我更在意前面的「題目有沒有問對」——會先從公司與產品策略的角度看問題，再用研究、訪談和工作坊，幫團隊釐清這題值不值得做、應該先做哪一步。
-          </p>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-            我關心的不只是畫面，而是這些設計決策能不能為公司和使用者創造足夠的影響；如果你們正在為下一代產品方向或新技術應用找答案，我擅長用故事、數據和原型，陪團隊一起把決策變得更踏實。
-          </p>
+          <div 
+            className="animate-fade-in"
+            style={{ animationDelay: '200ms', animationFillMode: 'both' }}
+          >
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
+              我是 Jack，一位長期深耕 B2B 與系統型產品的 Product / UX 設計師。
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
+              比起直接打開 Figma，我更在意前面的「題目有沒有問對」——會先從公司與產品策略的角度看問題，再用研究、訪談和工作坊，幫團隊釐清這題值不值得做、應該先做哪一步。
+            </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
+              我關心的不只是畫面，而是這些設計決策能不能為公司和使用者創造足夠的影響；如果你們正在為下一代產品方向或新技術應用找答案，我擅長用故事、數據和原型，陪團隊一起把決策變得更踏實。
+            </p>
+          </div>
           
           {/* Download CV Button */}
-          <a href="/cv.pdf" download>
+          <a 
+            href="/cv.pdf" 
+            download
+            className="animate-fade-in inline-block"
+            style={{ animationDelay: '300ms', animationFillMode: 'both' }}
+          >
             <Button variant="heroOutline" size="lg" className="text-lg">
               <span className="relative z-10 flex items-center">
                 <Download className="mr-2 h-5 w-5" />
