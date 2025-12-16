@@ -12,6 +12,8 @@ import { useScrollSpy, Section } from "@/hooks/useScrollSpy";
 import { cn } from "@/lib/utils";
 import aiPcHero from "@/assets/bg_project_aipc.webp";
 import droneHero from "@/assets/bg_projects_drone.webp";
+import DroneUXContent from "@/components/projects/DroneUXContent";
+import AMRRobotContent from "@/components/projects/AMRRobotContent";
 
 const projectData = {
   "ai-pc": {
@@ -52,7 +54,6 @@ const projectData = {
       { id: "my-role", label: "My Role" },
       { id: "what-we-did", label: "What we did" },
       { id: "challenges", label: "Challenges & Impact" },
-      { id: "ai-tools", label: "AI Tools" },
       { id: "learnings", label: "What I learned" },
     ],
   },
@@ -784,23 +785,11 @@ const ProjectDetailV2 = () => {
         </>
       )}
 
-      {/* Drone UX - Placeholder for now, needs similar treatment */}
-      {projectId === "drone-ux" && (
-        <div className="py-16 px-4 md:px-6">
-          <div className="container mx-auto max-w-4xl text-center">
-            <p className="text-muted-foreground">Drone UX V2 content - 導覽功能已啟用，內容結構與 accordion 待整合</p>
-          </div>
-        </div>
-      )}
+      {/* Drone UX Content */}
+      {projectId === "drone-ux" && <DroneUXContent />}
 
-      {/* AMR Robot - Placeholder for now */}
-      {projectId === "amr-robot" && (
-        <div className="py-16 px-4 md:px-6">
-          <div className="container mx-auto max-w-4xl text-center">
-            <p className="text-muted-foreground">AMR Robot V2 content - 導覽功能已啟用，內容結構與 accordion 待整合</p>
-          </div>
-        </div>
-      )}
+      {/* AMR Robot Content */}
+      {projectId === "amr-robot" && <AMRRobotContent />}
 
       {/* Next Project Navigation */}
       {project.nextProject && (
