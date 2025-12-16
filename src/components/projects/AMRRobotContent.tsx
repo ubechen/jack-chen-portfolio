@@ -6,7 +6,7 @@ const AMRRobotContent = () => {
     <>
       {/* Section 1: Overview */}
       <ScrollReveal delay={100}>
-        <section className="py-16 md:py-24 px-4 md:px-6">
+        <section id="overview" className="py-16 md:py-24 px-4 md:px-6">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-4xl font-bold mb-12 text-foreground">
               1. Overview
@@ -88,7 +88,7 @@ const AMRRobotContent = () => {
 
       {/* Section 2: My Role */}
       <ScrollReveal delay={100}>
-        <section className="py-16 md:py-24 px-4 md:px-6 bg-muted/60 shadow-sm">
+        <section id="my-role" className="py-16 md:py-24 px-4 md:px-6 bg-muted/60 shadow-sm">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-4xl font-bold mb-12 text-foreground">
               2. My Role
@@ -182,7 +182,7 @@ const AMRRobotContent = () => {
 
       {/* Section 3: What we did */}
       <ScrollReveal delay={100}>
-        <section className="py-16 md:py-24 px-4 md:px-6">
+        <section id="what-we-did" className="py-16 md:py-24 px-4 md:px-6">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-4xl font-bold mb-12 text-foreground">
               3. What we did
@@ -400,7 +400,7 @@ const AMRRobotContent = () => {
 
       {/* Section 4: Challenges & Impact */}
       <ScrollReveal delay={100}>
-        <section className="py-16 md:py-24 px-4 md:px-6 bg-muted/60 shadow-sm">
+        <section id="challenges" className="py-16 md:py-24 px-4 md:px-6 bg-muted/60 shadow-sm">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-4xl font-bold mb-12 text-foreground">
               4. Challenges & Impact
@@ -504,7 +504,7 @@ const AMRRobotContent = () => {
 
       {/* Section 5: What I learned */}
       <ScrollReveal delay={100}>
-        <section className="py-16 md:py-24 px-4 md:px-6">
+        <section id="learnings" className="py-16 md:py-24 px-4 md:px-6">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-4xl font-bold mb-12 text-foreground">
               5. What I learned
