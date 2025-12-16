@@ -71,9 +71,9 @@ const ProjectDetail = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Version Switcher Component
+  // Version Switcher Component - positioned above back-to-top button
   const VersionSwitcher = () => (
-    <div className="fixed bottom-4 right-4 z-50 flex gap-2 bg-background/90 backdrop-blur-sm p-2 rounded-lg border border-border shadow-lg">
+    <div className="fixed bottom-20 right-4 z-50 flex gap-2 bg-background/90 backdrop-blur-sm p-2 rounded-lg border border-border shadow-lg">
       <Button
         size="sm"
         variant={useV2 ? "outline" : "default"}
@@ -116,6 +116,7 @@ const ProjectDetail = () => {
     <>
     <VersionSwitcher />
     <div className="min-h-screen">
+      <Navigation />
       
       {/* Hero Section */}
       <section className="relative min-h-[50vh] overflow-hidden">
