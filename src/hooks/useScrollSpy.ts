@@ -10,43 +10,29 @@ export const useScrollSpy = (sections: Section[], offset = 120) => {
   const [showNav, setShowNav] = useState(false);
 
   const handleScroll = useCallback(() => {
-    const scrollPosition = window.scrollY + offset;
-    
-    // Determine if nav should be visible (when Overview section reaches top)
+    // Use getBoundingClientRect for accurate viewport-relative positions
     const overviewSection = document.getElementById("overview");
     if (overviewSection) {
-      const overviewTop = overviewSection.offsetTop;
-      setShowNav(scrollPosition >= overviewTop);
+      const rect = overviewSection.getBoundingClientRect();
+      // Show nav when Overview's top reaches or passes the offset threshold
+      setShowNav(rect.top <= offset);
     }
     
-    // Find the current section by checking each section's bounds
-    for (let i = sections.length - 1; i >= 0; i--) {
-      const section = document.getElementById(sections[i].id);
-      if (section) {
-        const sectionTop = section.offsetTop;
-        const sectionBottom = sectionTop + section.offsetHeight;
-        
-        // Check if scroll position is within this section
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-          setActiveSection(sections[i].id);
-          return;
+    // Find active section using getBoundingClientRect
+    let currentSection = sections[0]?.id || "";
+    
+    for (const section of sections) {
+      const element = document.getElementById(section.id);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        // If section's top has passed the offset threshold, mark it as active
+        if (rect.top <= offset) {
+          currentSection = section.id;
         }
       }
     }
     
-    // Fallback: find the closest section above current scroll position
-    for (let i = sections.length - 1; i >= 0; i--) {
-      const section = document.getElementById(sections[i].id);
-      if (section && section.offsetTop <= scrollPosition) {
-        setActiveSection(sections[i].id);
-        return;
-      }
-    }
-    
-    // Default to first section if none found
-    if (sections.length > 0) {
-      setActiveSection(sections[0].id);
-    }
+    setActiveSection(currentSection);
   }, [sections, offset]);
 
   useEffect(() => {

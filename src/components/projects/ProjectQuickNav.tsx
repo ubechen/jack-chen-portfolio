@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Section } from "@/hooks/useScrollSpy";
 
@@ -27,6 +27,19 @@ export const DesktopQuickNav = ({ sections, activeSection, isVisible }: ProjectQ
   const activeIndex = sections.findIndex(s => s.id === activeSection);
   const itemHeight = 36; // Height of each nav item in pixels
   const headerHeight = 40; // Height of the header "快速導覽"
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
+
+  // Track if nav has ever been visible to trigger exit animation
+  useEffect(() => {
+    if (isVisible && !hasBeenVisible) {
+      setHasBeenVisible(true);
+    }
+  }, [isVisible, hasBeenVisible]);
+
+  // Don't render until first visibility
+  if (!hasBeenVisible) {
+    return null;
+  }
 
   return (
     <nav 
@@ -72,14 +85,22 @@ export const DesktopQuickNav = ({ sections, activeSection, isVisible }: ProjectQ
   );
 };
 
-// Mobile: Horizontal scrollable chip navigation
+// Mobile: Horizontal scrollable chip navigation with slide animation
 export const MobileQuickNav = ({ sections, activeSection, isVisible }: ProjectQuickNavProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const activeIndex = sections.findIndex(s => s.id === activeSection);
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
+
+  // Track if nav has ever been visible to trigger exit animation
+  useEffect(() => {
+    if (isVisible && !hasBeenVisible) {
+      setHasBeenVisible(true);
+    }
+  }, [isVisible, hasBeenVisible]);
 
   // Auto-scroll to active chip when active section changes
   useEffect(() => {
-    if (scrollRef.current && activeIndex >= 0) {
+    if (scrollRef.current && activeIndex >= 0 && isVisible) {
       const container = scrollRef.current;
       const chips = container.querySelectorAll('button');
       const activeChip = chips[activeIndex] as HTMLElement;
@@ -92,9 +113,10 @@ export const MobileQuickNav = ({ sections, activeSection, isVisible }: ProjectQu
         });
       }
     }
-  }, [activeIndex]);
+  }, [activeIndex, isVisible]);
 
-  if (!isVisible) {
+  // Don't render until first visibility
+  if (!hasBeenVisible) {
     return null;
   }
 
@@ -102,7 +124,9 @@ export const MobileQuickNav = ({ sections, activeSection, isVisible }: ProjectQu
     <div 
       className={cn(
         "xl:hidden sticky top-16 z-30 bg-background/95 backdrop-blur-sm border-b border-border py-2 px-4",
-        "animate-slide-in-top"
+        isVisible
+          ? "animate-slide-in-top"
+          : "animate-slide-out-top pointer-events-none"
       )}
     >
       <div className="overflow-x-auto scrollbar-hide" ref={scrollRef}>
