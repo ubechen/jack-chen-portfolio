@@ -126,10 +126,11 @@ const Navigation = () => {
       if (href === "#projects" && isProjectPage) isActive = true;
     }
     
-    return `text-sm transition-colors ${
+    // Always include pb-1 border-b-2 to prevent text shift, only change border color
+    return `text-sm transition-colors pb-1 border-b-2 ${
       isActive 
-        ? "text-foreground font-semibold border-b-2 border-primary pb-1" 
-        : "text-muted-foreground hover:text-foreground"
+        ? "text-foreground font-semibold border-primary" 
+        : "text-muted-foreground hover:text-foreground border-transparent"
     }`;
   };
 
