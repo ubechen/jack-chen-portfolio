@@ -1,70 +1,93 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-interface ProcessAccordionProps {
+interface SubSection {
+  id: string;
   title: React.ReactNode;
+  content: React.ReactNode;
+}
+
+interface ProcessAccordionProps {
+  sectionTitle: React.ReactNode;
   introContent: React.ReactNode;
-  detailContent: React.ReactNode;
+  subSections: SubSection[];
   sectionId?: string;
   className?: string;
 }
 
 const ProcessAccordion = ({ 
-  title, 
+  sectionTitle, 
   introContent, 
-  detailContent,
+  subSections,
   sectionId = "what-we-did",
   className
 }: ProcessAccordionProps) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  // Track which subsections are expanded - default all collapsed
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
+
+  const toggleSection = (id: string) => {
+    setExpandedSections(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
 
   return (
     <section id={sectionId} className={cn("py-16 md:py-24 px-4 md:px-6", className)}>
       <div className="container mx-auto max-w-4xl">
-        {/* Title - always visible */}
-        {title}
+        {/* Main section title - always visible */}
+        {sectionTitle}
         
         {/* Intro paragraph - always visible */}
-        <div className="mb-8">
+        <div className="mb-10">
           {introContent}
         </div>
 
-        {/* Expand/Collapse button */}
-        <button
-          onClick={() => setIsExpanded(!isExpanded)}
-          className={cn(
-            "flex items-center gap-2 text-primary font-medium mb-8",
-            "hover:underline underline-offset-4 transition-all duration-200",
-            "focus:outline-none focus:ring-2 focus:ring-primary/20 focus:ring-offset-2 rounded-md px-2 py-1 -ml-2"
-          )}
-          aria-expanded={isExpanded}
-          aria-controls="process-detail-content"
-        >
-          {isExpanded ? (
-            <>
-              <ChevronUp className="h-5 w-5" />
-              收合內容
-            </>
-          ) : (
-            <>
-              <ChevronDown className="h-5 w-5" />
-              展開更多內容
-            </>
-          )}
-        </button>
-
-        {/* Detail content - collapsible */}
-        <div
-          id="process-detail-content"
-          className={cn(
-            "overflow-hidden transition-all duration-500 ease-in-out",
-            isExpanded 
-              ? "max-h-[20000px] opacity-100" 
-              : "max-h-0 opacity-0"
-          )}
-        >
-          {detailContent}
+        {/* Sub-sections - titles always visible, content collapsible */}
+        <div className="space-y-4">
+          {subSections.map((sub) => {
+            const isExpanded = expandedSections.has(sub.id);
+            return (
+              <div key={sub.id} className="border-l-2 border-border hover:border-primary/50 transition-colors">
+                {/* Sub-section title - clickable to expand/collapse */}
+                <button
+                  onClick={() => toggleSection(sub.id)}
+                  className="w-full flex items-center justify-between text-left py-3 px-6 group hover:bg-muted/30 transition-colors"
+                  aria-expanded={isExpanded}
+                  aria-controls={`subsection-content-${sub.id}`}
+                >
+                  <div className="flex-1">{sub.title}</div>
+                  <ChevronDown 
+                    className={cn(
+                      "h-5 w-5 text-muted-foreground group-hover:text-foreground transition-all duration-200 flex-shrink-0 ml-4",
+                      isExpanded && "rotate-180"
+                    )} 
+                  />
+                </button>
+                
+                {/* Sub-section content - collapsible */}
+                <div
+                  id={`subsection-content-${sub.id}`}
+                  className={cn(
+                    "overflow-hidden transition-all duration-300 ease-in-out",
+                    isExpanded 
+                      ? "max-h-[5000px] opacity-100" 
+                      : "max-h-0 opacity-0"
+                  )}
+                >
+                  <div className="px-6 pb-6 pt-2">
+                    {sub.content}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

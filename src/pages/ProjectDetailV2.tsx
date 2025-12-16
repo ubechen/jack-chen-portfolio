@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -78,49 +78,76 @@ const projectData = {
   },
 };
 
-// Process Accordion Component
+// Process Accordion Component with individual subsection collapse
+interface SubSection {
+  id: string;
+  title: React.ReactNode;
+  content: React.ReactNode;
+}
+
 const ProcessAccordion = ({ 
-  title, 
+  sectionTitle,
   introContent, 
-  detailContent 
+  subSections
 }: { 
-  title: React.ReactNode; 
+  sectionTitle: React.ReactNode; 
   introContent: React.ReactNode; 
-  detailContent: React.ReactNode;
+  subSections: SubSection[];
 }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
+
+  const toggleSection = (id: string) => {
+    setExpandedSections(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
 
   return (
     <>
-      {title}
-      <div className="mb-8">{introContent}</div>
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className={cn(
-          "flex items-center gap-2 text-primary font-medium mb-8",
-          "hover:underline underline-offset-4 transition-all duration-200",
-          "focus:outline-none focus:ring-2 focus:ring-primary/20 focus:ring-offset-2 rounded-md px-2 py-1 -ml-2"
-        )}
-      >
-        {isExpanded ? (
-          <>
-            <ChevronUp className="h-5 w-5" />
-            收合內容
-          </>
-        ) : (
-          <>
-            <ChevronDown className="h-5 w-5" />
-            展開更多內容
-          </>
-        )}
-      </button>
-      <div
-        className={cn(
-          "overflow-hidden transition-all duration-500 ease-in-out",
-          isExpanded ? "max-h-[20000px] opacity-100" : "max-h-0 opacity-0"
-        )}
-      >
-        {detailContent}
+      {sectionTitle}
+      <div className="mb-10">{introContent}</div>
+      
+      {/* Sub-sections - titles always visible, content collapsible */}
+      <div className="space-y-4">
+        {subSections.map((sub) => {
+          const isExpanded = expandedSections.has(sub.id);
+          return (
+            <div key={sub.id} className="border-l-2 border-border hover:border-primary/50 transition-colors">
+              {/* Sub-section title - clickable */}
+              <button
+                onClick={() => toggleSection(sub.id)}
+                className="w-full flex items-center justify-between text-left py-3 px-6 group hover:bg-muted/30 transition-colors"
+                aria-expanded={isExpanded}
+              >
+                <div className="flex-1">{sub.title}</div>
+                <ChevronDown 
+                  className={cn(
+                    "h-5 w-5 text-muted-foreground group-hover:text-foreground transition-all duration-200 flex-shrink-0 ml-4",
+                    isExpanded && "rotate-180"
+                  )} 
+                />
+              </button>
+              
+              {/* Sub-section content - collapsible */}
+              <div
+                className={cn(
+                  "overflow-hidden transition-all duration-300 ease-in-out",
+                  isExpanded ? "max-h-[5000px] opacity-100" : "max-h-0 opacity-0"
+                )}
+              >
+                <div className="px-6 pb-6 pt-2">
+                  {sub.content}
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </>
   );
@@ -133,7 +160,7 @@ const ProjectDetailV2 = () => {
   const [scrollY, setScrollY] = useState(0);
 
   const sections: Section[] = project?.sections || [];
-  const activeSection = useScrollSpy(sections, 150);
+  const { activeSection, showNav } = useScrollSpy(sections, 150);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -160,7 +187,7 @@ const ProjectDetailV2 = () => {
       <Navigation />
       
       {/* Desktop Quick Nav */}
-      <DesktopQuickNav sections={sections} activeSection={activeSection} />
+      <DesktopQuickNav sections={sections} activeSection={activeSection} isVisible={showNav} />
       
       {/* Hero Section */}
       <section className="relative min-h-[50vh] overflow-hidden">
@@ -224,7 +251,7 @@ const ProjectDetailV2 = () => {
       </ScrollReveal>
 
       {/* Mobile Quick Nav - Below meta section */}
-      <MobileQuickNav sections={sections} activeSection={activeSection} />
+      <MobileQuickNav sections={sections} activeSection={activeSection} isVisible={showNav} />
 
       {/* AI-PC Content with Quick Nav IDs */}
       {projectId === "ai-pc" && (
@@ -418,7 +445,7 @@ const ProjectDetailV2 = () => {
             <section id="what-we-did" className="py-16 md:py-24 px-4 md:px-6">
               <div className="container mx-auto max-w-4xl">
                 <ProcessAccordion
-                  title={
+                  sectionTitle={
                     <h2 className="text-4xl font-bold mb-12 text-foreground">
                       3. What we did
                       <span className="block text-xl font-normal text-muted-foreground mt-2">說出一個高層聽得懂、願意投資的故事</span>
@@ -429,15 +456,16 @@ const ProjectDetailV2 = () => {
                       透過 Kano 問卷研究與實機工作坊，我們發展出可供 PM 提案、ID/ME 評估新技術的具體情境與功能排序。
                     </p>
                   }
-                  detailContent={
-                    <>
-                      {/* 3.1 Kano */}
-                      <div className="mb-16">
-                        <div className="flex items-center gap-4 mb-8">
-                          <span className="text-6xl font-bold text-primary/20">3.1</span>
-                          <h3 className="text-2xl font-semibold text-foreground">Kano 問卷：釐清「什麼 AI 功能值得先做」</h3>
+                  subSections={[
+                    {
+                      id: "3.1",
+                      title: (
+                        <div className="flex items-center gap-4">
+                          <span className="text-4xl font-bold text-primary/30">3.1</span>
+                          <h3 className="text-xl font-semibold text-foreground">Kano 問卷：釐清「什麼 AI 功能值得先做」</h3>
                         </div>
-
+                      ),
+                      content: (
                         <div className="space-y-6">
                           <ul className="space-y-4 text-lg text-muted-foreground">
                             <li className="flex gap-3">
@@ -487,17 +515,17 @@ const ProjectDetailV2 = () => {
                             </figcaption>
                           </figure>
                         </div>
-                      </div>
-
-                      <div className="border-t border-border my-16"></div>
-
-                      {/* 3.2 Workshop */}
-                      <div>
-                        <div className="flex items-center gap-4 mb-8">
-                          <span className="text-6xl font-bold text-primary/20">3.2</span>
-                          <h3 className="text-2xl font-semibold text-foreground">實機工作坊：模擬未來 AI PC 情境</h3>
+                      )
+                    },
+                    {
+                      id: "3.2",
+                      title: (
+                        <div className="flex items-center gap-4">
+                          <span className="text-4xl font-bold text-primary/30">3.2</span>
+                          <h3 className="text-xl font-semibold text-foreground">實機工作坊：模擬未來 AI PC 情境</h3>
                         </div>
-
+                      ),
+                      content: (
                         <div className="space-y-6">
                           <ul className="space-y-4 text-lg text-muted-foreground">
                             <li className="flex gap-3">
@@ -560,9 +588,9 @@ const ProjectDetailV2 = () => {
                             </figcaption>
                           </figure>
                         </div>
-                      </div>
-                    </>
-                  }
+                      )
+                    }
+                  ]}
                 />
               </div>
             </section>
@@ -780,13 +808,15 @@ const ProjectDetailV2 = () => {
           <div className="container mx-auto max-w-4xl text-center">
             <p className="text-sm text-muted-foreground uppercase tracking-wider mb-4">下一個專案</p>
             <Button 
-              variant="outline" 
+              variant="heroOutline" 
               size="lg"
-              className="group"
+              className="text-2xl md:text-3xl font-bold py-8 px-12"
               onClick={() => navigate(`/project/${project.nextProject!.id}`)}
             >
-              {project.nextProject.title}
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              <span className="relative z-10 flex items-center">
+                {project.nextProject.title}
+                <ArrowRight className="ml-2 h-6 w-6" />
+              </span>
             </Button>
           </div>
         </section>
