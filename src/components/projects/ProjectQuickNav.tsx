@@ -127,12 +127,16 @@ export const MobileQuickNav = ({ sections, activeSection, isVisible }: ProjectQu
         const { scrollWidth, clientWidth, scrollLeft } = scrollRef.current;
         const hasOverflow = scrollWidth > clientWidth;
         setIsOverflowing(hasOverflow);
-        setShowLeftGradient(hasOverflow && scrollLeft > 0);
-        setShowRightGradient(hasOverflow && scrollLeft < scrollWidth - clientWidth - 1);
+        // Left gradient: show when scrolled right more than 5px
+        setShowLeftGradient(hasOverflow && scrollLeft > 5);
+        // Right gradient: show when not at the end
+        setShowRightGradient(hasOverflow && scrollLeft < scrollWidth - clientWidth - 5);
       }
     };
     
-    checkOverflow();
+    // Delayed check to ensure DOM is rendered
+    const timer = setTimeout(checkOverflow, 50);
+    
     window.addEventListener('resize', checkOverflow);
     
     const scrollEl = scrollRef.current;
@@ -141,6 +145,7 @@ export const MobileQuickNav = ({ sections, activeSection, isVisible }: ProjectQu
     }
     
     return () => {
+      clearTimeout(timer);
       window.removeEventListener('resize', checkOverflow);
       if (scrollEl) {
         scrollEl.removeEventListener('scroll', checkOverflow);
@@ -148,18 +153,22 @@ export const MobileQuickNav = ({ sections, activeSection, isVisible }: ProjectQu
     };
   }, [sections, hasBeenVisible]);
 
-  // Calculate flowing highlight position
+  // Calculate flowing highlight position using getBoundingClientRect for accuracy
   useLayoutEffect(() => {
     if (chipRefs.current[activeIndex] && chipsContainerRef.current) {
       const chip = chipRefs.current[activeIndex];
-      if (chip) {
+      const container = chipsContainerRef.current;
+      if (chip && container) {
+        const chipRect = chip.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+        
         setHighlightPos({
-          left: chip.offsetLeft,
-          width: chip.offsetWidth
+          left: chipRect.left - containerRect.left + container.scrollLeft,
+          width: chipRect.width
         });
       }
     }
-  }, [activeIndex, hasBeenVisible]);
+  }, [activeIndex, hasBeenVisible, isOverflowing]);
 
   // Auto-scroll to active chip
   useEffect(() => {

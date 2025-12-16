@@ -217,22 +217,27 @@ const Navigation = () => {
 
           {/* Mobile Menu Button - Animated Hamburger */}
           <button
-            className="md:hidden relative w-10 h-10 rounded-full flex items-center justify-center hover:bg-muted active:bg-muted/80 transition-colors"
+            className={cn(
+              "md:hidden relative w-11 h-11 rounded-full flex items-center justify-center transition-colors",
+              isMenuOpen 
+                ? "bg-muted" 
+                : "bg-transparent hover:bg-muted/50"
+            )}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
-            <div className="w-5 h-4 relative flex flex-col justify-between">
+            <div className="w-4 h-3 relative flex flex-col justify-between">
               <span className={cn(
-                "block h-0.5 w-5 bg-foreground rounded-full transition-all duration-300 origin-center",
-                isMenuOpen && "rotate-45 translate-y-[7px]"
+                "block h-0.5 w-4 bg-foreground rounded-full transition-all duration-300 origin-center",
+                isMenuOpen && "rotate-45 translate-y-[5px]"
               )} />
               <span className={cn(
-                "block h-0.5 w-5 bg-foreground rounded-full transition-all duration-300",
+                "block h-0.5 w-4 bg-foreground rounded-full transition-all duration-300",
                 isMenuOpen && "opacity-0 scale-x-0"
               )} />
               <span className={cn(
-                "block h-0.5 w-5 bg-foreground rounded-full transition-all duration-300 origin-center",
-                isMenuOpen && "-rotate-45 -translate-y-[7px]"
+                "block h-0.5 w-4 bg-foreground rounded-full transition-all duration-300 origin-center",
+                isMenuOpen && "-rotate-45 -translate-y-[5px]"
               )} />
             </div>
           </button>
@@ -240,7 +245,10 @@ const Navigation = () => {
 
         {/* Mobile Menu - fade in from top */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 animate-fade-in-down bg-background border-t border-border">
+          <div 
+            className="md:hidden mt-4 pb-4 animate-fade-in-down bg-background border-t border-border"
+            style={{ boxShadow: '0px 4px 10px rgba(0,0,0,0.15)' }}
+          >
             {menuItems.map((item) => (
               <div key={item.label}>
                 {item.subItems ? (
