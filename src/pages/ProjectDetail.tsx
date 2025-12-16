@@ -11,6 +11,7 @@ import aiPcHero from "@/assets/bg_project_aipc.webp";
 import droneHero from "@/assets/bg_projects_drone.webp";
 import DroneUXContent from "@/components/projects/DroneUXContent";
 import AMRRobotContent from "@/components/projects/AMRRobotContent";
+import ProjectDetailV2 from "@/pages/ProjectDetailV2";
 
 const projectData = {
   "ai-pc": {
@@ -59,6 +60,7 @@ const ProjectDetail = () => {
   const navigate = useNavigate();
   const project = projectData[projectId as keyof typeof projectData];
   const [scrollY, setScrollY] = useState(0);
+  const [useV2, setUseV2] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,6 +70,36 @@ const ProjectDetail = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Version Switcher Component
+  const VersionSwitcher = () => (
+    <div className="fixed bottom-4 right-4 z-50 flex gap-2 bg-background/90 backdrop-blur-sm p-2 rounded-lg border border-border shadow-lg">
+      <Button
+        size="sm"
+        variant={useV2 ? "outline" : "default"}
+        onClick={() => setUseV2(false)}
+      >
+        Classic
+      </Button>
+      <Button
+        size="sm"
+        variant={useV2 ? "default" : "outline"}
+        onClick={() => setUseV2(true)}
+      >
+        With Nav
+      </Button>
+    </div>
+  );
+
+  // Render V2 version if selected
+  if (useV2) {
+    return (
+      <>
+        <VersionSwitcher />
+        <ProjectDetailV2 />
+      </>
+    );
+  }
 
   if (!project) {
     return (
@@ -81,8 +113,9 @@ const ProjectDetail = () => {
   }
 
   return (
+    <>
+    <VersionSwitcher />
     <div className="min-h-screen">
-      <Navigation />
       
       {/* Hero Section */}
       <section className="relative min-h-[50vh] overflow-hidden">
@@ -708,6 +741,7 @@ const ProjectDetail = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 
