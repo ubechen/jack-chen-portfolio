@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import ScrollReveal from "@/components/ScrollReveal";
+import ProcessAccordion from "@/components/projects/ProcessAccordion";
 
 const DroneUXContent = () => {
   return (
@@ -238,231 +239,234 @@ const DroneUXContent = () => {
       <ScrollReveal delay={100}>
         <section id="what-we-did" className="py-16 md:py-24 px-4 md:px-6">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-4xl font-bold mb-12 text-foreground">
-              3. What we did
-              <span className="block text-xl font-normal text-muted-foreground mt-2">從「看懂市場」到「做出能 demo 的控制站」</span>
-            </h2>
-
-            {/* 3.1 */}
-            <div className="mb-16">
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-6xl font-bold text-primary/20">3.1</span>
-                <h3 className="text-2xl font-semibold text-foreground">快速建立共同語言：國際競品與任務情境</h3>
-              </div>
-
-              <div className="space-y-6">
-                <ul className="space-y-4 text-lg text-muted-foreground">
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>盤點軍用偵察、商用巡檢、搜救、農業等不同情境下的控制站形式</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>分析 UI 佈局：地圖、航線、姿態、影像、系統狀態、警示如何同時呈現</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>輸出一份控制站布局與互動模式總結，並提出關鍵問題</span>
-                  </li>
-                </ul>
-
-                {/* Image Placeholder */}
-                <figure className="-mx-4 md:mx-0">
-                  <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground text-center px-4">國際競品控制站布局分析</p>
-                  </div>
-                  <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    軍用/商用控制站 UI 比較
-                  </figcaption>
-                </figure>
-
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="bg-background border border-border rounded-lg p-5">
-                    <p className="text-muted-foreground">新手如何<mark className="bg-primary/20 text-foreground px-1 rounded">快速上手</mark>？</p>
-                  </div>
-                  <div className="bg-background border border-border rounded-lg p-5">
-                    <p className="text-muted-foreground">緊急狀況下，哪些資訊必須<mark className="bg-primary/20 text-foreground px-1 rounded">第一時間被看見</mark>？</p>
-                  </div>
-                  <div className="bg-background border border-border rounded-lg p-5">
-                    <p className="text-muted-foreground">實體鍵與觸控操作如何<mark className="bg-primary/20 text-foreground px-1 rounded">分工才不混亂</mark>？</p>
-                  </div>
-                </div>
-
-                {/* Image Placeholder */}
-                <figure className="-mx-4 md:mx-0">
-                  <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground text-center px-4">任務情境對照表</p>
-                  </div>
-                  <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    偵察、巡檢、搜救、農業情境
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-
-            {/* Divider */}
-            <div className="border-t border-border my-16"></div>
-
-            {/* 3.2 */}
-            <div className="mb-16">
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-6xl font-bold text-primary/20">3.2</span>
-                <h3 className="text-2xl font-semibold text-foreground">控制器＋螢幕協同設計：從人因出發</h3>
-              </div>
-
-              <div className="space-y-6">
-                <ul className="space-y-4 text-lg text-muted-foreground">
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>隨著控制器 ID 定稿，調整按鍵位置、數量與視線路徑，減少<mark className="bg-primary/20 text-foreground px-1 rounded">「抬頭低頭來回找」</mark>的負擔</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>將高頻、時間敏感的操作放在實體鍵，設定型功能留在觸控介面</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>設計清楚的 icon 與行為規則，讓操作者在按下去之前，就知道會發生什麼事</span>
-                  </li>
-                </ul>
-
-                {/* Image Placeholder */}
-                <figure className="-mx-4 md:mx-0">
-                  <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground text-center px-4">控制器人因設計與視線路徑</p>
-                  </div>
-                  <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    減少抬頭低頭的操作設計
-                  </figcaption>
-                </figure>
-
-                {/* Image Placeholder */}
-                <figure className="-mx-4 md:mx-0">
-                  <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground text-center px-4">Icon 與行為規則系統</p>
-                  </div>
-                  <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    按鍵與狀態對應設計
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-
-            {/* Divider */}
-            <div className="border-t border-border my-16"></div>
-
-            {/* 3.3 */}
-            <div className="mb-16">
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-6xl font-bold text-primary/20">3.3</span>
-                <h3 className="text-2xl font-semibold text-foreground">任務導向的 App UX</h3>
-              </div>
-
-              <div className="space-y-6">
+            <ProcessAccordion
+              sectionTitle={
+                <h2 className="text-4xl font-bold mb-12 text-foreground">
+                  3. What we did
+                  <span className="block text-xl font-normal text-muted-foreground mt-2">從「看懂市場」到「做出能 demo 的控制站」</span>
+                </h2>
+              }
+              introContent={
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  以<strong className="text-foreground">任務流程</strong>，而不是功能清單，規劃 App 架構：
+                  透過競品分析、人因設計、任務導向 App 架構與實機測試，我們交付了一套可在國際展會 demo 的控制站 POC。
                 </p>
+              }
+              subSections={[
+                {
+                  id: "3.1",
+                  title: (
+                    <div className="flex items-center gap-4">
+                      <span className="text-4xl font-bold text-primary/30">3.1</span>
+                      <h3 className="text-xl font-semibold text-foreground">快速建立共同語言：國際競品與任務情境</h3>
+                    </div>
+                  ),
+                  content: (
+                    <div className="space-y-6">
+                      <ul className="space-y-4 text-lg text-muted-foreground">
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>盤點軍用偵察、商用巡檢、搜救、農業等不同情境下的控制站形式</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>分析 UI 佈局：地圖、航線、姿態、影像、系統狀態、警示如何同時呈現</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>輸出一份控制站布局與互動模式總結，並提出關鍵問題</span>
+                        </li>
+                      </ul>
 
-                <div className="bg-secondary/50 rounded-xl p-8">
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <Card className="border-t-4 border-t-primary">
-                      <CardContent className="p-6">
-                        <h5 className="text-lg font-semibold text-primary mb-2">任務前</h5>
-                        <p className="text-sm text-muted-foreground">檢查、設定、載入任務參數與航線規劃</p>
-                      </CardContent>
-                    </Card>
-                    <Card className="border-t-4 border-t-primary">
-                      <CardContent className="p-6">
-                        <h5 className="text-lg font-semibold text-primary mb-2">任務中</h5>
-                        <p className="text-sm text-muted-foreground">監看、調整、緊急應變與即時決策</p>
-                      </CardContent>
-                    </Card>
-                    <Card className="border-t-4 border-t-primary">
-                      <CardContent className="p-6">
-                        <h5 className="text-lg font-semibold text-primary mb-2">任務後</h5>
-                        <p className="text-sm text-muted-foreground">資料回收、紀錄檢視與任務報告</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
+                      <figure className="-mx-4 md:mx-0">
+                        <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
+                          <p className="text-muted-foreground text-center px-4">國際競品控制站布局分析</p>
+                        </div>
+                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                          軍用/商用控制站 UI 比較
+                        </figcaption>
+                      </figure>
 
-                <ul className="space-y-4 text-lg text-muted-foreground">
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>針對關鍵畫面設計 wireframe 與 GUI，將地圖、即時影像、警示與系統狀態整合在同一視野中</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>同時考量展會 demo 動線，讓業務能在短時間說清楚「這套系統的價值」</span>
-                  </li>
-                </ul>
+                      <div className="grid md:grid-cols-3 gap-4">
+                        <div className="bg-background border border-border rounded-lg p-5">
+                          <p className="text-muted-foreground">新手如何<mark className="bg-primary/20 text-foreground px-1 rounded">快速上手</mark>？</p>
+                        </div>
+                        <div className="bg-background border border-border rounded-lg p-5">
+                          <p className="text-muted-foreground">緊急狀況下，哪些資訊必須<mark className="bg-primary/20 text-foreground px-1 rounded">第一時間被看見</mark>？</p>
+                        </div>
+                        <div className="bg-background border border-border rounded-lg p-5">
+                          <p className="text-muted-foreground">實體鍵與觸控操作如何<mark className="bg-primary/20 text-foreground px-1 rounded">分工才不混亂</mark>？</p>
+                        </div>
+                      </div>
 
-                {/* Image Placeholder */}
-                <figure className="-mx-4 md:mx-0">
-                  <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground text-center px-4">App IA 架構與任務流程</p>
-                  </div>
-                  <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    任務前/中/後的資訊架構
-                  </figcaption>
-                </figure>
+                      <figure className="-mx-4 md:mx-0">
+                        <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
+                          <p className="text-muted-foreground text-center px-4">任務情境對照表</p>
+                        </div>
+                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                          偵察、巡檢、搜救、農業情境
+                        </figcaption>
+                      </figure>
+                    </div>
+                  )
+                },
+                {
+                  id: "3.2",
+                  title: (
+                    <div className="flex items-center gap-4">
+                      <span className="text-4xl font-bold text-primary/30">3.2</span>
+                      <h3 className="text-xl font-semibold text-foreground">控制器＋螢幕協同設計：從人因出發</h3>
+                    </div>
+                  ),
+                  content: (
+                    <div className="space-y-6">
+                      <ul className="space-y-4 text-lg text-muted-foreground">
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>隨著控制器 ID 定稿，調整按鍵位置、數量與視線路徑，減少<mark className="bg-primary/20 text-foreground px-1 rounded">「抬頭低頭來回找」</mark>的負擔</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>將高頻、時間敏感的操作放在實體鍵，設定型功能留在觸控介面</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>設計清楚的 icon 與行為規則，讓操作者在按下去之前，就知道會發生什麼事</span>
+                        </li>
+                      </ul>
 
-                {/* Image Placeholder */}
-                <figure className="-mx-4 md:mx-0">
-                  <div className="aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground text-center px-4">關鍵畫面 GUI 設計</p>
-                  </div>
-                  <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    地圖、影像、警示整合介面
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
+                      <figure className="-mx-4 md:mx-0">
+                        <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
+                          <p className="text-muted-foreground text-center px-4">控制器人因設計與視線路徑</p>
+                        </div>
+                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                          減少抬頭低頭的操作設計
+                        </figcaption>
+                      </figure>
 
-            {/* Divider */}
-            <div className="border-t border-border my-16"></div>
+                      <figure className="-mx-4 md:mx-0">
+                        <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
+                          <p className="text-muted-foreground text-center px-4">Icon 與行為規則系統</p>
+                        </div>
+                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                          按鍵與狀態對應設計
+                        </figcaption>
+                      </figure>
+                    </div>
+                  )
+                },
+                {
+                  id: "3.3",
+                  title: (
+                    <div className="flex items-center gap-4">
+                      <span className="text-4xl font-bold text-primary/30">3.3</span>
+                      <h3 className="text-xl font-semibold text-foreground">任務導向的 App UX</h3>
+                    </div>
+                  ),
+                  content: (
+                    <div className="space-y-6">
+                      <p className="text-lg text-muted-foreground leading-relaxed">
+                        以<strong className="text-foreground">任務流程</strong>，而不是功能清單，規劃 App 架構：
+                      </p>
 
-            {/* 3.4 */}
-            <div>
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-6xl font-bold text-primary/20">3.4</span>
-                <h3 className="text-2xl font-semibold text-foreground">Prototype 測試：讓問題在展場前先發生完</h3>
-              </div>
+                      <div className="bg-secondary/50 rounded-xl p-8">
+                        <div className="grid md:grid-cols-3 gap-6">
+                          <Card className="border-t-4 border-t-primary">
+                            <CardContent className="p-6">
+                              <h5 className="text-lg font-semibold text-primary mb-2">任務前</h5>
+                              <p className="text-sm text-muted-foreground">檢查、設定、載入任務參數與航線規劃</p>
+                            </CardContent>
+                          </Card>
+                          <Card className="border-t-4 border-t-primary">
+                            <CardContent className="p-6">
+                              <h5 className="text-lg font-semibold text-primary mb-2">任務中</h5>
+                              <p className="text-sm text-muted-foreground">監看、調整、緊急應變與即時決策</p>
+                            </CardContent>
+                          </Card>
+                          <Card className="border-t-4 border-t-primary">
+                            <CardContent className="p-6">
+                              <h5 className="text-lg font-semibold text-primary mb-2">任務後</h5>
+                              <p className="text-sm text-muted-foreground">資料回收、紀錄檢視與任務報告</p>
+                            </CardContent>
+                          </Card>
+                        </div>
+                      </div>
 
-              <div className="space-y-6">
-                <ul className="space-y-4 text-lg text-muted-foreground">
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>實機模擬從開機、連線、起飛、執行任務到返航</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>記錄所有「需要多想一下」的地方：狀態不明、資訊被蓋住、按鍵與畫面不一致、潛在誤觸風險</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>整理成 issue list 與建議方案，與 PM、工程與合作公司一起調整</span>
-                  </li>
-                </ul>
+                      <ul className="space-y-4 text-lg text-muted-foreground">
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>針對關鍵畫面設計 wireframe 與 GUI，將地圖、即時影像、警示與系統狀態整合在同一視野中</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>同時考量展會 demo 動線，讓業務能在短時間說清楚「這套系統的價值」</span>
+                        </li>
+                      </ul>
 
-                {/* Image Placeholder */}
-                <figure className="-mx-4 md:mx-0">
-                  <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground text-center px-4">實機 Prototype 測試現場</p>
-                  </div>
-                  <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    模擬任務流程測試
-                  </figcaption>
-                </figure>
+                      <figure className="-mx-4 md:mx-0">
+                        <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
+                          <p className="text-muted-foreground text-center px-4">App IA 架構與任務流程</p>
+                        </div>
+                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                          任務前/中/後的資訊架構
+                        </figcaption>
+                      </figure>
 
-                <div className="bg-primary/10 rounded-xl p-8">
-                  <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">最終成果</p>
-                  <p className="text-xl text-foreground font-semibold leading-relaxed">
-                    這套控制站不只在國際展會順利 demo，也成功取得客戶訂單，並延伸到後台管理系統的 UX 規劃（機隊管理、任務紀錄、維運）
-                  </p>
-                </div>
-              </div>
-            </div>
+                      <figure className="-mx-4 md:mx-0">
+                        <div className="aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center">
+                          <p className="text-muted-foreground text-center px-4">關鍵畫面 GUI 設計</p>
+                        </div>
+                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                          地圖、影像、警示整合介面
+                        </figcaption>
+                      </figure>
+                    </div>
+                  )
+                },
+                {
+                  id: "3.4",
+                  title: (
+                    <div className="flex items-center gap-4">
+                      <span className="text-4xl font-bold text-primary/30">3.4</span>
+                      <h3 className="text-xl font-semibold text-foreground">Prototype 測試：讓問題在展場前先發生完</h3>
+                    </div>
+                  ),
+                  content: (
+                    <div className="space-y-6">
+                      <ul className="space-y-4 text-lg text-muted-foreground">
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>實機模擬從開機、連線、起飛、執行任務到返航</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>記錄所有「需要多想一下」的地方：狀態不明、資訊被蓋住、按鍵與畫面不一致、潛在誤觸風險</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>整理成 issue list 與建議方案，與 PM、工程與合作公司一起調整</span>
+                        </li>
+                      </ul>
+
+                      <figure className="-mx-4 md:mx-0">
+                        <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
+                          <p className="text-muted-foreground text-center px-4">實機 Prototype 測試現場</p>
+                        </div>
+                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                          模擬任務流程測試
+                        </figcaption>
+                      </figure>
+
+                      <div className="bg-primary/10 rounded-xl p-8">
+                        <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">最終成果</p>
+                        <p className="text-xl text-foreground font-semibold leading-relaxed">
+                          這套控制站不只在國際展會順利 demo，也成功取得客戶訂單，並延伸到後台管理系統的 UX 規劃（機隊管理、任務紀錄、維運）
+                        </p>
+                      </div>
+                    </div>
+                  )
+                }
+              ]}
+            />
           </div>
         </section>
       </ScrollReveal>
