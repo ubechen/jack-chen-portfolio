@@ -2,7 +2,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronDown, Play } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -14,6 +19,7 @@ import aiPcHero from "@/assets/bg_project_aipc.webp";
 import droneHero from "@/assets/bg_projects_drone.webp";
 import DroneUXContent from "@/components/projects/DroneUXContent";
 import AMRRobotContent from "@/components/projects/AMRRobotContent";
+import ESGBoardGameContent from "@/components/projects/ESGBoardGameContent";
 
 const projectData = {
   "ai-pc": {
@@ -68,6 +74,27 @@ const projectData = {
     nextProject: {
       id: "esg-board-game",
       title: "ESG Board Game",
+    },
+    sections: [
+      { id: "overview", label: "Overview" },
+      { id: "my-role", label: "My Role" },
+      { id: "what-we-did", label: "What we did" },
+      { id: "challenges", label: "Challenges & Impact" },
+      { id: "learnings", label: "What I learned" },
+    ],
+  },
+  "esg-board-game": {
+    title: "Wi-Thrive｜ESG Storytelling Game",
+    subtitle: "ESG 桌遊《緯你同行 Wi-Thrive》：把企業永續變成一場能被「玩懂」的體驗",
+    heroImage: aiPcHero,
+    heroVideo: "https://www.youtube.com/embed/LrH-OEzySV8?autoplay=1",
+    role: "Lead Designer · Product / UX / Visual · 專案協調窗口",
+    type: "ESG / 內訓與招募 · 桌遊體驗設計 · Generative AI 應用",
+    summary: "與公司 ESG 辦公室、HR 與臺科大迷你教育遊戲團隊合作，從既有規則原型出發，重新設計一套可量產的 ESG 桌遊《緯你同行 Wi-Thrive: A Sustainable Drive》，透過遊戲化體驗將公司永續行動轉成故事，支援招募、內訓與對外品牌溝通，同時也是 UX 團隊在 AI 圖像工作流與跨部門協作上的代表專案",
+    duration: "2023 Q3 – 2024 Q3",
+    nextProject: {
+      id: "ai-pc",
+      title: "AI PC",
     },
     sections: [
       { id: "overview", label: "Overview" },
@@ -159,6 +186,7 @@ const ProjectDetailV2 = () => {
   const navigate = useNavigate();
   const project = projectData[projectId as keyof typeof projectData];
   const [scrollY, setScrollY] = useState(0);
+  const [videoDialogOpen, setVideoDialogOpen] = useState(false);
 
   const sections: Section[] = project?.sections || [];
   const { activeSection, showNav } = useScrollSpy(sections, 150);
@@ -221,6 +249,20 @@ const ProjectDetailV2 = () => {
             >
               {project.subtitle}
             </p>
+            {/* Video Button for ESG project */}
+            {'heroVideo' in project && project.heroVideo && (
+              <Button
+                variant="ghost"
+                className="relative overflow-hidden border border-white/50 text-white before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-white/20 before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100 hover:bg-transparent hover:text-white animate-fade-in"
+                style={{ animationDelay: '400ms', animationFillMode: 'both' }}
+                onClick={() => setVideoDialogOpen(true)}
+              >
+                <span className="relative z-10 flex items-center">
+                  <Play className="mr-2 h-4 w-4" />
+                  🎥 觀看桌遊介紹影片
+                </span>
+              </Button>
+            )}
           </div>
         </div>
       </section>
@@ -802,6 +844,9 @@ const ProjectDetailV2 = () => {
       {/* AMR Robot Content */}
       {projectId === "amr-robot" && <AMRRobotContent />}
 
+      {/* ESG Board Game Content */}
+      {projectId === "esg-board-game" && <ESGBoardGameContent />}
+
       {/* Next Project Navigation */}
       {project.nextProject && (
         <section className="py-16 md:py-24 px-4 md:px-6 border-t border-border">
@@ -820,6 +865,28 @@ const ProjectDetailV2 = () => {
             </Button>
           </div>
         </section>
+      )}
+
+      {/* Video Dialog for ESG project */}
+      {'heroVideo' in project && project.heroVideo && (
+        <Dialog open={videoDialogOpen} onOpenChange={(open) => {
+          setVideoDialogOpen(open);
+        }}>
+          <DialogContent className="max-w-4xl p-0 bg-black border-none">
+            <DialogTitle className="sr-only">桌遊介紹影片</DialogTitle>
+            <div className="aspect-video">
+              {videoDialogOpen && (
+                <iframe
+                  src={project.heroVideo}
+                  title="桌遊介紹影片"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              )}
+            </div>
+          </DialogContent>
+        </Dialog>
       )}
 
       <Footer />
