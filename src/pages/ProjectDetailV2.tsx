@@ -58,13 +58,13 @@ const projectData = {
     ],
   },
   "amr-robot": {
-    title: "AMR Robot",
-    subtitle: "多場域服務型機器人產品與系統體驗設計",
+    title: "Wifundity AMR Robot",
+    subtitle: "多場域服務型機器人平台與系統體驗設計",
     heroImage: aiPcHero,
     role: "Product / UX / UI Designer",
     type: "B2B2C · 服務型機器人 · 多場域解決方案",
-    summary: "在公司成立新事業單位、從零打造自家服務型機器人產品線的三年間，負責 AMR Robot 相關體驗設計：從競品研究、後台系統與機器人端 App，到品牌網站、展覽與影片。面對中國成熟競品與台灣市場不確定性，透過 UX 串連產品、系統與品牌溝通",
-    duration: "2021 – 2023",
+    summary: "在公司成立新事業單位、從零打造自有服務型機器人品牌 Wifundity 的三年間，負責自主移動機器人（AMR）產品線相關體驗設計：從競品研究、後台系統與機器人端 App，到 Wifundity 品牌網站、展覽與影片。面對中國成熟競品與台灣市場不確定性，透過 UX 串連產品、系統與品牌溝通",
+    duration: "2021 Q4 – 2024 Q1",
     nextProject: {
       id: "esg-board-game",
       title: "ESG Board Game",
