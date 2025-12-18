@@ -11,12 +11,12 @@ const AMRRobotContent = () => {
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-4xl font-bold mb-12 text-foreground">
               1. Overview
-              <span className="block text-xl font-normal text-muted-foreground mt-2">疫情後的新事業契機</span>
+              <span className="block text-xl font-normal text-muted-foreground mt-2">疫情後的新事業與 Wifundity 品牌起點</span>
             </h2>
             
             <div className="space-y-8">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                2021 年，公司成立全新的機器人事業單位，希望在疫情後服務需求上升的時機點，打造一款<mark className="bg-primary/20 text-foreground px-1 rounded">「屬於台灣自己的服務型機器人」</mark>，與中國已經蓬勃發展的服務機器人品牌競爭
+                2021 年，公司成立全新的機器人事業單位，希望在疫情後服務需求上升的時機點，打造一款<mark className="bg-primary/20 text-foreground px-1 rounded">「屬於台灣自己的服務型機器人」</mark>，以 Wifundity 品牌進入自主移動機器人市場，與已經蓬勃發展的中國服務型機器人品牌競爭
               </p>
 
               <div className="bg-secondary/50 rounded-xl p-8 my-8">
@@ -24,11 +24,22 @@ const AMRRobotContent = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="text-lg font-semibold mb-3 text-foreground">產品路線</h4>
-                    <p className="text-muted-foreground">送貨／送餐、迎賓導覽、消毒、巡檢等 AMR／服務型機器人</p>
+                    <p className="text-muted-foreground mb-2">涵蓋多款 AMR／服務型機器人，對應不同場域與任務：</p>
+                    <ul className="space-y-1 text-muted-foreground">
+                      <li className="flex gap-2"><span className="text-primary">•</span>送貨／送餐</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span>迎賓與導覽</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span>消毒</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span>巡檢</li>
+                    </ul>
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold mb-3 text-foreground">目標場域</h4>
-                    <p className="text-muted-foreground">大型賣場、景點、飯店與醫院</p>
+                    <ul className="space-y-1 text-muted-foreground">
+                      <li className="flex gap-2"><span className="text-primary">•</span>大型賣場</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span>景點空間</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span>飯店與旅館</li>
+                      <li className="flex gap-2"><span className="text-primary">•</span>醫院與醫療院所</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -54,15 +65,15 @@ const AMRRobotContent = () => {
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="bg-background border border-border rounded-lg p-5">
                     <h4 className="text-lg font-semibold mb-2 text-primary">後台管理系統</h4>
-                    <p className="text-muted-foreground">讓營運人員能有效管理多台機器人與多場域地圖</p>
+                    <p className="text-muted-foreground">讓營運單位能有效管理多台機器人與多場域地圖</p>
                   </div>
                   <div className="bg-background border border-border rounded-lg p-5">
                     <h4 className="text-lg font-semibold mb-2 text-primary">機器人端 App</h4>
                     <p className="text-muted-foreground">讓現場服務人員與消費者都能輕鬆理解與互動</p>
                   </div>
                   <div className="bg-background border border-border rounded-lg p-5">
-                    <h4 className="text-lg font-semibold mb-2 text-primary">品牌溝通</h4>
-                    <p className="text-muted-foreground">網站、行銷影片與展場體驗，讓潛在客戶看見產品願景</p>
+                    <h4 className="text-lg font-semibold mb-2 text-primary">Wifundity 品牌溝通</h4>
+                    <p className="text-muted-foreground">品牌網站、行銷影片與展場體驗，讓潛在客戶看見產品願景與實際應用</p>
                   </div>
                 </div>
               </div>
@@ -97,7 +108,7 @@ const AMRRobotContent = () => {
             </h2>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-              這是一個長期大型專案，我不只是畫 UI，而是站在<mark className="bg-primary/20 text-foreground px-1 rounded">「整體服務」</mark>的角度把不同接觸點串起來，主要扮演三種角色：
+              這是一個長期大型專案，我不只是畫 UI，而是站在<mark className="bg-primary/20 text-foreground px-1 rounded">「整體服務」</mark>的角度，把 Wifundity 旗下的產品與對外溝通串成一條完整體驗，主要扮演三種角色：
             </p>
 
             <div className="space-y-6">
@@ -115,7 +126,7 @@ const AMRRobotContent = () => {
                         </li>
                         <li className="flex gap-3">
                           <span className="text-primary">•</span>
-                          <span>用競品研究與場域觀察，幫忙釐清：<mark className="bg-primary/20 text-foreground px-1 rounded">我們真正要解決的問題是什麼？</mark>而不是只列一張功能願望清單</span>
+                          <span>用競品研究與場域觀察，幫忙釐清：<mark className="bg-primary/20 text-foreground px-1 rounded">我們真正要解決的問題是什麼</mark>，而不是只列一張功能願望清單</span>
                         </li>
                       </ul>
                     </div>
@@ -137,7 +148,7 @@ const AMRRobotContent = () => {
                         </li>
                         <li className="flex gap-3">
                           <span className="text-primary">•</span>
-                          <span>隨著多代機器人與多場域導入，依據使用者回饋與營運需求持續調整操作與介面邏輯</span>
+                          <span>隨著多代機器人與多場域導入，依據使用者回饋與營運需求，持續調整操作與介面邏輯</span>
                         </li>
                       </ul>
                     </div>
@@ -155,11 +166,11 @@ const AMRRobotContent = () => {
                       <ul className="space-y-3 text-muted-foreground">
                         <li className="flex gap-3">
                           <span className="text-primary">•</span>
-                          <span><strong className="text-foreground">對內：</strong>把技術與營運語言整理成高層與跨部門看得懂的畫面與簡報</span>
+                          <span><strong className="text-foreground">對內：</strong>把技術與營運語言，整理成高層與跨部門看得懂的畫面與簡報</span>
                         </li>
                         <li className="flex gap-3">
                           <span className="text-primary">•</span>
-                          <span><strong className="text-foreground">對外：</strong>協助網站、影片、展覽，把「這台機器人到底能帶來什麼價值」講清楚、說得動人</span>
+                          <span><strong className="text-foreground">對外：</strong>協助 Wifundity 網站、影片、展覽，把「這台機器人與整體解決方案能帶來什麼價值」講清楚、說得動人</span>
                         </li>
                       </ul>
                     </div>
@@ -276,7 +287,7 @@ const AMRRobotContent = () => {
                           <Card className="border-t-4 border-t-primary">
                             <CardContent className="p-6">
                               <h5 className="text-lg font-semibold text-primary mb-2">地圖與任務管理</h5>
-                              <p className="text-sm text-muted-foreground">管理多場域路線與任務</p>
+                              <p className="text-sm text-muted-foreground">管理地圖、多場域路線與任務</p>
                             </CardContent>
                           </Card>
                           <Card className="border-t-4 border-t-primary">
@@ -355,7 +366,7 @@ const AMRRobotContent = () => {
                   title: (
                     <div className="flex items-center gap-4">
                       <span className="text-4xl font-bold text-primary/30">3.4</span>
-                      <h3 className="text-xl font-semibold text-foreground">讓外界看得懂：網站、影片與展覽</h3>
+                      <h3 className="text-xl font-semibold text-foreground">讓外界看得懂：Wifundity 網站、影片與展覽</h3>
                     </div>
                   ),
                   content: (
@@ -363,7 +374,7 @@ const AMRRobotContent = () => {
                       <ul className="space-y-4 text-lg text-muted-foreground">
                         <li className="flex gap-3">
                           <span className="text-primary font-bold">→</span>
-                          <span>規劃並設計產品網站的架構與內容，整理各種場域的應用故事</span>
+                          <span>規劃並設計 Wifundity 產品與解決方案網站的架構與內容，整理各種場域的應用故事</span>
                         </li>
                         <li className="flex gap-3">
                           <span className="text-primary font-bold">→</span>
@@ -377,7 +388,7 @@ const AMRRobotContent = () => {
 
                       <figure className="-mx-4 md:mx-0">
                         <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                          <p className="text-muted-foreground text-center px-4">產品網站設計</p>
+                          <p className="text-muted-foreground text-center px-4">Wifundity 產品網站設計</p>
                         </div>
                         <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
                           場域應用故事整理
@@ -450,16 +461,26 @@ const AMRRobotContent = () => {
                 <h3 className="text-2xl font-semibold mt-4 mb-4 text-foreground">
                   多方利害關係人之間的說服與對齊
                 </h3>
-                <div className="grid md:grid-cols-2 gap-4 mb-4">
-                  <div className="bg-secondary/30 rounded-lg p-4">
-                    <p className="text-sm font-semibold text-primary mb-1">專案橫跨</p>
-                    <p className="text-sm text-muted-foreground">新事業單位高層、PM / AM / ID / SW / HW、現場營運人員與終端客戶</p>
-                  </div>
-                  <div className="bg-secondary/30 rounded-lg p-4">
-                    <p className="text-sm font-semibold text-primary mb-1">每個人關注的角度不同</p>
-                    <p className="text-sm text-muted-foreground">我在其中扮演的角色</p>
-                  </div>
-                </div>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  專案橫跨：
+                </p>
+                <ul className="space-y-2 text-muted-foreground mb-4">
+                  <li className="flex gap-3">
+                    <span className="text-primary">•</span>
+                    <span>新事業單位高層</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-primary">•</span>
+                    <span>PM / AM / ID / SW / HW</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="text-primary">•</span>
+                    <span>現場營運人員與終端客戶</span>
+                  </li>
+                </ul>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  每個人關注的角度不同，我在其中扮演的是：
+                </p>
                 <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6 mb-4">
                   <p className="text-xl text-foreground font-medium">
                     把需求、限制與機會，整理成「可被看見、可被討論的畫面」的人
@@ -513,7 +534,7 @@ const AMRRobotContent = () => {
 
             <div className="bg-primary/10 rounded-xl p-8 mb-10">
               <p className="text-2xl text-foreground font-semibold leading-relaxed">
-                AMR Robot 是一個最終被公司決策暫停的大型專案，即使有遺憾，仍帶來幾個重要體會
+                Wifundity AMR Robot 是一個最終被公司決策暫停的大型專案，即使有遺憾，仍帶來幾個重要體會
               </p>
             </div>
 
@@ -535,7 +556,7 @@ const AMRRobotContent = () => {
 
               <div className="bg-background border-l-4 border-l-primary rounded-r-lg p-6 mt-8">
                 <p className="text-xl text-foreground font-medium leading-relaxed">
-                  AMR Robot 對我而言是一場長期的「全方位體驗實戰」—— 從產品、系統到品牌，從會議室一路走到賣場、飯店和醫院，也讓我在之後面對更複雜題目時，更有底氣說自己能陪團隊一起撐住
+                  對我而言，這是一場長期的「全方位體驗實戰」——從產品、系統到品牌，從會議室一路走到賣場、飯店和醫院，也讓我在之後面對更複雜題目時，更有底氣說自己能陪團隊一起撐住
                 </p>
               </div>
             </div>
