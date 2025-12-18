@@ -183,10 +183,9 @@ const AMRRobotContent = () => {
 
       {/* Section 3: What we did */}
       <ScrollReveal delay={100}>
-        <section id="what-we-did" className="py-16 md:py-24 px-4 md:px-6">
-          <div className="container mx-auto max-w-4xl">
-            <ProcessAccordion
-              sectionTitle={
+        <ProcessAccordion
+          sectionId="what-we-did"
+          sectionTitle={
                 <h2 className="text-4xl font-bold mb-12 text-foreground">
                   3. What we did
                   <span className="block text-xl font-normal text-muted-foreground mt-2">從市場研究到多場域實際導入</span>
@@ -398,8 +397,6 @@ const AMRRobotContent = () => {
                 }
               ]}
             />
-          </div>
-        </section>
       </ScrollReveal>
 
       {/* Section 4: Challenges & Impact */}
