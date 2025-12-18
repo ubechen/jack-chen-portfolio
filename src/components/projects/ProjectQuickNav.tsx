@@ -63,7 +63,7 @@ export const DesktopQuickNav = ({ sections, activeSection, isVisible }: ProjectQ
           : "animate-slide-out-left pointer-events-none"
       )}
       style={{ 
-        left: 'max(1rem, calc((100vw - min(100vw - 48px, 1400px)) / 2 + 24px - 200px))'
+        left: 'clamp(1rem, calc((100vw - 1400px) / 2 + 24px), 224px)'
       }}
     >
       <div className="bg-background/80 backdrop-blur-sm border border-border rounded-lg p-4 shadow-sm">
@@ -194,7 +194,7 @@ export const MobileQuickNav = ({ sections, activeSection, isVisible }: ProjectQu
   return (
     <div 
       className={cn(
-        "xl:hidden sticky top-[45px] z-30 bg-background/95 backdrop-blur-sm border-b border-border py-[0.2rem] px-3",
+        "xl:hidden sticky top-[45px] md:top-[58px] z-30 bg-background/95 backdrop-blur-sm border-b border-border py-[0.2rem] px-3",
         isVisible
           ? "animate-slide-in-top"
           : "animate-slide-out-top pointer-events-none"
