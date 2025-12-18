@@ -160,7 +160,10 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
+    <nav className={cn(
+      "fixed top-0 left-0 right-0 z-50 bg-background border-b border-border",
+      isMenuOpen && "shadow-[0px_4px_10px_rgba(0,0,0,0.15)] md:shadow-none"
+    )}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <button
@@ -247,7 +250,6 @@ const Navigation = () => {
         {isMenuOpen && (
           <div 
             className="md:hidden mt-4 pb-4 animate-fade-in-down bg-background border-t border-border"
-            style={{ boxShadow: '0px 4px 10px rgba(0,0,0,0.15)' }}
           >
             {menuItems.map((item) => (
               <div key={item.label}>

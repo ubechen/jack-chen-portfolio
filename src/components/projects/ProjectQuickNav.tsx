@@ -57,11 +57,14 @@ export const DesktopQuickNav = ({ sections, activeSection, isVisible }: ProjectQ
   return (
     <nav 
       className={cn(
-        "hidden xl:block fixed left-6 2xl:left-10 top-24 z-40 max-w-[180px]",
+        "hidden xl:block fixed top-24 z-40 max-w-[180px]",
         isVisible 
           ? "animate-slide-in-left" 
           : "animate-slide-out-left pointer-events-none"
       )}
+      style={{ 
+        left: 'max(1rem, calc((100vw - 1400px) / 2 - 200px))'
+      }}
     >
       <div className="bg-background/80 backdrop-blur-sm border border-border rounded-lg p-4 shadow-sm">
         <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
@@ -191,7 +194,7 @@ export const MobileQuickNav = ({ sections, activeSection, isVisible }: ProjectQu
   return (
     <div 
       className={cn(
-        "xl:hidden sticky top-[60px] z-30 bg-background/95 backdrop-blur-sm border-b border-border py-1.5 px-3",
+        "xl:hidden sticky top-[56px] z-30 bg-background/95 backdrop-blur-sm border-b border-border py-0 px-3",
         isVisible
           ? "animate-slide-in-top"
           : "animate-slide-out-top pointer-events-none"
@@ -230,7 +233,7 @@ export const MobileQuickNav = ({ sections, activeSection, isVisible }: ProjectQu
                 ref={el => chipRefs.current[index] = el}
                 onClick={() => scrollToSection(section.id)}
                 className={cn(
-                  "relative z-10 px-2.5 py-1 rounded-full text-xs whitespace-nowrap transition-colors duration-200",
+                  "relative z-10 px-2.5 py-2 rounded-full text-xs whitespace-nowrap transition-colors duration-200",
                   activeSection === section.id
                     ? "text-primary-foreground font-medium"
                     : "text-muted-foreground hover:text-foreground"

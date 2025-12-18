@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import ScrollReveal from "@/components/ScrollReveal";
+import ProcessAccordion from "@/components/projects/ProcessAccordion";
 
 const AMRRobotContent = () => {
   return (
@@ -184,216 +185,219 @@ const AMRRobotContent = () => {
       <ScrollReveal delay={100}>
         <section id="what-we-did" className="py-16 md:py-24 px-4 md:px-6">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="text-4xl font-bold mb-12 text-foreground">
-              3. What we did
-              <span className="block text-xl font-normal text-muted-foreground mt-2">從市場研究到多場域實際導入</span>
-            </h2>
-
-            {/* 3.1 */}
-            <div className="mb-16">
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-6xl font-bold text-primary/20">3.1</span>
-                <h3 className="text-2xl font-semibold text-foreground">看清題目：競品與市場研究</h3>
-              </div>
-
-              <div className="space-y-6">
-                <ul className="space-y-4 text-lg text-muted-foreground">
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>系統整理中國與國際服務型機器人：產品定位、場域應用、價值主張</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>實際操作中國競品，記錄從建地圖、派任務到異常處理等完整流程</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>整理成研究報告，讓高層與團隊看見</span>
-                  </li>
-                </ul>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-background border border-border rounded-lg p-5">
-                    <p className="text-muted-foreground">哪些是必須跟上的<mark className="bg-primary/20 text-foreground px-1 rounded">「市場基本門檻」</mark></p>
-                  </div>
-                  <div className="bg-background border border-border rounded-lg p-5">
-                    <p className="text-muted-foreground">哪些是我們可以<mark className="bg-primary/20 text-foreground px-1 rounded">差異化</mark>，而不是全部照抄的方向</p>
-                  </div>
-                </div>
-
-                {/* Image Placeholder */}
-                <figure className="-mx-4 md:mx-0">
-                  <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground text-center px-4">中國與國際服務型機器人競品分析</p>
-                  </div>
-                  <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    產品定位與價值主張比較
-                  </figcaption>
-                </figure>
-
-                {/* Image Placeholder */}
-                <figure className="-mx-4 md:mx-0">
-                  <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground text-center px-4">競品實際操作記錄</p>
-                  </div>
-                  <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    從建地圖到異常處理的完整流程
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-
-            {/* Divider */}
-            <div className="border-t border-border my-16"></div>
-
-            {/* 3.2 */}
-            <div className="mb-16">
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-6xl font-bold text-primary/20">3.2</span>
-                <h3 className="text-2xl font-semibold text-foreground">讓營運端有工具：後台管理系統</h3>
-              </div>
-
-              <div className="space-y-6">
+            <ProcessAccordion
+              sectionTitle={
+                <h2 className="text-4xl font-bold mb-12 text-foreground">
+                  3. What we did
+                  <span className="block text-xl font-normal text-muted-foreground mt-2">從市場研究到多場域實際導入</span>
+                </h2>
+              }
+              introContent={
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  與 PM、營運人員定義後台的核心任務：
+                  透過競品研究、後台系統設計、機器人 App 開發與品牌溝通，我們打造了一套完整的服務型機器人體驗。
                 </p>
+              }
+              subSections={[
+                {
+                  id: "3.1",
+                  title: (
+                    <div className="flex items-center gap-4">
+                      <span className="text-4xl font-bold text-primary/30">3.1</span>
+                      <h3 className="text-xl font-semibold text-foreground">看清題目：競品與市場研究</h3>
+                    </div>
+                  ),
+                  content: (
+                    <div className="space-y-6">
+                      <ul className="space-y-4 text-lg text-muted-foreground">
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>系統整理中國與國際服務型機器人：產品定位、場域應用、價值主張</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>實際操作中國競品，記錄從建地圖、派任務到異常處理等完整流程</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>整理成研究報告，讓高層與團隊看見</span>
+                        </li>
+                      </ul>
 
-                <div className="bg-secondary/50 rounded-xl p-8">
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <Card className="border-t-4 border-t-primary">
-                      <CardContent className="p-6">
-                        <h5 className="text-lg font-semibold text-primary mb-2">儀表板</h5>
-                        <p className="text-sm text-muted-foreground">一眼掌握機器人全局狀態</p>
-                      </CardContent>
-                    </Card>
-                    <Card className="border-t-4 border-t-primary">
-                      <CardContent className="p-6">
-                        <h5 className="text-lg font-semibold text-primary mb-2">地圖與任務管理</h5>
-                        <p className="text-sm text-muted-foreground">管理多場域路線與任務</p>
-                      </CardContent>
-                    </Card>
-                    <Card className="border-t-4 border-t-primary">
-                      <CardContent className="p-6">
-                        <h5 className="text-lg font-semibold text-primary mb-2">異常處理</h5>
-                        <p className="text-sm text-muted-foreground">快速處理異常與通知</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div className="bg-background border border-border rounded-lg p-5">
+                          <p className="text-muted-foreground">哪些是必須跟上的<mark className="bg-primary/20 text-foreground px-1 rounded">「市場基本門檻」</mark></p>
+                        </div>
+                        <div className="bg-background border border-border rounded-lg p-5">
+                          <p className="text-muted-foreground">哪些是我們可以<mark className="bg-primary/20 text-foreground px-1 rounded">差異化</mark>，而不是全部照抄的方向</p>
+                        </div>
+                      </div>
 
-                <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6">
-                  <p className="text-lg text-foreground font-medium">
-                    設計後台 IA、操作流程與畫面，讓它不是只給工程看的控制台，而是場域營運人員也能輕易掌握的介面
-                  </p>
-                </div>
+                      <figure className="-mx-4 md:mx-0">
+                        <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
+                          <p className="text-muted-foreground text-center px-4">中國與國際服務型機器人競品分析</p>
+                        </div>
+                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                          產品定位與價值主張比較
+                        </figcaption>
+                      </figure>
 
-                {/* Image Placeholder */}
-                <figure className="-mx-4 md:mx-0">
-                  <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground text-center px-4">後台管理系統介面設計</p>
-                  </div>
-                  <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    儀表板與地圖管理畫面
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
+                      <figure className="-mx-4 md:mx-0">
+                        <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
+                          <p className="text-muted-foreground text-center px-4">競品實際操作記錄</p>
+                        </div>
+                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                          從建地圖到異常處理的完整流程
+                        </figcaption>
+                      </figure>
+                    </div>
+                  )
+                },
+                {
+                  id: "3.2",
+                  title: (
+                    <div className="flex items-center gap-4">
+                      <span className="text-4xl font-bold text-primary/30">3.2</span>
+                      <h3 className="text-xl font-semibold text-foreground">讓營運端有工具：後台管理系統</h3>
+                    </div>
+                  ),
+                  content: (
+                    <div className="space-y-6">
+                      <p className="text-lg text-muted-foreground leading-relaxed">
+                        與 PM、營運人員定義後台的核心任務：
+                      </p>
 
-            {/* Divider */}
-            <div className="border-t border-border my-16"></div>
+                      <div className="bg-secondary/50 rounded-xl p-8">
+                        <div className="grid md:grid-cols-3 gap-6">
+                          <Card className="border-t-4 border-t-primary">
+                            <CardContent className="p-6">
+                              <h5 className="text-lg font-semibold text-primary mb-2">儀表板</h5>
+                              <p className="text-sm text-muted-foreground">一眼掌握機器人全局狀態</p>
+                            </CardContent>
+                          </Card>
+                          <Card className="border-t-4 border-t-primary">
+                            <CardContent className="p-6">
+                              <h5 className="text-lg font-semibold text-primary mb-2">地圖與任務管理</h5>
+                              <p className="text-sm text-muted-foreground">管理多場域路線與任務</p>
+                            </CardContent>
+                          </Card>
+                          <Card className="border-t-4 border-t-primary">
+                            <CardContent className="p-6">
+                              <h5 className="text-lg font-semibold text-primary mb-2">異常處理</h5>
+                              <p className="text-sm text-muted-foreground">快速處理異常與通知</p>
+                            </CardContent>
+                          </Card>
+                        </div>
+                      </div>
 
-            {/* 3.3 */}
-            <div className="mb-16">
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-6xl font-bold text-primary/20">3.3</span>
-                <h3 className="text-2xl font-semibold text-foreground">讓機器人現場好用：機器人端 App 與場域驗證</h3>
-              </div>
+                      <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6">
+                        <p className="text-lg text-foreground font-medium">
+                          設計後台 IA、操作流程與畫面，讓它不是只給工程看的控制台，而是場域營運人員也能輕易掌握的介面
+                        </p>
+                      </div>
 
-              <div className="space-y-6">
-                <ul className="space-y-4 text-lg text-muted-foreground">
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>為送餐、消毒、迎賓等不同模式設計 UI 流程與畫面，在<mark className="bg-primary/20 text-foreground px-1 rounded">「現場人員怎麼用」</mark>與<mark className="bg-primary/20 text-foreground px-1 rounded">「顧客怎麼理解」</mark>之間取得平衡</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>隨著一代、二代機器人外型與能力變化，重新檢視操作流程與行為邏輯</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>走進賣場、飯店、醫院觀察真實運行，把這些觀察轉成具體 issue 與設計調整，而不是只停留在 prototype</span>
-                  </li>
-                </ul>
+                      <figure className="-mx-4 md:mx-0">
+                        <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
+                          <p className="text-muted-foreground text-center px-4">後台管理系統介面設計</p>
+                        </div>
+                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                          儀表板與地圖管理畫面
+                        </figcaption>
+                      </figure>
+                    </div>
+                  )
+                },
+                {
+                  id: "3.3",
+                  title: (
+                    <div className="flex items-center gap-4">
+                      <span className="text-4xl font-bold text-primary/30">3.3</span>
+                      <h3 className="text-xl font-semibold text-foreground">讓機器人現場好用：機器人端 App 與場域驗證</h3>
+                    </div>
+                  ),
+                  content: (
+                    <div className="space-y-6">
+                      <ul className="space-y-4 text-lg text-muted-foreground">
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>為送餐、消毒、迎賓等不同模式設計 UI 流程與畫面，在<mark className="bg-primary/20 text-foreground px-1 rounded">「現場人員怎麼用」</mark>與<mark className="bg-primary/20 text-foreground px-1 rounded">「顧客怎麼理解」</mark>之間取得平衡</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>隨著一代、二代機器人外型與能力變化，重新檢視操作流程與行為邏輯</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>走進賣場、飯店、醫院觀察真實運行，把這些觀察轉成具體 issue 與設計調整，而不是只停留在 prototype</span>
+                        </li>
+                      </ul>
 
-                {/* Image Placeholder */}
-                <figure className="-mx-4 md:mx-0">
-                  <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground text-center px-4">機器人端 App UI 設計</p>
-                  </div>
-                  <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    送餐、消毒、迎賓模式
-                  </figcaption>
-                </figure>
+                      <figure className="-mx-4 md:mx-0">
+                        <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
+                          <p className="text-muted-foreground text-center px-4">機器人端 App UI 設計</p>
+                        </div>
+                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                          送餐、消毒、迎賓模式
+                        </figcaption>
+                      </figure>
 
-                {/* Image Placeholder */}
-                <figure className="-mx-4 md:mx-0">
-                  <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground text-center px-4">場域驗證現場照片</p>
-                  </div>
-                  <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    賣場、飯店、醫院實際運行
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
+                      <figure className="-mx-4 md:mx-0">
+                        <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
+                          <p className="text-muted-foreground text-center px-4">場域驗證現場照片</p>
+                        </div>
+                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                          賣場、飯店、醫院實際運行
+                        </figcaption>
+                      </figure>
+                    </div>
+                  )
+                },
+                {
+                  id: "3.4",
+                  title: (
+                    <div className="flex items-center gap-4">
+                      <span className="text-4xl font-bold text-primary/30">3.4</span>
+                      <h3 className="text-xl font-semibold text-foreground">讓外界看得懂：網站、影片與展覽</h3>
+                    </div>
+                  ),
+                  content: (
+                    <div className="space-y-6">
+                      <ul className="space-y-4 text-lg text-muted-foreground">
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>規劃並設計產品網站的架構與內容，整理各種場域的應用故事</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>參與多支形象與功能影片，從腳本到畫面，把技術拆成一般人聽得懂的情境</span>
+                        </li>
+                        <li className="flex gap-3">
+                          <span className="text-primary font-bold">→</span>
+                          <span>支援媒體發佈與展覽：展場文宣、看板輸出與互動內容，確保對外展示的畫面與實際產品能力一致</span>
+                        </li>
+                      </ul>
 
-            {/* Divider */}
-            <div className="border-t border-border my-16"></div>
+                      <figure className="-mx-4 md:mx-0">
+                        <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
+                          <p className="text-muted-foreground text-center px-4">產品網站設計</p>
+                        </div>
+                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                          場域應用故事整理
+                        </figcaption>
+                      </figure>
 
-            {/* 3.4 */}
-            <div>
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-6xl font-bold text-primary/20">3.4</span>
-                <h3 className="text-2xl font-semibold text-foreground">讓外界看得懂：網站、影片與展覽</h3>
-              </div>
-
-              <div className="space-y-6">
-                <ul className="space-y-4 text-lg text-muted-foreground">
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>規劃並設計產品網站的架構與內容，整理各種場域的應用故事</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>參與多支形象與功能影片，從腳本到畫面，把技術拆成一般人聽得懂的情境</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-primary font-bold">→</span>
-                    <span>支援媒體發佈與展覽：展場文宣、看板輸出與互動內容，確保對外展示的畫面與實際產品能力一致</span>
-                  </li>
-                </ul>
-
-                {/* Image Placeholder */}
-                <figure className="-mx-4 md:mx-0">
-                  <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground text-center px-4">產品網站設計</p>
-                  </div>
-                  <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    場域應用故事整理
-                  </figcaption>
-                </figure>
-
-                {/* Image Placeholder */}
-                <figure className="-mx-4 md:mx-0">
-                  <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground text-center px-4">展場與影片製作</p>
-                  </div>
-                  <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    展覽文宣與互動內容
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
+                      <figure className="-mx-4 md:mx-0">
+                        <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
+                          <p className="text-muted-foreground text-center px-4">展場與影片製作</p>
+                        </div>
+                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+                          展覽文宣與互動內容
+                        </figcaption>
+                      </figure>
+                    </div>
+                  )
+                }
+              ]}
+            />
           </div>
         </section>
       </ScrollReveal>

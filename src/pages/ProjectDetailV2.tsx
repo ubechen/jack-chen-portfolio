@@ -228,19 +228,30 @@ const ProjectDetailV2 = () => {
       <ScrollReveal>
         {/* Project Meta */}
         <section className="py-8 md:py-12 px-4 md:px-6 bg-muted/60 shadow-sm">
-          <div className="container mx-auto max-w-6xl">
-            <div className="grid md:grid-cols-3 gap-6 mb-6">
-              <div>
+          <div className="container mx-auto max-w-4xl">
+            <div className="flex flex-col md:flex-row md:items-start gap-6 mb-6">
+              {/* 角色 - flexible width */}
+              <div className="flex-1 min-w-0">
                 <h3 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">角色</h3>
                 <p className="text-foreground font-medium">{project.role}</p>
               </div>
-              <div>
+              
+              {/* Vertical divider */}
+              <div className="hidden md:block w-px h-12 bg-border/60 self-center flex-shrink-0" />
+              
+              {/* 類型 - flexible width */}
+              <div className="flex-1 min-w-0">
                 <h3 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">類型</h3>
                 <p className="text-foreground">{project.type}</p>
               </div>
-              <div>
+              
+              {/* Vertical divider */}
+              <div className="hidden md:block w-px h-12 bg-border/60 self-center flex-shrink-0" />
+              
+              {/* 期間 - shrink to fit */}
+              <div className="flex-shrink-0 md:w-auto">
                 <h3 className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">期間</h3>
-                <p className="text-foreground">{project.duration}</p>
+                <p className="text-foreground whitespace-nowrap">{project.duration}</p>
               </div>
             </div>
             <div>
@@ -799,12 +810,12 @@ const ProjectDetailV2 = () => {
             <Button 
               variant="heroOutline" 
               size="lg"
-              className="text-2xl md:text-3xl font-bold py-8 px-12"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold py-6 sm:py-8 px-6 sm:px-8 md:px-12 max-w-full"
               onClick={() => navigate(`/project/${project.nextProject!.id}`)}
             >
-              <span className="relative z-10 flex items-center">
+              <span className="relative z-10 flex items-center truncate">
                 {project.nextProject.title}
-                <ArrowRight className="ml-2 h-6 w-6" />
+                <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6 flex-shrink-0" />
               </span>
             </Button>
           </div>
