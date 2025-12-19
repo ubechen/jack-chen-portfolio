@@ -358,13 +358,19 @@ const ProjectDetailV2 = () => {
               </span>
             </Button>
             <h1 
-              className="text-4xl md:text-6xl font-bold mb-4 text-foreground animate-fade-in"
+              className="text-3xl md:text-5xl font-bold mb-2 text-foreground animate-fade-in"
               style={{ animationDelay: '200ms', animationFillMode: 'both' }}
             >
-              {project.title}
+              {project.title.split('｜')[0]}
             </h1>
             <p 
-              className="text-xl md:text-2xl text-primary mb-6 animate-fade-in"
+              className="text-xl md:text-3xl font-medium text-foreground/70 mb-4 animate-fade-in"
+              style={{ animationDelay: '250ms', animationFillMode: 'both' }}
+            >
+              {project.title.split('｜')[1]}
+            </p>
+            <p 
+              className="text-lg md:text-xl text-primary mb-6 animate-fade-in"
               style={{ animationDelay: '300ms', animationFillMode: 'both' }}
             >
               {project.subtitle}
