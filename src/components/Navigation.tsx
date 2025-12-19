@@ -169,12 +169,30 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <button
             onClick={handleLogoClick}
-            className="relative overflow-hidden text-xl font-semibold text-foreground transition-colors flex items-center gap-2 px-3 py-1.5 rounded-md group before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-primary before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100"
+            className="text-xl font-semibold flex items-center gap-2 px-3 py-1.5 rounded-md group"
           >
             {isHomePage ? (
-              <span className="relative z-10 transition-colors duration-300 group-hover:text-primary-foreground">Jack Chen</span>
+              <span 
+                className="relative transition-all duration-500 ease-out"
+                style={{
+                  backgroundImage: 'linear-gradient(to left, hsl(var(--primary)) 50%, hsl(var(--foreground)) 50%)',
+                  backgroundSize: '200% 100%',
+                  backgroundPosition: '100% 0',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundPosition = '0% 0';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundPosition = '100% 0';
+                }}
+              >
+                Jack Chen
+              </span>
             ) : (
-              <Home className="h-5 w-5 relative z-10 transition-colors duration-300 group-hover:text-primary-foreground" />
+              <Home className="h-5 w-5 transition-colors duration-300 text-foreground group-hover:text-primary" />
             )}
           </button>
 
