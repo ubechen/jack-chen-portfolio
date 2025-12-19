@@ -15,9 +15,9 @@ const Navigation = () => {
 
   const projectItems = [
     { label: "AI PC", href: "/project/ai-pc" },
-    { label: "Drone UX", href: "/project/drone-ux" },
-    { label: "AMR Robot", href: "/project/amr-robot" },
-    { label: "ESG Board Game", href: "/project/esg-board-game" },
+    { label: "Drone System", href: "/project/drone-ux" },
+    { label: "Wifundity AMR", href: "/project/amr-robot" },
+    { label: "Wi-Thrive ESG Game", href: "/project/esg-board-game" },
     { label: "BabyFlow", href: "/project/babyflow" },
   ];
 
@@ -27,7 +27,7 @@ const Navigation = () => {
       href: "#about", 
       isPage: false,
       subItems: [
-        { label: "我的工作方式", href: "/about" },
+        { label: "How I Work", href: "/about" },
         { label: "Resume", href: "/resume" }
       ]
     },
@@ -169,12 +169,12 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <button
             onClick={handleLogoClick}
-            className="text-xl font-semibold text-foreground hover:text-primary transition-colors flex items-center gap-2"
+            className="relative overflow-hidden text-xl font-semibold text-foreground transition-colors flex items-center gap-2 px-3 py-1.5 rounded-md group before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-primary before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100"
           >
             {isHomePage ? (
-              "Jack Chen"
+              <span className="relative z-10 transition-colors duration-300 group-hover:text-primary-foreground">Jack Chen</span>
             ) : (
-              <Home className="h-5 w-5" />
+              <Home className="h-5 w-5 relative z-10 transition-colors duration-300 group-hover:text-primary-foreground" />
             )}
           </button>
 

@@ -224,7 +224,7 @@ const Resume = () => {
           </ScrollReveal>
 
           <ScrollReveal>
-            <section className="py-8 px-6 md:px-8 bg-secondary/50 rounded-xl mb-12">
+            <section className="py-8 px-6 md:px-8 bg-secondary/50 rounded-xl mb-12 print:hidden">
               <h3 className="text-lg font-semibold text-foreground mb-4">
                 Download Resume
               </h3>

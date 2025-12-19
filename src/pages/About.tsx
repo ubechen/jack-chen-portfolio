@@ -37,12 +37,12 @@ const About = () => {
       <section className="pt-32 pb-16 px-6 bg-background">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-8 text-foreground animate-fade-in">
-            About Me｜Jack
+            About & How I Work
           </h1>
           
           {/* Profile Image with Mask */}
           <div 
-            className="relative w-48 h-48 md:w-56 md:h-56 mb-8 animate-fade-in"
+            className="relative w-48 h-48 md:w-56 md:h-56 mb-8 animate-fade-in group"
             style={{ animationDelay: '100ms', animationFillMode: 'both' }}
           >
             <div 
@@ -57,6 +57,14 @@ const About = () => {
                 className="w-full h-full object-cover"
                 skeletonClassName="rounded-[30%_70%_70%_30%/30%_30%_70%_70%]"
               />
+              {/* Flowing light hover effect */}
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none overflow-hidden rounded-[30%_70%_70%_30%/30%_30%_70%_70%]"
+              >
+                <div 
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"
+                />
+              </div>
             </div>
             {/* Decorative border ring */}
             <div 
@@ -86,7 +94,7 @@ const About = () => {
             style={{ animationDelay: '300ms', animationFillMode: 'both' }}
           >
             <Button variant="heroOutline" size="lg" className="text-lg">
-              <span className="relative z-10">查看履歷</span>
+              <span className="relative z-10">View Resume</span>
             </Button>
           </Link>
         </div>
