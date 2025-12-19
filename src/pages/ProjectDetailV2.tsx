@@ -316,13 +316,14 @@ const ProjectDetailV2 = () => {
             {/* Video Button for ESG project */}
             {'heroVideo' in project && project.heroVideo && (
               <Button
-                variant="ghost"
-                className="relative overflow-hidden border border-white/50 text-white before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-white/20 before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100 hover:bg-transparent hover:text-white animate-fade-in"
+                size="lg"
+                variant="hero"
+                className="text-base font-medium animate-fade-in"
                 style={{ animationDelay: '400ms', animationFillMode: 'both' }}
                 onClick={() => setVideoDialogOpen(true)}
               >
-                <span className="relative z-10 flex items-center">
-                  <Play className="mr-2 h-4 w-4" />
+                <span className="relative z-10 flex items-center gap-2">
+                  <Play className="h-4 w-4" />
                   🎥 觀看桌遊介紹影片
                 </span>
               </Button>
