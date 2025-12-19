@@ -229,16 +229,20 @@ const Resume = () => {
                 Download Resume
               </h3>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button variant="hero" className="relative z-10 flex items-center gap-2" asChild>
+                <Button variant="hero" size="lg" className="text-base font-medium" asChild>
                   <a href="#" download>
-                    <Download className="h-4 w-4" />
-                    下載中文版 PDF
+                    <span className="relative z-10 flex items-center gap-2">
+                      <Download className="h-4 w-4" />
+                      下載中文版 PDF
+                    </span>
                   </a>
                 </Button>
-                <Button variant="hero" className="relative z-10 flex items-center gap-2" asChild>
+                <Button variant="hero" size="lg" className="text-base font-medium" asChild>
                   <a href="#" download>
-                    <Download className="h-4 w-4" />
-                    Download English PDF
+                    <span className="relative z-10 flex items-center gap-2">
+                      <Download className="h-4 w-4" />
+                      Download English PDF
+                    </span>
                   </a>
                 </Button>
               </div>
