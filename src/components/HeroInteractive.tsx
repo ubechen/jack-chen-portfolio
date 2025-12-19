@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { ChevronDown, ChevronLeft, ChevronRight, Download } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
 interface HeroState {
@@ -38,6 +38,14 @@ const heroStates: HeroState[] = [
     title: "AMR Robot｜Service System Design",
     description: "從競品研究到前後台與場域驗證，整合多場域服務機器人的完整體驗",
     tags: ["Service Robots", "Fleet Control", "Field UX Study"],
+  },
+  {
+    id: "esg-board-game",
+    projectId: "esg-board-game",
+    label: "ESG Game",
+    title: "Wi-Thrive｜ESG Storytelling Game",
+    description: "把企業永續轉成好玩易懂的 ESG 桌遊，串聯招募、內訓與品牌溝通",
+    tags: ["ESG Storytelling", "Serious Game", "Generative AI Visuals"],
   },
 ];
 
@@ -111,18 +119,15 @@ const HeroInteractive = () => {
             >
               <span className="relative z-10">View Projects</span>
             </Button>
-            <a href="/cv.pdf" download>
+            <Link to="/resume">
               <Button
                 size="lg"
                 variant="heroOutline"
                 className="text-base font-medium"
               >
-                <span className="relative z-10 flex items-center">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download CV
-                </span>
+                <span className="relative z-10">View Resume</span>
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -154,18 +159,15 @@ const HeroInteractive = () => {
               >
                 <span className="relative z-10">View Projects</span>
               </Button>
-              <a href="/cv.pdf" download>
+              <Link to="/resume">
                 <Button
                   size="lg"
                   variant="heroOutline"
                   className="text-base font-medium"
                 >
-                  <span className="relative z-10 flex items-center">
-                    <Download className="mr-2 h-5 w-5" />
-                    Download CV
-                  </span>
+                  <span className="relative z-10">View Resume</span>
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
 

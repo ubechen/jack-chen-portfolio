@@ -143,10 +143,9 @@ const Resume = () => {
   ];
 
   const skillsTools = [
-    { category: "設計", tools: "Figma、Adobe XD、Illustrator、Photoshop" },
-    { category: "原型", tools: "Figma Prototype、Principle／ProtoPie（或同級工具）" },
-    { category: "協作", tools: "Notion、Miro、Jira、Confluence、Google Workspace" },
-    { category: "AI", tools: "ChatGPT、Midjourney、Photoshop Generative Fill／Firefly" }
+    "Figma / FigJam、Adobe XD、Axure RP、Notion、NotebookLM",
+    "Photoshop / Illustrator、Premiere Pro、After Effects",
+    "Generative AI：ChatGPT、Midjourney、Photoshop Firefly、Kling、Suno"
   ];
 
   const certifications = [
@@ -193,7 +192,7 @@ const Resume = () => {
           <ScrollReveal>
             <section className="py-12 md:py-16">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Resume
+                Resume 履歷
               </h1>
               <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-6">
                 Jack Chen｜Product / UX 設計師（B2B & 系統產品）
@@ -216,7 +215,7 @@ const Resume = () => {
                   <Linkedin className="h-4 w-4" />
                   LinkedIn
                 </a>
-                <a href="mailto:contact@example.com" className="flex items-center gap-1.5 hover:text-primary transition-colors">
+                <a href="mailto:taiyun0614@gmail.com" className="flex items-center gap-1.5 hover:text-primary transition-colors">
                   <Mail className="h-4 w-4" />
                   Email
                 </a>
@@ -224,23 +223,19 @@ const Resume = () => {
             </section>
           </ScrollReveal>
 
-          {/* Download Resume Block */}
           <ScrollReveal>
             <section className="py-8 px-6 md:px-8 bg-secondary/50 rounded-xl mb-12">
-              <h3 className="text-lg font-semibold text-foreground mb-2">
+              <h3 className="text-lg font-semibold text-foreground mb-4">
                 Download Resume
               </h3>
-              <p className="text-muted-foreground mb-6">
-                你可以下載 PDF 版本履歷，方便投遞職缺或內部轉介分享
-              </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Button variant="hero" className="flex items-center gap-2" asChild>
+                <Button variant="hero" className="relative z-10 flex items-center gap-2" asChild>
                   <a href="#" download>
                     <Download className="h-4 w-4" />
                     下載中文版 PDF
                   </a>
                 </Button>
-                <Button variant="hero" className="flex items-center gap-2" asChild>
+                <Button variant="hero" className="relative z-10 flex items-center gap-2" asChild>
                   <a href="#" download>
                     <Download className="h-4 w-4" />
                     Download English PDF
@@ -250,14 +245,13 @@ const Resume = () => {
             </section>
           </ScrollReveal>
 
-          {/* Profile Section */}
           <ScrollReveal>
             <section className="py-8 border-t border-border">
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
                 Profile｜個人簡介
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                我是 Jack，一位長期專注 B2B 與系統型產品的 Product / UX 設計師。過去十年在緯創等科技公司，橫跨 AI 筆電、服務型機器人、無人機與 ESG 專案，習慣從「公司下一步要往哪裡走」的角度看題目，用研究與故事協助團隊釐清該不該做、先做什麼，對齊多方利害關係人，並把方向落實為可上線、可被驗證的產品體驗
+                我是 Jack，一位長期專注 B2B 與系統型產品的 Product / UX 設計師。累積 10+ 年設計實務經驗，其中 8 年在緯創聚焦科技產品與 B2B / 系統型服務，橫跨 AI 筆電、服務型機器人、無人機、醫療復健產品與 ESG 專案。習慣從「公司下一步要往哪裡走」的角度看題目，用研究與故事協助團隊釐清目標、決定該做什麼，對齊多方利害關係人，並把方向落實為可上線、可被驗證的產品體驗
               </p>
             </section>
           </ScrollReveal>
@@ -322,7 +316,6 @@ const Resume = () => {
             </section>
           </ScrollReveal>
 
-          {/* Skills & Tools Section */}
           <ScrollReveal>
             <section className="py-8 border-t border-border">
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
@@ -340,15 +333,14 @@ const Resume = () => {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-4">Tools</h3>
-                  <div className="space-y-3">
-                    {skillsTools.map((item, index) => (
-                      <div key={index}>
-                        <span className="text-sm font-medium text-primary">{item.category}</span>
-                        <p className="text-muted-foreground">{item.tools}</p>
-                      </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-4">Tools & Workflow</h3>
+                  <ul className="space-y-2">
+                    {skillsTools.map((tool, index) => (
+                      <li key={index} className="text-muted-foreground pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-primary">
+                        {tool}
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               </div>
             </section>
@@ -410,14 +402,9 @@ const Resume = () => {
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
                 Languages｜語言
               </h2>
-              <ul className="space-y-2">
-                <li className="text-muted-foreground pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-primary">
-                  中文（繁體）｜母語
-                </li>
-                <li className="text-muted-foreground pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-primary">
-                  英文｜工作溝通能力
-                </li>
-              </ul>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                中文母語；英文可閱讀技術文件、撰寫簡報、參與會議（TOEIC 約 700）
+              </p>
             </section>
           </ScrollReveal>
 

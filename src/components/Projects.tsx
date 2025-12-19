@@ -3,27 +3,27 @@ import ProjectCard from "./ProjectCard";
 const Projects = () => {
   const projects = [
     {
-      title: "AI PC",
+      title: "AI PC｜Research & Vision",
       description: "用研究與情境故事勾勒 AI PC 願景，定義關鍵使用體驗與功能方向",
       tags: ["AI PC Vision", "Strategic UX", "UX Research"],
       projectId: "ai-pc",
     },
     {
-      title: "Drone UX",
-      description: "與無人機廠協作，打造易上手又可靠的地面控制站 UX 與操作流程",
+      title: "Drone System｜Control Experience",
+      description: "與無人機大廠協作，打造易上手又可靠的地面控制站 UX 與操作流程",
       tags: ["Drone GCS UX", "Control UI", "B2B Partnering"],
       projectId: "drone-ux",
     },
     {
-      title: "AMR Robot",
+      title: "AMR Robot｜Service System Design",
       description: "從競品研究到前後台與場域驗證，整合多場域服務機器人的完整體驗",
       tags: ["Service Robots", "Fleet Control", "Field UX Study"],
       projectId: "amr-robot",
     },
     {
-      title: "ESG Board Game",
-      description: "ESG 教育桌遊設計，透過遊戲化學習永續發展概念",
-      tags: ["Education", "Sustainability", "Gamification"],
+      title: "Wi-Thrive｜ESG Storytelling Game",
+      description: "把企業永續轉成好玩易懂的 ESG 桌遊，串聯招募、內訓與品牌溝通",
+      tags: ["ESG Storytelling", "Serious Game", "Generative AI Visuals"],
       projectId: "esg-board-game",
     },
     {

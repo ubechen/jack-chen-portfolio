@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Download, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/bg_index_hero.webp";
 
 const HeroClassic = () => {
@@ -38,18 +39,15 @@ const HeroClassic = () => {
           >
             <span className="relative z-10">View Projects</span>
           </Button>
-          <a href="/cv.pdf" download>
+          <Link to="/resume">
             <Button
               size="lg"
               variant="heroOutline"
               className="text-lg w-full"
             >
-              <span className="relative z-10 flex items-center">
-                <Download className="mr-2 h-5 w-5" />
-                Download CV
-              </span>
+              <span className="relative z-10">View Resume</span>
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
       

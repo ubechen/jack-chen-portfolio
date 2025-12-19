@@ -1,8 +1,9 @@
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Mail, Download, Linkedin } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Mail, Linkedin } from "lucide-react";
+import { useNavigate, Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
 import ImageWithSkeleton from "@/components/ImageWithSkeleton";
 import portraitImage from "@/assets/portrait-jack.webp";
@@ -15,6 +16,14 @@ const MediumIcon = () => (
 
 const About = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Jack Chen – About | Product / UX Designer in Taipei";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Learn about Jack Chen's approach to Product / UX design for B2B systems, AI PC, robotics, and ESG projects. Based in Taipei, Taiwan.");
+    }
+  }, []);
 
   const scrollToSection = (href: string) => {
     navigate(`/${href}`);
@@ -44,7 +53,7 @@ const About = () => {
             >
               <ImageWithSkeleton 
                 src={portraitImage} 
-                alt="Jack Chen - Product / UX Designer"
+                alt="Jack Chen – Product / UX Designer portrait"
                 className="w-full h-full object-cover"
                 skeletonClassName="rounded-[30%_70%_70%_30%/30%_30%_70%_70%]"
               />
@@ -70,20 +79,16 @@ const About = () => {
             </p>
           </div>
           
-          {/* Download CV Button */}
-          <a 
-            href="/cv.pdf" 
-            download
+          {/* View Resume Button */}
+          <Link 
+            to="/resume"
             className="animate-fade-in inline-block"
             style={{ animationDelay: '300ms', animationFillMode: 'both' }}
           >
             <Button variant="heroOutline" size="lg" className="text-lg">
-              <span className="relative z-10 flex items-center">
-                <Download className="mr-2 h-5 w-5" />
-                Download CV
-              </span>
+              <span className="relative z-10">查看履歷</span>
             </Button>
-          </a>
+          </Link>
         </div>
       </section>
 

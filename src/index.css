@@ -133,3 +133,54 @@ All colors MUST be HSL.
     text-wrap: balance;
   }
 }
+
+/* Print styles for Resume page */
+@media print {
+  /* Hide non-content elements */
+  nav,
+  footer,
+  .scroll-to-top-button,
+  button[aria-label="Scroll to top"],
+  .fixed,
+  [data-print-hide="true"] {
+    display: none !important;
+  }
+  
+  /* Reset backgrounds for print */
+  body,
+  .bg-background,
+  .bg-muted\/40,
+  .bg-secondary\/50,
+  .bg-card {
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  /* Ensure readable contrast */
+  main {
+    padding-top: 0 !important;
+  }
+  
+  /* Page breaks */
+  section {
+    page-break-inside: avoid;
+  }
+  
+  /* Ensure text is visible */
+  * {
+    color: black !important;
+  }
+  
+  .text-primary,
+  .text-muted-foreground {
+    color: #333 !important;
+  }
+  
+  /* Remove shadows and borders for cleaner print */
+  .shadow-sm,
+  .shadow-lg,
+  .shadow-md {
+    box-shadow: none !important;
+  }
+}
