@@ -33,7 +33,7 @@ const projectData = {
     duration: "2024 Q2 – Q4",
     nextProject: {
       id: "drone-ux",
-      title: "Drone System｜Control Experience",
+      title: "Drone System",
     },
     sections: [
       { id: "overview", label: "Overview" },
@@ -54,7 +54,7 @@ const projectData = {
     duration: "2024 Q2 – 2025 Q1",
     nextProject: {
       id: "amr-robot",
-      title: "Wifundity AMR｜Service System Design",
+      title: "Wifundity AMR",
     },
     sections: [
       { id: "overview", label: "Overview" },
@@ -74,7 +74,7 @@ const projectData = {
     duration: "2021 Q4 – 2024 Q1",
     nextProject: {
       id: "esg-board-game",
-      title: "Wi-Thrive｜ESG Storytelling Game",
+      title: "Wi-Thrive",
     },
     sections: [
       { id: "overview", label: "Overview" },
@@ -95,7 +95,7 @@ const projectData = {
     duration: "2023 Q3 – 2024 Q3",
     nextProject: {
       id: "ai-pc",
-      title: "AI PC｜Research & Vision",
+      title: "AI PC",
     },
     sections: [
       { id: "overview", label: "Overview" },
