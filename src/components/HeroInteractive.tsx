@@ -35,7 +35,7 @@ const heroStates: HeroState[] = [
     id: "service-robots",
     projectId: "amr-robot",
     label: "Service Robots",
-    title: "AMR Robot｜Service System Design",
+    title: "Wifundity AMR｜Service System Design",
     description: "從競品研究到前後台與場域驗證，整合多場域服務機器人的完整體驗",
     tags: ["Service Robots", "Fleet Control", "Field UX Study"],
   },

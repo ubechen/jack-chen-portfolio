@@ -24,7 +24,7 @@ import ESGBoardGameContent from "@/components/projects/ESGBoardGameContent";
 
 const projectData = {
   "ai-pc": {
-    title: "AI PC Envisioning",
+    title: "AI PC｜Research & Vision",
     subtitle: "用研究和故事，勾勒出下一代的 AI PC 藍圖",
     heroImage: aiPcHero,
     role: "Strategic UX · Research & Vision",
@@ -33,7 +33,7 @@ const projectData = {
     duration: "2024 Q2 – Q4",
     nextProject: {
       id: "drone-ux",
-      title: "Drone UX",
+      title: "Drone System｜Control Experience",
     },
     sections: [
       { id: "overview", label: "Overview" },
@@ -45,7 +45,7 @@ const projectData = {
     ],
   },
   "drone-ux": {
-    title: "Drone UX",
+    title: "Drone System｜Control Experience",
     subtitle: "打造無人機地面控制站的使用體驗",
     heroImage: droneHero,
     role: "Product / UX / UI Designer（跨公司協作）",
@@ -54,7 +54,7 @@ const projectData = {
     duration: "2024 Q2 – 2025 Q1",
     nextProject: {
       id: "amr-robot",
-      title: "AMR Robot",
+      title: "Wifundity AMR｜Service System Design",
     },
     sections: [
       { id: "overview", label: "Overview" },
@@ -65,7 +65,7 @@ const projectData = {
     ],
   },
   "amr-robot": {
-    title: "Wifundity AMR Robot",
+    title: "Wifundity AMR｜Service System Design",
     subtitle: "多場域服務型機器人平台與系統體驗設計",
     heroImage: aiPcHero,
     role: "Product / UX / UI Designer",
@@ -74,7 +74,7 @@ const projectData = {
     duration: "2021 Q4 – 2024 Q1",
     nextProject: {
       id: "esg-board-game",
-      title: "ESG Board Game",
+      title: "Wi-Thrive｜ESG Storytelling Game",
     },
     sections: [
       { id: "overview", label: "Overview" },
@@ -95,7 +95,7 @@ const projectData = {
     duration: "2023 Q3 – 2024 Q3",
     nextProject: {
       id: "ai-pc",
-      title: "AI PC",
+      title: "AI PC｜Research & Vision",
     },
     sections: [
       { id: "overview", label: "Overview" },
