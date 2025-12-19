@@ -2,7 +2,13 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, ArrowRight, ChevronDown, Play, FolderSearch, Briefcase } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Play, FolderSearch, Briefcase } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { Link } from "react-router-dom";
 import {
   Dialog,
@@ -31,6 +37,10 @@ const projectData = {
     type: "策略探索／未來產品願景",
     summary: "在 AI PC 定義尚未成熟的階段，透過研究與分析 10 個創新功能排序與 3 組代表情境，幫助 PM 組成向高層提案的藍圖，也讓 ID、ME 團隊與新創夥伴以情境評估新技術價值，加速進入原型開發",
     duration: "2024 Q2 – Q4",
+    prevProject: {
+      id: "esg-board-game",
+      title: "Wi-Thrive",
+    },
     nextProject: {
       id: "drone-ux",
       title: "Drone System",
@@ -52,6 +62,10 @@ const projectData = {
     type: "B2B／國防與產業應用 · 控制站 UX",
     summary: "在公司從 AMR Robot 轉向無人機市場之際，與國內無人機大廠合作，聚焦地面控制站（手持控制器＋App）的 UX 與 POC，支援國際展會 demo 與國防標案機會，後續延伸至後台管理系統",
     duration: "2024 Q2 – 2025 Q1",
+    prevProject: {
+      id: "ai-pc",
+      title: "AI PC",
+    },
     nextProject: {
       id: "amr-robot",
       title: "Wifundity AMR",
@@ -72,6 +86,10 @@ const projectData = {
     type: "B2B2C · 服務型機器人 · 多場域解決方案",
     summary: "在公司成立新事業單位、從零打造自有服務型機器人品牌 Wifundity 的三年間，負責自主移動機器人（AMR）產品線相關體驗設計：從競品研究、後台系統與機器人端 App，到 Wifundity 品牌網站、展覽與影片。面對中國成熟競品與台灣市場不確定性，透過 UX 串連產品、系統與品牌溝通",
     duration: "2021 Q4 – 2024 Q1",
+    prevProject: {
+      id: "drone-ux",
+      title: "Drone System",
+    },
     nextProject: {
       id: "esg-board-game",
       title: "Wi-Thrive",
@@ -93,6 +111,10 @@ const projectData = {
     type: "ESG / 內訓與招募 · 桌遊體驗設計 · Generative AI 應用",
     summary: "與公司 ESG 辦公室、HR 與臺科大迷你教育遊戲團隊合作，從既有規則原型出發，重新設計一套可量產的 ESG 桌遊《緯你同行 Wi-Thrive: A Sustainable Drive》，透過遊戲化體驗將公司永續行動轉成故事，支援招募、內訓與對外品牌溝通，同時也是 UX 團隊在 AI 圖像工作流與跨部門協作上的代表專案",
     duration: "2023 Q3 – 2024 Q3",
+    prevProject: {
+      id: "amr-robot",
+      title: "Wifundity AMR",
+    },
     nextProject: {
       id: "ai-pc",
       title: "AI PC",
@@ -390,6 +412,59 @@ const ProjectDetailV2 = () => {
                 </span>
               </Button>
             )}
+            
+            {/* Previous/Next Project Navigation */}
+            <div className="flex items-center gap-3 mt-6 animate-fade-in" style={{ animationDelay: '450ms', animationFillMode: 'both' }}>
+              {'prevProject' in project && project.prevProject && (
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="h-10 w-10 rounded-full border border-white/50 text-white 
+                          relative overflow-hidden
+                          before:content-[''] before:absolute before:inset-0 before:rounded-full 
+                          before:origin-right before:scale-x-0 before:bg-white/20 
+                          before:transition-transform before:duration-300 before:ease-out 
+                          hover:before:origin-left hover:before:scale-x-100 hover:bg-transparent"
+                        onClick={() => navigate(`/project/${project.prevProject.id}`)}
+                      >
+                        <ChevronLeft className="h-5 w-5 relative z-10" />
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent side="top">
+                      <p>Previous: {project.prevProject.title}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              )}
+              
+              {'nextProject' in project && project.nextProject && (
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="h-10 w-10 rounded-full border border-white/50 text-white 
+                          relative overflow-hidden
+                          before:content-[''] before:absolute before:inset-0 before:rounded-full 
+                          before:origin-right before:scale-x-0 before:bg-white/20 
+                          before:transition-transform before:duration-300 before:ease-out 
+                          hover:before:origin-left hover:before:scale-x-100 hover:bg-transparent"
+                        onClick={() => navigate(`/project/${project.nextProject.id}`)}
+                      >
+                        <ChevronRight className="h-5 w-5 relative z-10" />
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent side="top">
+                      <p>Next: {project.nextProject.title}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              )}
+            </div>
           </div>
         </div>
       </section>
