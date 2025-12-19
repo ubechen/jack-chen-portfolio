@@ -28,7 +28,7 @@ const Navigation = () => {
       isPage: false,
       subItems: [
         { label: "我的工作方式", href: "/about" },
-        { label: "Resume / 履歷", href: "/resume" }
+        { label: "Resume", href: "/resume" }
       ]
     },
     { 
@@ -92,7 +92,7 @@ const Navigation = () => {
   };
 
   const handleNavigation = (href: string, isPage: boolean = false) => {
-    if (href.startsWith("/project/") || href === "/about") {
+    if (href.startsWith("/project/") || href === "/about" || href === "/resume") {
       navigate(href);
       setIsMenuOpen(false);
       return;
