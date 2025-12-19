@@ -27,7 +27,8 @@ const Navigation = () => {
       href: "#about", 
       isPage: false,
       subItems: [
-        { label: "我的工作方式", href: "/about" }
+        { label: "我的工作方式", href: "/about" },
+        { label: "Resume / 履歷", href: "/resume" }
       ]
     },
     { 
