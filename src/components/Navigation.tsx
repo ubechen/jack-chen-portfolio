@@ -173,17 +173,22 @@ const Navigation = () => {
           >
             {isHomePage ? (
               <span 
-                className="relative transition-all duration-500 ease-out"
+                className="relative"
                 style={{
-                  backgroundImage: 'linear-gradient(to right, hsl(var(--primary)) 50%, hsl(var(--foreground)) 50%)',
-                  backgroundSize: '200% 100%',
-                  backgroundPosition: '100% 0',
+                  backgroundImage: 'linear-gradient(to right, hsl(var(--foreground)) 33.33%, hsl(var(--primary)) 33.33%, hsl(var(--primary)) 66.66%, hsl(var(--foreground)) 66.66%)',
+                  backgroundSize: '300% 100%',
+                  backgroundPosition: '0% 0',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
+                  transition: 'background-position 0.5s ease-out',
                 }}
                 onMouseEnter={(e) => {
+                  e.currentTarget.style.transition = 'none';
                   e.currentTarget.style.backgroundPosition = '0% 0';
+                  void e.currentTarget.offsetWidth;
+                  e.currentTarget.style.transition = 'background-position 0.5s ease-out';
+                  e.currentTarget.style.backgroundPosition = '50% 0';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundPosition = '100% 0';
