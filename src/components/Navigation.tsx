@@ -175,18 +175,18 @@ const Navigation = () => {
               <span 
                 className="relative transition-all duration-500 ease-out"
                 style={{
-                  backgroundImage: 'linear-gradient(to right, hsl(var(--foreground)) 50%, hsl(var(--primary)) 50%)',
+                  backgroundImage: 'linear-gradient(to right, hsl(var(--primary)) 50%, hsl(var(--foreground)) 50%)',
                   backgroundSize: '200% 100%',
-                  backgroundPosition: '0% 0',
+                  backgroundPosition: '100% 0',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundPosition = '100% 0';
+                  e.currentTarget.style.backgroundPosition = '0% 0';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundPosition = '0% 0';
+                  e.currentTarget.style.backgroundPosition = '100% 0';
                 }}
               >
                 Jack Chen
