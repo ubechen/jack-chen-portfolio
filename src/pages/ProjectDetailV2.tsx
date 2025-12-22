@@ -414,7 +414,7 @@ const ProjectDetailV2 = () => {
             )}
             
             {/* Previous/Next Project Navigation */}
-            <div className="flex items-center gap-3 mt-6 animate-fade-in" style={{ animationDelay: '450ms', animationFillMode: 'both' }}>
+            <div className="flex items-center gap-3 mt-6 justify-end animate-fade-in" style={{ animationDelay: '450ms', animationFillMode: 'both' }}>
               {'prevProject' in project && project.prevProject && (
                 <TooltipProvider>
                   <Tooltip>
@@ -422,15 +422,16 @@ const ProjectDetailV2 = () => {
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="h-10 w-10 rounded-full border border-white/50 text-white 
-                          relative overflow-hidden
-                          before:content-[''] before:absolute before:inset-0 before:rounded-full 
-                          before:origin-right before:scale-x-0 before:bg-white/20 
-                          before:transition-transform before:duration-300 before:ease-out 
-                          hover:before:origin-left hover:before:scale-x-100 hover:bg-transparent"
+                        className="h-10 w-10 rounded-full 
+                          bg-background/70 backdrop-blur 
+                          shadow-md border-0
+                          text-foreground
+                          hover:bg-background hover:scale-110 
+                          active:scale-95 
+                          transition-all"
                         onClick={() => navigate(`/project/${project.prevProject.id}`)}
                       >
-                        <ChevronLeft className="h-5 w-5 relative z-10" />
+                        <ChevronLeft className="h-5 w-5" />
                       </Button>
                     </TooltipTrigger>
                     <TooltipContent side="top">
@@ -447,15 +448,16 @@ const ProjectDetailV2 = () => {
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="h-10 w-10 rounded-full border border-white/50 text-white 
-                          relative overflow-hidden
-                          before:content-[''] before:absolute before:inset-0 before:rounded-full 
-                          before:origin-right before:scale-x-0 before:bg-white/20 
-                          before:transition-transform before:duration-300 before:ease-out 
-                          hover:before:origin-left hover:before:scale-x-100 hover:bg-transparent"
+                        className="h-10 w-10 rounded-full 
+                          bg-background/70 backdrop-blur 
+                          shadow-md border-0
+                          text-foreground
+                          hover:bg-background hover:scale-110 
+                          active:scale-95 
+                          transition-all"
                         onClick={() => navigate(`/project/${project.nextProject.id}`)}
                       >
-                        <ChevronRight className="h-5 w-5 relative z-10" />
+                        <ChevronRight className="h-5 w-5" />
                       </Button>
                     </TooltipTrigger>
                     <TooltipContent side="top">
