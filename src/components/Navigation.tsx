@@ -177,7 +177,7 @@ const Navigation = () => {
                 style={{
                   backgroundImage: 'linear-gradient(to right, hsl(var(--foreground)) 33.33%, hsl(var(--primary)) 33.33%, hsl(var(--primary)) 66.66%, hsl(var(--foreground)) 66.66%)',
                   backgroundSize: '300% 100%',
-                  backgroundPosition: '0% 0',
+                  backgroundPosition: '100% 0',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -185,13 +185,13 @@ const Navigation = () => {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transition = 'none';
-                  e.currentTarget.style.backgroundPosition = '0% 0';
+                  e.currentTarget.style.backgroundPosition = '100% 0';
                   void e.currentTarget.offsetWidth;
                   e.currentTarget.style.transition = 'background-position 0.5s ease-out';
                   e.currentTarget.style.backgroundPosition = '50% 0';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundPosition = '100% 0';
+                  e.currentTarget.style.backgroundPosition = '0% 0';
                 }}
               >
                 Jack Chen
