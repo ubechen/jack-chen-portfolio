@@ -419,20 +419,12 @@ const ProjectDetailV2 = () => {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className="h-10 w-10 rounded-full 
-                          bg-background/70 backdrop-blur 
-                          shadow-md border-0
-                          text-foreground
-                          hover:bg-background hover:scale-110 
-                          active:scale-95 
-                          transition-all"
+                      <button
                         onClick={() => navigate(`/project/${project.prevProject.id}`)}
+                        className="w-10 h-10 rounded-full bg-background/70 backdrop-blur flex items-center justify-center hover:bg-background hover:scale-110 active:scale-95 transition-all shadow-md"
                       >
-                        <ChevronLeft className="h-5 w-5" />
-                      </Button>
+                        <ChevronLeft className="h-5 w-5 text-foreground" />
+                      </button>
                     </TooltipTrigger>
                     <TooltipContent side="top">
                       <p>Previous: {project.prevProject.title}</p>
@@ -445,20 +437,12 @@ const ProjectDetailV2 = () => {
                 <TooltipProvider>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className="h-10 w-10 rounded-full 
-                          bg-background/70 backdrop-blur 
-                          shadow-md border-0
-                          text-foreground
-                          hover:bg-background hover:scale-110 
-                          active:scale-95 
-                          transition-all"
+                      <button
                         onClick={() => navigate(`/project/${project.nextProject.id}`)}
+                        className="w-10 h-10 rounded-full bg-background/70 backdrop-blur flex items-center justify-center hover:bg-background hover:scale-110 active:scale-95 transition-all shadow-md"
                       >
-                        <ChevronRight className="h-5 w-5" />
-                      </Button>
+                        <ChevronRight className="h-5 w-5 text-foreground" />
+                      </button>
                     </TooltipTrigger>
                     <TooltipContent side="top">
                       <p>Next: {project.nextProject.title}</p>
