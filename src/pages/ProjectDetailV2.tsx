@@ -33,7 +33,7 @@ import imgAipc312 from "@/assets/img_aipc_3-1-2.webp";
 import imgAipc321 from "@/assets/img_aipc_3-2-1.webp";
 import imgAipc322 from "@/assets/img_aipc_3-2-2.webp";
 import imgAipc41 from "@/assets/img_aipc_4-1.webp";
-import imgAipc61 from "@/assets/img_aipc_6-1.webp";
+import imgAipc61 from "@/assets/img_aipc_6-1-2.webp";
 
 const projectData = {
   "ai-pc": {
