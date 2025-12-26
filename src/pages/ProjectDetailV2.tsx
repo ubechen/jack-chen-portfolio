@@ -1000,11 +1000,11 @@ const ProjectDetailV2 = () => {
                   src={imgAipc61}
                   alt="2022 CES 展場舞台上，多個國際品牌筆電排成一列，左側一台螢幕顯示 Wistron 字樣的雙螢幕概念筆電，與 MSI、Razer、ROG、Acer、Dell 等品牌並列展示"
                   figcaption="2022 年，在同一客戶的雙螢幕電競 / 創作者筆電專案中，我參與的概念機曾在 CES 與各大品牌並列展出。這畫面對我來說，也是 AI PC 願景專案正在為公司累積的下一個目標"
-                  className="mb-10"
+                  className="mb-12"
                 />
 
                 {/* 個人職涯願景 */}
-                <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6">
+                <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6 mt-4">
                   <p className="text-xl text-foreground font-medium leading-relaxed">
                     對未來的 Senior / Staff 職位，我希望持續扮演這樣的角色：讓模糊的未來變得可以對話、可以決策，也可以一步步被實現
                   </p>

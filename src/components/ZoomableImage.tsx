@@ -96,8 +96,7 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
     <div 
       className={cn(
         "fixed inset-0 z-[9999] bg-black/90 grid place-items-center cursor-zoom-out p-4",
-        "transition-opacity duration-200 ease-out",
-        isClosing ? "opacity-0" : "opacity-100 animate-zoom-fade-in"
+        isClosing ? "animate-zoom-fade-out" : "animate-zoom-fade-in"
       )}
       onClick={handleClose}
     >
@@ -106,8 +105,7 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
         alt={alt}
         className={cn(
           "max-w-[calc(100vw-2rem)] max-h-[calc(100vh-2rem)] object-contain rounded-lg cursor-zoom-out",
-          "transition-transform duration-200 ease-out",
-          isClosing ? "scale-90 opacity-0" : "animate-zoom-scale-in"
+          isClosing ? "animate-zoom-scale-out" : "animate-zoom-scale-in"
         )}
         onClick={(e) => {
           e.stopPropagation();
@@ -120,7 +118,7 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
 
   return (
     <>
-      <figure className="-mx-4 md:mx-0">
+      <figure className={cn("-mx-4 md:mx-0", className)}>
         <div className="relative">
           {/* Skeleton with shimmer effect */}
           <div 
@@ -138,14 +136,13 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
             className={cn(
               "w-full md:rounded-lg transition-opacity duration-300",
               isLoaded ? "opacity-100" : "opacity-0",
-              canZoom && "cursor-zoom-in",
-              className
+              canZoom && "cursor-zoom-in"
             )}
           />
         </div>
         
         {figcaption && (
-          <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
+          <figcaption className="text-sm text-muted-foreground text-center mt-3 px-4">
             {figcaption}
           </figcaption>
         )}
