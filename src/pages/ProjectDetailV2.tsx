@@ -27,6 +27,13 @@ import droneHero from "@/assets/bg_projects_drone.webp";
 import DroneUXContent from "@/components/projects/DroneUXContent";
 import AMRRobotContent from "@/components/projects/AMRRobotContent";
 import ESGBoardGameContent from "@/components/projects/ESGBoardGameContent";
+import imgAipc11 from "@/assets/img_aipc_1-1.webp";
+import imgAipc311 from "@/assets/img_aipc_3-1-1.webp";
+import imgAipc312 from "@/assets/img_aipc_3-1-2.webp";
+import imgAipc321 from "@/assets/img_aipc_3-2-1.webp";
+import imgAipc322 from "@/assets/img_aipc_3-2-2.webp";
+import imgAipc41 from "@/assets/img_aipc_4-1.webp";
+import imgAipc61 from "@/assets/img_aipc_6-1.webp";
 
 const projectData = {
   "ai-pc": {
@@ -534,9 +541,11 @@ const ProjectDetailV2 = () => {
                   </div>
 
                   <figure className="-mx-4 md:mx-0">
-                    <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                      <p className="text-muted-foreground text-center px-4">市場現況與競品分析示意圖</p>
-                    </div>
+                    <img 
+                      src={imgAipc11}
+                      alt="AI PC 市場定義與主要競品功能比較"
+                      className="w-full md:rounded-lg"
+                    />
                     <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
                       AI PC 市場定義與主要競品功能比較
                     </figcaption>
@@ -670,14 +679,6 @@ const ProjectDetailV2 = () => {
                   </Card>
                 </div>
 
-                <figure className="-mx-4 md:mx-0 mt-10">
-                  <div className="aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground text-center px-4">專案角色與協作關係圖</p>
-                  </div>
-                  <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    與 PM、ID、ME 及新創夥伴的協作網絡
-                  </figcaption>
-                </figure>
               </div>
             </section>
           </ScrollReveal>
@@ -725,9 +726,11 @@ const ProjectDetailV2 = () => {
                           </ul>
 
                           <figure className="-mx-4 md:mx-0">
-                            <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                              <p className="text-muted-foreground text-center px-4">Kano 問卷設計與功能分類圖表</p>
-                            </div>
+                            <img 
+                              src={imgAipc311}
+                              alt="Kano 問卷設計與功能分類圖表"
+                              className="w-full md:rounded-lg"
+                            />
                             <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
                               10 個潛在功能的 Kano 分類結果
                             </figcaption>
@@ -749,9 +752,11 @@ const ProjectDetailV2 = () => {
                           </div>
 
                           <figure className="-mx-4 md:mx-0">
-                            <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
-                              <p className="text-muted-foreground text-center px-4">Top 10 AI PC 功能排序表格</p>
-                            </div>
+                            <img 
+                              src={imgAipc312}
+                              alt="Top 10 AI PC 功能排序表格"
+                              className="w-full md:rounded-lg"
+                            />
                             <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
                               創新功能優先序與投資建議
                             </figcaption>
@@ -789,9 +794,11 @@ const ProjectDetailV2 = () => {
                           </ul>
 
                           <figure className="-mx-4 md:mx-0">
-                            <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                              <p className="text-muted-foreground text-center px-4">工作坊現場照片與互動過程</p>
-                            </div>
+                            <img 
+                              src={imgAipc321}
+                              alt="工作坊腦力激盪討論與便利貼整理"
+                              className="w-full md:rounded-lg"
+                            />
                             <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
                               結合實機樣品的團體訪談與腦力激盪
                             </figcaption>
@@ -822,9 +829,11 @@ const ProjectDetailV2 = () => {
                           </div>
 
                           <figure className="-mx-4 md:mx-0">
-                            <div className="aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center">
-                              <p className="text-muted-foreground text-center px-4">AI Agent 概念草圖與互動方式</p>
-                            </div>
+                            <img 
+                              src={imgAipc322}
+                              alt="AI Hotkey 與概念設計方案"
+                              className="w-full md:rounded-lg"
+                            />
                             <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
                               AI Launcher 與 Agent 的情境展開
                             </figcaption>
@@ -880,9 +889,11 @@ const ProjectDetailV2 = () => {
                   </div>
 
                   <figure className="-mx-4 md:mx-0">
-                    <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                      <p className="text-muted-foreground text-center px-4">專案成果與影響力示意圖</p>
-                    </div>
+                    <img 
+                      src={imgAipc41}
+                      alt="五階層技術創新藍圖與價值轉換漏斗"
+                      className="w-full md:rounded-lg"
+                    />
                     <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
                       研究成果如何轉化為決策工具
                     </figcaption>
@@ -936,14 +947,6 @@ const ProjectDetailV2 = () => {
                     </li>
                   </ul>
 
-                  <figure className="-mx-4 md:mx-0 mt-8">
-                    <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                      <p className="text-muted-foreground text-center px-4">AI 輔助設計流程示意圖</p>
-                    </div>
-                    <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                      運用生成式 AI 加速研究與共創
-                    </figcaption>
-                  </figure>
                 </div>
 
                 <div className="border-t border-border my-16"></div>
@@ -989,37 +992,56 @@ const ProjectDetailV2 = () => {
                   6. What I learned
                 </h2>
 
+                {/* 開頭引言 - 最重要的觀點 */}
                 <div className="bg-primary/10 rounded-xl p-8 mb-10">
                   <p className="text-2xl text-foreground font-semibold leading-relaxed">
-                    在沒有人知道正確答案的題目裡，UX 的價值不僅在於提升使用者體驗，而是有根據的設計出<mark className="bg-primary/30 text-foreground px-2 py-1 rounded">「可被討論與落地的未來版本」</mark>
+                    在沒有人知道標準答案的題目裡，UX 的價值不只是把介面畫得漂亮、把流程做得順，而是有根有據地設計出一個<mark className="bg-primary/30 text-foreground px-2 py-1 rounded">「可被討論、可被質疑、也可被落地的未來版本」</mark>
                   </p>
                   <p className="text-lg text-muted-foreground mt-4">
-                    讓 PM/高層、ID/ME、與合作夥伴願意一起往同一個方向前進
+                    讓 PM / 高層、ID / ME、合作夥伴願意一起朝那個方向前進
                   </p>
                 </div>
 
-                <div className="space-y-6 text-lg text-muted-foreground">
+                {/* 專案確認的價值 */}
+                <div className="space-y-6 text-lg text-muted-foreground mb-10">
                   <p className="leading-relaxed">
-                    UX 如果能<strong className="text-foreground">同時滿足不同關係人的需求、提供可用的輸出</strong>，就能自然提升在組織裡的影響力
-                  </p>
-                  <p className="leading-relaxed">
-                    這也是我希望在未來的 Senior / Staff 等級職位中持續扮演的角色：
+                    這個專案讓我再次確認：
                   </p>
                   <div className="bg-background border-l-4 border-l-primary rounded-r-lg p-6">
-                    <p className="text-xl text-foreground font-medium">
-                      讓模糊的未來變得可以對話、可以決策，也可以一步步實現產品藍圖
+                    <p className="text-xl text-foreground font-medium leading-relaxed">
+                      當 UX 能同時滿足不同利害關係人的需求——幫 PM 串出提案故事、幫決策者看見風險與機會、幫 ID / ME 用情境思考新技術的價值——設計就不再只是輸出畫面，而是參與產品策略與投資判斷的一部分
                     </p>
                   </div>
                 </div>
 
-                <figure className="-mx-4 md:mx-0 mt-10">
-                  <div className="aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center">
-                    <p className="text-muted-foreground text-center px-4">專案總結與個人成長回顧</p>
-                  </div>
+                {/* CES 經驗與未來展望 */}
+                <div className="space-y-6 text-lg text-muted-foreground mb-10">
+                  <p className="leading-relaxed">
+                    在 2022 年，同一客戶的雙螢幕電競 / 創作者筆電專案中，我參與的 UX 研究與概念設計，曾讓 Wistron 概念機在 CES 與 MSI、Razer、ROG、Acer、Dell 等品牌並列展出。那次經驗對我來說是一個提醒：
+                  </p>
+                  <p className="leading-relaxed">
+                    <strong className="text-foreground">AI PC Envisioning 雖然還停留在願景與探索階段，但本質上，仍是在為公司下一次被看見、被採用、拿到訂單的機會鋪路</strong>——先把一個可信、說得動人的未來版本設計出來，才有機會真的走到展場與市場。
+                  </p>
+                </div>
+
+                {/* CES 圖片 */}
+                <figure className="-mx-4 md:mx-0 mb-10">
+                  <img 
+                    src={imgAipc61}
+                    alt="2022 CES 展場舞台上，多個國際品牌筆電排成一列，左側一台螢幕顯示 Wistron 字樣的雙螢幕概念筆電，與 MSI、Razer、ROG、Acer、Dell 等品牌並列展示"
+                    className="w-full md:rounded-lg"
+                  />
                   <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    從 AI PC 專案中獲得的策略思維與跨部門協作經驗
+                    2022 年，在同一客戶的雙螢幕電競 / 創作者筆電專案中，我參與的概念機曾在 CES 與各大品牌並列展出。這畫面對我來說，也是 AI PC 願景專案正在為公司累積的下一個目標
                   </figcaption>
                 </figure>
+
+                {/* 個人職涯願景 */}
+                <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6">
+                  <p className="text-xl text-foreground font-medium leading-relaxed">
+                    對未來的 Senior / Staff 職位，我希望持續扮演這樣的角色：讓模糊的未來變得可以對話、可以決策，也可以一步步被實現
+                  </p>
+                </div>
               </div>
             </section>
           </ScrollReveal>
