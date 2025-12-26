@@ -11,8 +11,21 @@ interface ZoomableImageProps {
 const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isZoomed, setIsZoomed] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
   const [canZoom, setCanZoom] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
+
+  // Listen for global close event - only one image can be zoomed at a time
+  useEffect(() => {
+    const handleCloseAll = () => {
+      if (isZoomed) {
+        setIsZoomed(false);
+        setIsClosing(false);
+      }
+    };
+    window.addEventListener("zoomable-close-all", handleCloseAll);
+    return () => window.removeEventListener("zoomable-close-all", handleCloseAll);
+  }, [isZoomed]);
 
   // Recheck canZoom on window resize
   useEffect(() => {
@@ -38,16 +51,43 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
   useEffect(() => {
     if (!isZoomed) return;
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIsZoomed(false);
+      if (e.key === "Escape") handleClose();
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isZoomed]);
+
+  // Auto-close on scroll
+  useEffect(() => {
+    if (!isZoomed) return;
+    const handleScroll = () => {
+      handleClose();
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isZoomed]);
 
   const handleLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
     const img = e.currentTarget;
     setCanZoom(img.naturalWidth > img.clientWidth || img.naturalHeight > img.clientHeight);
     setIsLoaded(true);
+  };
+
+  const handleOpen = () => {
+    if (!canZoom) return;
+    // Close any other zoomed images first
+    window.dispatchEvent(new CustomEvent("zoomable-close-all"));
+    // Small delay to ensure other images close before this one opens
+    setTimeout(() => setIsZoomed(true), 10);
+  };
+
+  const handleClose = () => {
+    if (isClosing) return;
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsZoomed(false);
+      setIsClosing(false);
+    }, 200); // Match animation duration
   };
 
   return (
@@ -66,7 +106,7 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
             src={src}
             alt={alt}
             onLoad={handleLoad}
-            onClick={() => canZoom && setIsZoomed(true)}
+            onClick={handleOpen}
             className={cn(
               "w-full md:rounded-lg transition-opacity duration-300",
               isLoaded ? "opacity-100" : "opacity-0",
@@ -83,27 +123,29 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
         )}
       </figure>
 
-      {/* Zoomed overlay */}
+      {/* Zoomed overlay - z-[100] to be above all other UI elements */}
       {isZoomed && (
         <div 
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center animate-fade-in cursor-zoom-out"
-          onClick={() => setIsZoomed(false)}
+          className={cn(
+            "fixed inset-0 z-[100] bg-black/90 flex items-center justify-center cursor-zoom-out",
+            "transition-opacity duration-200 ease-out",
+            isClosing ? "opacity-0" : "opacity-100 animate-zoom-fade-in"
+          )}
+          onClick={handleClose}
         >
           <img
             src={src}
             alt={alt}
-            className="max-w-[95vw] max-h-[95vh] object-contain animate-scale-in cursor-zoom-out"
+            className={cn(
+              "max-w-[95vw] max-h-[95vh] object-contain rounded-lg cursor-zoom-out",
+              "transition-transform duration-200 ease-out",
+              isClosing ? "scale-90 opacity-0" : "animate-zoom-scale-in"
+            )}
             onClick={(e) => {
               e.stopPropagation();
-              setIsZoomed(false);
+              handleClose();
             }}
           />
-          
-          {figcaption && (
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm text-white px-4 py-2 rounded-md text-sm max-w-[90vw] text-center">
-              {figcaption}
-            </div>
-          )}
         </div>
       )}
     </>
