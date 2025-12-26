@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { cn } from "@/lib/utils";
 
 interface ZoomableImageProps {
@@ -87,8 +88,35 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
     setTimeout(() => {
       setIsZoomed(false);
       setIsClosing(false);
-    }, 200); // Match animation duration
+    }, 200);
   };
+
+  // Render zoomed overlay via Portal to escape any parent stacking context
+  const zoomedOverlay = isZoomed ? createPortal(
+    <div 
+      className={cn(
+        "fixed inset-0 z-[9999] bg-black/90 grid place-items-center cursor-zoom-out p-4",
+        "transition-opacity duration-200 ease-out",
+        isClosing ? "opacity-0" : "opacity-100 animate-zoom-fade-in"
+      )}
+      onClick={handleClose}
+    >
+      <img
+        src={src}
+        alt={alt}
+        className={cn(
+          "max-w-[calc(100vw-2rem)] max-h-[calc(100vh-2rem)] object-contain rounded-lg cursor-zoom-out",
+          "transition-transform duration-200 ease-out",
+          isClosing ? "scale-90 opacity-0" : "animate-zoom-scale-in"
+        )}
+        onClick={(e) => {
+          e.stopPropagation();
+          handleClose();
+        }}
+      />
+    </div>,
+    document.body
+  ) : null;
 
   return (
     <>
@@ -123,31 +151,7 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
         )}
       </figure>
 
-      {/* Zoomed overlay - z-[100] to be above all other UI elements */}
-      {isZoomed && (
-        <div 
-          className={cn(
-            "fixed inset-0 z-[100] bg-black/90 flex items-center justify-center cursor-zoom-out",
-            "transition-opacity duration-200 ease-out",
-            isClosing ? "opacity-0" : "opacity-100 animate-zoom-fade-in"
-          )}
-          onClick={handleClose}
-        >
-          <img
-            src={src}
-            alt={alt}
-            className={cn(
-              "max-w-[95vw] max-h-[95vh] object-contain rounded-lg cursor-zoom-out",
-              "transition-transform duration-200 ease-out",
-              isClosing ? "scale-90 opacity-0" : "animate-zoom-scale-in"
-            )}
-            onClick={(e) => {
-              e.stopPropagation();
-              handleClose();
-            }}
-          />
-        </div>
-      )}
+      {zoomedOverlay}
     </>
   );
 };
