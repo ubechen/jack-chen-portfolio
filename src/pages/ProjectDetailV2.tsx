@@ -27,6 +27,7 @@ import droneHero from "@/assets/bg_projects_drone.webp";
 import DroneUXContent from "@/components/projects/DroneUXContent";
 import AMRRobotContent from "@/components/projects/AMRRobotContent";
 import ESGBoardGameContent from "@/components/projects/ESGBoardGameContent";
+import ZoomableImage from "@/components/ZoomableImage";
 import imgAipc11 from "@/assets/img_aipc_1-1.webp";
 import imgAipc311 from "@/assets/img_aipc_3-1-1.webp";
 import imgAipc312 from "@/assets/img_aipc_3-1-2.webp";
@@ -540,16 +541,11 @@ const ProjectDetailV2 = () => {
                     </p>
                   </div>
 
-                  <figure className="-mx-4 md:mx-0">
-                    <img 
-                      src={imgAipc11}
-                      alt="AI PC 市場定義與主要競品功能比較"
-                      className="w-full md:rounded-lg"
-                    />
-                    <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                      AI PC 市場定義與主要競品功能比較
-                    </figcaption>
-                  </figure>
+                  <ZoomableImage
+                    src={imgAipc11}
+                    alt="AI PC 市場定義與主要競品功能比較"
+                    figcaption="AI PC 市場定義與主要競品功能比較"
+                  />
 
                   <div className="bg-secondary/50 rounded-xl p-8 my-8">
                     <h3 className="text-xl font-semibold mb-4 text-foreground">內部背景與挑戰</h3>
@@ -725,16 +721,11 @@ const ProjectDetailV2 = () => {
                             </li>
                           </ul>
 
-                          <figure className="-mx-4 md:mx-0">
-                            <img 
-                              src={imgAipc311}
-                              alt="Kano 問卷設計與功能分類圖表"
-                              className="w-full md:rounded-lg"
-                            />
-                            <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                              10 個潛在功能的 Kano 分類結果
-                            </figcaption>
-                          </figure>
+                          <ZoomableImage
+                            src={imgAipc311}
+                            alt="Kano 問卷設計與功能分類圖表"
+                            figcaption="10 個潛在功能的 Kano 分類結果"
+                          />
 
                           <div className="grid md:grid-cols-3 gap-4">
                             <div className="bg-secondary/50 rounded-lg p-5 text-center">
@@ -751,16 +742,11 @@ const ProjectDetailV2 = () => {
                             </div>
                           </div>
 
-                          <figure className="-mx-4 md:mx-0">
-                            <img 
-                              src={imgAipc312}
-                              alt="Top 10 AI PC 功能排序表格"
-                              className="w-full md:rounded-lg"
-                            />
-                            <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                              創新功能優先序與投資建議
-                            </figcaption>
-                          </figure>
+                          <ZoomableImage
+                            src={imgAipc312}
+                            alt="Top 10 AI PC 功能排序表格"
+                            figcaption="創新功能優先序與投資建議"
+                          />
                         </div>
                       )
                     },
@@ -793,16 +779,11 @@ const ProjectDetailV2 = () => {
                             </li>
                           </ul>
 
-                          <figure className="-mx-4 md:mx-0">
-                            <img 
-                              src={imgAipc321}
-                              alt="工作坊腦力激盪討論與便利貼整理"
-                              className="w-full md:rounded-lg"
-                            />
-                            <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                              結合實機樣品的團體訪談與腦力激盪
-                            </figcaption>
-                          </figure>
+                          <ZoomableImage
+                            src={imgAipc321}
+                            alt="工作坊腦力激盪討論與便利貼整理"
+                            figcaption="結合實機樣品的團體訪談與腦力激盪"
+                          />
 
                           <div className="bg-secondary/50 rounded-xl p-8">
                             <h4 className="text-xl font-semibold mb-6 text-foreground">AI Agent / AI Launcher 三組核心情境</h4>
@@ -828,16 +809,11 @@ const ProjectDetailV2 = () => {
                             </div>
                           </div>
 
-                          <figure className="-mx-4 md:mx-0">
-                            <img 
-                              src={imgAipc322}
-                              alt="AI Hotkey 與概念設計方案"
-                              className="w-full md:rounded-lg"
-                            />
-                            <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                              AI Launcher 與 Agent 的情境展開
-                            </figcaption>
-                          </figure>
+                          <ZoomableImage
+                            src={imgAipc322}
+                            alt="AI Hotkey 與概念設計方案"
+                            figcaption="AI Launcher 與 Agent 的情境展開"
+                          />
                         </div>
                       )
                     }
@@ -888,16 +864,11 @@ const ProjectDetailV2 = () => {
                     </div>
                   </div>
 
-                  <figure className="-mx-4 md:mx-0">
-                    <img 
-                      src={imgAipc41}
-                      alt="五階層技術創新藍圖與價值轉換漏斗"
-                      className="w-full md:rounded-lg"
-                    />
-                    <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                      研究成果如何轉化為決策工具
-                    </figcaption>
-                  </figure>
+                  <ZoomableImage
+                    src={imgAipc41}
+                    alt="五階層技術創新藍圖與價值轉換漏斗"
+                    figcaption="研究成果如何轉化為決策工具"
+                  />
 
                   <div className="grid md:grid-cols-3 gap-6 mt-8">
                     <div className="bg-primary/10 rounded-xl p-6 text-center">
@@ -1025,16 +996,12 @@ const ProjectDetailV2 = () => {
                 </div>
 
                 {/* CES 圖片 */}
-                <figure className="-mx-4 md:mx-0 mb-10">
-                  <img 
-                    src={imgAipc61}
-                    alt="2022 CES 展場舞台上，多個國際品牌筆電排成一列，左側一台螢幕顯示 Wistron 字樣的雙螢幕概念筆電，與 MSI、Razer、ROG、Acer、Dell 等品牌並列展示"
-                    className="w-full md:rounded-lg"
-                  />
-                  <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                    2022 年，在同一客戶的雙螢幕電競 / 創作者筆電專案中，我參與的概念機曾在 CES 與各大品牌並列展出。這畫面對我來說，也是 AI PC 願景專案正在為公司累積的下一個目標
-                  </figcaption>
-                </figure>
+                <ZoomableImage
+                  src={imgAipc61}
+                  alt="2022 CES 展場舞台上，多個國際品牌筆電排成一列，左側一台螢幕顯示 Wistron 字樣的雙螢幕概念筆電，與 MSI、Razer、ROG、Acer、Dell 等品牌並列展示"
+                  figcaption="2022 年，在同一客戶的雙螢幕電競 / 創作者筆電專案中，我參與的概念機曾在 CES 與各大品牌並列展出。這畫面對我來說，也是 AI PC 願景專案正在為公司累積的下一個目標"
+                  className="mb-10"
+                />
 
                 {/* 個人職涯願景 */}
                 <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6">
