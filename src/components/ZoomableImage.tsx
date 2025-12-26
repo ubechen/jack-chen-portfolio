@@ -1,6 +1,5 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { ZoomIn, ZoomOut } from "lucide-react";
 
 interface ZoomableImageProps {
   src: string;
@@ -14,40 +13,22 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
   const [isZoomed, setIsZoomed] = useState(false);
   const [canZoom, setCanZoom] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
 
-  // Check if image can be zoomed (natural size > displayed size)
-  const checkCanZoom = useCallback(() => {
-    if (!imgRef.current) return;
-    
-    const img = imgRef.current;
-    const naturalWidth = img.naturalWidth;
-    const naturalHeight = img.naturalHeight;
-    const displayedWidth = img.clientWidth;
-    const displayedHeight = img.clientHeight;
-
-    // Only enable zoom if natural size is larger than displayed size
-    const zoomable = naturalWidth > displayedWidth || naturalHeight > displayedHeight;
-    setCanZoom(zoomable);
-  }, []);
-
+  // Recheck canZoom on window resize
   useEffect(() => {
-    if (isLoaded) {
-      checkCanZoom();
-    }
-    
-    // Recheck on window resize
+    const checkCanZoom = () => {
+      if (!imgRef.current || !isLoaded) return;
+      const img = imgRef.current;
+      setCanZoom(img.naturalWidth > img.clientWidth || img.naturalHeight > img.clientHeight);
+    };
+
     window.addEventListener("resize", checkCanZoom);
     return () => window.removeEventListener("resize", checkCanZoom);
-  }, [isLoaded, checkCanZoom]);
+  }, [isLoaded]);
 
   // Prevent body scroll when zoomed
   useEffect(() => {
-    if (isZoomed) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = isZoomed ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
@@ -55,37 +36,29 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
 
   // Handle ESC key to close zoom
   useEffect(() => {
+    if (!isZoomed) return;
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isZoomed) {
-        setIsZoomed(false);
-      }
+      if (e.key === "Escape") setIsZoomed(false);
     };
-
-    if (isZoomed) {
-      window.addEventListener("keydown", handleKeyDown);
-      return () => window.removeEventListener("keydown", handleKeyDown);
-    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isZoomed]);
 
-  const handleClick = () => {
-    if (canZoom) {
-      setIsZoomed(!isZoomed);
-    }
-  };
-
-  const handleLoad = () => {
+  const handleLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = e.currentTarget;
+    setCanZoom(img.naturalWidth > img.clientWidth || img.naturalHeight > img.clientHeight);
     setIsLoaded(true);
   };
 
   return (
     <>
-      <figure ref={containerRef} className="-mx-4 md:mx-0">
-        {/* Skeleton with shimmer effect */}
+      <figure className="-mx-4 md:mx-0">
         <div className="relative">
+          {/* Skeleton with shimmer effect */}
           <div 
             className={cn(
               "absolute inset-0 bg-gradient-to-r from-muted via-muted/50 to-muted bg-[length:200%_100%] transition-opacity duration-500 rounded-lg",
-              isLoaded ? "opacity-0" : "opacity-100 animate-shimmer"
+              isLoaded ? "opacity-0 pointer-events-none" : "opacity-100 animate-shimmer"
             )} 
           />
           <img
@@ -93,26 +66,14 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
             src={src}
             alt={alt}
             onLoad={handleLoad}
-            onClick={handleClick}
+            onClick={() => canZoom && setIsZoomed(true)}
             className={cn(
-              "w-full md:rounded-lg transition-all duration-300",
+              "w-full md:rounded-lg transition-opacity duration-300",
               isLoaded ? "opacity-100" : "opacity-0",
-              canZoom && "cursor-zoom-in hover:opacity-90",
+              canZoom && "cursor-zoom-in",
               className
             )}
-            aria-label={canZoom ? `${alt} - 點擊放大圖片` : alt}
           />
-          
-          {/* Zoom indicator on hover */}
-          {canZoom && isLoaded && (
-            <div 
-              className="absolute bottom-3 right-3 md:right-3 bg-black/60 backdrop-blur-sm text-white px-2 py-1 rounded-md text-xs flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
-              style={{ opacity: 0.7 }}
-            >
-              <ZoomIn className="h-3 w-3" />
-              <span>點擊放大</span>
-            </div>
-          )}
         </div>
         
         {figcaption && (
@@ -126,21 +87,12 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
       {isZoomed && (
         <div 
           className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center animate-fade-in cursor-zoom-out"
-          onClick={handleClick}
-          role="dialog"
-          aria-modal="true"
-          aria-label="放大圖片檢視"
+          onClick={() => setIsZoomed(false)}
         >
-          {/* Close hint */}
-          <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-sm text-white px-3 py-2 rounded-md text-sm flex items-center gap-2">
-            <ZoomOut className="h-4 w-4" />
-            <span>點擊或按 ESC 關閉</span>
-          </div>
-          
           <img
             src={src}
             alt={alt}
-            className="max-w-[95vw] max-h-[95vh] object-contain animate-scale-in"
+            className="max-w-[95vw] max-h-[95vh] object-contain animate-scale-in cursor-zoom-out"
             onClick={(e) => {
               e.stopPropagation();
               setIsZoomed(false);
