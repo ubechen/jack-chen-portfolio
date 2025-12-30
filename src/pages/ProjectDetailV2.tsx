@@ -927,13 +927,6 @@ const ProjectDetailV2 = () => {
                     </li>
                   </ul>
 
-                  <ZoomableImage
-                    src={imgAipc51}
-                    alt="AI 輔助設計流程示意圖"
-                    figcaption="運用生成式 AI 加速研究與共創"
-                    className="mt-8"
-                  />
-
                 </div>
 
                 <div className="border-t border-border my-16"></div>
@@ -966,6 +959,13 @@ const ProjectDetailV2 = () => {
                       </CardContent>
                     </Card>
                   </div>
+
+                  <ZoomableImage
+                    src={imgAipc51}
+                    alt="AI 輔助設計流程示意圖"
+                    figcaption="運用生成式 AI 加速研究與共創"
+                    className="mt-10"
+                  />
                 </div>
               </div>
             </section>
