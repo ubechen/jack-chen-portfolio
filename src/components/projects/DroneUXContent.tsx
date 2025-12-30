@@ -1,6 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import ScrollReveal from "@/components/ScrollReveal";
 import ProcessAccordion from "@/components/projects/ProcessAccordion";
+import ZoomableImage from "@/components/ZoomableImage";
+import imgDrone11 from "@/assets/img_drone_1-1.webp";
+import imgDrone12 from "@/assets/img_drone_1-2.webp";
+import imgDrone21 from "@/assets/img_drone_2-1.webp";
 
 const DroneUXContent = () => {
   return (
@@ -32,15 +36,11 @@ const DroneUXContent = () => {
                 </div>
               </div>
 
-              {/* Image Placeholder */}
-              <figure className="-mx-4 md:mx-0">
-                <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                  <p className="text-muted-foreground text-center px-4">無人機市場轉型與合作背景</p>
-                </div>
-                <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                  從 AMR 到無人機的策略轉向
-                </figcaption>
-              </figure>
+              <ZoomableImage
+                src={imgDrone11}
+                alt="從 AMR 到無人機的策略轉向"
+                figcaption="從 AMR 到無人機的策略轉向"
+              />
 
               <div>
                 <h3 className="text-2xl font-semibold mb-6 text-foreground">地面控制站聚焦項目</h3>
@@ -60,15 +60,11 @@ const DroneUXContent = () => {
                 </div>
               </div>
 
-              {/* Image Placeholder */}
-              <figure className="-mx-4 md:mx-0">
-                <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                  <p className="text-muted-foreground text-center px-4">地面控制站組成元素示意</p>
-                </div>
-                <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                  手持控制器與 App 整合架構
-                </figcaption>
-              </figure>
+              <ZoomableImage
+                src={imgDrone12}
+                alt="手持控制器與 App 整合架構"
+                figcaption="手持控制器與 App 整合架構"
+              />
 
               <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6 my-8">
                 <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">短期目標</p>
@@ -222,15 +218,12 @@ const DroneUXContent = () => {
               </Card>
             </div>
 
-            {/* Image Placeholder */}
-            <figure className="-mx-4 md:mx-0 mt-10">
-              <div className="aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center">
-                <p className="text-muted-foreground text-center px-4">專案角色與協作關係圖</p>
-              </div>
-              <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                跨部門與跨公司協作網絡
-              </figcaption>
-            </figure>
+            <ZoomableImage
+              src={imgDrone21}
+              alt="無人機 GCS 地面控制站專案角色"
+              figcaption="跨部門與跨公司協作網絡"
+              className="mt-10"
+            />
           </div>
         </section>
       </ScrollReveal>
