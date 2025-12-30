@@ -34,6 +34,8 @@ import imgAipc312 from "@/assets/img_aipc_3-1-2.webp";
 import imgAipc321 from "@/assets/img_aipc_3-2-1.webp";
 import imgAipc322 from "@/assets/img_aipc_3-2-2.webp";
 import imgAipc41 from "@/assets/img_aipc_4-1.webp";
+import imgAipc21 from "@/assets/img_aipc_2-1.webp";
+import imgAipc51 from "@/assets/img_aipc_5-1.webp";
 import imgAipc61 from "@/assets/img_aipc_6-1-2.webp";
 
 const projectData = {
@@ -675,6 +677,13 @@ const ProjectDetailV2 = () => {
                   </Card>
                 </div>
 
+                <ZoomableImage
+                  src={imgAipc21}
+                  alt="專案角色與協作關係圖"
+                  figcaption="與 PM、ID、ME 及新創夥伴的協作網絡"
+                  className="mt-10"
+                />
+
               </div>
             </section>
           </ScrollReveal>
@@ -917,6 +926,13 @@ const ProjectDetailV2 = () => {
                       <span>使用生成式影像工具產出情境圖、AI Launcher / Agent 的方向，作爲共創素材</span>
                     </li>
                   </ul>
+
+                  <ZoomableImage
+                    src={imgAipc51}
+                    alt="AI 輔助設計流程示意圖"
+                    figcaption="運用生成式 AI 加速研究與共創"
+                    className="mt-8"
+                  />
 
                 </div>
 
