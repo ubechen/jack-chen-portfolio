@@ -76,6 +76,10 @@ const DroneUXContent = () => {
               <p className="text-lg text-muted-foreground leading-relaxed">
                 因涉及軍事用途，客戶資訊高度保密，我們只能在有限資訊下，同時考量軍用與民用情境，從國際競品出發，找到 UX 的切入點，幫公司在全新領域站穩第一步
               </p>
+
+              <p className="text-sm text-muted-foreground/70 italic mt-8 text-center">
+                本專案配圖皆為依專案情境重新製作的示意圖與 AI 合成畫面，非實際客戶產品畫面
+              </p>
             </div>
           </div>
         </section>
