@@ -57,7 +57,7 @@ const Resume = () => {
 
   const workExperience = [
     {
-      company: "Wistron 緯創資通",
+      company: "Wistron Corporation 緯創資通",
       title: "Assistant Technical Manager（技術副理）",
       period: "2016/07 – 2025/02",
       location: "Taipei",
@@ -84,7 +84,7 @@ const Resume = () => {
       ]
     },
     {
-      company: "Taipei Digital Advertising Inc.",
+      company: "Taipei Digital Group",
       title: "Senior Web Designer（Front-End Designer / Developer）",
       period: "2014/01 – 2016/07",
       location: "Taipei",
@@ -230,7 +230,7 @@ const Resume = () => {
               </h3>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button variant="hero" size="lg" className="text-base font-medium" asChild>
-                  <a href="#" download>
+                  <a href="/Resume_陳泰運_Jack.pdf" download>
                     <span className="relative z-10 flex items-center gap-2">
                       <Download className="h-4 w-4" />
                       下載中文版 PDF
@@ -238,7 +238,7 @@ const Resume = () => {
                   </a>
                 </Button>
                 <Button variant="hero" size="lg" className="text-base font-medium" asChild>
-                  <a href="#" download>
+                  <a href="/Resume_Tai-Yun_Chen_Jack.pdf" download>
                     <span className="relative z-10 flex items-center gap-2">
                       <Download className="h-4 w-4" />
                       Download English PDF
