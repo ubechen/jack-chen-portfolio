@@ -58,7 +58,7 @@ const Resume = () => {
   const workExperience = [
     {
       company: "Wistron Corporation 緯創資通",
-      title: "Assistant Technical Manager（技術副理）",
+      title: "Assistant Technical Manager (技術副理 / UX / Product Design)",
       period: "2016/07 – 2025/02",
       location: "Taipei",
       type: "Full-time",
@@ -230,7 +230,7 @@ const Resume = () => {
               </h3>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button variant="hero" size="lg" className="text-base font-medium" asChild>
-                  <a href="/Resume_陳泰運_Jack.pdf" download>
+                  <a href="/Resume_Tai-Yun_Chen_Jack_tw.pdf" download>
                     <span className="relative z-10 flex items-center gap-2">
                       <Download className="h-4 w-4" />
                       下載中文版 PDF
@@ -238,7 +238,7 @@ const Resume = () => {
                   </a>
                 </Button>
                 <Button variant="hero" size="lg" className="text-base font-medium" asChild>
-                  <a href="/Resume_Tai-Yun_Chen_Jack.pdf" download>
+                  <a href="/Resume_Tai-Yun_Chen_Jack_en.pdf" download>
                     <span className="relative z-10 flex items-center gap-2">
                       <Download className="h-4 w-4" />
                       Download English PDF
