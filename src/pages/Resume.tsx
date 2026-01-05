@@ -58,7 +58,7 @@ const Resume = () => {
   const workExperience = [
     {
       company: "Wistron Corporation 緯創資通",
-      title: "Assistant Technical Manager (技術副理 / UX / Product Design)",
+      title: "Assistant Technical Manager (UX / Product Design)",
       period: "2016/07 – 2025/02",
       location: "Taipei",
       type: "Full-time",
@@ -73,7 +73,7 @@ const Resume = () => {
     },
     {
       company: "Reborn Academy",
-      title: "UI/UX Design Mentor（約聘）",
+      title: "UI / UX Design Mentor (約聘)",
       period: "2021/09 – 2022/03",
       location: "Taipei",
       type: "",
@@ -85,7 +85,7 @@ const Resume = () => {
     },
     {
       company: "Taipei Digital Group",
-      title: "Senior Web Designer（Front-End Designer / Developer）",
+      title: "Senior Web Designer (Front-End Designer / Developer)",
       period: "2014/01 – 2016/07",
       location: "Taipei",
       type: "Full-time",
