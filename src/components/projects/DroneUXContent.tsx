@@ -5,6 +5,10 @@ import ZoomableImage from "@/components/ZoomableImage";
 import imgDrone11 from "@/assets/img_drone_1-1.webp";
 import imgDrone12 from "@/assets/img_drone_1-2.webp";
 import imgDrone21 from "@/assets/img_drone_2-1.webp";
+import imgDrone311 from "@/assets/img_drone_3-1-1.webp";
+import imgDrone312 from "@/assets/img_drone_3-1-2.webp";
+import imgDrone321 from "@/assets/img_drone_3-2-1.webp";
+import imgDrone322 from "@/assets/img_drone_3-2-2.webp";
 
 const DroneUXContent = () => {
   return (
@@ -273,14 +277,11 @@ const DroneUXContent = () => {
                         </li>
                       </ul>
 
-                      <figure className="-mx-4 md:mx-0">
-                        <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                          <p className="text-muted-foreground text-center px-4">國際競品控制站布局分析</p>
-                        </div>
-                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                          軍用/商用控制站 UI 比較
-                        </figcaption>
-                      </figure>
+                      <ZoomableImage
+                        src={imgDrone311}
+                        alt="國際競品與任務情境分析"
+                        figcaption="軍用/商用控制站 UI 比較"
+                      />
 
                       <div className="grid md:grid-cols-3 gap-4">
                         <div className="bg-background border border-border rounded-lg p-5">
@@ -294,14 +295,11 @@ const DroneUXContent = () => {
                         </div>
                       </div>
 
-                      <figure className="-mx-4 md:mx-0">
-                        <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
-                          <p className="text-muted-foreground text-center px-4">任務情境對照表</p>
-                        </div>
-                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                          偵察、巡檢、搜救、農業情境
-                        </figcaption>
-                      </figure>
+                      <ZoomableImage
+                        src={imgDrone312}
+                        alt="任務情境與關鍵問題分析對照表"
+                        figcaption="偵察、巡檢、搜救、農業情境"
+                      />
                     </div>
                   )
                 },
@@ -330,23 +328,17 @@ const DroneUXContent = () => {
                         </li>
                       </ul>
 
-                      <figure className="-mx-4 md:mx-0">
-                        <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                          <p className="text-muted-foreground text-center px-4">控制器人因設計與視線路徑</p>
-                        </div>
-                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                          減少抬頭低頭的操作設計
-                        </figcaption>
-                      </figure>
+                      <ZoomableImage
+                        src={imgDrone322}
+                        alt="控制器人因與視線優化設計"
+                        figcaption="減少抬頭低頭的操作設計"
+                      />
 
-                      <figure className="-mx-4 md:mx-0">
-                        <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
-                          <p className="text-muted-foreground text-center px-4">Icon 與行為規則系統</p>
-                        </div>
-                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                          按鍵與狀態對應設計
-                        </figcaption>
-                      </figure>
+                      <ZoomableImage
+                        src={imgDrone321}
+                        alt="Icon 與行為規則系統 & 按鍵狀態設計"
+                        figcaption="按鍵與狀態對應設計"
+                      />
                     </div>
                   )
                 },
