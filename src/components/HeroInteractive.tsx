@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
+import heroAiPc from "@/assets/bg_index_hero_aipc.webp";
 
 interface HeroState {
   id: string;
@@ -12,6 +13,7 @@ interface HeroState {
   title: string;
   description: string;
   tags: string[];
+  image?: string;
 }
 
 const heroStates: HeroState[] = [
@@ -22,6 +24,7 @@ const heroStates: HeroState[] = [
     title: "AI PC｜Research & Vision",
     description: "用研究與情境故事勾勒 AI PC 願景，定義關鍵使用體驗與功能方向",
     tags: ["AI PC Vision", "Strategic UX", "UX Research"],
+    image: heroAiPc,
   },
   {
     id: "drone-ux",
@@ -181,13 +184,23 @@ const HeroInteractive = () => {
                     {heroStates.map((state) => (
                       <div key={state.id} className="flex-[0_0_100%] min-w-0">
                         <Link to={`/project/${state.projectId}`}>
-                          <div className="aspect-video bg-gradient-to-br from-primary/10 via-muted to-primary/5 rounded-xl flex items-center justify-center overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
-                            <div className="text-center text-muted-foreground/60">
-                              <div className="w-16 h-16 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
-                                <span className="text-2xl">🎯</span>
+                          <div className="aspect-video rounded-xl overflow-hidden cursor-pointer hover:opacity-90 transition-opacity">
+                            {state.image ? (
+                              <img 
+                                src={state.image} 
+                                alt={state.title}
+                                className="w-full h-full object-cover"
+                              />
+                            ) : (
+                              <div className="w-full h-full bg-gradient-to-br from-primary/10 via-muted to-primary/5 flex items-center justify-center">
+                                <div className="text-center text-muted-foreground/60">
+                                  <div className="w-16 h-16 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <span className="text-2xl">🎯</span>
+                                  </div>
+                                  <p className="text-sm">Project Preview</p>
+                                </div>
                               </div>
-                              <p className="text-sm">Project Preview</p>
-                            </div>
+                            )}
                           </div>
                         </Link>
                       </div>
