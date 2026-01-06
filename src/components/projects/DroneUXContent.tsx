@@ -12,6 +12,7 @@ import imgDrone322 from "@/assets/img_drone_3-2-2.webp";
 import imgDrone331 from "@/assets/img_drone_3-3-1.webp";
 import imgDrone332 from "@/assets/img_drone_3-3-2.webp";
 import imgDrone34 from "@/assets/img_drone_3-4.webp";
+import imgDrone41 from "@/assets/img_drone_4-1.webp";
 import imgDrone51 from "@/assets/img_drone_5-1.webp";
 
 const DroneUXContent = () => {
@@ -531,15 +532,12 @@ const DroneUXContent = () => {
                 </div>
               </div>
 
-              {/* Image Placeholder */}
-              <figure className="-mx-4 md:mx-0">
-                <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                  <p className="text-muted-foreground text-center px-4">專案成果與延伸影響</p>
-                </div>
-                <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                  從 POC 到訂單到後台系統
-                </figcaption>
-              </figure>
+              {/* Image */}
+              <ZoomableImage
+                src={imgDrone41}
+                alt="專案挑戰、解決方式與成果延伸影響的視覺化流程圖"
+                figcaption="從資訊受限與多角色協作的挑戰，到以 UX 作為橋樑，最終達成國際展會 demo、確認訂單與擴展後台系統"
+              />
 
               {/* Impact Summary */}
               <div className="grid md:grid-cols-3 gap-6 mt-8">
