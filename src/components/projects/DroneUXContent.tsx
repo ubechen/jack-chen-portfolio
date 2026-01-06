@@ -9,6 +9,8 @@ import imgDrone311 from "@/assets/img_drone_3-1-1.webp";
 import imgDrone312 from "@/assets/img_drone_3-1-2.webp";
 import imgDrone321 from "@/assets/img_drone_3-2-1.webp";
 import imgDrone322 from "@/assets/img_drone_3-2-2.webp";
+import imgDrone331 from "@/assets/img_drone_3-3-1.webp";
+import imgDrone332 from "@/assets/img_drone_3-3-2.webp";
 
 const DroneUXContent = () => {
   return (
@@ -390,23 +392,17 @@ const DroneUXContent = () => {
                         </li>
                       </ul>
 
-                      <figure className="-mx-4 md:mx-0">
-                        <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                          <p className="text-muted-foreground text-center px-4">App IA 架構與任務流程</p>
-                        </div>
-                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                          任務前/中/後的資訊架構
-                        </figcaption>
-                      </figure>
+                      <ZoomableImage
+                        src={imgDrone331}
+                        alt="App IA 架構與任務流程"
+                        figcaption="任務前/中/後的資訊架構"
+                      />
 
-                      <figure className="-mx-4 md:mx-0">
-                        <div className="aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center">
-                          <p className="text-muted-foreground text-center px-4">關鍵畫面 GUI 設計</p>
-                        </div>
-                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                          地圖、影像、警示整合介面
-                        </figcaption>
-                      </figure>
+                      <ZoomableImage
+                        src={imgDrone332}
+                        alt="關鍵畫面 GUI 設計"
+                        figcaption="地圖、影像、警示整合介面"
+                      />
                     </div>
                   )
                 },
