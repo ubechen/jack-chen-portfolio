@@ -11,6 +11,8 @@ import imgDrone321 from "@/assets/img_drone_3-2-1.webp";
 import imgDrone322 from "@/assets/img_drone_3-2-2.webp";
 import imgDrone331 from "@/assets/img_drone_3-3-1.webp";
 import imgDrone332 from "@/assets/img_drone_3-3-2.webp";
+import imgDrone34 from "@/assets/img_drone_3-4.webp";
+import imgDrone51 from "@/assets/img_drone_5-1.webp";
 
 const DroneUXContent = () => {
   return (
@@ -48,6 +50,13 @@ const DroneUXContent = () => {
                 figcaption="從 AMR 到無人機的策略轉向"
               />
 
+              {/* 聲明提示區塊 */}
+              <div className="bg-muted/50 border border-border rounded-lg px-4 py-3 text-center">
+                <p className="text-sm text-muted-foreground">
+                  本專案配圖皆為依專案情境重新製作的示意圖與 AI 合成畫面，非實際客戶產品畫面
+                </p>
+              </div>
+
               <div>
                 <h3 className="text-2xl font-semibold mb-6 text-foreground">地面控制站聚焦項目</h3>
                 <div className="grid md:grid-cols-2 gap-4">
@@ -83,9 +92,6 @@ const DroneUXContent = () => {
                 因涉及軍事用途，客戶資訊高度保密，我們只能在有限資訊下，同時考量軍用與民用情境，從國際競品出發，找到 UX 的切入點，幫公司在全新領域站穩第一步
               </p>
 
-              <p className="text-sm text-muted-foreground/70 italic mt-8 text-center">
-                本專案配圖皆為依專案情境重新製作的示意圖與 AI 合成畫面，非實際客戶產品畫面
-              </p>
             </div>
           </div>
         </section>
@@ -431,14 +437,11 @@ const DroneUXContent = () => {
                         </li>
                       </ul>
 
-                      <figure className="-mx-4 md:mx-0">
-                        <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                          <p className="text-muted-foreground text-center px-4">實機 Prototype 測試現場</p>
-                        </div>
-                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                          模擬任務流程測試
-                        </figcaption>
-                      </figure>
+                      <ZoomableImage
+                        src={imgDrone34}
+                        alt="實機 Prototype 測試現場"
+                        figcaption="模擬任務流程測試"
+                      />
 
                       <div className="bg-primary/10 rounded-xl p-8">
                         <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">最終成果</p>
@@ -566,48 +569,62 @@ const DroneUXContent = () => {
               5. What I learned
             </h2>
 
+            {/* 核心引言 */}
             <div className="bg-primary/10 rounded-xl p-8 mb-10">
               <p className="text-2xl text-foreground font-semibold leading-relaxed">
-                在一個自己本來不熟悉、資訊又不完整的領域裡，UX 的價值不是假裝很懂，而是設計出一條<mark className="bg-primary/30 text-foreground px-2 py-1 rounded">可以一步步靠近真實需求的路徑</mark>。
+                對我來說，這個 Drone 控制站專案，是在<mark className="bg-primary/30 text-foreground px-2 py-1 rounded">「自己原本不熟悉、資訊又有限」的領域裡</mark>，學會怎麼讓 UX 仍然發揮價值的一次實戰
               </p>
             </div>
 
-            <div className="space-y-6 text-lg text-muted-foreground">
+            <div className="space-y-8 text-lg text-muted-foreground">
+              {/* 段落一：策略選擇 */}
               <p className="leading-relaxed">
-                對我而言，Drone UX 專案是：
+                一開始，我對無人機與軍用／產業任務的了解其實不深，很多真實需求也因為保密無法完全揭露。與其假裝很懂，我選擇做的是：
               </p>
-              
-              <ul className="space-y-4">
+
+              <ul className="space-y-4 pl-4">
                 <li className="flex gap-3">
                   <span className="text-primary font-bold">•</span>
-                  <span>公司從 AMR 轉向無人機的<strong className="text-foreground">新起點</strong></span>
+                  <span>先用國際競品與公開案例建立一個<strong className="text-foreground">合理的 baseline</strong></span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-primary font-bold">•</span>
-                  <span>一次在跨公司、多角色、多限制底下，仍把控制站體驗做成<mark className="bg-primary/20 text-foreground px-1 rounded">「可 demo、可投標、可延伸」</mark>的實戰</span>
+                  <span>再透過任務情境、控制站資訊優先順序、實體鍵與螢幕分工去設計<mark className="bg-primary/20 text-foreground px-1 rounded">「一條可以靠近真實需求的路」</mark></span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-primary font-bold">•</span>
-                  <span>也讓高層與合作夥伴看見：在國防／產業這類高門檻領域裡，<strong className="text-foreground">UX 依然能找到具體的切入點</strong>，幫團隊用更有信心的方式前進</span>
+                  <span>留下足夠彈性，讓未來實際導入客戶時可以調整，而不用全部推倒重來</span>
                 </li>
               </ul>
 
-              <div className="bg-background border-l-4 border-l-primary rounded-r-lg p-6 mt-8">
-                <p className="text-xl text-foreground font-medium">
-                  在陌生領域建立信任，從能夠「demo 出來」開始。
+              {/* 段落二：展會驗證 */}
+              <div className="bg-secondary/50 rounded-xl p-6">
+                <p className="leading-relaxed">
+                  當控制站方案在 <strong className="text-foreground">XPONENTIAL 2025 美國休士頓展</strong> 上正式對外展出時，看到業務、合作夥伴與潛在客戶在攤位前實際操作、討論任務情境，對我是一個很重要的確認——
+                </p>
+                <p className="leading-relaxed mt-4">
+                  那些在會議室裡對「資訊怎麼排」「實體鍵怎麼配置」「狀態要怎麼回饋」的細部拉扯，最後真的有幫助大家在一個嘈雜又忙碌的展場裡，<mark className="bg-primary/20 text-foreground px-1 rounded">把系統講清楚、示範順暢</mark>。
+                </p>
+              </div>
+
+              {/* 展會圖片 */}
+              <ZoomableImage
+                src={imgDrone51}
+                alt="XPONENTIAL 2025 美國休士頓展場中，無人機與地面控制站在攤位上展示，前景是與會者與客戶在展位前交流與觀察操作情境"
+                figcaption="Drone 系統在 XPONENTIAL 2025 美國休士頓展正式對外展示，驗證控制站體驗在真實展場情境中也能被快速理解與採用"
+              />
+
+              {/* 段落三：核心體悟 */}
+              <p className="leading-relaxed">
+                這個專案讓我更確定：
+              </p>
+
+              <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6">
+                <p className="text-xl text-foreground font-medium leading-relaxed">
+                  在高門檻、資訊不透明的產業裡，UX 不一定能一開始就「定義所有細節」，但可以設計出一套<mark className="bg-primary/30 text-foreground px-2 py-1 rounded">讓團隊逐步靠近正確方向的結構與語言</mark>——讓工程、業務、高層和合作夥伴都有共同的畫面可以討論，並在真正走到展場與市場的那一刻，驗證自己做的選擇是不是站得住腳
                 </p>
               </div>
             </div>
-
-            {/* Image Placeholder */}
-            <figure className="-mx-4 md:mx-0 mt-10">
-              <div className="aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center">
-                <p className="text-muted-foreground text-center px-4">專案反思與成長</p>
-              </div>
-              <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                UX 在陌生領域的價值路徑
-              </figcaption>
-            </figure>
           </div>
         </section>
       </ScrollReveal>
