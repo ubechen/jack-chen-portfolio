@@ -134,7 +134,7 @@ const Resume = () => {
   ];
 
   const skillsUX = [
-    "UX 研究（訪談、問卷、Kano 分析、可用性測試）",
+    "UX 研究（訪談、問卷、分析、可用性測試）",
     "資訊架構（IA）與 Task flow 設計",
     "複雜系統與後台管理介面設計",
     "裝置端 App 與軟硬體整合體驗設計",
@@ -143,9 +143,9 @@ const Resume = () => {
   ];
 
   const skillsTools = [
-    "Figma / FigJam、Adobe XD、Axure RP、Notion、NotebookLM",
-    "Photoshop / Illustrator、Premiere Pro、After Effects",
-    "Generative AI：ChatGPT、Midjourney、Photoshop Firefly、Kling、Suno"
+    "UI / UX：Figma / FigJam、Adobe XD、Axure RP、Notion、NotebookLM",
+    "Adobe CC：Photoshop / Illustrator、Premiere Pro、After Effects",
+    "Generative AI：Midjourney、Photoshop Firefly、Kling、Suno"
   ];
 
   const certifications = [
