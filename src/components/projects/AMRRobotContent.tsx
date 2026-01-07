@@ -93,6 +93,12 @@ const AMRRobotContent = () => {
                   這是一個跨越硬體、軟體、場域、營運與品牌的大型專案，也是我職涯中實際承擔角色最多、成長幅度最大的一段經歷之一
                 </p>
               </div>
+
+              <div className="bg-muted/50 border border-border rounded-lg px-4 py-3 text-center mt-8">
+                <p className="text-sm text-muted-foreground">
+                  本專案配圖部分為重新製作的示意圖與 AI 合成畫面
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -385,15 +391,6 @@ const AMRRobotContent = () => {
                           <span>支援媒體發佈與展覽：展場文宣、看板輸出與互動內容，確保對外展示的畫面與實際產品能力一致</span>
                         </li>
                       </ul>
-
-                      <figure className="-mx-4 md:mx-0">
-                        <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                          <p className="text-muted-foreground text-center px-4">Wifundity 產品網站設計</p>
-                        </div>
-                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                          場域應用故事整理
-                        </figcaption>
-                      </figure>
 
                       <figure className="-mx-4 md:mx-0">
                         <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">

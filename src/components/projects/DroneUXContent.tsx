@@ -54,7 +54,7 @@ const DroneUXContent = () => {
               {/* 聲明提示區塊 */}
               <div className="bg-muted/50 border border-border rounded-lg px-4 py-3 text-center">
                 <p className="text-sm text-muted-foreground">
-                  本專案配圖皆為依專案情境重新製作的示意圖與 AI 合成畫面，非實際客戶產品畫面
+                  本專案配圖皆為重新製作的示意圖與 AI 合成畫面
                 </p>
               </div>
 
