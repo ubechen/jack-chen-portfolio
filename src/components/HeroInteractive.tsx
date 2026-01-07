@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import heroAiPc from "@/assets/bg_index_hero_aipc.webp";
+import heroDrone from "@/assets/bg_index_hero_drone.webp";
 
 interface HeroState {
   id: string;
@@ -33,6 +34,7 @@ const heroStates: HeroState[] = [
     title: "Drone System｜Control Experience",
     description: "與無人機大廠協作，打造易上手又可靠的地面控制站 UX 與操作流程",
     tags: ["Drone GCS UX", "Control UI", "B2B Partnering"],
+    image: heroDrone,
   },
   {
     id: "service-robots",
