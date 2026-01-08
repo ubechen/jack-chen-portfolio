@@ -4,7 +4,11 @@ import ProcessAccordion from "@/components/projects/ProcessAccordion";
 import imgAMR1_1 from "@/assets/img_amr_1-1.webp";
 import imgAMR1_2 from "@/assets/img_amr_1-2.webp";
 import imgAMR2_1 from "@/assets/img_amr_2-1.webp";
-
+import imgAMR3_2 from "@/assets/img_amr_3-2.webp";
+import imgAMR3_3_1 from "@/assets/img_amr_3-3-1.webp";
+import imgAMR3_3_2 from "@/assets/img_amr_3-3-2.webp";
+import imgAMR4_1 from "@/assets/img_amr_4-1.webp";
+import imgAMR5_1 from "@/assets/img_amr_5-1.webp";
 const AMRRobotContent = () => {
   return (
     <>
@@ -304,9 +308,11 @@ const AMRRobotContent = () => {
                       </div>
 
                       <figure className="-mx-4 md:mx-0">
-                        <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                          <p className="text-muted-foreground text-center px-4">後台管理系統介面設計</p>
-                        </div>
+                        <img 
+                          src={imgAMR3_2} 
+                          alt="後台管理系統介面設計，展示儀表板、地圖管理與機器人狀態監控等功能畫面" 
+                          className="w-full md:rounded-lg"
+                        />
                         <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
                           儀表板與地圖管理畫面
                         </figcaption>
@@ -340,18 +346,22 @@ const AMRRobotContent = () => {
                       </ul>
 
                       <figure className="-mx-4 md:mx-0">
-                        <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                          <p className="text-muted-foreground text-center px-4">機器人端 App UI 設計</p>
-                        </div>
+                        <img 
+                          src={imgAMR3_3_1} 
+                          alt="機器人端 App UI 設計，包含送餐流程、密碼輸入、箱門操作與任務派送等介面" 
+                          className="w-full md:rounded-lg"
+                        />
                         <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
                           送餐、消毒、迎賓模式
                         </figcaption>
                       </figure>
 
                       <figure className="-mx-4 md:mx-0">
-                        <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
-                          <p className="text-muted-foreground text-center px-4">場域驗證現場照片</p>
-                        </div>
+                        <img 
+                          src={imgAMR3_3_2} 
+                          alt="機器人在賣場實際運行的場域驗證照片，展示消費者與機器人互動情境" 
+                          className="w-full md:rounded-lg"
+                        />
                         <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
                           賣場、飯店、醫院實際運行
                         </figcaption>
@@ -501,9 +511,11 @@ const AMRRobotContent = () => {
 
               {/* Image Placeholder */}
               <figure className="-mx-4 md:mx-0">
-                <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                  <p className="text-muted-foreground text-center px-4">專案挑戰與解決方式</p>
-                </div>
+                <img 
+                  src={imgAMR4_1} 
+                  alt="專案挑戰示意圖：對標中國成熟競品尋求差異化創新，以及多方利害關係人之間的說服與對齊" 
+                  className="w-full md:rounded-lg"
+                />
                 <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
                   決策依據與協作過程
                 </figcaption>
@@ -523,7 +535,7 @@ const AMRRobotContent = () => {
 
             <div className="bg-primary/10 rounded-xl p-8 mb-10">
               <p className="text-2xl text-foreground font-semibold leading-relaxed">
-                Wifundity AMR Robot 是一個最終被公司決策暫停的大型專案，即使有遺憾，仍帶來幾個重要體會
+                AMR Robot 是一個最終被公司決策暫停的大型專案，即使結局有遺憾，仍帶來幾個重要體會：
               </p>
             </div>
 
@@ -531,32 +543,38 @@ const AMRRobotContent = () => {
               <ul className="space-y-6 text-lg text-muted-foreground">
                 <li className="flex gap-3">
                   <span className="text-primary font-bold">•</span>
-                  <span>UX 不只為「上線產品」服務，也要具備全局觀，為<mark className="bg-primary/20 text-foreground px-1 rounded">「要不要繼續投資／往下做」</mark>提供判斷依據</span>
+                  <span>UX 不只為「上線那一刻」服務，也要具備全局觀，為<mark className="bg-primary/20 text-foreground px-1 rounded">「要不要繼續投資／擴大導入」</mark>提供判斷依據</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-primary font-bold">•</span>
-                  <span>在高不確定性的新事業裡，持續把真實場域經驗帶回決策桌，是設計師真正能顯現價值的地方</span>
+                  <span>在高不確定性的新事業裡，持續把賣場、飯店、醫院等真實場域的觀察與數據帶回決策桌，是設計師真正能顯現價值的地方</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-primary font-bold">•</span>
-                  <span>即使專案被終止，過程中累積的設計系統、流程思維與跨部門協作方式，依然會成為下一個專案的基礎</span>
+                  <span>看到機器人在醫院病房走廊與飯店客房樓層實際運行，聽到現場人員的回饋，比任何簡報都更清楚地驗證設計是否真的有用</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-primary font-bold">•</span>
+                  <span>即使專案最終被喊停，過程中累積的設計系統、流程思維與跨部門協作方式，依然成為之後面對 AI PC、無人機等專案時的重要基礎</span>
                 </li>
               </ul>
 
               <div className="bg-background border-l-4 border-l-primary rounded-r-lg p-6 mt-8">
                 <p className="text-xl text-foreground font-medium leading-relaxed">
-                  對我而言，這是一場長期的「全方位體驗實戰」——從產品、系統到品牌，從會議室一路走到賣場、飯店和醫院，也讓我在之後面對更複雜題目時，更有底氣說自己能陪團隊一起撐住
+                  對我來說，AMR Robot 是一場長期的「全方位體驗實戰」——從產品、系統到品牌，從會議室一路走到賣場、飯店和醫院，也讓我在之後面對更複雜題目時，更有底氣說自己能陪團隊一起撐住
                 </p>
               </div>
             </div>
 
-            {/* Image Placeholder */}
+            {/* Image 5-1 */}
             <figure className="-mx-4 md:mx-0 mt-10">
-              <div className="aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center">
-                <p className="text-muted-foreground text-center px-4">專案反思與成長</p>
-              </div>
+              <img 
+                src={imgAMR5_1} 
+                alt="AMR Robot 在醫院與飯店實際運行的情境，包含病房走廊送物與飯店樓層配送服務" 
+                className="w-full md:rounded-lg"
+              />
               <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                從全方位體驗實戰中學習
+                即使專案最終被暫停，機器人仍在醫院與飯店等真實場域提供服務，驗證產品與體驗的實際價值
               </figcaption>
             </figure>
           </div>
