@@ -418,7 +418,7 @@ const ProjectDetailV2 = () => {
                 style={{ animationDelay: '350ms', animationFillMode: 'both' }}
               >
                 {(project.tags as string[]).map((tag: string) => (
-                  <span key={tag} className="text-sm text-white/60">
+                  <span key={tag} className="text-sm" style={{ color: 'rgba(70, 70, 70, 0.6)' }}>
                     #{tag}
                   </span>
                 ))}
