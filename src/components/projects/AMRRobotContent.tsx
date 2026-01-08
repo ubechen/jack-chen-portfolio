@@ -1,6 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import ScrollReveal from "@/components/ScrollReveal";
 import ProcessAccordion from "@/components/projects/ProcessAccordion";
+import imgAMR1_1 from "@/assets/img_amr_1-1.webp";
+import imgAMR1_2 from "@/assets/img_amr_1-2.webp";
+import imgAMR2_1 from "@/assets/img_amr_2-1.webp";
 
 const AMRRobotContent = () => {
   return (
@@ -44,11 +47,13 @@ const AMRRobotContent = () => {
                 </div>
               </div>
 
-              {/* Image Placeholder */}
+              {/* Image 1-1 */}
               <figure className="-mx-4 md:mx-0">
-                <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                  <p className="text-muted-foreground text-center px-4">疫情後服務型機器人市場機會</p>
-                </div>
+                <img 
+                  src={imgAMR1_1} 
+                  alt="疫情後服務型機器人市場機會" 
+                  className="w-full md:rounded-lg"
+                />
                 <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
                   2021 年新事業發展背景
                 </figcaption>
@@ -78,11 +83,13 @@ const AMRRobotContent = () => {
                 </div>
               </div>
 
-              {/* Image Placeholder */}
+              {/* Image 1-2 */}
               <figure className="-mx-4 md:mx-0">
-                <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                  <p className="text-muted-foreground text-center px-4">整體服務流程架構示意</p>
-                </div>
+                <img 
+                  src={imgAMR1_2} 
+                  alt="整體服務流程架構示意" 
+                  className="w-full md:rounded-lg"
+                />
                 <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
                   後台系統、機器人 App、品牌溝通
                 </figcaption>
@@ -185,11 +192,13 @@ const AMRRobotContent = () => {
               </Card>
             </div>
 
-            {/* Image Placeholder */}
+            {/* Image 2-1 */}
             <figure className="-mx-4 md:mx-0 mt-10">
-              <div className="aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center">
-                <p className="text-muted-foreground text-center px-4">專案角色與協作關係圖</p>
-              </div>
+              <img 
+                src={imgAMR2_1} 
+                alt="專案角色與協作關係圖" 
+                className="w-full md:rounded-lg"
+              />
               <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
                 跨部門協作網絡
               </figcaption>
@@ -248,23 +257,6 @@ const AMRRobotContent = () => {
                         </div>
                       </div>
 
-                      <figure className="-mx-4 md:mx-0">
-                        <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                          <p className="text-muted-foreground text-center px-4">中國與國際服務型機器人競品分析</p>
-                        </div>
-                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                          產品定位與價值主張比較
-                        </figcaption>
-                      </figure>
-
-                      <figure className="-mx-4 md:mx-0">
-                        <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
-                          <p className="text-muted-foreground text-center px-4">競品實際操作記錄</p>
-                        </div>
-                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                          從建地圖到異常處理的完整流程
-                        </figcaption>
-                      </figure>
                     </div>
                   )
                 },
