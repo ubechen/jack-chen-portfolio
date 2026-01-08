@@ -35,11 +35,14 @@ const ProjectCard = ({ title, subtitle, description, roleInfo, tags, projectId }
         </div>
         <p className="text-muted-foreground mb-4 flex-grow">{description}</p>
         
-        {/* Role & Domain Info */}
+        {/* Role Info */}
         {roleInfo && (
-          <p className="text-sm text-muted-foreground/70 mb-4 border-t border-border pt-4">
-            {roleInfo}
-          </p>
+          <div className="mb-4 pt-4">
+            <div className="w-12 h-px bg-border mb-3" />
+            <p className="text-sm text-muted-foreground/70">
+              {roleInfo}
+            </p>
+          </div>
         )}
         
         <div className="flex flex-wrap gap-2">
