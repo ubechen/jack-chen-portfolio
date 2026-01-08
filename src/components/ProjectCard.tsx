@@ -6,11 +6,12 @@ interface ProjectCardProps {
   title: string;
   subtitle?: string;
   description: string;
+  roleInfo?: string;
   tags: string[];
   projectId: string;
 }
 
-const ProjectCard = ({ title, subtitle, description, tags, projectId }: ProjectCardProps) => {
+const ProjectCard = ({ title, subtitle, description, roleInfo, tags, projectId }: ProjectCardProps) => {
   const navigate = useNavigate();
 
   return (
@@ -32,14 +33,22 @@ const ProjectCard = ({ title, subtitle, description, tags, projectId }: ProjectC
           </div>
           <ArrowUpRight className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-all group-hover:translate-x-1 group-hover:-translate-y-1 flex-shrink-0" />
         </div>
-        <p className="text-muted-foreground mb-6 flex-grow">{description}</p>
+        <p className="text-muted-foreground mb-4 flex-grow">{description}</p>
+        
+        {/* Role & Domain Info */}
+        {roleInfo && (
+          <p className="text-sm text-muted-foreground/70 mb-4 border-t border-border pt-4">
+            {roleInfo}
+          </p>
+        )}
+        
         <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
             <span
               key={tag}
               className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full"
             >
-              {tag}
+              #{tag}
             </span>
           ))}
         </div>
