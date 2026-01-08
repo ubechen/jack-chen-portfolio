@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import ScrollReveal from "@/components/ScrollReveal";
 import ProcessAccordion from "@/components/projects/ProcessAccordion";
+import ZoomableImage from "@/components/ZoomableImage";
 import imgAMR1_1 from "@/assets/img_amr_1-1.webp";
 import imgAMR1_2 from "@/assets/img_amr_1-2.webp";
 import imgAMR2_1 from "@/assets/img_amr_2-1.webp";
@@ -52,16 +53,11 @@ const AMRRobotContent = () => {
               </div>
 
               {/* Image 1-1 */}
-              <figure className="-mx-4 md:mx-0">
-                <img 
-                  src={imgAMR1_1} 
-                  alt="疫情後服務型機器人市場機會" 
-                  className="w-full md:rounded-lg"
-                />
-                <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                  2021 年新事業發展背景
-                </figcaption>
-              </figure>
+              <ZoomableImage
+                src={imgAMR1_1}
+                alt="疫情後服務型機器人市場機會"
+                figcaption="2021 年新事業發展背景"
+              />
 
               <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6 my-8">
                 <p className="text-xl text-foreground font-medium">
@@ -88,16 +84,11 @@ const AMRRobotContent = () => {
               </div>
 
               {/* Image 1-2 */}
-              <figure className="-mx-4 md:mx-0">
-                <img 
-                  src={imgAMR1_2} 
-                  alt="整體服務流程架構示意" 
-                  className="w-full md:rounded-lg"
-                />
-                <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                  後台系統、機器人 App、品牌溝通
-                </figcaption>
-              </figure>
+              <ZoomableImage
+                src={imgAMR1_2}
+                alt="整體服務流程架構示意"
+                figcaption="後台系統、機器人 App、品牌溝通"
+              />
 
               <div className="bg-primary/10 rounded-xl p-8 mt-8">
                 <p className="text-2xl text-foreground font-semibold leading-relaxed">
@@ -197,16 +188,12 @@ const AMRRobotContent = () => {
             </div>
 
             {/* Image 2-1 */}
-            <figure className="-mx-4 md:mx-0 mt-10">
-              <img 
-                src={imgAMR2_1} 
-                alt="專案角色與協作關係圖" 
-                className="w-full md:rounded-lg"
-              />
-              <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                跨部門協作網絡
-              </figcaption>
-            </figure>
+            <ZoomableImage
+              src={imgAMR2_1}
+              alt="專案角色與協作關係圖"
+              figcaption="跨部門協作網絡"
+              className="mt-10"
+            />
           </div>
         </section>
       </ScrollReveal>
@@ -307,16 +294,11 @@ const AMRRobotContent = () => {
                         </p>
                       </div>
 
-                      <figure className="-mx-4 md:mx-0">
-                        <img 
-                          src={imgAMR3_2} 
-                          alt="後台管理系統介面設計，展示儀表板、地圖管理與機器人狀態監控等功能畫面" 
-                          className="w-full md:rounded-lg"
-                        />
-                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                          儀表板與地圖管理畫面
-                        </figcaption>
-                      </figure>
+                      <ZoomableImage
+                        src={imgAMR3_2}
+                        alt="後台管理系統介面設計，展示儀表板、地圖管理與機器人狀態監控等功能畫面"
+                        figcaption="儀表板與地圖管理畫面"
+                      />
                     </div>
                   )
                 },
@@ -345,27 +327,17 @@ const AMRRobotContent = () => {
                         </li>
                       </ul>
 
-                      <figure className="-mx-4 md:mx-0">
-                        <img 
-                          src={imgAMR3_3_1} 
-                          alt="機器人端 App UI 設計，包含送餐流程、密碼輸入、箱門操作與任務派送等介面" 
-                          className="w-full md:rounded-lg"
-                        />
-                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                          送餐、消毒、迎賓模式
-                        </figcaption>
-                      </figure>
+                      <ZoomableImage
+                        src={imgAMR3_3_1}
+                        alt="機器人端 App UI 設計，包含送餐流程、密碼輸入、箱門操作與任務派送等介面"
+                        figcaption="送餐、消毒、迎賓模式"
+                      />
 
-                      <figure className="-mx-4 md:mx-0">
-                        <img 
-                          src={imgAMR3_3_2} 
-                          alt="機器人在賣場實際運行的場域驗證照片，展示消費者與機器人互動情境" 
-                          className="w-full md:rounded-lg"
-                        />
-                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                          賣場、飯店、醫院實際運行
-                        </figcaption>
-                      </figure>
+                      <ZoomableImage
+                        src={imgAMR3_3_2}
+                        alt="機器人在賣場實際運行的場域驗證照片，展示消費者與機器人互動情境"
+                        figcaption="賣場、飯店、醫院實際運行"
+                      />
                     </div>
                   )
                 },
@@ -510,16 +482,11 @@ const AMRRobotContent = () => {
               </div>
 
               {/* Image Placeholder */}
-              <figure className="-mx-4 md:mx-0">
-                <img 
-                  src={imgAMR4_1} 
-                  alt="專案挑戰示意圖：對標中國成熟競品尋求差異化創新，以及多方利害關係人之間的說服與對齊" 
-                  className="w-full md:rounded-lg"
-                />
-                <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                  決策依據與協作過程
-                </figcaption>
-              </figure>
+              <ZoomableImage
+                src={imgAMR4_1}
+                alt="專案挑戰示意圖：對標中國成熟競品尋求差異化創新，以及多方利害關係人之間的說服與對齊"
+                figcaption="決策依據與協作過程"
+              />
             </div>
           </div>
         </section>
@@ -567,16 +534,12 @@ const AMRRobotContent = () => {
             </div>
 
             {/* Image 5-1 */}
-            <figure className="-mx-4 md:mx-0 mt-10">
-              <img 
-                src={imgAMR5_1} 
-                alt="AMR Robot 在醫院與飯店實際運行的情境，包含病房走廊送物與飯店樓層配送服務" 
-                className="w-full md:rounded-lg"
-              />
-              <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                即使專案最終被暫停，機器人仍在醫院與飯店等真實場域提供服務，驗證產品與體驗的實際價值
-              </figcaption>
-            </figure>
+            <ZoomableImage
+              src={imgAMR5_1}
+              alt="AMR Robot 在醫院與飯店實際運行的情境，包含病房走廊送物與飯店樓層配送服務"
+              figcaption="即使專案最終被暫停，機器人仍在醫院與飯店等真實場域提供服務，驗證產品與體驗的實際價值"
+              className="mt-10"
+            />
           </div>
         </section>
       </ScrollReveal>
