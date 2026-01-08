@@ -47,6 +47,7 @@ const projectData = {
     type: "策略探索／未來產品願景",
     summary: "在 AI PC 定義尚未成熟的階段，透過研究與分析 10 個創新功能排序與 3 組代表情境，幫助 PM 組成向高層提案的藍圖，也讓 ID、ME 團隊與新創夥伴以情境評估新技術價值，加速進入原型開發",
     duration: "2024 Q2 – Q4",
+    tags: ["AI PC Vision", "Strategic UX", "UX Research"],
     prevProject: {
       id: "esg-board-game",
       title: "Wi-Thrive",
@@ -68,10 +69,11 @@ const projectData = {
     title: "Drone System｜Control Experience",
     subtitle: "打造無人機地面控制站的使用體驗",
     heroImage: droneHero,
-    role: "Product / UX / UI Designer（跨公司協作）",
+    role: "Product / UX / UI Designer",
     type: "B2B／國防與產業應用 · 控制站 UX",
     summary: "在公司從 AMR Robot 轉向無人機市場之際，與國內無人機大廠合作，聚焦地面控制站（手持控制器＋App）的 UX 與 POC，支援國際展會 demo 與國防標案機會，後續延伸至後台管理系統",
     duration: "2024 Q2 – 2025 Q1",
+    tags: ["Drone GCS UX", "Control System", "B2B"],
     prevProject: {
       id: "ai-pc",
       title: "AI PC",
@@ -96,6 +98,7 @@ const projectData = {
     type: "B2B2C · 服務型機器人 · 多場域解決方案",
     summary: "在公司成立新事業單位、從零打造自有服務型機器人品牌 Wifundity 的三年間，負責自主移動機器人（AMR）產品線相關體驗設計：從競品研究、後台系統與機器人端 App，到 Wifundity 品牌網站、展覽與影片。面對中國成熟競品與台灣市場不確定性，透過 UX 串連產品、系統與品牌溝通",
     duration: "2021 Q4 – 2024 Q1",
+    tags: ["Service Robot", "Operations Dashboard", "B2B2C"],
     prevProject: {
       id: "drone-ux",
       title: "Drone System",
@@ -121,6 +124,7 @@ const projectData = {
     type: "ESG / 內訓與招募 · 桌遊體驗設計 · Generative AI 應用",
     summary: "與公司 ESG 辦公室、HR 與臺科大迷你教育遊戲團隊合作，從既有規則原型出發，重新設計一套可量產的 ESG 桌遊《緯你同行 Wi-Thrive: A Sustainable Drive》，透過遊戲化體驗將公司永續行動轉成故事，支援招募、內訓與對外品牌溝通，同時也是 UX 團隊在 AI 圖像工作流與跨部門協作上的代表專案",
     duration: "2023 Q3 – 2024 Q3",
+    tags: ["ESG Storytelling", "Board Game", "Gen AI Visuals"],
     prevProject: {
       id: "amr-robot",
       title: "Wifundity AMR",
@@ -402,11 +406,24 @@ const ProjectDetailV2 = () => {
               {project.title.split('｜')[1]}
             </p>
             <p 
-              className="text-lg md:text-xl text-primary mb-6 animate-fade-in"
+              className="text-lg md:text-xl text-primary mb-4 animate-fade-in"
               style={{ animationDelay: '300ms', animationFillMode: 'both' }}
             >
               {project.subtitle}
             </p>
+            {/* Tags */}
+            {'tags' in project && project.tags && (
+              <div 
+                className="flex flex-wrap gap-x-4 gap-y-1 mb-6 animate-fade-in"
+                style={{ animationDelay: '350ms', animationFillMode: 'both' }}
+              >
+                {(project.tags as string[]).map((tag: string) => (
+                  <span key={tag} className="text-sm text-white/60">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+            )}
             {/* Video Button for ESG project */}
             {'heroVideo' in project && project.heroVideo && (
               <Button
