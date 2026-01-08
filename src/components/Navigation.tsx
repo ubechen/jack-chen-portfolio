@@ -18,7 +18,6 @@ const Navigation = () => {
     { label: "Drone System", href: "/project/drone-ux" },
     { label: "Wifundity AMR", href: "/project/amr-robot" },
     { label: "Wi-Thrive ESG Game", href: "/project/esg-board-game" },
-    { label: "BabyFlow", href: "/project/babyflow" },
   ];
 
   const menuItems = [
