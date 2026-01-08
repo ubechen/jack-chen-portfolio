@@ -33,7 +33,7 @@ const heroStates: HeroState[] = [
     label: "Drone UX",
     title: "Drone System｜Control Experience",
     description: "與無人機大廠協作，打造易上手又可靠的地面控制站 UX 與操作流程",
-    tags: ["Drone GCS UX", "Control UI", "B2B Partnering"],
+    tags: ["Drone GCS UX", "Control System", "B2B"],
     image: heroDrone,
   },
   {
@@ -42,7 +42,7 @@ const heroStates: HeroState[] = [
     label: "Service Robots",
     title: "Wifundity AMR｜Service System Design",
     description: "從競品研究到前後台與場域驗證，整合多場域服務機器人的完整體驗",
-    tags: ["Service Robots", "Fleet Control", "Field UX Study"],
+    tags: ["Service Robot", "Operations Dashboard", "B2B2C"],
   },
   {
     id: "esg-board-game",
@@ -50,7 +50,7 @@ const heroStates: HeroState[] = [
     label: "ESG Game",
     title: "Wi-Thrive｜ESG Storytelling Game",
     description: "把企業永續轉成好玩易懂的 ESG 桌遊，串聯招募、內訓與品牌溝通",
-    tags: ["ESG Storytelling", "Serious Game", "Generative AI Visuals"],
+    tags: ["ESG Storytelling", "Board Game", "Gen AI Visuals"],
   },
 ];
 
