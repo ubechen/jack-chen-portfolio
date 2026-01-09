@@ -6,6 +6,7 @@ import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import heroAiPc from "@/assets/bg_index_hero_aipc.webp";
 import heroDrone from "@/assets/bg_index_hero_drone.webp";
+import heroAmr from "@/assets/bg_index_hero_amr.webp";
 
 interface HeroState {
   id: string;
@@ -43,6 +44,7 @@ const heroStates: HeroState[] = [
     title: "Wifundity AMR｜Service System Design",
     description: "從競品研究到前後台與場域驗證，整合多場域服務機器人的完整體驗",
     tags: ["Service Robot", "Operations Dashboard", "B2B2C"],
+    image: heroAmr,
   },
   {
     id: "esg-board-game",
