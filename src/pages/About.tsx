@@ -76,14 +76,8 @@ const About = () => {
             className="animate-fade-in"
             style={{ animationDelay: '200ms', animationFillMode: 'both' }}
           >
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
-              我是 Jack，一位長期深耕 B2B 與系統型產品的 Product / UX 設計師。
-            </p>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
-              比起直接打開 Figma，我更在意前面的「題目有沒有問對」——會先從公司與產品策略的角度看問題，再用研究、訪談和工作坊，幫團隊釐清這題值不值得做、應該先做哪一步。
-            </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-              我關心的不只是畫面，而是這些設計決策能不能為公司和使用者創造足夠的影響；如果你們正在為下一代產品方向或新技術應用找答案，我擅長用故事、數據和原型，陪團隊一起把決策變得更踏實。
+              我是 Jack，Product / UX 設計師，擅長在高不確定性與跨部門協作中，將模糊題目整理成可執行的方向。我習慣先對齊目標與成功指標，再用研究、訪談與快速試作降低風險，讓團隊更快收斂選項並推進交付。我在意的不只是介面，而是設計是否能帶來使用者價值，同時對應產品目標與成效
             </p>
           </div>
           
