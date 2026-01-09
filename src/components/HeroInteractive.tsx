@@ -7,6 +7,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import heroAiPc from "@/assets/bg_index_hero_aipc.webp";
 import heroDrone from "@/assets/bg_index_hero_drone.webp";
 import heroAmr from "@/assets/bg_index_hero_amr.webp";
+import heroEsg from "@/assets/bg_index_hero_esg.webp";
 
 interface HeroState {
   id: string;
@@ -53,6 +54,7 @@ const heroStates: HeroState[] = [
     title: "Wi-Thrive｜ESG Storytelling Game",
     description: "把企業永續轉成好玩易懂的 ESG 桌遊，串聯招募、內訓與品牌溝通",
     tags: ["ESG Storytelling", "Board Game", "Gen AI Visuals"],
+    image: heroEsg,
   },
 ];
 

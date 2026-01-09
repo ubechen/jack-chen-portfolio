@@ -25,6 +25,7 @@ import { cn } from "@/lib/utils";
 import aiPcHero from "@/assets/bg_project_aipc.webp";
 import droneHero from "@/assets/bg_projects_drone.webp";
 import amrHero from "@/assets/bg_project_amr.webp";
+import esgHero from "@/assets/bg_project_esg.webp";
 import DroneUXContent from "@/components/projects/DroneUXContent";
 import AMRRobotContent from "@/components/projects/AMRRobotContent";
 import ESGBoardGameContent from "@/components/projects/ESGBoardGameContent";
@@ -119,7 +120,7 @@ const projectData = {
   "esg-board-game": {
     title: "Wi-Thrive｜ESG Storytelling Game",
     subtitle: "ESG 桌遊《緯你同行 Wi-Thrive》：把企業永續變成一場能被「玩懂」的體驗",
-    heroImage: aiPcHero,
+    heroImage: esgHero,
     heroVideo: "https://www.youtube.com/embed/LrH-OEzySV8?autoplay=1",
     role: "Lead Designer · Product / UX / Visual · 專案協調窗口",
     type: "ESG / 內訓與招募 · 桌遊體驗設計 · Generative AI 應用",
