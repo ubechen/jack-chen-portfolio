@@ -10,6 +10,7 @@ import imgAMR3_3_1 from "@/assets/img_amr_3-3-1.webp";
 import imgAMR3_3_2 from "@/assets/img_amr_3-3-2.webp";
 import imgAMR4_1 from "@/assets/img_amr_4-1.webp";
 import imgAMR5_1 from "@/assets/img_amr_5-1.webp";
+import imgAMR3_4 from "@/assets/img_amr_3-4.webp";
 const AMRRobotContent = () => {
   return (
     <>
@@ -366,14 +367,11 @@ const AMRRobotContent = () => {
                         </li>
                       </ul>
 
-                      <figure className="-mx-4 md:mx-0">
-                        <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
-                          <p className="text-muted-foreground text-center px-4">展場與影片製作</p>
-                        </div>
-                        <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                          展覽文宣與互動內容
-                        </figcaption>
-                      </figure>
+                      <ZoomableImage
+                        src={imgAMR3_4}
+                        alt="AMR Robot 專案團隊合作過程與場域驗證，包含設計討論、工程開發、賣場飯店醫院實際運行等情境"
+                        figcaption="設計、開發、展覽與場域驗證"
+                      />
                     </div>
                   )
                 }
