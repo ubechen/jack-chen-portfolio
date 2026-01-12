@@ -55,13 +55,13 @@ const Projects = () => {
     >
       {/* 背景圖層（帶模糊 + 視差效果） */}
       <div 
-        className="absolute inset-0"
+        className="absolute -top-[50%] -bottom-[50%] left-0 right-0"
         style={{
           backgroundImage: 'url(/images/projects-bg.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'blur(2px)',
-          transform: `translateY(${scrollY * 0.3}px)`,
+          transform: `translateY(${scrollY * 0.15}px)`,
         }}
       />
       {/* 主藍色遮罩 50% */}
