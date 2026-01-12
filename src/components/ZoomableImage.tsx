@@ -14,10 +14,18 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
   const [isZoomed, setIsZoomed] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [canZoom, setCanZoom] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
   const isPinchingRef = useRef(false);
   const isDraggingRef = useRef(false);
   const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+
+  // Detect touch device
+  useEffect(() => {
+    setIsTouchDevice(
+      'ontouchstart' in window || navigator.maxTouchPoints > 0
+    );
+  }, []);
   // Listen for global close event - only one image can be zoomed at a time
   useEffect(() => {
     const handleCloseAll = () => {
@@ -149,7 +157,7 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
   const zoomedOverlay = isZoomed ? createPortal(
     <div 
       className={cn(
-        "fixed inset-0 z-[9999] bg-black/90 grid place-items-center cursor-zoom-out p-4",
+        "fixed inset-0 z-[9999] bg-black/90 flex flex-col items-center justify-center cursor-zoom-out p-4",
         isClosing ? "animate-zoom-fade-out" : "animate-zoom-fade-in"
       )}
       onClick={handleOverlayClick}
@@ -161,7 +169,7 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
         src={src}
         alt={alt}
         className={cn(
-          "max-w-[calc(100vw-2rem)] max-h-[calc(100vh-2rem)] object-contain rounded-lg cursor-zoom-out",
+          "max-w-[calc(100vw-2rem)] max-h-[calc(100vh-6rem)] object-contain rounded-lg cursor-zoom-out",
           isClosing ? "animate-zoom-scale-out" : "animate-zoom-scale-in"
         )}
         onClick={handleImageClick}
@@ -169,6 +177,11 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       />
+      {isTouchDevice && (
+        <p className="text-white/60 text-sm mt-4 text-center pointer-events-none">
+          雙指可縮放與拖曳圖片
+        </p>
+      )}
     </div>,
     document.body
   ) : null;
