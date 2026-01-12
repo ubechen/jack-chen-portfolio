@@ -1,6 +1,18 @@
+import { useState, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const projects = [
     {
       title: "AI PC",
@@ -41,19 +53,19 @@ const Projects = () => {
       id="projects" 
       className="py-24 px-0 md:px-6 relative overflow-hidden"
     >
-      {/* 背景圖層（帶模糊 + 視差固定） */}
+      {/* 背景圖層（帶模糊 + 視差效果） */}
       <div 
         className="absolute inset-0"
         style={{
           backgroundImage: 'url(/images/projects-bg.webp)',
-          backgroundAttachment: 'fixed',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'blur(2px)',
+          transform: `translateY(${scrollY * 0.3}px)`,
         }}
       />
-      {/* 主藍色遮罩 */}
-      <div className="absolute inset-0 bg-primary/85" />
+      {/* 主藍色遮罩 50% */}
+      <div className="absolute inset-0 bg-primary/50" />
       <div className="container mx-auto max-w-6xl relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
           Featured Projects
