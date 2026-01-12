@@ -47,7 +47,7 @@ const projectData = {
     heroImage: aiPcHero,
     role: "Strategic UX · Research & Vision",
     type: "策略探索／未來產品願景",
-    summary: "在 AI PC 定義尚未成熟的階段，透過研究與分析 10 個創新功能排序與 3 組代表情境，幫助 PM 組成向高層提案的藍圖，也讓 ID、ME 團隊與新創夥伴以情境評估新技術價值，加速進入原型開發",
+    summary: "在 AI PC 尚未成熟的探索期，以研究與分析完成 10 項創新功能優先序與 3 組代表情境/工作流。成果支援 PM 對高層與國際電腦品牌客戶提案，也讓 ID、ME 與新創夥伴以情境評估新技術價值，加速原型開發",
     duration: "2024 Q2 – Q4",
     tags: ["AI PC Vision", "Strategic UX", "UX Research"],
     prevProject: {
@@ -73,7 +73,7 @@ const projectData = {
     heroImage: droneHero,
     role: "Product / UX / UI Designer",
     type: "B2B／國防與產業應用 · 控制站 UX",
-    summary: "在公司從 AMR Robot 轉向無人機市場之際，與國內無人機大廠合作，聚焦地面控制站（手持控制器＋App）的 UX 與 POC，支援國際展會 demo 與國防標案機會，後續延伸至後台管理系統",
+    summary: "公司從 AMR 轉向無人機市場之際，與國內無人機大廠合作聚焦地面控制站(手持控制器+App)的 UX 與 POC：從競品研究到實機測試，設計任務中可靠、低誤操作的流程與介面，支援國際展會 demo 與國防標案，並延伸至後台管理系統規劃",
     duration: "2024 Q2 – 2025 Q1",
     tags: ["Drone GCS UX", "Control System", "B2B"],
     prevProject: {
@@ -98,7 +98,7 @@ const projectData = {
     heroImage: amrHero,
     role: "Product / UX / UI Designer",
     type: "B2B2C · 服務型機器人 · 多場域解決方案",
-    summary: "在公司成立新事業單位、從零打造自有服務型機器人品牌 Wifundity 的三年間，負責自主移動機器人（AMR）產品線相關體驗設計：從競品研究、後台系統與機器人端 App，到 Wifundity 品牌網站、展覽與影片。面對中國成熟競品與台灣市場不確定性，透過 UX 串連產品、系統與品牌溝通",
+    summary: "公司新事業從零打造服務型機器人品牌 Wifundity 的三年間，負責 AMR 產品體驗設計：競品研究、後台管理系統與機器人端 App，到品牌網站、展覽與影片。在成熟競品與市場不確定性下，以 UX 串連產品、營運流程與品牌溝通，推進多場域落地",
     duration: "2021 Q4 – 2024 Q1",
     tags: ["Service Robot", "Operations Dashboard", "B2B2C"],
     prevProject: {
@@ -124,7 +124,7 @@ const projectData = {
     heroVideo: "https://www.youtube.com/embed/LrH-OEzySV8?autoplay=1",
     role: "Lead Designer · Product / UX / Visual · 專案協調窗口",
     type: "ESG / 內訓與招募 · 桌遊體驗設計 · Generative AI 應用",
-    summary: "與公司 ESG 辦公室、HR 與臺科大迷你教育遊戲團隊合作，從既有規則原型出發，重新設計一套可量產的 ESG 桌遊《緯你同行 Wi-Thrive: A Sustainable Drive》，透過遊戲化體驗將公司永續行動轉成故事，支援招募、內訓與對外品牌溝通，同時也是 UX 團隊在 AI 圖像工作流與跨部門協作上的代表專案",
+    summary: "為支援企業內訓、招募與品牌溝通，與 ESG、HR 及臺科大教育遊戲團隊合作，將既有規則原型重構為可量產桌遊《緯你同行 Wi-Thrive》。透過遊戲化把永續行動轉成可理解的情境與故事，並導入 AI 生成圖像工作流，在短時間內高效完成大量素材且維持風格一致與高品質",
     duration: "2023 Q3 – 2024 Q3",
     tags: ["ESG Storytelling", "Board Game", "Gen AI Visuals"],
     prevProject: {
