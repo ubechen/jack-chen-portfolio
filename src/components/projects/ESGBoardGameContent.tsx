@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import ScrollReveal from "@/components/ScrollReveal";
 import ProcessAccordion from "@/components/projects/ProcessAccordion";
+import ZoomableImage from "@/components/ZoomableImage";
 import imgEsg2_1 from "@/assets/img_esg_2-1.webp";
 
 const ESGBoardGameContent = () => {
@@ -213,17 +214,15 @@ const ESGBoardGameContent = () => {
               </Card>
             </div>
 
-            {/* Image Placeholder */}
-            <figure className="-mx-4 md:mx-0 mt-10">
-              <img 
+            {/* Image with zoom support */}
+            <div className="-mx-4 md:mx-0 mt-10">
+              <ZoomableImage 
                 src={imgEsg2_1} 
                 alt="AI 圖像工作流：拆解元素、設計 Prompt 結構、團隊分工產製、風格一致與專注" 
                 className="w-full md:rounded-lg"
+                figcaption="AI 圖像不是為了省事，而是讓團隊能把心力放在更重要的體驗與內容決策上"
               />
-              <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                AI 圖像不是為了省事，而是讓團隊能把心力放在更重要的體驗與內容決策上
-              </figcaption>
-            </figure>
+            </div>
           </div>
         </section>
       </ScrollReveal>
