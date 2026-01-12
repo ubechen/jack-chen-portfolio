@@ -75,11 +75,11 @@ const Projects = () => {
     >
       {/* 背景圖層（帶模糊 + 視差效果） */}
       <div 
-        className="absolute -top-[20%] left-0 right-0 bottom-0"
+        className="absolute -top-[20%] left-0 right-0 -bottom-[20%]"
         style={{
           backgroundImage: 'url(/images/projects-bg.webp)',
           backgroundSize: 'cover',
-          backgroundPosition: 'top',
+          backgroundPosition: 'center',
           filter: 'blur(2px)',
           transform: `translateY(-${parallaxY}px)`,
         }}
