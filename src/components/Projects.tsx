@@ -41,7 +41,7 @@ const Projects = () => {
       id="projects" 
       className="py-24 px-0 md:px-6 relative"
       style={{
-        backgroundImage: 'url(/images/projects-bg.jpg)',
+        backgroundImage: 'url(/images/projects-bg.webp)',
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
