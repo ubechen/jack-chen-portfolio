@@ -16,7 +16,8 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
   const [canZoom, setCanZoom] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
   const isPinchingRef = useRef(false);
-
+  const isDraggingRef = useRef(false);
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
   // Listen for global close event - only one image can be zoomed at a time
   useEffect(() => {
     const handleCloseAll = () => {
@@ -59,11 +60,11 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isZoomed]);
 
-  // Auto-close on scroll (but not during pinch)
+  // Auto-close on scroll (but not during pinch or drag)
   useEffect(() => {
     if (!isZoomed) return;
     const handleScroll = () => {
-      if (isPinchingRef.current) return;
+      if (isPinchingRef.current || isDraggingRef.current) return;
       handleClose();
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -93,28 +94,54 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
     }, 200);
   };
 
-  // Touch event handlers for pinch-to-zoom detection
+  // Touch event handlers for pinch-to-zoom and drag detection
   const handleTouchStart = (e: React.TouchEvent) => {
     if (e.touches.length > 1) {
       isPinchingRef.current = true;
+    } else if (e.touches.length === 1) {
+      // Record single-finger touch start position
+      touchStartRef.current = {
+        x: e.touches[0].clientX,
+        y: e.touches[0].clientY,
+      };
+      isDraggingRef.current = false;
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (e.touches.length > 1) {
+      isPinchingRef.current = true;
+      return;
+    }
+    
+    if (touchStartRef.current && e.touches.length === 1) {
+      const deltaX = Math.abs(e.touches[0].clientX - touchStartRef.current.x);
+      const deltaY = Math.abs(e.touches[0].clientY - touchStartRef.current.y);
+      
+      // Movement over 10px is considered a drag
+      if (deltaX > 10 || deltaY > 10) {
+        isDraggingRef.current = true;
+      }
     }
   };
 
   const handleTouchEnd = () => {
-    // Delay reset to prevent click event from firing immediately after pinch
+    touchStartRef.current = null;
+    // Delay reset to prevent click event from firing immediately after pinch/drag
     setTimeout(() => {
       isPinchingRef.current = false;
+      isDraggingRef.current = false;
     }, 150);
   };
 
   const handleOverlayClick = () => {
-    if (isPinchingRef.current) return;
+    if (isPinchingRef.current || isDraggingRef.current) return;
     handleClose();
   };
 
   const handleImageClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (isPinchingRef.current) return;
+    if (isPinchingRef.current || isDraggingRef.current) return;
     handleClose();
   };
 
@@ -127,6 +154,7 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
       )}
       onClick={handleOverlayClick}
       onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
       <img
@@ -138,6 +166,7 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
         )}
         onClick={handleImageClick}
         onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       />
     </div>,
