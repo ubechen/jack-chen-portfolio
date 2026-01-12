@@ -37,7 +37,7 @@ import imgAipc321 from "@/assets/img_aipc_3-2-1.webp";
 import imgAipc322 from "@/assets/img_aipc_3-2-2.webp";
 import imgAipc41 from "@/assets/img_aipc_4-1.webp";
 import imgAipc21 from "@/assets/img_aipc_2-1.webp";
-import imgAipc51 from "@/assets/img_aipc_5-1.webp";
+import imgAipc51 from "@/assets/img_aipc_5-1-2.webp";
 import imgAipc61 from "@/assets/img_aipc_6-1-2.webp";
 
 const projectData = {
@@ -981,8 +981,8 @@ const ProjectDetailV2 = () => {
 
                   <ZoomableImage
                     src={imgAipc51}
-                    alt="AI 輔助設計流程示意圖"
-                    figcaption="運用生成式 AI 加速研究與共創"
+                    alt="AI / ESG Lens - AI 作為對象與工具，以及 ESG 評估的未來延伸視角"
+                    figcaption="透過 AI / ESG 視角審視專案的雙重價值"
                     className="mt-10"
                   />
                 </div>
