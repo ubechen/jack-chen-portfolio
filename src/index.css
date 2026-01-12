@@ -102,6 +102,16 @@ All colors MUST be HSL.
 }
 
 @layer base {
+  ::selection {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  ::-moz-selection {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
   * {
     @apply border-border;
   }
