@@ -59,7 +59,7 @@ const Projects = () => {
         style={{
           backgroundImage: 'url(/images/projects-bg.webp)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'top',
           filter: 'blur(2px)',
           transform: `translateY(${scrollY * 0.3}px)`,
         }}
