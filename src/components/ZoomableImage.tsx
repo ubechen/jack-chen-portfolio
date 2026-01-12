@@ -15,6 +15,7 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
   const [isClosing, setIsClosing] = useState(false);
   const [canZoom, setCanZoom] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
+  const isPinchingRef = useRef(false);
 
   // Listen for global close event - only one image can be zoomed at a time
   useEffect(() => {
@@ -58,10 +59,11 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isZoomed]);
 
-  // Auto-close on scroll
+  // Auto-close on scroll (but not during pinch)
   useEffect(() => {
     if (!isZoomed) return;
     const handleScroll = () => {
+      if (isPinchingRef.current) return;
       handleClose();
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -91,6 +93,31 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
     }, 200);
   };
 
+  // Touch event handlers for pinch-to-zoom detection
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (e.touches.length > 1) {
+      isPinchingRef.current = true;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    // Delay reset to prevent click event from firing immediately after pinch
+    setTimeout(() => {
+      isPinchingRef.current = false;
+    }, 150);
+  };
+
+  const handleOverlayClick = () => {
+    if (isPinchingRef.current) return;
+    handleClose();
+  };
+
+  const handleImageClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (isPinchingRef.current) return;
+    handleClose();
+  };
+
   // Render zoomed overlay via Portal to escape any parent stacking context
   const zoomedOverlay = isZoomed ? createPortal(
     <div 
@@ -98,7 +125,9 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
         "fixed inset-0 z-[9999] bg-black/90 grid place-items-center cursor-zoom-out p-4",
         isClosing ? "animate-zoom-fade-out" : "animate-zoom-fade-in"
       )}
-      onClick={handleClose}
+      onClick={handleOverlayClick}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       <img
         src={src}
@@ -107,10 +136,9 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
           "max-w-[calc(100vw-2rem)] max-h-[calc(100vh-2rem)] object-contain rounded-lg cursor-zoom-out",
           isClosing ? "animate-zoom-scale-out" : "animate-zoom-scale-in"
         )}
-        onClick={(e) => {
-          e.stopPropagation();
-          handleClose();
-        }}
+        onClick={handleImageClick}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
       />
     </div>,
     document.body
