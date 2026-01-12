@@ -55,7 +55,7 @@ const Projects = () => {
     >
       {/* 背景圖層（帶模糊 + 視差效果） */}
       <div 
-        className="absolute inset-0"
+        className="absolute -top-[30%] left-0 right-0 bottom-0"
         style={{
           backgroundImage: 'url(/images/projects-bg.webp)',
           backgroundSize: 'cover',

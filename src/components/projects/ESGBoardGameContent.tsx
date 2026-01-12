@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import ScrollReveal from "@/components/ScrollReveal";
 import ProcessAccordion from "@/components/projects/ProcessAccordion";
+import imgEsg2_1 from "@/assets/img_esg_2-1.webp";
 
 const ESGBoardGameContent = () => {
   return (
@@ -214,11 +215,13 @@ const ESGBoardGameContent = () => {
 
             {/* Image Placeholder */}
             <figure className="-mx-4 md:mx-0 mt-10">
-              <div className="aspect-[16/9] bg-muted md:rounded-lg flex items-center justify-center">
-                <p className="text-muted-foreground text-center px-4">專案角色與協作關係圖</p>
-              </div>
+              <img 
+                src={imgEsg2_1} 
+                alt="AI 圖像工作流：拆解元素、設計 Prompt 結構、團隊分工產製、風格一致與專注" 
+                className="w-full md:rounded-lg"
+              />
               <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                跨部門協作網絡
+                AI 圖像不是為了省事，而是讓團隊能把心力放在更重要的體驗與內容決策上
               </figcaption>
             </figure>
           </div>
