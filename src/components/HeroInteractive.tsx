@@ -111,10 +111,10 @@ const HeroInteractive = () => {
               Product / UX 設計夥伴
             </h1>
             <h2 className="text-lg md:text-xl text-muted-foreground font-medium">
-              Jack 專注複雜產品與多角色情境，用研究與故事讓決策更踏實
+              Jack 專注複雜產品與多角色情境，用研究與故事讓決策更清楚
             </h2>
             <p className="text-base text-muted-foreground/80 max-w-lg mx-auto">
-              多從「產品下一步要走哪裡」的角度思考設計，協助團隊對齊目標並做出可執行的選擇
+              擅長在工程限制與時程壓力下整合需求，協助團隊對齊目標並做出可執行的選擇，讓方向能真正被做出來用起來
             </p>
           </div>
 
@@ -151,10 +151,10 @@ const HeroInteractive = () => {
                 Product / UX 設計夥伴
               </h1>
               <h2 className="text-lg md:text-xl text-muted-foreground font-medium">
-                Jack 專注複雜產品與多角色情境，用研究與故事讓決策更踏實
+                Jack 專注複雜產品與多角色情境，用研究與故事讓決策更清楚
               </h2>
               <p className="text-base text-muted-foreground/80 max-w-lg">
-                多從「產品下一步要走哪裡」的角度思考設計，協助團隊對齊目標並做出可執行的選擇
+                擅長在工程限制與時程壓力下整合需求，協助團隊對齊目標並做出可執行的選擇，讓方向能真正被做出來用起來
               </p>
             </div>
 
