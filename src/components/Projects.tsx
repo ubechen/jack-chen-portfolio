@@ -5,7 +5,7 @@ const Projects = () => {
     {
       title: "AI PC",
       subtitle: "Research & Vision",
-      description: "在 AI PC 尚未被定義前，以研究與分析整理 10 項關鍵 AI 功能優先序與 3 組未來工作情境，協助 PM 規劃產品藍圖",
+      description: "在 AI PC 尚未定義前，以研究與分析整理 10 項 AI 功能優先序與 3 組未來工作情境，協助 PM 建立產品藍圖與取捨依據",
       roleInfo: "Strategic UX / Product Designer",
       tags: ["AI PC Vision", "Strategic UX", "UX Research"],
       projectId: "ai-pc",
@@ -13,7 +13,7 @@ const Projects = () => {
     {
       title: "Drone System",
       subtitle: "Control Experience",
-      description: "與國內無人機大廠合作開發地面控制站，從競品研究到實機測試，設計操作者在任務中可依賴的控制器與操作介面",
+      description: "與國內無人機大廠合作開發地面控制站，從競品研究到實機測試，設計任務中可靠、低誤操作的控制器與操作介面",
       roleInfo: "Product / UX / UI Designer",
       tags: ["Drone GCS UX", "Control System", "B2B"],
       projectId: "drone-ux",
@@ -21,7 +21,7 @@ const Projects = () => {
     {
       title: "AMR Robot",
       subtitle: "Service System Design",
-      description: "參與新事業服務機器人產品線，從競品研究、後台管理系統到機器人端 App，設計支援賣場、飯店、醫院等多場域的完整體驗",
+      description: "參與服務機器人產品線，從競品研究到前後台與機器人端 App，打造支援賣場／飯店／醫院的多場域營運體驗",
       roleInfo: "Product / UX / UI Designer",
       tags: ["Service Robot", "Operations Dashboard", "B2B2C"],
       projectId: "amr-robot",
@@ -29,7 +29,7 @@ const Projects = () => {
     {
       title: "Wi-Thrive",
       subtitle: "ESG Storytelling Game",
-      description: "與 ESG 辦公室、HR 與臺科大合作設計《緯你同行》桌遊，結合 GenAI 圖像與 UX 調整，讓同仁與應徵者在遊戲中理解公司永續行動",
+      description: "與 ESG、HR 與臺科大合作《緯你同行》桌遊，結合生成式圖像與體驗調整，讓同仁與應徵者在遊戲中理解永續行動",
       roleInfo: "Lead Designer",
       tags: ["ESG Storytelling", "Board Game", "Gen AI Visuals"],
       projectId: "esg-board-game",
