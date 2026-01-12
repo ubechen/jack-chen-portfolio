@@ -39,19 +39,23 @@ const Projects = () => {
   return (
     <section 
       id="projects" 
-      className="py-24 px-0 md:px-6 relative"
-      style={{
-        backgroundImage: 'url(/images/projects-bg.webp)',
-        backgroundAttachment: 'fixed',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundColor: 'hsl(220 14% 96%)',
-      }}
+      className="py-24 px-0 md:px-6 relative overflow-hidden"
     >
-      {/* Semi-transparent overlay for readability */}
-      <div className="absolute inset-0 bg-background/80" />
+      {/* 背景圖層（帶模糊 + 視差固定） */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          backgroundImage: 'url(/images/projects-bg.webp)',
+          backgroundAttachment: 'fixed',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'blur(2px)',
+        }}
+      />
+      {/* 主藍色遮罩 */}
+      <div className="absolute inset-0 bg-primary/85" />
       <div className="container mx-auto max-w-6xl relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-foreground">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
           Featured Projects
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
