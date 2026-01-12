@@ -1,15 +1,34 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
-  const [scrollY, setScrollY] = useState(0);
+  const [parallaxY, setParallaxY] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (!sectionRef.current) return;
+      
+      const rect = sectionRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Only calculate parallax when section is visible
+      if (rect.bottom < 0 || rect.top > windowHeight) {
+        return;
+      }
+      
+      // Calculate how far into the section we've scrolled (0 = just entering, 1 = leaving)
+      const sectionProgress = Math.max(0, (windowHeight - rect.top) / (windowHeight + rect.height));
+      
+      // Apply parallax: move background UP as we scroll down (max 120px)
+      const maxParallax = 120;
+      const newParallaxY = Math.min(sectionProgress * maxParallax * 1.5, maxParallax);
+      
+      setParallaxY(newParallaxY);
     };
     
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial calculation
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -50,18 +69,19 @@ const Projects = () => {
 
   return (
     <section 
+      ref={sectionRef}
       id="projects" 
       className="py-24 px-0 md:px-6 relative overflow-hidden"
     >
       {/* 背景圖層（帶模糊 + 視差效果） */}
       <div 
-        className="absolute -top-[30%] left-0 right-0 bottom-0"
+        className="absolute -top-[20%] left-0 right-0 bottom-0"
         style={{
           backgroundImage: 'url(/images/projects-bg.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'top',
           filter: 'blur(2px)',
-          transform: `translateY(${scrollY * 0.3}px)`,
+          transform: `translateY(-${parallaxY}px)`,
         }}
       />
       {/* 主藍色遮罩 50% */}
