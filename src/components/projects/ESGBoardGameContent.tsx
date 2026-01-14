@@ -413,8 +413,10 @@ const ESGBoardGameContent = () => {
             <div className="space-y-12">
               {/* Challenge 1 */}
               <div className="bg-background border border-border rounded-xl p-8">
-                <h3 className="text-2xl font-semibold mb-6 text-foreground flex items-center gap-3">
-                  <span className="text-primary">Challenge 1</span>
+                <div className="flex items-start gap-4">
+                  <span className="bg-primary/10 text-primary font-bold px-3 py-1 rounded-full text-sm">挑戰 1</span>
+                </div>
+                <h3 className="text-2xl font-semibold mt-4 mb-4 text-foreground">
                   內容專業又龐大，還要讓各方「看得懂、看得過」
                 </h3>
                 
@@ -464,8 +466,10 @@ const ESGBoardGameContent = () => {
 
               {/* Challenge 2 */}
               <div className="bg-background border border-border rounded-xl p-8">
-                <h3 className="text-2xl font-semibold mb-6 text-foreground flex items-center gap-3">
-                  <span className="text-primary">Challenge 2</span>
+                <div className="flex items-start gap-4">
+                  <span className="bg-primary/10 text-primary font-bold px-3 py-1 rounded-full text-sm">挑戰 2</span>
+                </div>
+                <h3 className="text-2xl font-semibold mt-4 mb-4 text-foreground">
                   跨部門與外部團隊合作，需要清楚邊界與節奏
                 </h3>
                 
