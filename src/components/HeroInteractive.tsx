@@ -110,12 +110,9 @@ const HeroInteractive = () => {
               <br />
               Product / UX 設計夥伴
             </h1>
-            <h2 className="text-lg md:text-xl text-muted-foreground font-medium">
-              Jack 專注複雜產品與多角色情境，用研究與故事讓決策更清楚
+            <h2 className="text-base md:text-lg text-muted-foreground/80 font-medium">
+              Jack 專注複雜產品與多角色情境：研究釐清、需求整合、取捨落地，讓下一步更明確
             </h2>
-            <p className="text-base text-muted-foreground/80 max-w-lg mx-auto">
-              擅長在工程限制與時程壓力下整合需求，協助團隊對齊目標並做出可執行的選擇，讓方向能真正被做出來用起來
-            </p>
           </div>
 
           {/* CTA Buttons */}
@@ -150,12 +147,9 @@ const HeroInteractive = () => {
                 <br />
                 Product / UX 設計夥伴
               </h1>
-              <h2 className="text-lg md:text-xl text-muted-foreground font-medium">
-                Jack 專注複雜產品與多角色情境，用研究與故事讓決策更清楚
+              <h2 className="text-base md:text-lg text-muted-foreground/80 font-medium">
+                Jack 專注複雜產品與多角色情境：研究釐清、需求整合、取捨落地，讓下一步更明確
               </h2>
-              <p className="text-base text-muted-foreground/80 max-w-lg">
-                擅長在工程限制與時程壓力下整合需求，協助團隊對齊目標並做出可執行的選擇，讓方向能真正被做出來用起來
-              </p>
             </div>
 
             {/* CTA Buttons */}
