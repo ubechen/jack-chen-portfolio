@@ -3,6 +3,8 @@ import ScrollReveal from "@/components/ScrollReveal";
 import ProcessAccordion from "@/components/projects/ProcessAccordion";
 import ZoomableImage from "@/components/ZoomableImage";
 import imgEsg2_1 from "@/assets/img_esg_2-1.webp";
+import imgEsg3_1 from "@/assets/img_esg_3-1.webp";
+import imgEsg5_1 from "@/assets/img_esg_5-1.webp";
 
 const ESGBoardGameContent = () => {
   return (
@@ -268,14 +270,12 @@ const ESGBoardGameContent = () => {
                     </li>
                   </ul>
 
-                  <figure className="-mx-4 md:mx-0">
-                    <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                      <p className="text-muted-foreground text-center px-4">試玩與體驗痛點整理</p>
-                    </div>
-                    <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                      UX 團隊內部試玩記錄
-                    </figcaption>
-                  </figure>
+                  <ZoomableImage
+                    src={imgEsg3_1}
+                    alt="團隊成員與公司同仁試玩 Wi-Thrive 桌遊過程記錄"
+                    className="w-full md:rounded-lg -mx-4 md:mx-0"
+                    figcaption="團隊成員與公司同仁試玩記錄"
+                  />
                 </div>
               )
             },
@@ -308,14 +308,6 @@ const ESGBoardGameContent = () => {
                     </li>
                   </ul>
 
-                  <figure className="-mx-4 md:mx-0">
-                    <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                      <p className="text-muted-foreground text-center px-4">卡牌版型系統設計</p>
-                    </div>
-                    <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                      視覺規則與資訊層級
-                    </figcaption>
-                  </figure>
 
                   <figure className="-mx-4 md:mx-0">
                     <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
@@ -363,14 +355,6 @@ const ESGBoardGameContent = () => {
                     </p>
                   </div>
 
-                  <figure className="-mx-4 md:mx-0">
-                    <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                      <p className="text-muted-foreground text-center px-4">AI 圖像工作流示意</p>
-                    </div>
-                    <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                      Prompt 結構與分工模式
-                    </figcaption>
-                  </figure>
                 </div>
               )
             },
@@ -567,58 +551,46 @@ const ESGBoardGameContent = () => {
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-4xl font-bold mb-12 text-foreground">
               5. What I learned
-              <span className="block text-xl font-normal text-muted-foreground mt-2">永續也可以被「玩懂」</span>
+              <span className="block text-xl font-normal text-muted-foreground mt-2">讓永續被「看懂」也被「帶走」</span>
             </h2>
 
             <div className="space-y-8">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                對我來說，Wi-Thrive《緯你同行》是一個很特別、也很關鍵的案子。
+                Wi-Thrive《緯你同行》對我來說不只是一次把內容做成桌遊的設計案，而是一個很具體的證明：當 ESG 這種專業又抽象的題目，換成「能被玩、能被理解、能被分享」的體驗時，它就更容易被記住，也更容易被拿去用。
               </p>
-
-              <div className="bg-primary/10 rounded-xl p-8">
-                <p className="text-xl text-foreground font-semibold leading-relaxed">
-                  它再次證明：UX 能力並不被限制在螢幕上，而是可以運用在任何需要「讓人理解、做出選擇」的情境
-                </p>
-              </div>
-
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                在專業內容、多方利害關係人與時間壓力之下，設計師的價值不只是產出畫面，而是：
-              </p>
-
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-background border border-border rounded-lg p-6">
-                  <p className="text-foreground font-medium">先幫忙看清題目與目標</p>
-                </div>
-                <div className="bg-background border border-border rounded-lg p-6">
-                  <p className="text-foreground font-medium">再把複雜的內容變成可以被體驗、被帶著走的形式</p>
-                </div>
-              </div>
 
               <div className="bg-secondary/50 rounded-xl p-8">
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  對我個人而言，這也是一次：
+                  這個案子讓我學到幾件事：
                 </p>
-                <ul className="space-y-3 text-foreground">
+                <ul className="space-y-4 text-foreground">
                   <li className="flex gap-3">
                     <span className="text-primary font-bold">•</span>
-                    <span>帶領多人團隊協作、掌控節奏與品質的實戰</span>
+                    <span>UX 的價值不只在螢幕上，而是在任何需要「降低理解成本、引導行為、形成共識」的情境</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-primary font-bold">•</span>
-                    <span>用生成式 AI 工具建立工作流，而不是單點嘗試</span>
+                    <span>面對多方利害關係人時，設計師的工作不只是產出畫面，而是把回饋整理成可執行的取捨，讓團隊能在同一個節奏內往前推</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-primary font-bold">•</span>
-                    <span>在一開始「不那麼被看重」的案子裡，做出超出預期成果的經驗</span>
+                    <span>生成式 AI 的重點不在於做出一張好看的圖，而是把它變成可複用、可分工、可控品質的工作流，才撐得起大量內容與短時程交付</span>
                   </li>
                 </ul>
               </div>
 
               <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6">
-                <p className="text-xl text-foreground font-medium leading-relaxed">
-                  即使我不是站在台前介紹桌遊的人，但知道這套遊戲已經被各種場景拿來使用、讓更多人「玩懂」這間公司在做的永續行動，對我來說，是一件很值得、也很驕傲的事。
+                <p className="text-lg text-foreground leading-relaxed">
+                  而最讓我印象深刻的是：這款桌遊後來不只用在招募與內訓，也被帶到供應鏈協力夥伴大會，由公司總經理暨執行長在台上向供應鏈廠商介紹，並作為伴手禮之一。這代表它不只是「做得漂亮」，而是成為公司對外溝通永續作為的一種語言與載體。
                 </p>
               </div>
+
+              <ZoomableImage
+                src={imgEsg5_1}
+                alt="2024 緯創供應鏈協力夥伴大會現場，總經理暨執行長林建勳於台上介紹 Wistron ESG Board Game《Wi-Thrive》，並作為供應商伴手禮之一"
+                className="w-full md:rounded-lg -mx-4 md:mx-0"
+                figcaption="從內訓到供應鏈溝通，Wi-Thrive 成為公司對外說永續的一種體驗語言，也讓設計成果帶著走延續價值"
+              />
             </div>
           </div>
         </section>
