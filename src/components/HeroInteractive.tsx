@@ -107,8 +107,12 @@ const HeroInteractive = () => {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Mobile/Tablet Layout (< 1024px) */}
         <div className="lg:hidden flex flex-col items-center justify-center text-center space-y-8 min-h-[70vh]">
-          {/* Animated SVG Background */}
-          {showAnimatedBg && <HeroAnimatedBackground />}
+          {/* Animated SVG Background - Digital Ecosystem Blueprint */}
+          {showAnimatedBg && (
+            <div className="opacity-25 text-muted-foreground">
+              <HeroAnimatedBackground />
+            </div>
+          )}
           
           {/* Background Toggle Button */}
           <HeroBackgroundToggle 
