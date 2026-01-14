@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
+import HeroAnimatedBackground from "./HeroAnimatedBackground";
+import HeroBackgroundToggle from "./HeroBackgroundToggle";
 import heroAiPc from "@/assets/bg_index_hero_aipc.webp";
 import heroDrone from "@/assets/bg_index_hero_drone.webp";
 import heroAmr from "@/assets/bg_index_hero_amr.webp";
@@ -60,6 +62,7 @@ const heroStates: HeroState[] = [
 
 const HeroInteractive = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [showAnimatedBg, setShowAnimatedBg] = useState(true);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   const activeState = heroStates[selectedIndex];
@@ -104,7 +107,16 @@ const HeroInteractive = () => {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Mobile/Tablet Layout (< 1024px) */}
         <div className="lg:hidden flex flex-col items-center justify-center text-center space-y-8 min-h-[70vh]">
-          <div className="space-y-4">
+          {/* Animated SVG Background */}
+          {showAnimatedBg && <HeroAnimatedBackground />}
+          
+          {/* Background Toggle Button */}
+          <HeroBackgroundToggle 
+            isOn={showAnimatedBg} 
+            onToggle={() => setShowAnimatedBg(!showAnimatedBg)} 
+          />
+          
+          <div className="space-y-4 relative z-10">
             <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-[1.2] md:leading-[1.2]">
               幫團隊處理複雜題目的
               <br />
