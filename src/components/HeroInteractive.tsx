@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
-import HeroAnimatedBackground from "./HeroAnimatedBackground";
+import HeroAnimatedBackgroundResponsive from "./HeroAnimatedBackgroundResponsive";
 import HeroBackgroundToggle from "./HeroBackgroundToggle";
 import heroAiPc from "@/assets/bg_index_hero_aipc.webp";
 import heroDrone from "@/assets/bg_index_hero_drone.webp";
@@ -109,8 +109,8 @@ const HeroInteractive = () => {
         <div className="lg:hidden flex flex-col items-center justify-center text-center space-y-8 min-h-[70vh]">
           {/* Animated SVG Background - Digital Ecosystem Blueprint */}
           {showAnimatedBg && (
-            <div className="opacity-25 text-muted-foreground">
-              <HeroAnimatedBackground />
+            <div className="opacity-25 text-muted-foreground absolute inset-0">
+              <HeroAnimatedBackgroundResponsive />
             </div>
           )}
           
