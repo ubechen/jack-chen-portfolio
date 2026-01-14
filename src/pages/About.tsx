@@ -103,7 +103,7 @@ const About = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              這幾年在科技製造與 B2B 產品環境裡，我長期待在一個尷尬、但很有價值的位置——介於 <strong className="text-foreground">業務／PM／高層</strong> 和 <strong className="text-foreground">ID／ME／RD</strong> 之間。
+              這幾年在科技製造與 B2B 產品環境裡，我長期待在一個尷尬、但很有價值的位置——介於 <strong className="text-foreground">業務／PM／高層</strong> 和 <strong className="text-foreground">ID／ME／RD</strong> 之間
             </p>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
@@ -139,9 +139,9 @@ const About = () => {
             
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-foreground">複雜系統與 B2B / B2B2X 產品</h3>
+              <h3 className="text-xl font-semibold mb-3 text-foreground">複雜系統與 B2B / B2B2X 產品</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-3">
-                  例如：AI PC、無人機／機器人／AMR、企業內部系統等具備多角色、多流程的服務。
+                  例如：創新筆電、無人機／機器人／AMR、企業內部系統、醫療復健系統等具備多角色、多流程的服務
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-2">這些產品的共通點是：</p>
                 <ul className="space-y-2 pl-6">
@@ -151,16 +151,16 @@ const About = () => {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-foreground">軟硬體整合的體驗</h3>
+              <h3 className="text-xl font-semibold mb-3 text-foreground">軟硬體整合的體驗</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  和 ID、ME、韌體等團隊合作，把感測器、控制器這種「看起來很技術」的東西，化成使用者看得懂、易於使用的體驗。
+                  和 ID、ME、韌體等團隊合作，把感測器、控制器這種「看起來很技術」的東西，化成使用者看得懂、易於使用的體驗
                 </p>
               </div>
               
               <div>
                 <h3 className="text-xl font-semibold mb-3 text-foreground">高不確定性的探索題目</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  像是 AI PC 的未來形態、新技術模組應用，或 ESG／永續相關的新服務方向。這些題目通常還沒有標準答案，需要一邊研究、一邊幫團隊找出可以嘗試的路徑。
+                  像是 AI PC 的未來形態、新技術模組應用，或 ESG／永續相關的新服務方向。這些題目通常還沒有標準答案，需要一邊研究、一邊幫團隊找出可以嘗試的路徑
                 </p>
               </div>
             </div>
@@ -177,7 +177,7 @@ const About = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              我比較像是「拿著研究和故事，陪團隊做選擇」的設計師。
+              我比較像是「拿著研究和故事，陪團隊做選擇」的設計師
             </p>
             
             <div className="space-y-8">
@@ -229,7 +229,7 @@ const About = () => {
             </div>
             
             <p className="text-lg text-muted-foreground leading-relaxed mt-8">
-              多數時候，我比較像安靜觀察的人：先把不同角色的顧慮聽完、拼成一張完整的圖，再幫大家一起縮小不確定性。我傾向穩穩地往前推，而不是把團隊拉去做很炫、但落不了地的東西。如果用人格來形容，大概是偏向 ISFJ 型——重視信任感、默默把該顧的細節顧好，也願意撐住專案的底線。
+              多數時候，我比較像安靜觀察的人：先把不同角色的顧慮聽完、拼成一張完整的圖，再幫大家一起縮小不確定性。我傾向穩穩地往前推，而不是把團隊拉去做很炫、但落不了地的東西。如果用人格來形容，大概是偏向 ISFJ 型——重視信任感、默默把該顧的細節顧好，也願意撐住專案的底線
             </p>
           </div>
         </section>
@@ -245,23 +245,23 @@ const About = () => {
             
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-foreground">複雜產品與 B2B 服務的體驗優化</h3>
+              <h3 className="text-xl font-semibold mb-3 text-foreground">複雜產品與 B2B 服務的體驗優化</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  不管是 AI PC、機器人還是內部系統，我特別在意的是：能不能真的讓不同角色「少一點摩擦」，能不能幫產品團隊看見新的商機或模式。
+                  不管是 AI PC、機器人還是內部系統，我特別在意的是：能不能真的讓不同角色「少一點摩擦」，能不能幫產品團隊看見新的商機或模式
                 </p>
               </div>
               
               <div>
                 <h3 className="text-xl font-semibold mb-3 text-foreground">負責任的產品決策</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  包含：在導入 AI 或自動化時，不只是追求「能做」，也討論「應不應該做、做到什麼程度」；在有 ESG、永續或治理議題時，及早把這些限制納入設計與溝通，而不是最後才補一塊說明。
+                  包含：在導入 AI 或自動化時，不只是追求「能做」，也討論「應不應該做、做到什麼程度」；在有 ESG、永續或治理議題時，及早把這些限制納入設計與溝通，而不是最後才補一塊說明
                 </p>
               </div>
               
               <div>
                 <h3 className="text-xl font-semibold mb-3 text-foreground">把 UX 從「輸出螢幕」變成「輸出決策品質」</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  我希望 UX 在組織裡，不只是畫 UI、做 usability、維護設計系統，而是：<span className="text-foreground italic">幫團隊問對問題、做對選擇，並把這些選擇做得清楚、好用又可被信任。</span>
+                  我希望 UX 在組織裡，不只是畫 UI、做 usability、維護設計系統，而是：<span className="text-foreground italic">幫團隊問對問題、做對選擇，並把這些選擇做得清楚、好用又可被信任</span>
                 </p>
               </div>
             </div>
@@ -283,7 +283,7 @@ const About = () => {
             </ul>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              那我們可以聊一聊，一起把模糊的題目走到可落地的那一步。
+              那我們可以聊一聊，一起把模糊的題目走到可落地的那一步
             </p>
             
             {/* 3 Contact Buttons */}
@@ -326,7 +326,7 @@ const About = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              我把 AI 視為日常工作流程的一部分：從研究整理、情境發想到設計驗證，都會善用工具來加速，而不是取代思考。為了讓這些實務有更完整的知識基礎，我也投入系統化學習，並取得以下 AI 相關證照：
+              我把 AI 視為日常工作流程的一部分：從研究整理、情境發想到設計驗證，都會善用工具來加速，而不是取代思考。為了讓這些實務有更完整的知識基礎，我也投入系統化學習，並取得以下 AI 相關證照
             </p>
             
             <ul className="space-y-3 pl-6">
