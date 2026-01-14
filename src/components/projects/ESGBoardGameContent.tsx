@@ -4,6 +4,9 @@ import ProcessAccordion from "@/components/projects/ProcessAccordion";
 import ZoomableImage from "@/components/ZoomableImage";
 import imgEsg2_1 from "@/assets/img_esg_2-1.webp";
 import imgEsg3_1 from "@/assets/img_esg_3-1.webp";
+import imgEsg3_2 from "@/assets/img_esg_3-2.webp";
+import imgEsg3_4 from "@/assets/img_esg_3-4.webp";
+import imgEsg4_1 from "@/assets/img_esg_4-1.webp";
 import imgEsg5_1 from "@/assets/img_esg_5-1.webp";
 
 const ESGBoardGameContent = () => {
@@ -20,7 +23,7 @@ const ESGBoardGameContent = () => {
             
             <div className="space-y-8">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                公司永續經營辦公室希望打造一款 ESG 桌遊，透過實際遊玩的過程，讓同仁、應徵者、客戶，可以在輕鬆互動中理解公司做了哪些永續行動。
+                公司永續經營辦公室希望打造一款 ESG 桌遊，透過實際遊玩的過程，讓同仁、應徵者、客戶，可以在輕鬆互動中理解公司做了哪些永續行動
               </p>
 
               <div className="bg-secondary/50 rounded-xl p-8 my-8">
@@ -44,7 +47,7 @@ const ESGBoardGameContent = () => {
               <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6 my-8">
                 <h3 className="text-lg font-semibold mb-3 text-foreground">前期進度</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  ESG 辦公室已與<mark className="bg-primary/20 text-foreground px-1 rounded">臺科大迷你教育遊戲研究團隊</mark>合作，完成初版遊戲規則與機制、基本的遊戲流程雛形。
+                  ESG 辦公室已與<mark className="bg-primary/20 text-foreground px-1 rounded">臺科大迷你教育遊戲研究團隊</mark>合作，完成初版遊戲規則與機制、基本的遊戲流程雛形
                 </p>
               </div>
 
@@ -64,7 +67,7 @@ const ESGBoardGameContent = () => {
               </div>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                原先 ESG 辦公室曾尋找外包設計師，但遇到溝通與效率問題，最後在 HR 轉介下改由我們 UX 團隊接手，由我擔任主要負責人，帶領 4 位設計師共同完成。
+                原先 ESG 辦公室曾尋找外包設計師，但遇到溝通與效率問題，最後在 HR 轉介下改由我們 UX 團隊接手，由我擔任主要負責人，帶領 4 位設計師共同完成
               </p>
 
               <div className="bg-primary/10 rounded-xl p-8 mt-8">
@@ -241,7 +244,7 @@ const ESGBoardGameContent = () => {
           }
           introContent={
             <p className="text-lg text-muted-foreground leading-relaxed">
-              透過試玩體驗、視覺系統設計、AI 圖像工作流與印前落地，我們打造了一套完整的 ESG 桌遊體驗。
+              透過試玩體驗、視覺系統設計、AI 圖像工作流與印前落地，我們打造了一套完整的 ESG 桌遊體驗
             </p>
           }
           subSections={[
@@ -309,14 +312,12 @@ const ESGBoardGameContent = () => {
                   </ul>
 
 
-                  <figure className="-mx-4 md:mx-0">
-                    <div className="aspect-[16/10] bg-muted md:rounded-lg flex items-center justify-center">
-                      <p className="text-muted-foreground text-center px-4">全套實體物件設計</p>
-                    </div>
-                    <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                      底板、計分板、token、說明書與外盒
-                    </figcaption>
-                  </figure>
+                  <ZoomableImage
+                    src={imgEsg3_2}
+                    alt="Wi-Thrive ESG 桌遊全套實體物件設計，包含底板、計分板、卡牌、token 等配件"
+                    className="w-full md:rounded-lg -mx-4 md:mx-0"
+                    figcaption="底板、計分板、token、說明書與外盒"
+                  />
                 </div>
               )
             },
@@ -387,14 +388,12 @@ const ESGBoardGameContent = () => {
                     </li>
                   </ul>
 
-                  <figure className="-mx-4 md:mx-0">
-                    <div className="aspect-video bg-muted md:rounded-lg flex items-center justify-center">
-                      <p className="text-muted-foreground text-center px-4">最終桌遊成品</p>
-                    </div>
-                    <figcaption className="text-sm text-muted-foreground text-center mt-2 px-4">
-                      中英雙語版本
-                    </figcaption>
-                  </figure>
+                  <ZoomableImage
+                    src={imgEsg3_4}
+                    alt="Wi-Thrive ESG 桌遊完整成品，包含外盒、底板、卡牌、token 等所有配件"
+                    className="w-full md:rounded-lg -mx-4 md:mx-0"
+                    figcaption="桌遊成品紀錄"
+                  />
                 </div>
               )
             }
@@ -445,7 +444,7 @@ const ESGBoardGameContent = () => {
                 </div>
 
                 <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6">
-                  <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">我的角色</p>
+                  <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">我的做法是</p>
                   <ul className="space-y-2 text-foreground">
                     <li className="flex gap-3">
                       <span className="text-primary">•</span>
@@ -453,7 +452,7 @@ const ESGBoardGameContent = () => {
                     </li>
                     <li className="flex gap-3">
                       <span className="text-primary">•</span>
-                      <span>幫忙辨識哪些是「必須修」、哪些是「可以討論」、哪些是「改了會更混亂」</span>
+                      <span>幫忙辨識哪些是必須修、哪些可以討論、哪些改了反而更混亂</span>
                     </li>
                     <li className="flex gap-3">
                       <span className="text-primary">•</span>
@@ -504,19 +503,19 @@ const ESGBoardGameContent = () => {
                 </div>
 
                 <div>
-                  <p className="text-sm text-muted-foreground uppercase tracking-wider mb-4">在專案過程中，我刻意做到：</p>
+                  <p className="text-sm text-muted-foreground uppercase tracking-wider mb-4">在專案過程中，我刻意做到</p>
                   <ul className="space-y-3 text-muted-foreground">
                     <li className="flex gap-3">
                       <span className="text-primary font-bold">→</span>
-                      <span>每一輪會議之前先整理「目前版本狀態」與「這一輪要做什麼決定」</span>
+                      <span>每一輪會議前先整理目前版本狀態與這一輪要定下什麼</span>
                     </li>
                     <li className="flex gap-3">
                       <span className="text-primary font-bold">→</span>
-                      <span>用簡單的圖、樣機與流程，讓非設計背景的夥伴也看得懂差異</span>
+                      <span>用簡單的圖、樣機與流程讓非設計背景的夥伴也看得懂差異</span>
                     </li>
                     <li className="flex gap-3">
                       <span className="text-primary font-bold">→</span>
-                      <span>對團隊成員說清楚：哪一些是一定要收斂的範圍，哪一些可以留給下一版優化</span>
+                      <span>對團隊成員說清楚：哪些一定要收斂、哪些可以留到下一版</span>
                     </li>
                   </ul>
                 </div>
@@ -528,7 +527,11 @@ const ESGBoardGameContent = () => {
                 <div className="space-y-4">
                   <div className="flex gap-4 items-start">
                     <span className="text-2xl">✓</span>
-                    <p className="text-lg text-foreground">高層總經理級主管實際玩過桌遊，對 ESG 與 UX 團隊有了具體印象</p>
+                    <p className="text-lg text-foreground">各事業群總經理級主管實際參與試玩，讓桌遊的溝通效果與理解門檻在高層層級被驗證</p>
+                  </div>
+                  <div className="flex gap-4 items-start">
+                    <span className="text-2xl">✓</span>
+                    <p className="text-lg text-foreground">高層對 ESG 與 UX 團隊留下具體印象，並延伸到供應鏈溝通與對外贈禮場景</p>
                   </div>
                   <div className="flex gap-4 items-start">
                     <span className="text-2xl">✓</span>
@@ -536,9 +539,16 @@ const ESGBoardGameContent = () => {
                   </div>
                   <div className="flex gap-4 items-start">
                     <span className="text-2xl">✓</span>
-                    <p className="text-lg text-foreground">在公司內部，UX 團隊被看見的不只是「畫 UI」，而是能處理<mark className="bg-primary/20 text-foreground px-1 rounded">內容、體驗、AI 工具與跨部門協作</mark>的夥伴</p>
+                    <p className="text-lg text-foreground">在公司內部，UX 團隊被看見的不只是畫 UI，而是能處理<mark className="bg-primary/20 text-foreground px-1 rounded">內容、體驗、AI 工具與跨部門協作</mark>的夥伴</p>
                   </div>
                 </div>
+
+                <ZoomableImage
+                  src={imgEsg4_1}
+                  alt="Wi-Thrive ESG 桌遊高層試玩現場，多位總經理級主管共同體驗並給出回饋"
+                  className="w-full md:rounded-lg -mx-4 md:mx-0 mt-8"
+                  figcaption="當桌遊能讓不同背景的人在同一張桌上對齊理解，它就不只是成果展示，而是下一輪優化的共同語言"
+                />
               </div>
             </div>
           </div>
@@ -556,7 +566,7 @@ const ESGBoardGameContent = () => {
 
             <div className="space-y-8">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Wi-Thrive《緯你同行》對我來說不只是一次把內容做成桌遊的設計案，而是一個很具體的證明：當 ESG 這種專業又抽象的題目，換成「能被玩、能被理解、能被分享」的體驗時，它就更容易被記住，也更容易被拿去用。
+                Wi-Thrive《緯你同行》對我來說不只是一次把內容做成桌遊的設計案，而是一個很具體的證明：當 ESG 這種專業又抽象的題目，換成「能被玩、能被理解、能被分享」的體驗時，它就更容易被記住，也更容易被拿去用
               </p>
 
               <div className="bg-secondary/50 rounded-xl p-8">
@@ -581,7 +591,7 @@ const ESGBoardGameContent = () => {
 
               <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6">
                 <p className="text-lg text-foreground leading-relaxed">
-                  而最讓我印象深刻的是：這款桌遊後來不只用在招募與內訓，也被帶到供應鏈協力夥伴大會，由公司總經理暨執行長在台上向供應鏈廠商介紹，並作為伴手禮之一。這代表它不只是「做得漂亮」，而是成為公司對外溝通永續作為的一種語言與載體。
+                  而最讓我印象深刻的是：這款桌遊後來不只用在招募與內訓，也被帶到供應鏈協力夥伴大會，由公司總經理暨執行長在台上向供應鏈廠商介紹，並作為伴手禮之一。這代表它不只是「做得漂亮」，而是成為公司對外溝通永續作為的一種語言與載體
                 </p>
               </div>
 
