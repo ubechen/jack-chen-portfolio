@@ -104,22 +104,22 @@ const HeroInteractive = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/5 to-transparent rounded-full" />
       </div>
 
+      {/* ★ 動態 SVG 背景（全域位置，兩版共用） */}
+      {showAnimatedBg && (
+        <div className="opacity-25 text-muted-foreground absolute inset-0 pointer-events-none z-0">
+          <HeroAnimatedBackgroundResponsive />
+        </div>
+      )}
+
+      {/* ★ 背景切換按鈕（全域位置） */}
+      <HeroBackgroundToggle 
+        isOn={showAnimatedBg} 
+        onToggle={() => setShowAnimatedBg(!showAnimatedBg)} 
+      />
+
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Mobile/Tablet Layout (< 1024px) */}
         <div className="lg:hidden flex flex-col items-center justify-center text-center space-y-8 min-h-[70vh]">
-          {/* Animated SVG Background - Digital Ecosystem Blueprint */}
-          {showAnimatedBg && (
-            <div className="opacity-25 text-muted-foreground absolute inset-0">
-              <HeroAnimatedBackgroundResponsive />
-            </div>
-          )}
-          
-          {/* Background Toggle Button */}
-          <HeroBackgroundToggle 
-            isOn={showAnimatedBg} 
-            onToggle={() => setShowAnimatedBg(!showAnimatedBg)} 
-          />
-          
           <div className="space-y-4 relative z-10">
             <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-[1.2] md:leading-[1.2]">
               幫團隊處理複雜題目的
