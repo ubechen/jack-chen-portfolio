@@ -47,7 +47,7 @@ const Projects = () => {
       description: "與國內無人機大廠合作開發地面控制站，從競品研究到實機測試，設計任務中可靠、低誤操作的控制器與操作介面",
       roleInfo: "Product / UX / UI Designer",
       tags: ["Drone GCS UX", "Control System", "B2B"],
-      projectId: "drone-ux",
+      projectId: "drone",
     },
     {
       title: "AMR Robot",

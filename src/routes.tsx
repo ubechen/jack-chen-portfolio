@@ -43,20 +43,10 @@ export const routes: RouteRecord[] = [
         element: withSuspense(Resume),
       },
       {
-        path: "project/ai-pc",
+        path: "project/:projectId",
         element: withSuspense(ProjectDetail),
-      },
-      {
-        path: "project/drone-ux",
-        element: withSuspense(ProjectDetail),
-      },
-      {
-        path: "project/amr-robot",
-        element: withSuspense(ProjectDetail),
-      },
-      {
-        path: "project/esg-board-game",
-        element: withSuspense(ProjectDetail),
+        // Define which paths to pre-render for this dynamic route
+        getStaticPaths: () => ['ai-pc', 'drone', 'amr-robot', 'esg-board-game'],
       },
       {
         path: "*",
