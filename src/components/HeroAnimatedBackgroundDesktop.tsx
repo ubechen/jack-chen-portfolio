@@ -18,7 +18,7 @@ const HeroAnimatedBackgroundDesktop = () => {
             /* 背景內容群組 - 統一套用淡雅風格 */
             .bg-content-d {
               color: hsl(220, 20%, 80%);
-              opacity: 0.15;
+              opacity: 0.3;
               filter: url(#subtle-blur);
               transition: opacity 0.5s ease;
             }
