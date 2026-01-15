@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Play, FolderSearch, Briefcase } from "lucide-react";
@@ -230,70 +231,7 @@ const ProjectDetailV2 = () => {
   const sections: Section[] = project?.sections || [];
   const { activeSection, showNav } = useScrollSpy(sections, 150);
 
-  // SEO and JSON-LD for each project
-  useEffect(() => {
-    if (!project) return;
-
-    const seoData: Record<string, { title: string; description: string }> = {
-      "ai-pc": {
-        title: "AI PC UX Case Study | Jack Chen – Product / UX Designer Taipei",
-        description: "AI PC vision and strategy UX case study by Jack Chen. Research-driven approach to define next-gen laptop experiences for creators and professionals."
-      },
-      "drone-ux": {
-        title: "Drone Ground Control UX | Jack Chen – Product / UX Designer Taipei",
-        description: "Drone ground control station (GCS) UX design case study. B2B partnering project for military and industrial drone applications."
-      },
-      "amr-robot": {
-        title: "AMR Service Robot UX | Jack Chen – Product / UX Designer Taipei",
-        description: "Wifundity AMR service robot platform UX case study. Fleet management and multi-venue service robot experience design."
-      },
-      "esg-board-game": {
-        title: "ESG Board Game Design | Jack Chen – Product / UX Designer Taipei",
-        description: "Wi-Thrive ESG storytelling game experience design. Generative AI visual workflow for sustainable board game production."
-      }
-    };
-
-    const seo = seoData[projectId as string] || {
-      title: `${project.title} | Jack Chen – Product / UX Designer Taipei`,
-      description: project.summary
-    };
-
-    document.title = seo.title;
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", seo.description);
-    }
-
-    // Add JSON-LD CreativeWork schema
-    const existingScript = document.querySelector('script[data-project-schema="true"]');
-    if (existingScript) {
-      existingScript.remove();
-    }
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.setAttribute("data-project-schema", "true");
-    script.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "CreativeWork",
-      "name": project.title,
-      "description": project.summary,
-      "author": {
-        "@type": "Person",
-        "name": "Jack Chen",
-        "jobTitle": "Product / UX Designer"
-      }
-    });
-    document.head.appendChild(script);
-
-    return () => {
-      const scriptToRemove = document.querySelector('script[data-project-schema="true"]');
-      if (scriptToRemove) {
-        scriptToRemove.remove();
-      }
-    };
-  }, [project, projectId]);
-
+  // Scroll handler only
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -369,8 +307,49 @@ const ProjectDetailV2 = () => {
     );
   }
 
+  const seoData: Record<string, { title: string; description: string }> = {
+    "ai-pc": {
+      title: "AI PC UX Case Study | Jack Chen – Product / UX Designer Taipei",
+      description: "AI PC vision and strategy UX case study by Jack Chen. Research-driven approach to define next-gen laptop experiences for creators and professionals."
+    },
+    "drone-ux": {
+      title: "Drone Ground Control UX | Jack Chen – Product / UX Designer Taipei",
+      description: "Drone ground control station (GCS) UX design case study. B2B partnering project for military and industrial drone applications."
+    },
+    "amr-robot": {
+      title: "AMR Service Robot UX | Jack Chen – Product / UX Designer Taipei",
+      description: "Wifundity AMR service robot platform UX case study. Fleet management and multi-venue service robot experience design."
+    },
+    "esg-board-game": {
+      title: "ESG Board Game Design | Jack Chen – Product / UX Designer Taipei",
+      description: "Wi-Thrive ESG storytelling game experience design. Generative AI visual workflow for sustainable board game production."
+    }
+  };
+
+  const seo = seoData[projectId as string] || {
+    title: `${project.title} | Jack Chen – Product / UX Designer Taipei`,
+    description: project.summary
+  };
+
+  const jsonLdData = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": project.title,
+    "description": project.summary,
+    "author": {
+      "@type": "Person",
+      "name": "Jack Chen",
+      "jobTitle": "Product / UX Designer"
+    }
+  };
+
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <script type="application/ld+json">{JSON.stringify(jsonLdData)}</script>
+      </Helmet>
       <Navigation />
       
       {/* Desktop Quick Nav */}

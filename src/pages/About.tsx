@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -17,20 +17,16 @@ const MediumIcon = () => (
 const About = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    document.title = "Jack Chen – About | Product / UX Designer in Taipei";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Learn about Jack Chen's approach to Product / UX design for B2B systems, AI PC, robotics, and ESG projects. Based in Taipei, Taiwan.");
-    }
-  }, []);
-
   const scrollToSection = (href: string) => {
     navigate(`/${href}`);
   };
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Jack Chen – About | Product / UX Designer in Taipei</title>
+        <meta name="description" content="Learn about Jack Chen's approach to Product / UX design for B2B systems, AI PC, robotics, and ESG projects. Based in Taipei, Taiwan." />
+      </Helmet>
       <Navigation />
       
       {/* Hero Section - White background */}
@@ -325,43 +321,44 @@ const About = () => {
               AI & Continuous Learning
             </h2>
             
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              我把 AI 視為日常工作流程的一部分：從研究整理、情境發想到設計驗證，都會善用工具來加速，而不是取代思考。為了讓這些實務有更完整的知識基礎，我也投入系統化學習，並取得以下 AI 相關證照
-            </p>
-            
-            <ul className="space-y-3 pl-6">
-              <li className="text-lg text-muted-foreground">• iPAS AI 應用規劃師 初級</li>
-              <li className="text-lg text-muted-foreground">• 資策會生成式 AI 能力認證</li>
-            </ul>
-          </div>
-        </section>
-      </ScrollReveal>
-
-      <ScrollReveal delay={100}>
-        {/* Section: A bit more about me - Warm accent background */}
-        <section className="py-16 px-6 bg-muted/50 shadow-sm">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">
-              A bit more about me
-            </h2>
-            
-            <ul className="space-y-4">
-              <li className="text-lg text-muted-foreground leading-relaxed">
-                <span className="mr-2">🧩</span><strong className="text-foreground">個性偏 ISFJ 型：</strong>安靜觀察多一點、搶話少一點，重視信任和長期合作關係
-              </li>
-              <li className="text-lg text-muted-foreground leading-relaxed">
-                <span className="mr-2">👶</span><strong className="text-foreground">新手爸爸 & 女兒奴：</strong>下班最期待的就是陪女兒玩，觀察她怎麼跟世界互動，偶爾也會變成設計靈感的一部分
-              </li>
-              <li className="text-lg text-muted-foreground leading-relaxed">
-                <span className="mr-2">☕️🚗</span><strong className="text-foreground">咖啡成癮＋模型車收藏：</strong>現在少手沖，多半靠外帶或膠囊續命；模型車則是在忙碌生活裡保留的小小儀式感
-              </li>
-              <li className="text-lg text-muted-foreground leading-relaxed">
-                <span className="mr-2">🔵📐</span><strong className="text-foreground">藍色控＋細節龜毛：</strong>偏愛各種藍色，也很享受在易用性測試裡當「debug 達人」，一條一條把問題點抓出來整理好
-              </li>
-              <li className="text-lg text-muted-foreground leading-relaxed">
-                <span className="mr-2">🎤🧱</span><strong className="text-foreground">幕前幕後切換自如：</strong>習慣待在幕後穩住局面、整理不同角色的聲音；但在需要有人登場 pitch、主持工作坊或對外簡報時，也願意站到台前，讓團隊的成果被看見
-              </li>
-            </ul>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <span className="text-xl">🤖</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 text-foreground">AI 工具融入設計流程</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    在緯創專案期間，我主動將生成式 AI 工具（如 Midjourney、Photoshop Firefly）導入 ESG 桌遊與展場影片製作，建立可複製的 AI 圖像工作流，讓團隊在壓縮的時程下維持高品質與風格一致的產出。我也持續探索如何用 AI 輔助使用者研究整理與原型發想
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <span className="text-xl">📜</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 text-foreground">AI 相關認證</h3>
+                  <ul className="space-y-2">
+                    <li className="text-lg text-muted-foreground">• 經濟部 iPAS｜AI 應用規劃師 初級</li>
+                    <li className="text-lg text-muted-foreground">• 資策會｜生成式 AI 能力認證</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <span className="text-xl">📚</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 text-foreground">持續學習 ＆ Side Project</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    這個作品集網站就是我用 AI Coding 工具（Lovable）打造的 side project，從零開始實作 React + Vite + Tailwind 架構，同時練習與 AI 協作的迭代方式。未來我希望能進一步探索 AI agent、No-code / Low-code 工具在設計工作上的可能性
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </ScrollReveal>

@@ -1,59 +1,29 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { MapPin, Globe, Linkedin, Mail, Download, ExternalLink } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 
+// JSON-LD structured data for Resume page
+const jsonLdData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jack Chen",
+  "jobTitle": "Product / UX Designer",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Taipei",
+    "addressCountry": "Taiwan"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/tai-yun-chen/"
+  ],
+  "description": "Product / UX Designer focused on B2B systems, robotics, AI PC, drones, and ESG experiences."
+};
+
 const Resume = () => {
-  useEffect(() => {
-    document.title = "Jack Chen – Product / UX Designer in Taipei | Resume & Portfolio";
-    
-    // Set meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Jack Chen is a Product / UX Designer based in Taipei, focused on B2B systems, robotics, AI PC, drones, and ESG experiences. View his resume, projects, and download Chinese / English PDFs.");
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = "Jack Chen is a Product / UX Designer based in Taipei, focused on B2B systems, robotics, AI PC, drones, and ESG experiences. View his resume, projects, and download Chinese / English PDFs.";
-      document.head.appendChild(meta);
-    }
-
-    // Add JSON-LD structured data
-    const existingScript = document.querySelector('script[type="application/ld+json"]');
-    if (existingScript) {
-      existingScript.remove();
-    }
-    
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Jack Chen",
-      "jobTitle": "Product / UX Designer",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Taipei",
-        "addressCountry": "Taiwan"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/tai-yun-chen/",
-        window.location.origin
-      ],
-      "description": "Product / UX Designer focused on B2B systems, robotics, AI PC, drones, and ESG experiences."
-    });
-    document.head.appendChild(script);
-
-    return () => {
-      const scriptToRemove = document.querySelector('script[type="application/ld+json"]');
-      if (scriptToRemove) {
-        scriptToRemove.remove();
-      }
-    };
-  }, []);
 
   const workExperience = [
     {
@@ -183,6 +153,11 @@ const Resume = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Jack Chen – Product / UX Designer in Taipei | Resume & Portfolio</title>
+        <meta name="description" content="Jack Chen is a Product / UX Designer based in Taipei, focused on B2B systems, robotics, AI PC, drones, and ESG experiences. View his resume, projects, and download Chinese / English PDFs." />
+        <script type="application/ld+json">{JSON.stringify(jsonLdData)}</script>
+      </Helmet>
       <Navigation />
       
       <main className="pt-20 pb-16">

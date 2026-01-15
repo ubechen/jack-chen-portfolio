@@ -5,6 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // GitHub Pages requires base path set to repo name in production
+  // For Lovable preview, keep base as "/"
+  base: mode === "production" ? "/jack-ux-portfolio-vite/" : "/",
   server: {
     host: "::",
     port: 8080,
@@ -14,5 +17,9 @@ export default defineConfig(({ mode }) => ({
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  ssgOptions: {
+    script: "async",
+    formatting: "minify",
   },
 }));
