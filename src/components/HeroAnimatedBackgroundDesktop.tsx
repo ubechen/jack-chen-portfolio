@@ -2,172 +2,165 @@ const HeroAnimatedBackgroundDesktop = () => {
   return (
     <svg
       version="1.1"
-      id="tech-ecosystem-bg-desktop"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1200 600"
       preserveAspectRatio="xMidYMid slice"
       className="w-full h-full pointer-events-none absolute top-0 left-0"
     >
       <defs>
-        {/* 高斯模糊濾鏡 */}
-        <filter id="subtle-blur">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" />
+        <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blurOut" />
+          <feColorMatrix
+            in="blurOut"
+            type="matrix"
+            values="
+              0.9 0 0 0 0.1
+              0 0.9 0 0 0.1
+              0 0 1 0 0.2
+              0 0 0 0.8 0"
+            result="glowColor"
+          />
+          <feMerge>
+            <feMergeNode in="glowColor" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
         </filter>
-        <style>
-          {`
-            /* 背景內容群組 - 統一套用淡雅風格 */
-            .bg-content-d {
-              color: hsl(220, 20%, 80%);
-              opacity: 0.3;
-              filter: url(#subtle-blur);
-              transition: opacity 0.5s ease;
-            }
-            
-            .st-line-d {
-              fill: none;
-              stroke: currentColor;
-              stroke-width: 1.5;
-              stroke-linecap: round;
-              stroke-linejoin: round;
-              vector-effect: non-scaling-stroke;
-            }
-            .st-text-d {
-              fill: currentColor;
-              font-family: 'Courier New', monospace, sans-serif;
-              font-size: 14px;
-              font-weight: bold;
-              letter-spacing: 1px;
-            }
-            
-            @keyframes flowAnimationDesktop {
-              from { stroke-dashoffset: 1500; }
-              to { stroke-dashoffset: 0; }
-            }
-            .anim-flow-d {
-              stroke-dasharray: 1500;
-              stroke-dashoffset: 1500;
-              animation: flowAnimationDesktop 30s linear infinite;
-            }
-            .anim-flow-rev-d {
-              stroke-dasharray: 1500;
-              stroke-dashoffset: 0;
-              animation: flowAnimationDesktop 35s linear infinite reverse;
-            }
-
-            @keyframes floatAnimationDesktop {
-              0%, 100% { transform: translateY(0); }
-              50% { transform: translateY(-10px); }
-            }
-            .anim-float-d {
-              animation: floatAnimationDesktop 7s ease-in-out infinite;
-            }
-
-            @keyframes rotateAnimationDesktop {
-              from { transform: rotate(0deg); }
-              to { transform: rotate(360deg); }
-            }
-            .anim-spin-d {
-              transform-box: fill-box;
-              transform-origin: center;
-              animation: rotateAnimationDesktop 2s linear infinite;
-            }
-
-            @keyframes pulseOpacityDesktop {
-              0%, 100% { opacity: 0.6; }
-              50% { opacity: 1; }
-            }
-            .anim-pulse-d {
-              animation: pulseOpacityDesktop 5s ease-in-out infinite;
-            }
-          `}
-        </style>
       </defs>
 
-      {/* 包裹所有內容的淡雅風格群組 */}
-      <g className="bg-content-d">
-        {/* 斜向電路網絡背景線條 */}
-        <g id="network-lines-desktop" className="st-line-d anim-flow-d">
-          <path d="M100,150 L400,150 L600,300 L900,300 L1100,450" />
-          <path d="M200,450 L400,300 L600,300 L800,150 L1000,150" />
-          <path d="M600,100 V500" />
-          {/* 節點 */}
-          <circle cx="400" cy="150" r="3" />
-          <circle cx="600" cy="300" r="4" />
-          <circle cx="900" cy="300" r="3" />
+      <style>{`
+        /* --- 全域樣式設定 --- */
+        .abstract-bg-content {
+          /* 極淡的淺藍青色，適合淺色背景 */
+          color: hsl(200, 30%, 85%);
+          /* 整體透明度非常低，確保不搶戲 */
+          opacity: 0.2;
+          /* 套用發光濾鏡 */
+          filter: url(#soft-glow);
+          transition: opacity 0.8s ease;
+        }
+
+        /* 曲線樣式 */
+        .st-curve {
+          fill: none;
+          stroke: currentColor;
+          stroke-width: 1.5;
+          stroke-linecap: round;
+          vector-effect: non-scaling-stroke;
+        }
+        
+        /* 節點樣式 */
+        .st-node {
+          fill: currentColor;
+          stroke: none;
+        }
+
+        /* 文字樣式 (維持科技感但更淡) */
+        .st-text-abstract {
+          fill: currentColor;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          font-size: 12px;
+          font-weight: 500;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          opacity: 0.8;
+        }
+        
+        /* --- 動畫定義 --- */
+        /* 緩慢的光流動動畫 */
+        @keyframes flowSoft { 
+          from { stroke-dashoffset: 2000; } 
+          to { stroke-dashoffset: 0; } 
+        }
+        .anim-flow-soft { 
+          stroke-dasharray: 2000; 
+          stroke-dashoffset: 2000; 
+          animation: flowSoft 40s linear infinite; 
+        }
+        .anim-flow-soft-rev { 
+          stroke-dasharray: 2000; 
+          stroke-dashoffset: 0; 
+          animation: flowSoft 45s linear infinite reverse; 
+        }
+
+        /* 有機的浮動與脈動 */
+        @keyframes pulseOrganic { 
+          0%, 100% { opacity: 0.4; transform: scale(1); } 
+          50% { opacity: 1; transform: scale(1.05); } 
+        }
+        .anim-pulse-node { 
+          transform-box: fill-box; 
+          transform-origin: center; 
+          animation: pulseOrganic 6s ease-in-out infinite; 
+        }
+
+        @keyframes floatAbstract { 
+          0%, 100% { transform: translate(0, 0); } 
+          50% { transform: translate(10px, -15px); } 
+        }
+        .anim-float-abs { 
+          animation: floatAbstract 10s ease-in-out infinite; 
+        }
+
+        /* 旋轉動畫 */
+        @keyframes spinSlow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .anim-spin {
+          transform-box: fill-box;
+          transform-origin: center;
+          animation: spinSlow 15s linear infinite;
+        }
+      `}</style>
+
+      <g className="abstract-bg-content">
+        {/* 主要流動曲線 */}
+        <g className="anim-flow-soft" opacity="0.7">
+          <path className="st-curve" d="M-100,100 C100,250 300,50 500,200 C700,350 900,150 1300,300" />
+          <path className="st-curve" d="M-50,500 C150,550 350,300 600,350 C850,400 1050,100 1250,150" />
+        </g>
+        
+        {/* 輔助流動曲線 */}
+        <g className="anim-flow-soft-rev" opacity="0.5">
+          <path className="st-curve" d="M200,300 C300,450 500,550 700,450" strokeWidth="1" />
+          <path className="st-curve" d="M800,200 C900,50 1100,100 1200,50" strokeWidth="1" />
         </g>
 
-        {/* 左側區域：無人機 + AI AGENT */}
-        <g className="anim-float-d" style={{ transform: 'translateY(0)' }}>
-          <g transform="translate(150, 200)">
-            <g transform="translate(0, -40)">
-              <g className="st-line-d anim-flow-d">
-                {/* 無人機機身 */}
-                <path d="M0,0 m-20,-20 l40,40 m-40,0 l40,-40 M0,-5 l0,10 m-5,-5 l10,0" />
-                {/* 螺旋槳 */}
-                <circle className="anim-spin-d" cx="-20" cy="-20" r="8" />
-                <circle className="anim-spin-d" cx="20" cy="-20" r="8" />
-                <circle className="anim-spin-d" cx="-20" cy="20" r="8" />
-                <circle className="anim-spin-d" cx="20" cy="20" r="8" />
-              </g>
-            </g>
-            <text x="-40" y="40" className="st-text-d anim-pulse-d">AI AGENT_</text>
+        {/* 左側節點簇 - AI Agent */}
+        <g className="anim-float-abs" transform="translate(150, 180)">
+          <g className="anim-pulse-node">
+            <circle className="st-node" cx="0" cy="0" r="5" />
+            <circle className="st-node" cx="15" cy="-10" r="3" opacity="0.7" />
+            <circle className="st-node" cx="-12" cy="12" r="3" opacity="0.7" />
+            <circle className="st-node" cx="20" cy="15" r="2" opacity="0.5" />
           </g>
+          <text x="30" y="5" className="st-text-abstract">AI Agent_</text>
         </g>
 
-        {/* 中間區域：AI 創新筆電 + UX/UI */}
-        <g className="anim-float-d" style={{ transform: 'translateY(0)' }}>
-          <g transform="translate(600, 300)">
-            <g transform="translate(-24, -20)">
-              <g className="st-line-d anim-flow-rev-d">
-                {/* 鍵盤底座 */}
-                <path d="M4,8 L44,8 L48,36 L0,36 Z" />
-                {/* 螢幕 */}
-                <path d="M4,8 L4,-28 L44,-28 L44,8" />
-                {/* AI 符號 */}
-                <path d="M16,-16 h16 m-8,-8 v16 M20,-12 l8,8 m0,-8 l-8,8" opacity="0.7" />
-              </g>
-            </g>
-            <text x="0" y="50" className="st-text-d anim-pulse-d" textAnchor="middle" fontSize="16">AI INNOVATION HUB</text>
-            <text x="-120" y="0" className="st-text-d anim-pulse-d" textAnchor="end">UX/UI Design</text>
-            <text x="120" y="0" className="st-text-d anim-pulse-d" textAnchor="start">UXR</text>
+        {/* 中央節點簇 - AI Innovation Core */}
+        <g className="anim-float-abs" transform="translate(600, 300)" style={{ animationDelay: '-3s' }}>
+          <g className="anim-pulse-node">
+            <circle className="st-node" cx="0" cy="0" r="8" />
+            <circle className="st-node" cx="20" cy="0" r="4" />
+            <circle className="st-node" cx="-20" cy="0" r="4" />
+            <circle className="st-node" cx="0" cy="-20" r="4" />
+            <circle className="st-node" cx="0" cy="20" r="4" />
+            <ellipse className="st-curve anim-spin" cx="0" cy="0" rx="40" ry="20" strokeWidth="1" opacity="0.4" />
           </g>
+          <text x="0" y="60" className="st-text-abstract" textAnchor="middle">AI Innovation Core</text>
+          <text x="-50" y="-40" className="st-text-abstract" textAnchor="end" fontSize="10">UXR/Design</text>
         </g>
 
-        {/* 右側區域：機器人 + ESG */}
-        <g className="anim-float-d" style={{ transform: 'translateY(0)' }}>
-          <g transform="translate(950, 350)">
-            {/* AMR 機器人 */}
-            <g transform="translate(-100, 20)">
-              <g className="st-line-d anim-flow-d">
-                {/* 輪子 */}
-                <circle cx="10" cy="40" r="6" />
-                <circle cx="38" cy="40" r="6" />
-                {/* 底盤 */}
-                <path d="M0,34 h48 v6 h-48 Z" />
-                {/* 車身 */}
-                <path d="M8,34 L12,0 L36,0 L40,34" />
-                {/* 感測器 */}
-                <path d="M24,0 v-8 m-6,-4 a6,6 0 0 1 12,0" />
-              </g>
-            </g>
-
-            {/* 人形機器人 */}
-            <g transform="translate(50, 0)">
-              <g className="st-line-d anim-flow-rev-d">
-                {/* 頭部 */}
-                <circle cx="24" cy="8" r="8" />
-                <line x1="20" y1="8" x2="28" y2="8" strokeWidth="1" />
-                {/* 身體 */}
-                <rect x="12" y="18" width="24" height="30" rx="4" />
-                {/* 手臂 */}
-                <path d="M12,24 L0,36 M36,24 L48,36" />
-                {/* 腿部 */}
-                <path d="M18,48 v16 M30,48 v16" />
-              </g>
-            </g>
-
-            <text x="0" y="120" className="st-text-d anim-pulse-d" textAnchor="middle">ESG FOUNDATION</text>
+        {/* 右側節點簇 - Robotics & ESG */}
+        <g className="anim-float-abs" transform="translate(1000, 400)" style={{ animationDelay: '-6s' }}>
+          <g className="anim-pulse-node">
+            <circle className="st-node" cx="0" cy="0" r="6" />
+            <circle className="st-node" cx="18" cy="8" r="4" opacity="0.8" />
+            <circle className="st-node" cx="-10" cy="15" r="4" opacity="0.8" />
+            <line className="st-curve" x1="0" y1="0" x2="18" y2="8" strokeWidth="1" />
+            <line className="st-curve" x1="0" y1="0" x2="-10" y2="15" strokeWidth="1" />
           </g>
+          <text x="30" y="10" className="st-text-abstract">Robotics & ESG</text>
         </g>
       </g>
     </svg>
