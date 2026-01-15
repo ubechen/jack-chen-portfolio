@@ -30,8 +30,8 @@ const HeroAnimatedBackgroundMobile = () => {
       <style>{`
         /* --- 樣式沿用桌機版設定 --- */
         .abstract-bg-content-mobile {
-          color: hsl(200, 30%, 85%); /* 極淡淺藍青色 */
-          opacity: 0.2; /* 低透明度 */
+            color: hsl(210, 50%, 50%); /* 中度飽和藍色 */
+            opacity: 0.4; /* 提高透明度 */
           filter: url(#soft-glow-mobile);
           transition: opacity 0.8s ease;
         }
@@ -96,12 +96,12 @@ const HeroAnimatedBackgroundMobile = () => {
 
       <g className="abstract-bg-content-mobile">
         {/* 左側垂直流動曲線 */}
-        <g className="anim-flow-vert" opacity="0.7">
+        <g className="anim-flow-vert" opacity="0.8">
           <path className="st-curve" d="M 60,-50 C 120,150 -20,300 40,500 C 80,650 20,850 60,900" />
         </g>
         
         {/* 右側垂直流動曲線 */}
-        <g className="anim-flow-vert-rev" opacity="0.7">
+        <g className="anim-flow-vert-rev" opacity="0.8">
           <path className="st-curve" d="M 340,900 C 280,700 420,550 360,350 C 320,150 380,-50 340,-100" />
         </g>
 

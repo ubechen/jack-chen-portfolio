@@ -30,10 +30,10 @@ const HeroAnimatedBackgroundDesktop = () => {
       <style>{`
         /* --- 全域樣式設定 --- */
         .abstract-bg-content {
-          /* 極淡的淺藍青色，適合淺色背景 */
-          color: hsl(200, 30%, 85%);
-          /* 整體透明度非常低，確保不搶戲 */
-          opacity: 0.2;
+            /* 中度飽和的藍色，更明顯可見 */
+            color: hsl(210, 50%, 50%);
+            /* 提高透明度讓動畫清晰可見 */
+            opacity: 0.4;
           /* 套用發光濾鏡 */
           filter: url(#soft-glow);
           transition: opacity 0.8s ease;
@@ -115,13 +115,13 @@ const HeroAnimatedBackgroundDesktop = () => {
 
       <g className="abstract-bg-content">
         {/* 主要流動曲線 */}
-        <g className="anim-flow-soft" opacity="0.7">
+        <g className="anim-flow-soft" opacity="0.8">
           <path className="st-curve" d="M-100,100 C100,250 300,50 500,200 C700,350 900,150 1300,300" />
           <path className="st-curve" d="M-50,500 C150,550 350,300 600,350 C850,400 1050,100 1250,150" />
         </g>
         
         {/* 輔助流動曲線 */}
-        <g className="anim-flow-soft-rev" opacity="0.5">
+        <g className="anim-flow-soft-rev" opacity="0.6">
           <path className="st-curve" d="M200,300 C300,450 500,550 700,450" strokeWidth="1" />
           <path className="st-curve" d="M800,200 C900,50 1100,100 1200,50" strokeWidth="1" />
         </g>
