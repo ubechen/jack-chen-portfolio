@@ -32,8 +32,8 @@ const heroStates: HeroState[] = [
     image: heroAiPc,
   },
   {
-    id: "drone-ux",
-    projectId: "drone-ux",
+    id: "drone",
+    projectId: "drone",
     label: "Drone UX",
     title: "Drone System｜Control Experience",
     description: "與無人機大廠協作，設計高可靠控制站 UX 與操作流程",

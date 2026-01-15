@@ -15,7 +15,7 @@ const Navigation = () => {
 
   const projectItems = [
     { label: "AI PC", href: "/project/ai-pc" },
-    { label: "Drone System", href: "/project/drone-ux" },
+    { label: "Drone System", href: "/project/drone" },
     { label: "Wifundity AMR", href: "/project/amr-robot" },
     { label: "Wi-Thrive ESG Game", href: "/project/esg-board-game" },
   ];
