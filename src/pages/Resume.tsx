@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { MapPin, Globe, Linkedin, Mail, Download, ExternalLink } from "lucide-react";
+import { toast } from "sonner";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -190,30 +191,31 @@ const Resume = () => {
                   <Linkedin className="h-4 w-4" />
                   LinkedIn
                 </a>
-                <a href="mailto:taiyun0614@gmail.com" className="flex items-center gap-1.5 hover:text-primary transition-colors">
+                <button 
+                  onClick={() => {
+                    navigator.clipboard.writeText("taiyun0614@gmail.com");
+                    toast("已複製 Email", { duration: 2000 });
+                  }}
+                  className="flex items-center gap-1.5 hover:text-primary transition-colors"
+                >
                   <Mail className="h-4 w-4" />
                   Email
-                </a>
+                </button>
               </div>
             </section>
           </ScrollReveal>
 
           <ScrollReveal>
-            <section className="py-4 px-4 md:px-6 bg-secondary/50 rounded-lg mb-12 print:hidden">
-              <div className="flex items-center justify-between gap-4">
-                <h3 className="text-base font-medium text-foreground">
-                  履歷下載
-                </h3>
-                <Button variant="hero" size="default" asChild>
-                  <a href="/Resume_Tai-Yun_Chen_Jack_tw.pdf" download>
-                    <span className="relative z-10 flex items-center gap-2">
-                      <Download className="h-4 w-4" />
-                      下載履歷 PDF
-                    </span>
-                  </a>
-                </Button>
-              </div>
-            </section>
+            <div className="mb-12 print:hidden">
+              <Button variant="heroOutline" size="lg" className="text-lg" asChild>
+                <a href="/Resume_Tai-Yun_Chen_Jack_tw.pdf" download>
+                  <span className="relative z-10 flex items-center gap-2">
+                    <Download className="h-4 w-4" />
+                    下載履歷 PDF
+                  </span>
+                </a>
+              </Button>
+            </div>
           </ScrollReveal>
 
           <ScrollReveal>
@@ -222,7 +224,7 @@ const Resume = () => {
                 Profile｜個人簡介
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                我是 Jack，一位<strong className="text-foreground">擅長將複雜需求與新技術轉化為可落地體驗</strong>的 Product / UX 設計師。累積<strong className="text-foreground">10+ 年設計實務經驗</strong>，其中<strong className="text-foreground">8 年在緯創</strong>參與多端與系統型產品，橫跨<strong className="text-foreground">創新筆電、服務型機器人、無人機、醫療復健與 ESG</strong>專案。我習慣<strong className="text-foreground">先把題目問清楚、對齊目標與成功指標</strong>，再用<strong className="text-foreground">研究、流程設計與驗證降低不確定性</strong>，推進<strong className="text-foreground">跨部門共識</strong>，將方向落實為<strong className="text-foreground">可上線、可驗證、能帶來成效</strong>的產品體驗。下一步希望在<strong className="text-foreground">不設限產業<span className="whitespace-nowrap">（B2B/B2C 皆可）</span></strong>的前提下，加入重視協作與落地的團隊，做出同時<strong className="text-foreground">改善使用者體驗</strong>、也能<strong className="text-foreground">帶動產品目標與成效</strong>的設計。
+                我是 Jack，一位<strong>擅長將複雜需求與新技術轉化為可落地體驗</strong>的 Product / UX 設計師。累積<strong>10+ 年設計實務經驗</strong>，其中<strong>8 年在緯創</strong>參與多端與系統型產品，橫跨<strong>創新筆電、服務型機器人、無人機、醫療復健與 ESG</strong>專案。我習慣<strong>先把題目問清楚、對齊目標與成功指標</strong>，再用<strong>研究、流程設計與驗證降低不確定性</strong>，推進<strong>跨部門共識</strong>，將方向落實為<strong>可上線、可驗證、能帶來成效</strong>的產品體驗。下一步希望在<strong>不設限產業<span className="whitespace-nowrap">（B2B/B2C 皆可）</span></strong>的前提下，加入重視協作與落地的團隊，做出同時<strong>改善使用者體驗</strong>、也能<strong>帶動產品目標與成效</strong>的設計
               </p>
             </section>
           </ScrollReveal>
