@@ -106,7 +106,7 @@ const HeroInteractive = () => {
 
       {/* ★ 動態 SVG 背景（全域位置，兩版共用） */}
       {showAnimatedBg && (
-        <div className="opacity-25 text-muted-foreground absolute inset-0 pointer-events-none z-0">
+        <div className="text-muted-foreground absolute inset-0 pointer-events-none z-0">
           <HeroAnimatedBackgroundResponsive />
         </div>
       )}
