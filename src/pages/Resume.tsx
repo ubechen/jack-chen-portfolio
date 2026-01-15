@@ -89,7 +89,7 @@ const Resume = () => {
     {
       title: "Drone｜Ground Control Station – Interaction & UX",
       description: "與無人機廠合作設計地面控制站（手持控制器＋ App）操作體驗，以任務為主重新整理流程與資訊層級，降低操作負擔並提升情境判讀清晰度",
-      link: "/project/drone-ux"
+      link: "/project/drone"
     },
     {
       title: "Wifundity AMR Robot｜Service Platform – Product & System UX",

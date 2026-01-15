@@ -1030,7 +1030,7 @@ const ProjectDetailV2 = () => {
       )}
 
       {/* Drone UX Content */}
-      {projectId === "drone-ux" && <DroneUXContent />}
+      {projectId === "drone" && <DroneUXContent />}
 
       {/* AMR Robot Content */}
       {projectId === "amr-robot" && <AMRRobotContent />}
