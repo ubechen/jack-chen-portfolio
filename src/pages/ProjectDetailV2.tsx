@@ -56,7 +56,7 @@ const projectData = {
       title: "Wi-Thrive",
     },
     nextProject: {
-      id: "drone-ux",
+      id: "drone",
       title: "Drone System",
     },
     sections: [
@@ -68,7 +68,7 @@ const projectData = {
       { id: "learnings", label: "What I learned" },
     ],
   },
-  "drone-ux": {
+  "drone": {
     title: "Drone System｜Control Experience",
     subtitle: "打造無人機地面控制站的使用體驗",
     heroImage: droneHero,
@@ -103,7 +103,7 @@ const projectData = {
     duration: "2021 Q4 – 2024 Q1",
     tags: ["Service Robot", "Operations Dashboard", "B2B2C"],
     prevProject: {
-      id: "drone-ux",
+      id: "drone",
       title: "Drone System",
     },
     nextProject: {
@@ -312,7 +312,7 @@ const ProjectDetailV2 = () => {
       title: "AI PC UX Case Study | Jack Chen – Product / UX Designer Taipei",
       description: "AI PC vision and strategy UX case study by Jack Chen. Research-driven approach to define next-gen laptop experiences for creators and professionals."
     },
-    "drone-ux": {
+    "drone": {
       title: "Drone Ground Control UX | Jack Chen – Product / UX Designer Taipei",
       description: "Drone ground control station (GCS) UX design case study. B2B partnering project for military and industrial drone applications."
     },

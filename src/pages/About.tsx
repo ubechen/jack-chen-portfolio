@@ -314,6 +314,40 @@ const About = () => {
       </ScrollReveal>
 
       <ScrollReveal delay={100}>
+        {/* Section: A bit more about me */}
+        <section className="py-16 px-6 bg-background">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">
+              A bit more about me
+            </h2>
+            
+            <ul className="space-y-4">
+              <li className="text-lg text-muted-foreground flex items-start gap-3">
+                <span className="text-xl flex-shrink-0">🧩</span>
+                <span>個性偏 ISFJ 型：安靜觀察多一點、搶話少一點，重視信任和長期合作關係</span>
+              </li>
+              <li className="text-lg text-muted-foreground flex items-start gap-3">
+                <span className="text-xl flex-shrink-0">👶</span>
+                <span>新手爸爸 & 女兒奴：下班最期待的就是陪女兒玩，觀察她怎麼跟世界互動，偶爾也會變成設計靈感的一部分</span>
+              </li>
+              <li className="text-lg text-muted-foreground flex items-start gap-3">
+                <span className="text-xl flex-shrink-0">☕️🚗</span>
+                <span>咖啡成癮＋模型車收藏：現在少手沖，多半靠外帶或膠囊續命；模型車則是在忙碌生活裡保留的小小儀式感</span>
+              </li>
+              <li className="text-lg text-muted-foreground flex items-start gap-3">
+                <span className="text-xl flex-shrink-0">🔵📐</span>
+                <span>藍色控＋細節龜毛：偏愛各種藍色，也很享受在易用性測試裡當「debug 達人」，一條一條把問題點抓出來整理好</span>
+              </li>
+              <li className="text-lg text-muted-foreground flex items-start gap-3">
+                <span className="text-xl flex-shrink-0">🎤🧱</span>
+                <span>幕前幕後切換自如：習慣待在幕後穩住局面、整理不同角色的聲音；但在需要有人登場 pitch、主持工作坊或對外簡報時，也願意站到台前，讓團隊的成果被看見</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal delay={100}>
         {/* Section: AI & Continuous Learning */}
         <section className="py-16 px-6 bg-primary/15 shadow-sm">
           <div className="max-w-4xl mx-auto">
@@ -354,7 +388,7 @@ const About = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-foreground">持續學習 ＆ Side Project</h3>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    這個作品集網站就是我用 AI Coding 工具（Lovable）打造的 side project，從零開始實作 React + Vite + Tailwind 架構，同時練習與 AI 協作的迭代方式。未來我希望能進一步探索 AI agent、No-code / Low-code 工具在設計工作上的可能性
+                    這個作品集網站是我用 AI Coding 工具（Lovable）打造的 side project，探索如何透過 AI 協作快速將想法轉化為成品。未來我希望能進一步探索 AI agent、No-code / Low-code 工具在設計工作上的可能性
                   </p>
                 </div>
               </div>
