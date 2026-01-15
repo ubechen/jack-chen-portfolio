@@ -1,11 +1,10 @@
-import { useState, useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import HeroAnimatedBackgroundResponsive from "./HeroAnimatedBackgroundResponsive";
-import HeroBackgroundToggle from "./HeroBackgroundToggle";
 import heroAiPc from "@/assets/bg_index_hero_aipc.webp";
 import heroDrone from "@/assets/bg_index_hero_drone.webp";
 import heroAmr from "@/assets/bg_index_hero_amr.webp";
@@ -62,7 +61,6 @@ const heroStates: HeroState[] = [
 
 const HeroInteractive = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [showAnimatedBg, setShowAnimatedBg] = useState(true);
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
   const activeState = heroStates[selectedIndex];
@@ -105,17 +103,9 @@ const HeroInteractive = () => {
       </div>
 
       {/* ★ 動態 SVG 背景（全域位置，兩版共用） */}
-      {showAnimatedBg && (
-        <div className="text-muted-foreground absolute inset-0 pointer-events-none z-0">
-          <HeroAnimatedBackgroundResponsive />
-        </div>
-      )}
-
-      {/* ★ 背景切換按鈕（全域位置） */}
-      <HeroBackgroundToggle 
-        isOn={showAnimatedBg} 
-        onToggle={() => setShowAnimatedBg(!showAnimatedBg)} 
-      />
+      <div className="text-muted-foreground absolute inset-0 pointer-events-none z-0">
+        <HeroAnimatedBackgroundResponsive />
+      </div>
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Mobile/Tablet Layout (< 1024px) */}
