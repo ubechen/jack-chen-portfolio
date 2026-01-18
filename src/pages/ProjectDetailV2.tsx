@@ -307,28 +307,33 @@ const ProjectDetailV2 = () => {
     );
   }
 
-  const seoData: Record<string, { title: string; description: string }> = {
+  const seoData: Record<string, { title: string; description: string; ogDescription: string }> = {
     "ai-pc": {
-      title: "AI PC UX Case Study | Jack Chen – Product / UX Designer Taipei",
-      description: "AI PC vision and strategy UX case study by Jack Chen. Research-driven approach to define next-gen laptop experiences for creators and professionals."
+      title: "AI PC｜Research & Vision｜Jack Chen 專案",
+      description: "在 AI PC 尚未被明確定義前，透過研究與分析整理關鍵 AI 功能優先序與未來工作情境，協助產品藍圖規劃，並以情境與原型支持跨部門決策與提案",
+      ogDescription: "以研究與分析整理 AI 功能優先序與未來工作情境，協助產品藍圖規劃，並用情境與原型支持跨部門決策與提案"
     },
     "drone": {
-      title: "Drone Ground Control UX | Jack Chen – Product / UX Designer Taipei",
-      description: "Drone ground control station (GCS) UX design case study. B2B partnering project for military and industrial drone applications."
+      title: "Drone System｜Control Experience｜Jack Chen 專案",
+      description: "與無人機團隊合作打造地面控制站體驗，從競品研究到實機測試，設計控制器與介面流程，讓操作者在任務中能更清楚掌握狀態、降低誤操作並提升效率",
+      ogDescription: "從競品研究到實機測試，設計控制器與介面流程，讓操作者在任務中更清楚掌握狀態、降低誤操作並提升效率"
     },
     "amr-robot": {
-      title: "AMR Service Robot UX | Jack Chen – Product / UX Designer Taipei",
-      description: "Wifundity AMR service robot platform UX case study. Fleet management and multi-venue service robot experience design."
+      title: "Wifundity AMR Robot｜Service System Design｜Jack Chen 專案",
+      description: "參與服務型機器人產品線，涵蓋競品研究、後台管理系統與機器人端 App，支援賣場、飯店、醫院等多場域導入，建立可營運、可擴充的服務體驗與流程",
+      ogDescription: "從競品研究到後台與機器人端 App，支援多場域導入，建立可營運、可擴充的服務體驗與流程"
     },
     "esg-board-game": {
-      title: "ESG Board Game Design | Jack Chen – Product / UX Designer Taipei",
-      description: "Wi-Thrive ESG storytelling game experience design. Generative AI visual workflow for sustainable board game production."
+      title: "Wi-Thrive｜ESG Storytelling Game｜Jack Chen 專案",
+      description: "與 ESG、HR 與學研團隊合作設計《緯你同行》桌遊，結合 GenAI 圖像與 UX 微調，把永續行動轉成可被「玩懂」的故事體驗，支援招募、內訓與對外溝通",
+      ogDescription: "結合 GenAI 圖像與 UX 微調，把永續行動轉成可被玩懂的故事體驗，支援招募、內訓與對外溝通"
     }
   };
 
   const seo = seoData[projectId as string] || {
-    title: `${project.title} | Jack Chen – Product / UX Designer Taipei`,
-    description: project.summary
+    title: `${project.title} | Jack Chen – Product / UX Designer`,
+    description: project.summary,
+    ogDescription: project.summary
   };
 
   const jsonLdData = {
@@ -348,6 +353,10 @@ const ProjectDetailV2 = () => {
       <Helmet>
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.ogDescription} />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.ogDescription} />
         <script type="application/ld+json">{JSON.stringify(jsonLdData)}</script>
       </Helmet>
       <Navigation />
