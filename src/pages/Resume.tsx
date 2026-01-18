@@ -15,13 +15,12 @@ const jsonLdData = {
   "jobTitle": "Product / UX Designer",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Taipei",
     "addressCountry": "Taiwan"
   },
   "sameAs": [
     "https://www.linkedin.com/in/tai-yun-chen/"
   ],
-  "description": "Product / UX Designer focused on B2B systems, robotics, AI PC, drones, and ESG experiences."
+  "description": "Jack Chen 的履歷摘要與工作經歷，包含 UX 研究、資訊架構、複雜系統與後台設計、裝置端 App 與軟硬整合、跨部門對齊與簡報溝通能力"
 };
 
 const Resume = () => {
@@ -155,8 +154,12 @@ const Resume = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Jack Chen – Product / UX Designer in Taipei | Resume & Portfolio</title>
-        <meta name="description" content="Jack Chen is a Product / UX Designer based in Taipei, focused on B2B systems, robotics, AI PC, drones, and ESG experiences. View his resume, projects, and download Chinese / English PDFs." />
+        <title>Resume｜履歷與經歷摘要｜Jack Chen</title>
+        <meta name="description" content="Jack Chen 的履歷摘要與工作經歷，包含 UX 研究、資訊架構、複雜系統與後台設計、裝置端 App 與軟硬整合、跨部門對齊與簡報溝通能力" />
+        <meta property="og:title" content="Resume｜履歷與經歷摘要｜Jack Chen" />
+        <meta property="og:description" content="履歷摘要與工作經歷：UX 研究、IA、後台與系統設計、裝置端整合、利害關係人對齊與溝通" />
+        <meta name="twitter:title" content="Resume｜履歷與經歷摘要｜Jack Chen" />
+        <meta name="twitter:description" content="履歷摘要與工作經歷：UX 研究、IA、後台與系統設計、裝置端整合、利害關係人對齊與溝通" />
         <script type="application/ld+json">{JSON.stringify(jsonLdData)}</script>
       </Helmet>
       <Navigation />
