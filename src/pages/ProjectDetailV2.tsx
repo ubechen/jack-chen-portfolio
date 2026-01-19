@@ -853,12 +853,32 @@ const ProjectDetailV2 = () => {
                     <div className="flex items-start gap-4">
                       <span className="bg-primary/10 text-primary font-bold px-3 py-1 rounded-full text-sm">挑戰 1</span>
                     </div>
-                    <h3 className="text-2xl font-semibold mt-4 mb-4 text-foreground">
+                    <h3 className="text-2xl font-semibold mt-4 mb-2 text-foreground">
                       避免變成「酷炫但沒資源做」的幻想
                     </h3>
-                    <div className="bg-primary/5 rounded-lg p-6">
+                    <p className="text-muted-foreground mb-4">高層用量產思維檢視前衛概念、團隊也擔心最後做不出來</p>
+                    <div className="bg-primary/5 rounded-lg p-6 space-y-4">
+                      <div>
+                        <p className="text-lg text-foreground leading-relaxed">
+                          <strong>解決方式：</strong>把「願景」拆成可被討論的決策工具
+                        </p>
+                        <ul className="mt-3 space-y-2 text-muted-foreground">
+                          <li className="flex gap-2">
+                            <span className="text-primary">→</span>
+                            <span>針對 10 項功能與 3 組情境，交代為何先做、先驗證什麼</span>
+                          </li>
+                          <li className="flex gap-2">
+                            <span className="text-primary">→</span>
+                            <span>讓討論從「好不好／太前衛」轉成<mark className="bg-primary/20 text-foreground px-1 rounded">「先做哪幾步」</mark>，建立分階段 POC 路線與停損點</span>
+                          </li>
+                          <li className="flex gap-2">
+                            <span className="text-primary">→</span>
+                            <span>讓 ID／ME 可以用情境檢視技術價值，而不是只看規格或單點創新</span>
+                          </li>
+                        </ul>
+                      </div>
                       <p className="text-lg text-muted-foreground leading-relaxed">
-                        <strong className="text-foreground">解決方式：</strong>所有功能與情境解釋其優先順序，讓決策者可以討論<mark className="bg-primary/20 text-foreground px-1 rounded">「先做哪幾步」</mark>，有階段性的 POC 規劃
+                        <strong className="text-foreground">成果：</strong>決策者更容易對齊開發順序，也降低概念案被一句話打回票的機率
                       </p>
                     </div>
                   </div>
@@ -867,15 +887,32 @@ const ProjectDetailV2 = () => {
                     <div className="flex items-start gap-4">
                       <span className="bg-primary/10 text-primary font-bold px-3 py-1 rounded-full text-sm">挑戰 2</span>
                     </div>
-                    <h3 className="text-2xl font-semibold mt-4 mb-4 text-foreground">
+                    <h3 className="text-2xl font-semibold mt-4 mb-2 text-foreground">
                       讓 UX 成果不只是研究報告
                     </h3>
-                    <div className="bg-primary/5 rounded-lg p-6">
-                      <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                        <strong className="text-foreground">解決方式：</strong>針對不同對象（PM、ID/ME、新創夥伴）輸出可直接溝通的成果，滿足不同目的與需求
-                      </p>
+                    <p className="text-muted-foreground mb-4">同一份研究要同時能說服高層/客戶，也要讓內部有人接得住</p>
+                    <div className="bg-primary/5 rounded-lg p-6 space-y-4">
+                      <div>
+                        <p className="text-lg text-foreground leading-relaxed">
+                          <strong>解決方式：</strong>把研究輸出「改寫」成不同角色拿了就能用的溝通版本
+                        </p>
+                        <ul className="mt-3 space-y-2 text-muted-foreground">
+                          <li className="flex gap-2">
+                            <span className="text-primary">→</span>
+                            <span><strong className="text-foreground">PM：</strong>可直接提案的故事骨架（問題→取捨→路線）與功能優先序依據</span>
+                          </li>
+                          <li className="flex gap-2">
+                            <span className="text-primary">→</span>
+                            <span><strong className="text-foreground">ID／ME：</strong>以工作流驗證新硬體方向的情境檢核與設計原則</span>
+                          </li>
+                          <li className="flex gap-2">
+                            <span className="text-primary">→</span>
+                            <span><strong className="text-foreground">新創夥伴：</strong>用情境對齊合作切入點與必要能力，避免變成只在賣零件</span>
+                          </li>
+                        </ul>
+                      </div>
                       <p className="text-lg text-muted-foreground leading-relaxed">
-                        <strong className="text-foreground">成果：</strong>後續 AI 類型專案啟動時，提升 UX 被重視程度，<mark className="bg-primary/20 text-foreground px-1 rounded">更早被邀請參與</mark>，被視為決策過程的一部分，而非單純支援角色
+                        <strong className="text-foreground">成果：</strong>後續 AI 類型專案啟動時，UX 更早被邀請參與策略討論，開始被視為<mark className="bg-primary/20 text-foreground px-1 rounded">決策過程的一部分</mark>，而非後期支援角色
                       </p>
                     </div>
                   </div>
@@ -893,7 +930,7 @@ const ProjectDetailV2 = () => {
                     </div>
                     <div className="bg-primary/10 rounded-xl p-6 text-center">
                       <p className="text-4xl font-bold text-primary mb-2">3</p>
-                      <p className="text-sm text-muted-foreground">AI Agent 核心情境<br />概念發展</p>
+                      <p className="text-sm text-muted-foreground">AI Agent 核心情境<br />概念工作流發展</p>
                     </div>
                     <div className="bg-primary/10 rounded-xl p-6 text-center">
                       <p className="text-4xl font-bold text-primary mb-2">↑</p>
