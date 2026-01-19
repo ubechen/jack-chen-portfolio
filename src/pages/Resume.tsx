@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { MapPin, Globe, Linkedin, Mail, Download, ExternalLink } from "lucide-react";
+import { MapPin, Globe, Linkedin, Mail, Download, ExternalLink, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -186,7 +186,7 @@ const Resume = () => {
                   <MapPin className="h-4 w-4" />
                   台北，台灣
                 </span>
-                <a href="/" className="flex items-center gap-1.5 hover:text-primary transition-colors">
+                <a href="https://taiyun.design/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-primary transition-colors">
                   <Globe className="h-4 w-4" />
                   作品集網站
                 </a>
@@ -197,7 +197,20 @@ const Resume = () => {
                 <button 
                   onClick={() => {
                     navigator.clipboard.writeText("taiyun0614@gmail.com");
-                    toast("已複製 Email", { duration: 2000 });
+                    toast("已複製 Email", { 
+                      duration: 1500,
+                      icon: <CheckCircle2 className="h-4 w-4 text-white" />,
+                      style: {
+                        background: '#22c55e',
+                        color: 'white',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '8px',
+                        padding: '12px 16px',
+                        minWidth: 'auto',
+                      }
+                    });
                   }}
                   className="flex items-center gap-1.5 hover:text-primary transition-colors"
                 >
@@ -227,7 +240,7 @@ const Resume = () => {
                 Profile｜個人簡介
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                我是 Jack，一位<strong>擅長將複雜需求與新技術轉化為可落地體驗</strong>的 Product / UX 設計師。累積<strong>10+ 年設計實務經驗</strong>，其中<strong>8 年在緯創</strong>參與多端與系統型產品，橫跨<strong>創新筆電、服務型機器人、無人機、醫療復健與 ESG</strong>專案。我習慣<strong>先把題目問清楚、對齊目標與成功指標</strong>，再用<strong>研究、流程設計與驗證降低不確定性</strong>，推進<strong>跨部門共識</strong>，將方向落實為<strong>可上線、可驗證、能帶來成效</strong>的產品體驗。下一步希望在<strong>不設限產業<span className="whitespace-nowrap">（B2B/B2C 皆可）</span></strong>的前提下，加入重視協作與落地的團隊，做出同時<strong>改善使用者體驗</strong>、也能<strong>帶動產品目標與成效</strong>的設計
+                我是陳泰運 Jack，一位<strong>擅長將複雜需求與新技術轉化為可落地體驗</strong>的 Product / UX 設計師。累積<strong>10+ 年設計實務經驗</strong>，其中<strong>8 年在緯創</strong>參與多端與系統型產品，橫跨<strong>創新筆電、服務型機器人、無人機、醫療復健與 ESG</strong>專案。我習慣<strong>先把題目問清楚、對齊目標與成功指標</strong>，再用<strong>研究、流程設計與驗證降低不確定性</strong>，推進<strong>跨部門共識</strong>，將方向落實為<strong>可上線、可驗證、能帶來成效</strong>的產品體驗。下一步希望在<strong>不設限產業<span className="whitespace-nowrap">（B2B/B2C 皆可）</span></strong>的前提下，加入重視協作與落地的團隊，做出同時<strong>改善使用者體驗</strong>、也能<strong>帶動產品目標與成效</strong>的設計
               </p>
             </section>
           </ScrollReveal>
