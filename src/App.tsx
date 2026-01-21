@@ -9,8 +9,9 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <HelmetProvider>
+// SSG 時會從外部傳入 helmetContext，用於提取 meta 標籤
+const App = ({ helmetContext = {} }: { helmetContext?: object }) => (
+  <HelmetProvider context={helmetContext}>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />

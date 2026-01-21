@@ -246,6 +246,24 @@ const ProjectDetailV2 = () => {
     
     return (
       <div className="min-h-screen bg-background flex flex-col">
+        <Helmet>
+          <title>找不到這個專案｜Jack Chen（陳泰運）作品集</title>
+          <meta name="description" content="這個專案連結可能已更新或暫時不公開。你可以回到 Projects 列表，瀏覽 AI PC、Drone System、Wifundity AMR、Wi-Thrive ESG 等案例" />
+          <link rel="canonical" href="https://taiyun.design/projects/not-found" />
+          <meta name="robots" content="noindex,follow" />
+          <meta property="og:locale" content="zh_TW" />
+          <meta property="og:type" content="website" />
+          <meta property="og:site_name" content="Jack Chen（陳泰運）作品集" />
+          <meta property="og:title" content="找不到這個專案｜Jack Chen（陳泰運）作品集" />
+          <meta property="og:description" content="此專案連結可能已更新或暫時不公開。回到 Projects 列表瀏覽其他案例" />
+          <meta property="og:url" content="https://taiyun.design/projects/not-found" />
+          <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/913ea9b5-713e-47d8-9de2-ad05ff4e2dd3/id-preview-fa2e4b33--de911528-6f96-43b3-a205-2765473bab47.lovable.app-1768453677111.png" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="找不到這個專案｜Jack Chen（陳泰運）作品集" />
+          <meta name="twitter:description" content="此專案連結可能已更新或暫時不公開。回到 Projects 列表瀏覽其他案例" />
+          <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/913ea9b5-713e-47d8-9de2-ad05ff4e2dd3/id-preview-fa2e4b33--de911528-6f96-43b3-a205-2765473bab47.lovable.app-1768453677111.png" />
+        </Helmet>
+        
         <Navigation />
         
         <main className="flex-1 flex items-center justify-center px-6 py-24">
