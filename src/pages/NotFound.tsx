@@ -48,7 +48,7 @@ const NotFound = () => {
           <h1 className="text-6xl font-bold text-foreground mb-4">404</h1>
           <h2 className="text-xl font-medium text-foreground mb-2">Page Not Found</h2>
           <p className="text-muted-foreground mb-8">
-            抱歉，您所尋找的頁面不存在或已被移動。
+            抱歉，您所尋找的頁面不存在或已被移動
           </p>
           
           {/* CTA Buttons */}

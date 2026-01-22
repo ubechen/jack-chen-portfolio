@@ -598,10 +598,10 @@ const DroneUXContent = () => {
               {/* 段落二：展會驗證 */}
               <div className="bg-secondary/50 rounded-xl p-6">
                 <p className="leading-relaxed">
-                  當控制站方案在 <strong className="text-foreground">XPONENTIAL 2025 美國休士頓展</strong> 上正式對外展出時，看到業務、合作夥伴與潛在客戶在攤位前實際操作、討論任務情境，對我是一個很重要的確認——
+                  當控制站方案在 <strong className="text-foreground">XPONENTIAL 2025 美國休士頓展</strong> 上正式對外展出時，看到業務、合作夥伴與潛在客戶在攤位前實際操作、討論任務情境，對我是一個很重要的確認：
                 </p>
                 <p className="leading-relaxed mt-4">
-                  那些在會議室裡對「資訊怎麼排」「實體鍵怎麼配置」「狀態要怎麼回饋」的細部拉扯，最後真的有幫助大家在一個嘈雜又忙碌的展場裡，<mark className="bg-primary/20 text-foreground px-1 rounded">把系統講清楚、示範順暢</mark>。
+                  那些在會議室裡對「資訊怎麼排」「實體鍵怎麼配置」「狀態要怎麼回饋」的細部拉扯，最後真的有幫助大家在一個嘈雜又忙碌的展場裡，<mark className="bg-primary/20 text-foreground px-1 rounded">把系統講清楚、示範順暢</mark>
                 </p>
               </div>
 
@@ -619,7 +619,7 @@ const DroneUXContent = () => {
 
               <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6">
                 <p className="text-xl text-foreground font-medium leading-relaxed">
-                  在高門檻、資訊不透明的產業裡，UX 不一定能一開始就「定義所有細節」，但可以設計出一套<mark className="bg-primary/30 text-foreground px-2 py-1 rounded">讓團隊逐步靠近正確方向的結構與語言</mark>——讓工程、業務、高層和合作夥伴都有共同的畫面可以討論，並在真正走到展場與市場的那一刻，驗證自己做的選擇是不是站得住腳
+                  在高門檻、資訊不透明的產業裡，UX 不一定能一開始就「定義所有細節」，但可以設計出一套<mark className="bg-primary/30 text-foreground px-2 py-1 rounded">讓團隊逐步靠近正確方向的結構與語言</mark>：讓工程、業務、高層和合作夥伴都有共同的畫面可以討論，並在真正走到展場與市場的那一刻，驗證自己做的選擇是不是站得住腳
                 </p>
               </div>
             </div>

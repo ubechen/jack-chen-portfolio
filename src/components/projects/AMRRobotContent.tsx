@@ -526,7 +526,7 @@ const AMRRobotContent = () => {
 
               <div className="bg-background border-l-4 border-l-primary rounded-r-lg p-6 mt-8">
                 <p className="text-xl text-foreground font-medium leading-relaxed">
-                  對我來說，AMR Robot 是一場長期的「全方位體驗實戰」——從產品、系統到品牌，從會議室一路走到賣場、飯店和醫院，也讓我在之後面對更複雜題目時，更有底氣說自己能陪團隊一起撐住
+                  對我來說，AMR Robot 是一場長期的「全方位體驗實戰」：從產品、系統到品牌，從會議室一路走到賣場、飯店和醫院，也讓我在之後面對更複雜題目時，更有底氣說自己能陪團隊一起撐住
                 </p>
               </div>
             </div>

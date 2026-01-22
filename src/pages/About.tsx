@@ -103,7 +103,7 @@ const About = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              這幾年在科技製造與 B2B 產品環境裡，我長期待在一個尷尬、但很有價值的位置——介於 <strong className="text-foreground">業務／PM／高層</strong> 和 <strong className="text-foreground">ID／ME／RD</strong> 之間
+              這幾年在科技製造與 B2B 產品環境裡，我長期待在一個尷尬、但很有價值的位置：介於 <strong className="text-foreground">業務／PM／高層</strong> 和 <strong className="text-foreground">ID／ME／RD</strong> 之間
             </p>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
@@ -229,7 +229,7 @@ const About = () => {
             </div>
             
             <p className="text-lg text-muted-foreground leading-relaxed mt-8">
-              多數時候，我比較像安靜觀察的人：先把不同角色的顧慮聽完、拼成一張完整的圖，再幫大家一起縮小不確定性。我傾向穩穩地往前推，而不是把團隊拉去做很炫、但落不了地的東西。如果用人格來形容，大概是偏向 ISFJ 型——重視信任感、默默把該顧的細節顧好，也願意撐住專案的底線
+              多數時候，我比較像安靜觀察的人：先把不同角色的顧慮聽完、拼成一張完整的圖，再幫大家一起縮小不確定性。我傾向穩穩地往前推，而不是把團隊拉去做很炫、但落不了地的東西。如果用人格來形容，大概是偏向 ISFJ 型：重視信任感、默默把該顧的細節顧好，也願意撐住專案的底線
             </p>
           </div>
         </section>
