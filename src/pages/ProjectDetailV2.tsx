@@ -1058,7 +1058,7 @@ const ProjectDetailV2 = () => {
                   </p>
                   <div className="bg-background border-l-4 border-l-primary rounded-r-lg p-6">
                     <p className="text-xl text-foreground font-medium leading-relaxed">
-                      當 UX 能同時滿足不同利害關係人的需求——幫 PM 串出提案故事、幫決策者看見風險與機會、幫 ID / ME 用情境思考新技術的價值——設計就不再只是輸出畫面，而是參與產品策略與投資判斷的一部分
+                      當 UX 能同時滿足不同利害關係人的需求：幫 PM 串出提案故事、幫決策者看見風險與機會、幫 ID / ME 用情境思考新技術的價值：設計就不再只是輸出畫面，而是參與產品策略與投資判斷的一部分
                     </p>
                   </div>
                 </div>
