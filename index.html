@@ -21,6 +21,54 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Loading Screen Styles -->
+    <style>
+      #loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #dfe1e5;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.5s ease-out;
+      }
+      
+      .loader-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      
+      .loader-content img {
+        width: 400px;
+        height: auto;
+        max-width: 80vw;
+      }
+      
+      .loader-content p {
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #22272b;
+        margin: 0;
+        letter-spacing: 0.05em;
+      }
+      
+      #loader-wrapper.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      #loader-wrapper.hidden {
+        display: none;
+      }
+    </style>
+
     <!-- Open Graph (Social share / AI agents) -->
     <meta property="og:site_name" content="Jack Chen Portfolio" />
     <meta property="og:title" content="Jack Chen（陳泰運）｜Product / UX 設計作品集" />
@@ -135,7 +183,45 @@
   </head>
 
   <body>
+    <!-- Loading Screen -->
+    <div id="loader-wrapper">
+      <div class="loader-content">
+        <img src="/images/Jack_Loading.webp" alt="Loading..." />
+        <p>Loading</p>
+      </div>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Loading Screen Script -->
+    <script>
+      (function() {
+        var MIN_LOADING_TIME = 1500;
+        var startTime = Date.now();
+        
+        var windowLoadPromise = new Promise(function(resolve) {
+          if (document.readyState === 'complete') {
+            resolve();
+          } else {
+            window.addEventListener('load', resolve);
+          }
+        });
+        
+        var minTimePromise = new Promise(function(resolve) {
+          setTimeout(resolve, MIN_LOADING_TIME);
+        });
+        
+        Promise.all([windowLoadPromise, minTimePromise]).then(function() {
+          var loader = document.getElementById('loader-wrapper');
+          if (loader) {
+            loader.classList.add('fade-out');
+            setTimeout(function() {
+              loader.classList.add('hidden');
+            }, 500);
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
