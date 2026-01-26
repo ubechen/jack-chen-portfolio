@@ -9,9 +9,10 @@ interface ProjectCardProps {
   roleInfo?: string;
   tags: string[];
   projectId: string;
+  thumbnail?: string;
 }
 
-const ProjectCard = ({ title, subtitle, description, roleInfo, tags, projectId }: ProjectCardProps) => {
+const ProjectCard = ({ title, subtitle, description, roleInfo, tags, projectId, thumbnail }: ProjectCardProps) => {
   const navigate = useNavigate();
 
   return (
@@ -19,6 +20,16 @@ const ProjectCard = ({ title, subtitle, description, roleInfo, tags, projectId }
       className="hover-lift cursor-pointer group overflow-hidden border-border h-full"
       onClick={() => navigate(`/project/${projectId}`)}
     >
+      {/* 頂部縮圖區域 */}
+      {thumbnail && (
+        <div className="h-32 md:h-36 overflow-hidden">
+          <img 
+            src={thumbnail} 
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      )}
       <CardContent className="p-8 h-full flex flex-col">
         <div className="flex items-start justify-between mb-4">
           <div>
