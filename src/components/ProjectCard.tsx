@@ -30,7 +30,7 @@ const ProjectCard = ({ title, subtitle, description, roleInfo, tags, projectId, 
           />
         </div>
       )}
-      <CardContent className="p-8 h-full flex flex-col">
+      <CardContent className="p-8 pt-6 flex flex-col flex-grow">
         <div className="flex items-start justify-between mb-4">
           <div>
             <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
