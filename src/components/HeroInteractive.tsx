@@ -112,7 +112,7 @@ const HeroInteractive = () => {
         <div className="lg:hidden flex flex-col items-center justify-center text-center space-y-8 min-h-[70vh]">
           <div className="space-y-4 relative z-10">
             <h1 className="text-3xl md:text-4xl font-bold text-foreground leading-[1.2] md:leading-[1.2]">
-              幫團隊處理複雜題目的
+              把模糊變明確的
               <br />
               Product / UX 設計夥伴
             </h1>
@@ -149,7 +149,7 @@ const HeroInteractive = () => {
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.2] md:leading-[1.2] lg:leading-[1.2]">
-                幫團隊處理複雜題目的
+                把模糊變明確的
                 <br />
                 Product / UX 設計夥伴
               </h1>
