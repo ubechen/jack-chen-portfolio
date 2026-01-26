@@ -1,6 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 
+// 專案縮圖
+import bgAipc from "@/assets/bg_index_hero_aipc.webp";
+import bgDrone from "@/assets/bg_index_hero_drone.webp";
+import bgAmr from "@/assets/bg_index_hero_amr.webp";
+import bgEsg from "@/assets/bg_index_hero_esg.webp";
+
 const Projects = () => {
   const [parallaxY, setParallaxY] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
@@ -40,6 +46,7 @@ const Projects = () => {
       roleInfo: "Strategic UX / Product Designer",
       tags: ["AI PC Vision", "Strategic UX", "UX Research"],
       projectId: "ai-pc",
+      thumbnail: bgAipc,
     },
     {
       title: "Drone System",
@@ -48,6 +55,7 @@ const Projects = () => {
       roleInfo: "Product / UX / UI Designer",
       tags: ["Drone GCS UX", "Control System", "B2B"],
       projectId: "drone",
+      thumbnail: bgDrone,
     },
     {
       title: "AMR Robot",
@@ -56,6 +64,7 @@ const Projects = () => {
       roleInfo: "Product / UX / UI Designer",
       tags: ["Service Robot", "Operations Dashboard", "B2B2C"],
       projectId: "amr-robot",
+      thumbnail: bgAmr,
     },
     {
       title: "Wi-Thrive",
@@ -64,6 +73,7 @@ const Projects = () => {
       roleInfo: "Lead Designer",
       tags: ["ESG Storytelling", "Board Game", "Gen AI Visuals"],
       projectId: "esg-board-game",
+      thumbnail: bgEsg,
     },
   ];
 
