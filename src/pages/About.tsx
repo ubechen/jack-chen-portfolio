@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Mail, Linkedin } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
-import ImageWithSkeleton from "@/components/ImageWithSkeleton";
+import ZoomableImage from "@/components/ZoomableImage";
 import portraitImage from "@/assets/portrait-jack.webp";
 import bgAboutMe from "@/assets/bg_about-me.webp";
 
@@ -52,11 +52,10 @@ const About = () => {
                 background: `linear-gradient(135deg, hsl(var(--primary) / 0.15), hsl(var(--primary) / 0.05))`
               }}
             >
-              <ImageWithSkeleton 
+              <img 
                 src={portraitImage} 
                 alt="Jack Chen – Product / UX Designer portrait"
                 className="w-full h-full object-cover"
-                skeletonClassName="rounded-[30%_70%_70%_30%/30%_30%_70%_70%]"
               />
               {/* Flowing light hover effect */}
               <div 
@@ -186,13 +185,11 @@ const About = () => {
       <ScrollReveal delay={100}>
         <section className="py-8 px-6 bg-background">
           <div className="max-w-4xl mx-auto">
-            <div className="rounded-xl overflow-hidden shadow-lg">
-              <ImageWithSkeleton 
-                src={bgAboutMe} 
-                alt="Jack 的工作場景拼貼：展場、工作坊、簡報、易用性測試等多元經驗"
-                className="w-full h-auto"
-              />
-            </div>
+            <ZoomableImage 
+              src={bgAboutMe} 
+              alt="Jack 的工作場景拼貼：展場、工作坊、簡報、易用性測試等多元經驗"
+              className="rounded-xl overflow-hidden shadow-lg"
+            />
           </div>
         </section>
       </ScrollReveal>
