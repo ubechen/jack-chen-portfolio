@@ -9,7 +9,18 @@ const AboutPreview = () => {
   return (
     <section id="about" className="py-16 px-6 bg-background">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground text-center">About</h2>
+      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground text-center">About</h2>
+        
+        {/* 手機版動畫圖片 - 標題下方置中 */}
+        <div className="md:hidden flex justify-center mb-6">
+          <div className="w-24 aspect-square rounded-full overflow-hidden shadow-md">
+            <img 
+              src={JackAbout} 
+              alt="Jack" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
         
         {/* 左圖右文佈局 */}
         <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
