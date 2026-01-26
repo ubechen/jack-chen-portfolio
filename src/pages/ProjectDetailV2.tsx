@@ -72,7 +72,7 @@ const projectData = {
     title: "Drone System｜Control Experience",
     subtitle: "打造無人機地面控制站的使用體驗",
     heroImage: droneHero,
-    role: "Product / UX / UI Designer",
+    role: "UX / UI Designer",
     type: "B2B／國防與產業應用 · 控制站 UX",
     summary: "公司從 AMR 轉向無人機市場之際，與國內無人機大廠合作聚焦地面控制站(手持控制器+App)的 UX 與 POC：從競品研究到實機測試，設計任務中可靠、低誤操作的流程與介面，支援國際展會 demo 與國防標案，並延伸至後台管理系統規劃",
     duration: "2024 Q2 – 2025 Q1",
@@ -1069,7 +1069,7 @@ const ProjectDetailV2 = () => {
                     在 2022 年，同一客戶的雙螢幕電競 / 創作者筆電專案中，我參與的 UX 研究與概念設計，曾讓 Wistron 概念機在 CES 與 MSI、Razer、ROG、Acer、Dell 等品牌並列展出。那次經驗對我來說是一個提醒：
                   </p>
                   <p className="leading-relaxed">
-                    <strong className="text-foreground">AI PC Envisioning 雖然還停留在願景和探索階段，但本質上，仍然是在為公司下一次被看見、被採用、拿到訂單的機會鋪路。</strong>先把一個可信、說得動人的未來版本設計出來，才有機會真的走到展場和市場。
+                    <strong className="text-foreground">AI PC Envisioning 雖然還停留在願景和探索階段，但本質上，仍然是在為公司下一次被看見、被採用、拿到訂單的機會鋪路。</strong>先把一個可信、說得動人的未來版本設計出來，才有機會真的走到展場和市場
                   </p>
                 </div>
 
@@ -1077,7 +1077,7 @@ const ProjectDetailV2 = () => {
                 <ZoomableImage
                   src={imgAipc61}
                   alt="2022 CES 展場舞台上，多個國際品牌筆電排成一列，左側一台螢幕顯示 Wistron 字樣的雙螢幕概念筆電，與 MSI、Razer、ROG、Acer、Dell 等品牌並列展示"
-                  figcaption="2022 年，在同一客戶的雙螢幕電競 / 創作者筆電專案中，我參與的概念機曾在 CES 與各大品牌並列展出。這畫面對我來說，也是 AI PC 願景專案正在為公司累積的下一個目標"
+                  figcaption="2022 年在雙螢幕電競 / 創作者筆電專案中，我參與的概念機曾在 CES 與各大品牌並列展出"
                   className="mb-12"
                 />
 
