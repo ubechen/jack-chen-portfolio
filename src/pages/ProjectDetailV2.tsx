@@ -48,7 +48,7 @@ const projectData = {
     heroImage: aiPcHero,
     role: "Strategic UX · Research & Vision",
     type: "策略探索／未來產品願景",
-    summary: "在 AI PC 尚未成熟的探索期，以研究與分析完成 10 項創新功能優先序與 3 組代表情境/工作流。成果支援 PM 對高層與國際電腦品牌客戶提案，也讓 ID、ME 與新創夥伴以情境評估新技術價值，加速原型開發",
+    summary: "在 AI PC 還很模糊的探索期，我透過研究完成了 10 項創新功能的優先排序，還有 3 組實際的工作情境。這些成果讓 PM 可以拿去跟高層和國際品牌客戶提案，也讓 ID、ME 團隊和新創夥伴能用真實情境來評估新技術到底有沒有價值，加速了原型開發的進度",
     duration: "2024 Q2 – Q4",
     tags: ["AI PC Vision", "Strategic UX", "UX Research"],
     prevProject: {
@@ -544,7 +544,7 @@ const ProjectDetailV2 = () => {
                 
                 <div className="space-y-8">
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    當時市場上對於「AI PC」的認知大多停留在：
+                    當時市場上對「AI PC」的認知大概就是：
                   </p>
                   
                   <ul className="space-y-3 text-lg text-muted-foreground ml-4">
@@ -554,17 +554,17 @@ const ProjectDetailV2 = () => {
                     </li>
                     <li className="flex gap-3">
                       <span className="text-primary">•</span>
-                      <span>具備 NPU，可在本地端離線處理 AI 任務</span>
+                      <span>有 NPU，可以在本地離線處理 AI 任務</span>
                     </li>
                     <li className="flex gap-3">
                       <span className="text-primary">•</span>
-                      <span>鍵盤上多了一顆 Copilot 專屬按鍵</span>
+                      <span>鍵盤上多了一顆 Copilot 按鍵</span>
                     </li>
                   </ul>
 
                   <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6 my-8">
                     <p className="text-xl text-foreground font-medium">
-                      但還沒有人說得清楚 — 對使用者而言，AI PC 在日常工作中，實際能帶來什麼幫助？
+                      但沒有人真的說得清楚：對使用者來說，AI PC 在日常工作裡到底能幫上什麼忙？
                     </p>
                   </div>
 
@@ -577,30 +577,30 @@ const ProjectDetailV2 = () => {
                   <div className="bg-secondary/50 rounded-xl p-8 my-8">
                     <h3 className="text-xl font-semibold mb-4 text-foreground">內部背景與挑戰</h3>
                     <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                      同時，內部 ID 與 ME 已設計出新型態散熱模組，並接觸國際新創夥伴（觸控實體鍵盤）；對 ODM 公司而言，更關鍵的問題是：
+                      同一時間，公司內部的 ID 和 ME 已經設計出新型態散熱模組，還接觸了國際新創夥伴（做觸控實體鍵盤）。對 ODM 公司來說，更關鍵的問題是：
                     </p>
                     <p className="text-xl text-primary font-semibold">
-                      值得投入長期資源的 AI PC，如何定義未來面貌？
+                      值得投入長期資源的 AI PC，該長什麼樣子？
                     </p>
                   </div>
 
                   <div>
                     <h3 className="text-2xl font-semibold mb-6 text-foreground">我的任務</h3>
                     <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                      站在 UX 的位置，與不同利害關係人協作與溝通：
+                      站在 UX 的位置，我需要跟不同的人協作和溝通：
                     </p>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="bg-background border border-border rounded-lg p-5">
                         <p className="text-muted-foreground">先幫公司定義一版<mark className="bg-primary/20 text-foreground px-1 rounded">「合理又有前瞻性」</mark>的 AI PC 願景</p>
                       </div>
                       <div className="bg-background border border-border rounded-lg p-5">
-                        <p className="text-muted-foreground">用研究與故事，幫 PM 組成一套可以<mark className="bg-primary/20 text-foreground px-1 rounded">說服高層的提案基礎</mark></p>
+                        <p className="text-muted-foreground">用研究和故事，幫 PM 組成一套<mark className="bg-primary/20 text-foreground px-1 rounded">能說服高層的提案</mark></p>
                       </div>
                       <div className="bg-background border border-border rounded-lg p-5">
-                        <p className="text-muted-foreground">讓內部 ID 與 ME 團隊可以<mark className="bg-primary/20 text-foreground px-1 rounded">根據具體情境</mark>，而非只看規格評估新技術的價值</p>
+                        <p className="text-muted-foreground">讓 ID 和 ME 團隊可以用<mark className="bg-primary/20 text-foreground px-1 rounded">具體情境</mark>來評估新技術的價值，而不是只看規格數字</p>
                       </div>
                       <div className="bg-background border border-border rounded-lg p-5">
-                        <p className="text-muted-foreground">與新創夥伴用<mark className="bg-primary/20 text-foreground px-1 rounded">情境對齊</mark>可能合作方向</p>
+                        <p className="text-muted-foreground">跟新創夥伴用<mark className="bg-primary/20 text-foreground px-1 rounded">情境對齊</mark>可能的合作方向</p>
                       </div>
                     </div>
                   </div>
@@ -608,10 +608,10 @@ const ProjectDetailV2 = () => {
                   <div className="bg-primary/10 rounded-xl p-8 mt-8">
                     <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">核心觀點</p>
                     <p className="text-2xl text-foreground font-semibold leading-relaxed">
-                      「AI PC 是一台會主動幫使用者工作、懂得情境脈絡的好夥伴，而不僅是一台『裝了 AI app』的電腦」
+                      「AI PC 應該是一台會主動幫你工作、懂得前後脈絡的好夥伴，而不只是一台『裝了 AI app』的電腦」
                     </p>
                     <p className="text-muted-foreground mt-4">
-                      這也決定了之後研究與提案的方向：先定義「什麼值得做？」
+                      這個觀點決定了後續研究和提案的方向：先定義「什麼值得做」
                     </p>
                   </div>
                 </div>
@@ -767,11 +767,11 @@ const ProjectDetailV2 = () => {
                               <p className="text-sm text-muted-foreground">沒有會生氣、有了覺得理所當然</p>
                             </div>
                             <div className="bg-secondary/50 rounded-lg p-5 text-center">
-                              <p className="text-sm font-semibold text-primary mb-1">Performance 期望型</p>
+                              <p className="text-sm font-semibold text-primary mb-1">One-dimensional 期望型</p>
                               <p className="text-sm text-muted-foreground">多一點會加分，少一點會扣分</p>
                             </div>
                             <div className="bg-secondary/50 rounded-lg p-5 text-center">
-                              <p className="text-sm font-semibold text-primary mb-1">Delighter 魅力型</p>
+                              <p className="text-sm font-semibold text-primary mb-1">Attractive 吸引型</p>
                               <p className="text-sm text-muted-foreground">有會驚喜、沒有也不會抱怨</p>
                             </div>
                           </div>
@@ -1069,7 +1069,7 @@ const ProjectDetailV2 = () => {
                     在 2022 年，同一客戶的雙螢幕電競 / 創作者筆電專案中，我參與的 UX 研究與概念設計，曾讓 Wistron 概念機在 CES 與 MSI、Razer、ROG、Acer、Dell 等品牌並列展出。那次經驗對我來說是一個提醒：
                   </p>
                   <p className="leading-relaxed">
-                    <strong className="text-foreground">AI PC Envisioning 雖然還停留在願景與探索階段，但本質上，仍是在為公司下一次被看見、被採用、拿到訂單的機會鋪路</strong>——先把一個可信、說得動人的未來版本設計出來，才有機會真的走到展場與市場。
+                    <strong className="text-foreground">AI PC Envisioning 雖然還停留在願景和探索階段，但本質上，仍然是在為公司下一次被看見、被採用、拿到訂單的機會鋪路。</strong>先把一個可信、說得動人的未來版本設計出來，才有機會真的走到展場和市場。
                   </p>
                 </div>
 
