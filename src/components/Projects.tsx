@@ -36,7 +36,7 @@ const Projects = () => {
     {
       title: "AI PC",
       subtitle: "Research & Vision",
-      description: "在 AI PC 尚未定義前，以研究與分析整理 10 項 AI 功能優先序與 3 組未來工作情境，協助 PM 建立產品藍圖與取捨依據",
+      description: "在 AI PC 還很模糊的探索期，透過研究完成 10 項創新功能優先排序與 3 組實際工作情境，讓 PM 可以拿去提案，也讓 ID、ME 能用情境評估新技術價值",
       roleInfo: "Strategic UX / Product Designer",
       tags: ["AI PC Vision", "Strategic UX", "UX Research"],
       projectId: "ai-pc",
