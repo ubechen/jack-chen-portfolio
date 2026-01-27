@@ -5,9 +5,10 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // GitHub Pages requires base path set to repo name in production
-  // For Lovable preview, keep base as "/"
-  base: mode === "production" ? "/jack-ux-portfolio-vite/" : "/",
+  // Use GITHUB_PAGES env var to distinguish deployment targets:
+  // - Lovable publish: base = "/"
+  // - GitHub Pages: base = "/jack-ux-portfolio-vite/"
+  base: process.env.GITHUB_PAGES === "true" ? "/jack-ux-portfolio-vite/" : "/",
   server: {
     host: "::",
     port: 8080,
