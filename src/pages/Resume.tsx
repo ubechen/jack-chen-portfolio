@@ -25,6 +25,32 @@ const jsonLdData = {
 
 const Resume = () => {
 
+  const handleDownloadResume = async () => {
+    try {
+      // Use BASE_URL to support both Lovable ("/") and GitHub Pages ("/repo/") deployments
+      const base = import.meta.env.BASE_URL || "/";
+      const url = `${base.replace(/\/$/, "")}/Resume_Tai-Yun_Chen_Jack_tw.pdf`;
+
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`Failed to fetch resume: ${res.status}`);
+
+      const blob = await res.blob();
+      const blobUrl = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = blobUrl;
+      a.download = "Resume_Tai-Yun_Chen_Jack_tw.pdf";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      URL.revokeObjectURL(blobUrl);
+    } catch (e) {
+      console.error(e);
+      toast("下載失敗，請稍後再試", { duration: 2000 });
+    }
+  };
+
   const workExperience = [
     {
       company: "Wistron Corporation 緯創資通",
@@ -223,13 +249,16 @@ const Resume = () => {
 
           <ScrollReveal>
             <div className="mb-12 print:hidden">
-              <Button variant="heroOutline" size="lg" className="text-lg" asChild>
-                <a href="/Resume_Tai-Yun_Chen_Jack_tw.pdf" download>
-                  <span className="relative z-10 flex items-center gap-2">
-                    <Download className="h-4 w-4" />
-                    下載履歷 PDF
-                  </span>
-                </a>
+              <Button
+                variant="heroOutline"
+                size="lg"
+                className="text-lg"
+                onClick={handleDownloadResume}
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  <Download className="h-4 w-4" />
+                  下載履歷 PDF
+                </span>
               </Button>
             </div>
           </ScrollReveal>
