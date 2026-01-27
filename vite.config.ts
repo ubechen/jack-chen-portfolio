@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
   // Use GITHUB_PAGES env var to distinguish deployment targets:
   // - Lovable publish: base = "/"
   // - GitHub Pages: base = "/jack-ux-portfolio-vite/"
-  base: process.env.GITHUB_PAGES === "true" ? "/jack-ux-portfolio-vite/" : "/",
+  base: process.env.GITHUB_PAGES === "true" ? "/jack-chen-portfolio/" : "/",
   server: {
     host: "::",
     port: 8080,
