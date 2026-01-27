@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { Head } from "vite-react-ssg";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -24,14 +24,14 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
-      <Helmet>
+      <Head>
         <title>How I Work｜我的工作方式｜Jack Chen</title>
         <meta name="description" content="介紹我的工作方式：從釐清題目與成功指標出發，透過研究與工作坊收斂方向，再用敘事、原型與驗證把策略轉成可執行的產品決策與體驗落地" />
         <meta property="og:title" content="How I Work｜我的工作方式｜Jack Chen" />
         <meta property="og:description" content="從題目釐清到研究收斂，再到原型驗證與落地，整理我如何把策略轉成可執行的產品決策與體驗" />
         <meta name="twitter:title" content="How I Work｜我的工作方式｜Jack Chen" />
         <meta name="twitter:description" content="從題目釐清到研究收斂，再到原型驗證與落地，整理我如何把策略轉成可執行的產品決策與體驗" />
-      </Helmet>
+      </Head>
       <Navigation />
       
       {/* Hero Section - White background */}

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { Head } from "vite-react-ssg";
 import { MapPin, Globe, Linkedin, Mail, Download, ExternalLink, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
 import Navigation from "@/components/Navigation";
@@ -179,7 +179,7 @@ const Resume = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
+      <Head>
         <title>Resume｜履歷與經歷摘要｜Jack Chen</title>
         <meta name="description" content="Jack Chen 的履歷摘要與工作經歷，包含 UX 研究、資訊架構、複雜系統與後台設計、裝置端 App 與軟硬整合、跨部門對齊與簡報溝通能力" />
         <meta property="og:title" content="Resume｜履歷與經歷摘要｜Jack Chen" />
@@ -187,7 +187,7 @@ const Resume = () => {
         <meta name="twitter:title" content="Resume｜履歷與經歷摘要｜Jack Chen" />
         <meta name="twitter:description" content="履歷摘要與工作經歷：UX 研究、IA、後台與系統設計、裝置端整合、利害關係人對齊與溝通" />
         <script type="application/ld+json">{JSON.stringify(jsonLdData)}</script>
-      </Helmet>
+      </Head>
       <Navigation />
       
       <main className="pt-20 pb-16">

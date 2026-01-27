@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Helmet } from "react-helmet-async";
+import { Head } from "vite-react-ssg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Play, FolderSearch, Briefcase } from "lucide-react";
@@ -246,7 +246,7 @@ const ProjectDetailV2 = () => {
     
     return (
       <div className="min-h-screen bg-background flex flex-col">
-        <Helmet>
+        <Head>
           <title>找不到這個專案｜Jack Chen（陳泰運）作品集</title>
           <meta name="description" content="這個專案連結可能已更新或暫時不公開。你可以回到 Projects 列表，瀏覽 AI PC、Drone System、Wifundity AMR、Wi-Thrive ESG 等案例" />
           <link rel="canonical" href="https://taiyun.design/projects/not-found" />
@@ -262,7 +262,7 @@ const ProjectDetailV2 = () => {
           <meta name="twitter:title" content="找不到這個專案｜Jack Chen（陳泰運）作品集" />
           <meta name="twitter:description" content="此專案連結可能已更新或暫時不公開。回到 Projects 列表瀏覽其他案例" />
           <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/913ea9b5-713e-47d8-9de2-ad05ff4e2dd3/id-preview-fa2e4b33--de911528-6f96-43b3-a205-2765473bab47.lovable.app-1768453677111.png" />
-        </Helmet>
+        </Head>
         
         <Navigation />
         
@@ -368,7 +368,7 @@ const ProjectDetailV2 = () => {
 
   return (
     <div className="min-h-screen">
-      <Helmet>
+      <Head>
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
         <meta property="og:title" content={seo.title} />
@@ -376,7 +376,7 @@ const ProjectDetailV2 = () => {
         <meta name="twitter:title" content={seo.title} />
         <meta name="twitter:description" content={seo.ogDescription} />
         <script type="application/ld+json">{JSON.stringify(jsonLdData)}</script>
-      </Helmet>
+      </Head>
       <Navigation />
       
       {/* Desktop Quick Nav */}

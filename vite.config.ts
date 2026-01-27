@@ -22,30 +22,5 @@ export default defineConfig(({ mode }) => ({
   ssgOptions: {
     script: "async",
     formatting: "minify",
-    onPageRendered(route: string, indexHTML: string, appCtx: { helmet?: { title?: { toString: () => string }; meta?: { toString: () => string }; link?: { toString: () => string } } } | undefined) {
-      // 從 appCtx 提取 helmet state 並注入到 HTML
-      const { helmet } = appCtx || {};
-      if (helmet) {
-        let html = indexHTML;
-        
-        // 替換 title
-        if (helmet.title) {
-          html = html.replace(/<title>.*?<\/title>/, helmet.title.toString());
-        }
-        
-        // 注入 meta tags（在 </head> 前插入）
-        if (helmet.meta) {
-          html = html.replace('</head>', `${helmet.meta.toString()}</head>`);
-        }
-        
-        // 注入 link tags (canonical 等)
-        if (helmet.link) {
-          html = html.replace('</head>', `${helmet.link.toString()}</head>`);
-        }
-        
-        return html;
-      }
-      return indexHTML;
-    },
   },
 }));
