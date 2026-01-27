@@ -1,73 +1,38 @@
-# Welcome to your Lovable project
+# Jack Chen Portfolio
 
-## Project info
+這個專案是我的個人作品集網站，用於展示我在 **B2B／系統型產品**、**裝置端體驗（Laptop / Drone Ground Control System）**、**服務型機器人平台**、以及 **ESG Storytelling** 等方向的精選案例  
 
-**URL**: https://lovable.dev/projects/de911528-6f96-43b3-a205-2765473bab47
+目標是讓未來的合作夥伴能快速理解我如何運用研究與設計方法，協助團隊釐清題目、對齊利害關係人，並把方向落實為可驗證的產品體驗  
 
-## How can I edit this code?
+- Live site：https://taiyun.design/
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## Site Structure（頁面架構）
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/de911528-6f96-43b3-a205-2765473bab47) and start prompting.
+- **Home**：定位、精選專案、快速導覽  
 
-Changes made via Lovable will be committed automatically to this repo.
+- **About**：我的工作方式（How I Work）  
 
-**Use your preferred IDE**
+- **Resume**：履歷頁（可下載履歷）  
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Projects（Case Studies）**
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+  - AI PC（Laptop）— Research & Vision  
 
-Follow these steps:
+  - Drone System — Control Experience  
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+  - Wifundity AMR Robot — Service System Design  
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+  - Wi-Thrive — ESG Storytelling Game  
 
-# Step 3: Install the necessary dependencies.
-npm i
+> 註：部分專案因保密因素，頁面圖片可能以「示意圖／重新製作的情境圖」呈現，以保留脈絡但避免洩露客戶資訊  
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## About This Portfolio（關於我）
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+我是 Jack Chen，長期投入產品與 UX 設計工作，擅長在高不確定性的題目裡，協助團隊把「模糊需求」轉成「可被討論、可被執行」的產品決策  
 
-**Use GitHub Codespaces**
+目前正在尋找新的工作機會，若你對我的經驗或專案有興趣，歡迎透過作品集網站與我聯繫  
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/de911528-6f96-43b3-a205-2765473bab47) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
