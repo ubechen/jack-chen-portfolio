@@ -1,86 +1,54 @@
 
 
-## GitHub Pages 部署修正計畫
+## 履歷 PDF 下載修復計畫
 
-### 問題摘要
+### 問題根因
 
-| 問題 | 現況 | 需修正為 |
-|------|------|----------|
-| Repository 名稱 | `/jack-ux-portfolio-vite/` | `/jack-chen-portfolio/` |
-| 404.html | 不存在 | 需自動產生 |
+PDF 檔案未成功存入 `public/` 資料夾，導致下載連結找不到檔案。
+
+### 修復步驟
+
+#### 1. 放置 PDF 檔案
+
+將使用者上傳的履歷檔案存放至正確位置：
+
+| 來源 | 目標路徑 |
+|------|----------|
+| `user-uploads://Resume_Tai-Yun_Chen_Jack_tw-2.pdf` | `public/Resume_Tai-Yun_Chen_Jack_tw.pdf` |
+
+#### 2. 驗證檔案可存取
+
+檔案放置後，可透過以下路徑存取：
+- **Lovable 預覽**：`https://id-preview--de911528-6f96-43b3-a205-2765473bab47.lovable.app/Resume_Tai-Yun_Chen_Jack_tw.pdf`
+- **Lovable 正式**：`https://jack-chen-portfolio.lovable.app/Resume_Tai-Yun_Chen_Jack_tw.pdf`
+- **GitHub Pages**：`https://ubechen.github.io/jack-chen-portfolio/Resume_Tai-Yun_Chen_Jack_tw.pdf`
 
 ---
 
-### 修改項目
+### 技術說明
 
-#### 1. 修正 Base 路徑（vite.config.ts）
+`public/` 資料夾中的檔案會被直接複製到網站根目錄，因此：
+- 放在 `public/Resume_Tai-Yun_Chen_Jack_tw.pdf`
+- 可透過 `/Resume_Tai-Yun_Chen_Jack_tw.pdf` 存取
 
-```typescript
-// 第 11 行
-// 修改前
-base: process.env.GITHUB_PAGES === "true" ? "/jack-ux-portfolio-vite/" : "/",
-
-// 修改後
-base: process.env.GITHUB_PAGES === "true" ? "/jack-chen-portfolio/" : "/",
+Resume.tsx 中的下載連結（第 227 行）已正確設定：
+```tsx
+<a href="/Resume_Tai-Yun_Chen_Jack_tw.pdf" download>
 ```
-
----
-
-#### 2. 自動產生 404.html（.github/workflows/deploy.yml）
-
-在 Build 完成後加入步驟，將 `dist/index.html` 複製為 `dist/404.html`，讓 GitHub Pages 能正確處理 404 路由：
-
-```yaml
-# 在 Build SSG 步驟後新增
-- name: Create 404.html for GitHub Pages
-  run: cp dist/index.html dist/404.html
-```
-
-**原理說明**：
-- GitHub Pages 遇到不存在的路徑時會讀取 `404.html`
-- 由於你的網站使用 SSG，所有頁面都有預渲染的靜態 HTML
-- 但如果有人直接訪問一個不存在的路徑，`404.html` 會載入 SPA 應用
-- React Router 會偵測到路徑不存在，自動顯示你設計的 `NotFound` 頁面
 
 ---
 
 ### 修改檔案清單
 
-| 檔案 | 變更內容 |
-|------|----------|
-| `vite.config.ts` | 更新 GitHub Pages base 路徑為 `/jack-chen-portfolio/` |
-| `.github/workflows/deploy.yml` | 新增步驟產生 `404.html` |
+| 檔案 | 動作 |
+|------|------|
+| `public/Resume_Tai-Yun_Chen_Jack_tw.pdf` | 新增（從使用者上傳檔案複製） |
 
 ---
 
-### 部署流程圖
+### 部署後測試
 
-```text
-┌─────────────────────────────────────────────────────────────┐
-│  Lovable 編輯                                                │
-│  ↓                                                          │
-│  自動同步到 GitHub (main branch)                             │
-│  ↓                                                          │
-│  GitHub Actions 自動觸發                                     │
-│  ↓                                                          │
-│  npm run build (產生靜態 HTML/CSS/JS)                        │
-│  ↓                                                          │
-│  複製 index.html → 404.html                                  │
-│  ↓                                                          │
-│  部署到 GitHub Pages                                         │
-│  ↓                                                          │
-│  網站上線：https://ubechen.github.io/jack-chen-portfolio/    │
-└─────────────────────────────────────────────────────────────┘
-```
-
----
-
-### 部署後驗證
-
-完成修改並推送後，你的網站將可透過以下網址訪問：
-
-- **GitHub Pages**：`https://ubechen.github.io/jack-chen-portfolio/`
-- **Lovable**：`https://jack-chen-portfolio.lovable.app/`（不受影響）
-
-兩個網址可同時運作，各自獨立。
+1. 前往 `/resume` 頁面
+2. 點擊「下載履歷 PDF」按鈕
+3. 確認 PDF 檔案成功下載
 
