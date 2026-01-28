@@ -27,10 +27,25 @@ const About = () => {
       <Head>
         <title>How I Work｜我的工作方式｜Jack Chen</title>
         <meta name="description" content="介紹我的工作方式：從釐清題目與成功指標出發，透過研究與工作坊收斂方向，再用敘事、原型與驗證把策略轉成可執行的產品決策與體驗落地" />
+        <link rel="canonical" href="https://taiyun.design/about" />
+        <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+        <meta name="author" content="Jack Chen" />
+        
+        {/* Open Graph */}
+        <meta property="og:locale" content="zh_TW" />
+        <meta property="og:type" content="website" />
         <meta property="og:title" content="How I Work｜我的工作方式｜Jack Chen" />
         <meta property="og:description" content="從題目釐清到研究收斂，再到原型驗證與落地，整理我如何把策略轉成可執行的產品決策與體驗" />
+        <meta property="og:url" content="https://taiyun.design/about" />
+        <meta property="og:site_name" content="Jack Chen Portfolio" />
+        <meta property="og:image" content="https://taiyun.design/images/og-about.png" />
+        <meta property="og:image:alt" content="Jack Chen 工作方式介紹頁面" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="How I Work｜我的工作方式｜Jack Chen" />
         <meta name="twitter:description" content="從題目釐清到研究收斂，再到原型驗證與落地，整理我如何把策略轉成可執行的產品決策與體驗" />
+        <meta name="twitter:image" content="https://taiyun.design/images/og-about.png" />
       </Head>
       <Navigation />
       
