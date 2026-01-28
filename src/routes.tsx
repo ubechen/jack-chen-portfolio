@@ -46,7 +46,13 @@ export const routes: RouteRecord[] = [
         path: "project/:projectId",
         element: withSuspense(ProjectDetail),
         // Define which paths to pre-render for this dynamic route
-        getStaticPaths: () => ['ai-pc', 'drone', 'amr-robot', 'esg-board-game'],
+        // Must return full paths (including parent route prefix) per vite-react-ssg docs
+        getStaticPaths: () => [
+          'project/ai-pc',
+          'project/drone',
+          'project/amr-robot',
+          'project/esg-board-game',
+        ],
       },
       {
         path: "*",
