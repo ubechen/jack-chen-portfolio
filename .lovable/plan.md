@@ -1,167 +1,140 @@
 
 
-## 專案內頁 SEO/AEO/GEO 更新 + Loading 動畫調整計畫
+## 修正 SSG 預渲染 Meta 標籤衝突問題
 
-### 一、修改檔案清單
+### 問題診斷
+
+目前專案內頁（如 AI PC）的 HTML 原始碼出現**兩組衝突的 meta 標籤**：
+
+| 來源 | 屬性 | 內容 |
+|------|------|------|
+| Index.tsx `<Head>` | `data-rh="true"` | 首頁標題「Jack Chen｜Product / UX 設計作品集｜系統型與產品體驗」 |
+| index.html | 無 | 首頁完整 SEO「Jack Chen（陳泰運）｜Product / UX 設計作品集｜B2B 系統...」 |
+
+而 ProjectDetailV2.tsx 的專案專屬 meta 標籤（如 AI PC）只在 JavaScript hydration 後才生效，無法在原始碼中看到。
+
+### 根本原因
+
+1. **index.html 的 meta 標籤被複製到所有頁面**：SSG 使用 index.html 作為模板，其中的首頁 SEO 內容會出現在所有預渲染頁面
+2. **Index.tsx 的 Head 標籤與 index.html 重複**：首頁同時有兩處定義 meta 標籤
+3. **SSG 未正確覆寫 index.html 的靜態標籤**：專案內頁的 `<Head>` 內容無法在建構時取代模板中的標籤
+
+---
+
+### 解決方案
+
+將 `index.html` 改為**純模板**，移除所有頁面專屬的 SEO 標籤，只保留：
+- 基礎 HTML 設定（charset、viewport）
+- 共用資源（fonts、favicon）
+- Loading 動畫樣式
+- Google Analytics
+
+所有頁面的 SEO meta 標籤（title、description、OG、Twitter、JSON-LD）統一由各頁面的 `<Head>` 元件負責注入。
+
+---
+
+### 修改檔案
 
 | 檔案 | 修改內容 |
 |------|----------|
-| `src/pages/ProjectDetailV2.tsx` | 重構 `seoData` 與 `<Head>` 元件，加入完整 meta 標籤與 JSON-LD |
-| `index.html` | 1. 手機版圖片縮小至 70%<br>2. Loading → Loading... |
+| `index.html` | 移除首頁專屬 SEO 標籤（保留基礎設定與共用資源） |
+| `src/pages/Index.tsx` | 加入完整首頁 SEO 標籤（從 index.html 搬移過來） |
 
 ---
 
-### 二、OG 圖片路徑（已更新為 images 資料夾）
+### 技術細節
 
-路徑統一使用 `https://taiyun.design/images/`：
-
-| 專案 | 圖片路徑 |
-|------|----------|
-| AI PC | `https://taiyun.design/images/og-ai-pc.png` |
-| Drone System | `https://taiyun.design/images/og-drone-system.png` |
-| AMR Robot | `https://taiyun.design/images/og-amr-robot.png` |
-| ESG Board Game | `https://taiyun.design/images/og-wi-thrive.png` |
-
-**你需要手動上傳 4 張 OG 圖片**（建議尺寸：1200×630px）到 `public/images/` 資料夾
-
----
-
-### 三、Loading 動畫調整
-
-#### 修改位置：index.html 第 47-60 行
-
-**CSS 新增手機版尺寸**（第 51 行後新增）：
-
-```css
-.loader-content img {
-  width: 400px;
-  height: auto;
-  max-width: 80vw;
-}
-
-/* 新增：手機版縮小至 70% */
-@media (max-width: 767px) {
-  .loader-content img {
-    width: 280px;  /* 400px × 70% = 280px */
-  }
-}
-```
-
-**文字修改**（第 190 行）：
+#### 1. index.html 修改後保留項目
 
 ```html
-<!-- 原本 -->
-<p>Loading</p>
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- 修改為 -->
-<p>Loading...</p>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Performance: Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:..." rel="stylesheet">
+
+    <!-- Loading Screen Styles (保留) -->
+    <style>...</style>
+
+    <!-- Google Analytics (保留) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JG20116BZ7"></script>
+    <script>...</script>
+  </head>
+  <body>...</body>
+</html>
 ```
 
----
+**移除項目**：
+- `<title>`
+- `<meta name="description">`
+- `<meta name="author">`
+- `<meta name="robots">`
+- `<link rel="canonical">`
+- 所有 `og:*` meta 標籤
+- 所有 `twitter:*` meta 標籤
+- JSON-LD 結構化資料
 
-### 四、SEO/AEO/GEO 完整實作
-
-#### 1. 重構 seoData 結構（第 328-355 行）
-
-從目前簡單結構：
-
-```typescript
-seoData: { title, description, ogDescription }
-```
-
-擴展為完整結構，以 AI PC 為例：
-
-```typescript
-"ai-pc": {
-  title: "AI PC｜Research & Vision｜Jack Chen 專案",
-  description: "在 AI PC 尚未被清楚定義前...",
-  canonical: "https://taiyun.design/project/ai-pc",
-  ogDescription: "用研究與情境敘事勾勒下一代 AI 筆電體驗...",
-  ogImage: "https://taiyun.design/images/og-ai-pc.png",
-  ogImageAlt: "AI PC 專案代表圖：...",
-  twitterDescription: "在 AI PC 尚未被定義前...",
-  jsonLdArticle: { ... },
-  jsonLdBreadcrumb: { ... }
-}
-```
-
-#### 2. 更新 Head 元件（第 371-379 行）
-
-從：
+#### 2. Index.tsx 加入完整首頁 SEO
 
 ```tsx
 <Head>
-  <title>{seo.title}</title>
-  <meta name="description" content={seo.description} />
-  <meta property="og:title" content={seo.title} />
-  <meta property="og:description" content={seo.ogDescription} />
-  <meta name="twitter:title" content={seo.title} />
-  <meta name="twitter:description" content={seo.ogDescription} />
-  <script type="application/ld+json">{JSON.stringify(jsonLdData)}</script>
-</Head>
-```
-
-更新為完整版：
-
-```tsx
-<Head>
-  {/* 基本 Meta */}
-  <title>{seo.title}</title>
-  <meta name="description" content={seo.description} />
-  <link rel="canonical" href={seo.canonical} />
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  {/* Primary SEO */}
+  <title>Jack Chen（陳泰運）｜Product / UX 設計作品集｜B2B 系統・AI PC・無人機・服務型機器人・ESG</title>
+  <meta name="description" content="Jack Chen（陳泰運 / Tai-Yun Chen）是 Product / UX 設計師..." />
   <meta name="author" content="Jack Chen" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <link rel="canonical" href="https://taiyun.design/" />
 
   {/* Open Graph */}
-  <meta property="og:locale" content="zh_TW" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content={seo.title} />
-  <meta property="og:description" content={seo.ogDescription} />
-  <meta property="og:url" content={seo.canonical} />
   <meta property="og:site_name" content="Jack Chen Portfolio" />
-  <meta property="og:image" content={seo.ogImage} />
-  <meta property="og:image:alt" content={seo.ogImageAlt} />
+  <meta property="og:title" content="Jack Chen（陳泰運）｜Product / UX 設計作品集" />
+  <meta property="og:description" content="B2B 系統・AI PC・無人機地面控制站..." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://taiyun.design/" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/..." />
 
   {/* Twitter */}
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={seo.title} />
-  <meta name="twitter:description" content={seo.twitterDescription} />
-  <meta name="twitter:image" content={seo.ogImage} />
+  <meta name="twitter:title" content="Jack Chen（陳泰運）｜Product / UX 設計作品集" />
+  <meta name="twitter:description" content="B2B 系統・AI PC・無人機・服務型機器人・ESG｜專案案例與履歷" />
+  <meta name="twitter:site" content="@jackchen_ux" />
+  <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/..." />
 
-  {/* JSON-LD：Article + BreadcrumbList */}
-  <script type="application/ld+json">{JSON.stringify(seo.jsonLdArticle)}</script>
-  <script type="application/ld+json">{JSON.stringify(seo.jsonLdBreadcrumb)}</script>
+  {/* JSON-LD: Person + WebSite */}
+  <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
 </Head>
 ```
 
 ---
 
-### 五、4 個專案的完整 SEO 資料
+### 預期結果
 
-每個專案都包含你提供的完整內容：
+修改後，每個頁面的 HTML 原始碼將只包含該頁面專屬的 meta 標籤：
 
-**AI PC**
-- Article schema 含 5 個 about 主題 + 7 個 keywords
-- BreadcrumbList: Home → Projects → AI PC｜Research & Vision
+| 頁面 | 原始碼中的 title |
+|------|------------------|
+| `/` (首頁) | Jack Chen（陳泰運）｜Product / UX 設計作品集｜B2B 系統... |
+| `/project/ai-pc` | AI PC｜Research & Vision｜Jack Chen 專案 |
+| `/project/drone` | Drone System｜Control Experience｜Jack Chen 專案 |
+| `/about` | About - Jack Chen... |
 
-**Drone System**
-- Article schema 含 5 個 about 主題 + 7 個 keywords
-- BreadcrumbList: Home → Projects → Drone System｜Control Experience
-
-**AMR Robot**
-- Article schema 含 5 個 about 主題 + 7 個 keywords
-- BreadcrumbList: Home → Projects → Wifundity AMR Robot｜Service System Design
-
-**ESG Board Game**
-- Article schema 含 5 個 about 主題 + 7 個 keywords
-- BreadcrumbList: Home → Projects → Wi-Thrive｜ESG Storytelling Game
+不再有重複或衝突的 meta 標籤。
 
 ---
 
-### 六、實作順序
+### 實作順序
 
-1. 修改 `index.html`：手機版 Loading 圖片 70% + Loading...
-2. 修改 `src/pages/ProjectDetailV2.tsx`：完整 SEO 資料結構與 Head 元件
-3. 你手動上傳 4 張 OG 圖片到 `public/images/`
-4. 推送到 GitHub 觸發 SSG 重新建構
+1. 修改 `index.html`：移除頁面專屬 SEO 標籤
+2. 修改 `src/pages/Index.tsx`：加入從 index.html 搬移的完整首頁 SEO
+3. 推送到 GitHub 觸發 SSG 重新建構
+4. 驗證各頁面原始碼
 
