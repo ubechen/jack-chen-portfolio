@@ -33,7 +33,7 @@ jobs:
       - name: Build SSG
         run: npm run build
         env:
-          GITHUB_PAGES: "true"
+          CUSTOM_DOMAIN: "true"
 
       - name: Create 404.html for GitHub Pages
         run: cp dist/index.html dist/404.html
