@@ -99,14 +99,14 @@ const Index = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://taiyun.design/" />
         <meta property="og:locale" content="zh_TW" />
-        <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/913ea9b5-713e-47d8-9de2-ad05ff4e2dd3/id-preview-fa2e4b33--de911528-6f96-43b3-a205-2765473bab47.lovable.app-1768453677111.png" />
+        <meta property="og:image" content="https://taiyun.design/images/og-index.png" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Jack Chen（陳泰運）｜Product / UX 設計作品集" />
         <meta name="twitter:description" content="B2B 系統・AI PC・無人機・服務型機器人・ESG｜專案案例與履歷" />
         <meta name="twitter:site" content="@jackchen_ux" />
-        <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/913ea9b5-713e-47d8-9de2-ad05ff4e2dd3/id-preview-fa2e4b33--de911528-6f96-43b3-a205-2765473bab47.lovable.app-1768453677111.png" />
+        <meta name="twitter:image" content="https://taiyun.design/images/og-index.png" />
         
         {/* JSON-LD: Person + WebSite */}
         <script type="application/ld+json">{JSON.stringify(personWebsiteSchema)}</script>

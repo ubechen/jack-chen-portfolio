@@ -371,7 +371,7 @@ const ProjectDetailV2 = () => {
       description: "與國內無人機大廠合作開發地面控制站，從競品研究到實機測試，設計控制器與 App 的任務流程、資訊呈現與操作回饋，讓操作者在任務中能更穩定依賴這套控制體驗",
       canonical: "https://taiyun.design/project/drone",
       ogDescription: "地面控制站（控制器＋App）UX：從研究到實機測試，強化任務流程、資訊層級與操作回饋，提升操控可靠性",
-      ogImage: "https://taiyun.design/images/og-drone-system.png",
+      ogImage: "https://taiyun.design/images/og-drone.png",
       ogImageAlt: "Drone System 專案代表圖：無人機地面控制站與任務操控情境",
       twitterDescription: "地面控制站UX：控制器＋App 的任務流程、資訊呈現與回饋設計，從研究到實機測試落地",
       jsonLdArticle: {
@@ -431,7 +431,7 @@ const ProjectDetailV2 = () => {
       description: "與 ESG 辦公室、HR 與臺科大合作設計《緯你同行》桌遊，結合生成式 AI 圖像工作流與體驗微調，讓同仁、應徵者與夥伴在遊戲中理解公司永續行動，支援內訓、招募與對外溝通",
       canonical: "https://taiyun.design/project/esg-board-game",
       ogDescription: "把 ESG 變成能被「玩懂」的體驗：可量產桌遊設計、GenAI 圖像工作流、跨部門協作與內訓/招募落地",
-      ogImage: "https://taiyun.design/images/og-wi-thrive.png",
+      ogImage: "https://taiyun.design/images/og-esg-board-game.png",
       ogImageAlt: "Wi-Thrive ESG 桌遊專案代表圖：企業永續故事化與遊戲化體驗",
       twitterDescription: "ESG 桌遊《緯你同行》：GenAI 圖像工作流＋體驗微調，支援內訓、招募與對外溝通",
       jsonLdArticle: {

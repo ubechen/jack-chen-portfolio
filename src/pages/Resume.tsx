@@ -182,10 +182,26 @@ const Resume = () => {
       <Head>
         <title>Resume｜履歷與經歷摘要｜Jack Chen</title>
         <meta name="description" content="Jack Chen 的履歷摘要與工作經歷，包含 UX 研究、資訊架構、複雜系統與後台設計、裝置端 App 與軟硬整合、跨部門對齊與簡報溝通能力" />
+        <link rel="canonical" href="https://taiyun.design/resume" />
+        <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+        <meta name="author" content="Jack Chen" />
+        
+        {/* Open Graph */}
+        <meta property="og:locale" content="zh_TW" />
+        <meta property="og:type" content="website" />
         <meta property="og:title" content="Resume｜履歷與經歷摘要｜Jack Chen" />
         <meta property="og:description" content="履歷摘要與工作經歷：UX 研究、IA、後台與系統設計、裝置端整合、利害關係人對齊與溝通" />
+        <meta property="og:url" content="https://taiyun.design/resume" />
+        <meta property="og:site_name" content="Jack Chen Portfolio" />
+        <meta property="og:image" content="https://taiyun.design/images/og-resume.png" />
+        <meta property="og:image:alt" content="Jack Chen 履歷摘要頁面" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Resume｜履歷與經歷摘要｜Jack Chen" />
-        <meta name="twitter:description" content="履歷摘要與工作經歷：UX 研究、IA、後台與系統設計、裝置端整合、利害關係人對齊與溝通" />
+        <meta name="twitter:description" content="履歷摘要與工作經歷：UX 研究、IA、後台與系統設計、裝置端整合..." />
+        <meta name="twitter:image" content="https://taiyun.design/images/og-resume.png" />
+        
         <script type="application/ld+json">{JSON.stringify(jsonLdData)}</script>
       </Head>
       <Navigation />
