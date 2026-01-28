@@ -325,57 +325,194 @@ const ProjectDetailV2 = () => {
     );
   }
 
-  const seoData: Record<string, { title: string; description: string; ogDescription: string }> = {
+  const seoData: Record<string, {
+    title: string;
+    description: string;
+    canonical: string;
+    ogDescription: string;
+    ogImage: string;
+    ogImageAlt: string;
+    twitterDescription: string;
+    jsonLdArticle: object;
+    jsonLdBreadcrumb: object;
+  }> = {
     "ai-pc": {
       title: "AI PC｜Research & Vision｜Jack Chen 專案",
-      description: "在 AI PC 尚未被明確定義前，透過研究與分析整理關鍵 AI 功能優先序與未來工作情境，協助產品藍圖規劃，並以情境與原型支持跨部門決策與提案",
-      ogDescription: "以研究與分析整理 AI 功能優先序與未來工作情境，協助產品藍圖規劃，並用情境與原型支持跨部門決策與提案"
+      description: "在 AI PC 尚未被清楚定義前，我以研究與情境敘事建立下一代 AI 筆電藍圖，整理關鍵 AI 功能優先序與未來工作情境，協助團隊形成可被討論、可落地的產品方向與 POC 路線",
+      canonical: "https://taiyun.design/project/ai-pc",
+      ogDescription: "用研究與情境敘事勾勒下一代 AI 筆電體驗，建立功能優先序與概念藍圖，協助團隊做出可執行的產品選擇",
+      ogImage: "https://taiyun.design/images/og-ai-pc.png",
+      ogImageAlt: "AI PC 專案代表圖：下一代 AI 筆電願景與情境概念",
+      twitterDescription: "在 AI PC 尚未被定義前，用研究與情境敘事建立下一代 AI 筆電藍圖與 POC 路線",
+      jsonLdArticle: {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "inLanguage": "zh-Hant",
+        "headline": "AI PC｜Research & Vision",
+        "description": "在 AI PC 尚未被清楚定義前，以研究與情境敘事建立下一代 AI 筆電藍圖，整理關鍵 AI 功能優先序與未來工作情境，協助團隊形成可落地的產品方向與 POC 路線",
+        "mainEntityOfPage": "https://taiyun.design/project/ai-pc",
+        "author": { "@type": "Person", "name": "Jack Chen", "url": "https://taiyun.design/" },
+        "about": ["AI PC", "Laptop Experience", "Strategic UX", "UX Research", "Product Vision"],
+        "keywords": ["AI PC", "筆電體驗設計", "策略型UX", "UX研究", "產品願景", "情境設計", "POC"],
+        "isPartOf": { "@type": "WebSite", "name": "Jack Chen Portfolio", "url": "https://taiyun.design/" }
+      },
+      jsonLdBreadcrumb: {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taiyun.design/" },
+          { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://taiyun.design/#projects" },
+          { "@type": "ListItem", "position": 3, "name": "AI PC｜Research & Vision", "item": "https://taiyun.design/project/ai-pc" }
+        ]
+      }
     },
     "drone": {
       title: "Drone System｜Control Experience｜Jack Chen 專案",
-      description: "與無人機團隊合作打造地面控制站體驗，從競品研究到實機測試，設計控制器與介面流程，讓操作者在任務中能更清楚掌握狀態、降低誤操作並提升效率",
-      ogDescription: "從競品研究到實機測試，設計控制器與介面流程，讓操作者在任務中更清楚掌握狀態、降低誤操作並提升效率"
+      description: "與國內無人機大廠合作開發地面控制站，從競品研究到實機測試，設計控制器與 App 的任務流程、資訊呈現與操作回饋，讓操作者在任務中能更穩定依賴這套控制體驗",
+      canonical: "https://taiyun.design/project/drone",
+      ogDescription: "地面控制站（控制器＋App）UX：從研究到實機測試，強化任務流程、資訊層級與操作回饋，提升操控可靠性",
+      ogImage: "https://taiyun.design/images/og-drone-system.png",
+      ogImageAlt: "Drone System 專案代表圖：無人機地面控制站與任務操控情境",
+      twitterDescription: "地面控制站UX：控制器＋App 的任務流程、資訊呈現與回饋設計，從研究到實機測試落地",
+      jsonLdArticle: {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "inLanguage": "zh-Hant",
+        "headline": "Drone System｜Control Experience",
+        "description": "與國內無人機大廠合作開發地面控制站，從競品研究到實機測試，設計控制器與 App 的任務流程、資訊呈現與操作回饋，讓操作者在任務中能更穩定依賴這套控制體驗",
+        "mainEntityOfPage": "https://taiyun.design/project/drone",
+        "author": { "@type": "Person", "name": "Jack Chen", "url": "https://taiyun.design/" },
+        "about": ["Drone", "Ground Control Station", "Control Experience", "B2B Product Design", "Usability Testing"],
+        "keywords": ["Drone GCS", "地面控制站", "控制系統UX", "任務流程設計", "資訊層級", "可用性測試", "B2B"],
+        "isPartOf": { "@type": "WebSite", "name": "Jack Chen Portfolio", "url": "https://taiyun.design/" }
+      },
+      jsonLdBreadcrumb: {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taiyun.design/" },
+          { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://taiyun.design/#projects" },
+          { "@type": "ListItem", "position": 3, "name": "Drone System｜Control Experience", "item": "https://taiyun.design/project/drone" }
+        ]
+      }
     },
     "amr-robot": {
       title: "Wifundity AMR Robot｜Service System Design｜Jack Chen 專案",
-      description: "參與服務型機器人產品線，涵蓋競品研究、後台管理系統與機器人端 App，支援賣場、飯店、醫院等多場域導入，建立可營運、可擴充的服務體驗與流程",
-      ogDescription: "從競品研究到後台與機器人端 App，支援多場域導入，建立可營運、可擴充的服務體驗與流程"
+      description: "參與服務型機器人產品線，從競品研究、後台管理系統到機器人端 App 與場域驗證，設計支援賣場、飯店、醫院等多場域的服務流程與營運操作體驗",
+      canonical: "https://taiyun.design/project/amr-robot",
+      ogDescription: "服務型機器人端到端體驗：後台營運、機器人端 App、場域導入驗證，整合多方角色與多場域流程",
+      ogImage: "https://taiyun.design/images/og-amr-robot.png",
+      ogImageAlt: "Wifundity AMR Robot 專案代表圖：服務型機器人與多場域服務情境",
+      twitterDescription: "從後台營運到機器人端 App 與場域驗證，打造多場域服務型機器人的完整服務體驗",
+      jsonLdArticle: {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "inLanguage": "zh-Hant",
+        "headline": "Wifundity AMR Robot｜Service System Design",
+        "description": "參與服務型機器人產品線，從競品研究、後台管理系統到機器人端 App 與場域驗證，設計支援賣場、飯店、醫院等多場域的服務流程與營運操作體驗",
+        "mainEntityOfPage": "https://taiyun.design/project/amr-robot",
+        "author": { "@type": "Person", "name": "Jack Chen", "url": "https://taiyun.design/" },
+        "about": ["Service Robot", "Fleet Management", "Operations Dashboard", "Service System Design", "B2B2C"],
+        "keywords": ["服務型機器人", "AMR", "後台管理系統", "營運儀表板", "機器人端App", "場域驗證", "B2B2C"],
+        "isPartOf": { "@type": "WebSite", "name": "Jack Chen Portfolio", "url": "https://taiyun.design/" }
+      },
+      jsonLdBreadcrumb: {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taiyun.design/" },
+          { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://taiyun.design/#projects" },
+          { "@type": "ListItem", "position": 3, "name": "Wifundity AMR Robot｜Service System Design", "item": "https://taiyun.design/project/amr-robot" }
+        ]
+      }
     },
     "esg-board-game": {
       title: "Wi-Thrive｜ESG Storytelling Game｜Jack Chen 專案",
-      description: "與 ESG、HR 與學研團隊合作設計《緯你同行》桌遊，結合 GenAI 圖像與 UX 微調，把永續行動轉成可被「玩懂」的故事體驗，支援招募、內訓與對外溝通",
-      ogDescription: "結合 GenAI 圖像與 UX 微調，把永續行動轉成可被玩懂的故事體驗，支援招募、內訓與對外溝通"
+      description: "與 ESG 辦公室、HR 與臺科大合作設計《緯你同行》桌遊，結合生成式 AI 圖像工作流與體驗微調，讓同仁、應徵者與夥伴在遊戲中理解公司永續行動，支援內訓、招募與對外溝通",
+      canonical: "https://taiyun.design/project/esg-board-game",
+      ogDescription: "把 ESG 變成能被「玩懂」的體驗：可量產桌遊設計、GenAI 圖像工作流、跨部門協作與內訓/招募落地",
+      ogImage: "https://taiyun.design/images/og-wi-thrive.png",
+      ogImageAlt: "Wi-Thrive ESG 桌遊專案代表圖：企業永續故事化與遊戲化體驗",
+      twitterDescription: "ESG 桌遊《緯你同行》：GenAI 圖像工作流＋體驗微調，支援內訓、招募與對外溝通",
+      jsonLdArticle: {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "inLanguage": "zh-Hant",
+        "headline": "Wi-Thrive｜ESG Storytelling Game",
+        "description": "與 ESG 辦公室、HR 與臺科大合作設計《緯你同行》桌遊，結合生成式 AI 圖像工作流與體驗微調，讓同仁、應徵者與夥伴在遊戲中理解公司永續行動，支援內訓、招募與對外溝通",
+        "mainEntityOfPage": "https://taiyun.design/project/esg-board-game",
+        "author": { "@type": "Person", "name": "Jack Chen", "url": "https://taiyun.design/" },
+        "about": ["ESG", "Internal Training", "Recruiting", "Service Design", "Generative AI"],
+        "keywords": ["ESG桌遊", "故事化溝通", "內訓設計", "招募體驗", "生成式AI圖像", "跨部門協作", "印刷量產"],
+        "isPartOf": { "@type": "WebSite", "name": "Jack Chen Portfolio", "url": "https://taiyun.design/" }
+      },
+      jsonLdBreadcrumb: {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taiyun.design/" },
+          { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://taiyun.design/#projects" },
+          { "@type": "ListItem", "position": 3, "name": "Wi-Thrive｜ESG Storytelling Game", "item": "https://taiyun.design/project/esg-board-game" }
+        ]
+      }
     }
   };
 
   const seo = seoData[projectId as string] || {
     title: `${project.title} | Jack Chen – Product / UX Designer`,
     description: project.summary,
-    ogDescription: project.summary
-  };
-
-  const jsonLdData = {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": project.title,
-    "description": project.summary,
-    "author": {
-      "@type": "Person",
-      "name": "Jack Chen",
-      "jobTitle": "Product / UX Designer"
+    canonical: `https://taiyun.design/project/${projectId}`,
+    ogDescription: project.summary,
+    ogImage: "https://taiyun.design/images/og-default.png",
+    ogImageAlt: `${project.title} 專案代表圖`,
+    twitterDescription: project.summary,
+    jsonLdArticle: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": project.title,
+      "description": project.summary,
+      "author": { "@type": "Person", "name": "Jack Chen" }
+    },
+    jsonLdBreadcrumb: {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://taiyun.design/" },
+        { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://taiyun.design/#projects" },
+        { "@type": "ListItem", "position": 3, "name": project.title, "item": `https://taiyun.design/project/${projectId}` }
+      ]
     }
   };
 
   return (
     <div className="min-h-screen">
       <Head>
+        {/* 基本 Meta */}
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
+        <link rel="canonical" href={seo.canonical} />
+        <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+        <meta name="author" content="Jack Chen" />
+
+        {/* Open Graph */}
+        <meta property="og:locale" content="zh_TW" />
+        <meta property="og:type" content="article" />
         <meta property="og:title" content={seo.title} />
         <meta property="og:description" content={seo.ogDescription} />
+        <meta property="og:url" content={seo.canonical} />
+        <meta property="og:site_name" content="Jack Chen Portfolio" />
+        <meta property="og:image" content={seo.ogImage} />
+        <meta property="og:image:alt" content={seo.ogImageAlt} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={seo.title} />
-        <meta name="twitter:description" content={seo.ogDescription} />
-        <script type="application/ld+json">{JSON.stringify(jsonLdData)}</script>
+        <meta name="twitter:description" content={seo.twitterDescription} />
+        <meta name="twitter:image" content={seo.ogImage} />
+
+        {/* JSON-LD */}
+        <script type="application/ld+json">{JSON.stringify(seo.jsonLdArticle)}</script>
+        <script type="application/ld+json">{JSON.stringify(seo.jsonLdBreadcrumb)}</script>
       </Head>
       <Navigation />
       
