@@ -1,66 +1,117 @@
 
 
-## Favicon 多格式支援設定
+## 藍色按鈕與色塊漸層設計
 
-### 一、你需要準備的檔案
+### 一、漸層色規格
 
-請準備以下檔案，並上傳到 `public/` 資料夾：
+| 位置 | 顏色 | HSL 值 |
+|------|------|--------|
+| 左側（起點） | 深藍色 | `217 100% 37%`（現有 primary） |
+| 右側（終點） | 帶紫深藍色 | `240 80% 45%`（偏紫調） |
 
-| 檔案名稱 | 尺寸 | 用途 |
-|---------|------|------|
-| `favicon.ico` | 多尺寸（16×16, 32×32, 48×48） | 傳統瀏覽器、Windows 書籤 |
-| `favicon-16x16.png` | 16×16 | 現代瀏覽器小尺寸 |
-| `favicon-32x32.png` | 32×32 | 現代瀏覽器標準尺寸 |
-| `apple-touch-icon.png` | 180×180 | iOS 加到主畫面時顯示 |
+漸層方向：**從左到右**（`to right` / `90deg`）
 
 ---
 
-### 二、程式碼修改
+### 二、實作範圍（首頁試作）
 
-修改 `index.html` 第 7-8 行的 Favicon 區塊：
+#### A) CSS 變數定義（`src/index.css`）
 
-```html
-<!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+新增漸層相關變數：
+
+```css
+:root {
+  /* 現有 primary 維持不變 */
+  --primary: 217 100% 37%;
+  
+  /* 新增：漸層終點色（帶紫深藍） */
+  --primary-end: 240 80% 45%;
+  
+  /* 新增：完整漸層 */
+  --primary-gradient: linear-gradient(
+    to right,
+    hsl(var(--primary)),
+    hsl(var(--primary-end))
+  );
+}
 ```
 
-改為：
+#### B) Button 元件（`src/components/ui/button.tsx`）
 
-```html
-<!-- Favicon: Multi-format support -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+修改 `hero` variant，將純色改為漸層：
+
+```tsx
+// 修改前
+hero: "relative overflow-hidden bg-primary text-primary-foreground ..."
+
+// 修改後
+hero: "relative overflow-hidden bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--primary-end))] text-primary-foreground ..."
 ```
 
+Hover 效果調整：
+- 保留現有的 `before:` pseudo-element 動畫
+- 或改用 `brightness` / `saturate` filter 增強互動感
+
+#### C) 首頁其他藍色元素（可選）
+
+| 元件 | 位置 | 現有樣式 | 漸層調整 |
+|------|------|----------|----------|
+| Carousel 指示器 | `HeroInteractive.tsx` 第 266 行 | `bg-primary` | `bg-gradient-to-r ...` |
+| Scroll to top 按鈕 | `ScrollToTopButton.tsx` 第 92 行 | `bg-primary` | `bg-gradient-to-r ...` |
+
 ---
 
-### 三、瀏覽器載入順序說明
-
-現代瀏覽器會依照 `sizes` 屬性選擇最適合的圖示：
-- **Chrome/Edge/Firefox**：優先使用 PNG（32×32 或 16×16）
-- **Safari/iOS**：使用 `apple-touch-icon`（加到主畫面時）
-- **舊版瀏覽器/Windows**：fallback 到 `.ico`
-
----
-
-### 四、上傳位置
+### 三、視覺預覽
 
 ```text
-public/
-├── favicon.ico          ← 覆蓋現有檔案
-├── favicon-16x16.png    ← 新增
-├── favicon-32x32.png    ← 新增
-└── apple-touch-icon.png ← 新增
+┌─────────────────────────────┐
+│  View Projects              │
+│  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  │
+│  深藍 ────────────→ 帶紫藍  │
+│  #0048ba          #4D4DCC   │
+└─────────────────────────────┘
 ```
 
 ---
 
-### 五、技術細節
+### 四、技術細節
 
-修改範圍：
-- 檔案：`index.html`
-- 行數：第 7-8 行
-- 變更：將單一 `<link>` 擴展為 4 個 `<link>` 標籤
+#### 修改檔案清單
+
+| 檔案 | 行數 | 變更內容 |
+|------|------|----------|
+| `src/index.css` | 第 20-24 行 | 新增 `--primary-end` 與 `--primary-gradient` 變數 |
+| `src/components/ui/button.tsx` | 第 19 行 | 修改 `hero` variant 為漸層背景 |
+
+#### Hover 狀態處理
+
+漸層按鈕的 hover 效果有兩種選擇：
+
+1. **亮度變化**：hover 時加 `brightness-110` 或 `saturate-125`
+2. **滑入覆蓋**：維持現有 `before:` 動畫，但改用漸層 hover 色
+
+建議先用方案 1（亮度），視覺效果較平滑。
+
+---
+
+### 五、確認後全站套用範圍
+
+若首頁試作確認 OK，後續套用到：
+
+| 位置 | 元件/樣式 |
+|------|-----------|
+| `default` button variant | 全站預設按鈕 |
+| `heroOutline` hover 狀態 | Outline 按鈕 hover 時填滿漸層 |
+| `bg-primary` 色塊 | 專案頁 highlight 區塊 |
+| `border-l-primary` | 左側強調線（可選擇是否改漸層） |
+
+---
+
+### 六、實作順序
+
+1. 在 `src/index.css` 新增 `--primary-end` 變數
+2. 修改 `button.tsx` 的 `hero` variant 為漸層
+3. 調整 hover 效果（亮度或 filter）
+4. 在首頁測試視覺效果
+5. 確認後再擴展到其他元件
 
