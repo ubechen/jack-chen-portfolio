@@ -16,7 +16,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground border border-transparent",
         contactLink: "relative overflow-hidden border border-border bg-background text-foreground before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-muted before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "relative overflow-hidden bg-primary text-primary-foreground before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-[hsl(var(--primary-hover))] before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100 active:bg-[hsl(var(--primary-pressed))]",
+        hero: "relative overflow-hidden bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--primary-end))] text-primary-foreground transition-all duration-300 hover:brightness-110 hover:saturate-125 active:brightness-90",
         heroOutline: "relative overflow-hidden border border-input bg-background text-foreground before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-primary before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100 hover:text-primary-foreground hover:border-primary active:bg-[hsl(var(--primary-pressed))]",
       },
       size: {
