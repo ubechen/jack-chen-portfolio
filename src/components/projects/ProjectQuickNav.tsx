@@ -36,8 +36,13 @@ export const DesktopQuickNav = ({ sections, activeSection, isVisible }: ProjectQ
 
   // Dynamically calculate highlight position based on actual button positions
   useLayoutEffect(() => {
-    if (listRef.current && hasBeenVisible) {
-      const buttons = listRef.current.querySelectorAll('button');
+    if (!listRef.current || !isVisible) return;
+    
+    // Use requestAnimationFrame to ensure DOM is fully rendered
+    const frame = requestAnimationFrame(() => {
+      const buttons = listRef.current?.querySelectorAll('button');
+      if (!buttons) return;
+      
       const activeIndex = sections.findIndex(s => s.id === activeSection);
       const activeButton = buttons[activeIndex] as HTMLElement;
       
@@ -47,8 +52,10 @@ export const DesktopQuickNav = ({ sections, activeSection, isVisible }: ProjectQ
           height: activeButton.offsetHeight
         });
       }
-    }
-  }, [activeSection, sections, hasBeenVisible]);
+    });
+    
+    return () => cancelAnimationFrame(frame);
+  }, [activeSection, sections, isVisible]);
 
   if (!hasBeenVisible) {
     return null;
@@ -72,14 +79,16 @@ export const DesktopQuickNav = ({ sections, activeSection, isVisible }: ProjectQ
         </p>
         
         <div className="relative">
-          {/* Dynamic highlight - uses actual button positions */}
-          <div 
-            className="absolute left-0 right-0 bg-primary/5 border-l-gradient transition-all duration-150 ease-out"
-            style={{ 
-              top: `${highlightStyle.top}px`,
-              height: `${highlightStyle.height}px`
-            }}
-          />
+          {/* Dynamic highlight - uses actual button positions, only show when calculated */}
+          {highlightStyle.height > 0 && (
+            <div 
+              className="absolute left-0 right-0 bg-primary/5 border-l-gradient transition-all duration-150 ease-out"
+              style={{ 
+                top: `${highlightStyle.top}px`,
+                height: `${highlightStyle.height}px`
+              }}
+            />
+          )}
           
           <ul ref={listRef} className="relative space-y-0.5">
             {sections.map((section, index) => (
