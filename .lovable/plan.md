@@ -1,45 +1,49 @@
-# 藍色漸層色全站套用 - 已完成 ✅
 
-## 漸層色規格
 
-| 位置 | 顏色 | HSL 值 |
-|------|------|--------|
-| 左側（起點） | 深藍色 | `217 100% 37%`（primary） |
-| 右側（終點） | 帶紫淺藍色 | `240 56% 63%`（#6a6ad6） |
+## Favicon 路徑調整至 images 資料夾
 
-## 已完成修改
+### 一、目前狀態
 
-### 1. CSS 變數更新 (`src/index.css`)
-- ✅ 更新 `--primary-end` 為 `240 56% 63%`（#6a6ad6）
-- ✅ 新增 `.border-l-gradient` utility class（上到下漸層直線）
+目前 favicon 相關路徑指向 `public/` 根目錄：
 
-### 2. Button 元件 (`src/components/ui/button.tsx`)
-- ✅ `hero` variant：漸層背景 + 色塊滑入動畫（hover）
-- ✅ `heroOutline` variant：hover 時漸層色塊滑入
+```html
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+```
 
-### 3. Navigation (`src/components/Navigation.tsx`)
-- ✅ Jack Chen logo hover 改為漸層色
+### 二、修改內容
 
-### 4. Back to Top 按鈕 (`src/components/ScrollToTopButton.tsx`)
-- ✅ 中央按鈕改為上到下漸層（`bg-gradient-to-b`）
+將路徑改為 `/images/` 資料夾：
 
-### 5. Hero Carousel 指示器 (`src/components/HeroInteractive.tsx`)
-- ✅ Active 狀態改為左到右漸層
+```html
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+```
 
-### 6. 內頁藍色左側線
-- ✅ `ESGBoardGameContent.tsx`：8 處
-- ✅ `DroneUXContent.tsx`：8 處
-- ✅ `AMRRobotContent.tsx`：6 處
-- ✅ `ProjectDetailV2.tsx`：6 處
-- ✅ `KeyDecisions.tsx`：1 處
-- ✅ `ProjectQuickNav.tsx`：1 處
+---
 
-### 7. 涵蓋頁面
-- ✅ 首頁 `/`
-- ✅ About `/about`
-- ✅ Resume `/resume`
-- ✅ 所有專案內頁 `/project/*`
-- ✅ 404 頁面（通過 Navigation 元件）
+### 三、你需要上傳的檔案
 
-## Hover 效果保留原則
-所有元件的 hover 動態效果（色塊滑入、scale、透明度變化）維持不變，只把純色改為漸層色。
+請將以下檔案上傳到 `public/images/` 資料夾：
+
+| 檔案名稱 | 尺寸 | 用途 |
+|---------|------|------|
+| `favicon.ico` | 多尺寸 | 傳統瀏覽器、Windows 書籤 |
+| `favicon-16x16.png` | 16x16 | 現代瀏覽器小尺寸 |
+| `favicon-32x32.png` | 32x32 | 現代瀏覽器標準尺寸 |
+| `apple-touch-icon.png` | 180x180 | iOS 加到主畫面 |
+
+---
+
+### 四、技術細節
+
+| 項目 | 內容 |
+|------|------|
+| 修改檔案 | `index.html` |
+| 修改行數 | 第 8-11 行 |
+| 變更內容 | 將 4 個 favicon 路徑從 `/` 改為 `/images/` |
+
