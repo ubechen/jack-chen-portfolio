@@ -84,6 +84,7 @@ export const DesktopQuickNav = ({ sections, activeSection, isVisible }: ProjectQ
             <div 
               className="absolute left-0 right-0 bg-primary/5 border-l-gradient transition-all duration-150 ease-out"
               style={{ 
+                position: 'absolute',
                 top: `${highlightStyle.top}px`,
                 height: `${highlightStyle.height}px`
               }}
