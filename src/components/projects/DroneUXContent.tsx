@@ -82,7 +82,7 @@ const DroneUXContent = () => {
                 figcaption="手持控制器與 App 整合架構"
               />
 
-              <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6 my-8">
+              <div className="bg-primary/5 border-l-gradient rounded-r-lg p-6 my-8">
                 <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">短期目標</p>
                 <p className="text-xl text-foreground font-medium">
                   做出一套 POC：能在國際無人機展上 demo，並具備投標國防部標案的基礎
@@ -113,7 +113,7 @@ const DroneUXContent = () => {
 
             <div className="space-y-6">
               {/* Role 1 */}
-              <Card className="border-l-4 border-l-primary overflow-hidden">
+              <Card className="border-l-gradient overflow-hidden">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <span className="text-4xl font-bold text-primary/30">01</span>
@@ -135,7 +135,7 @@ const DroneUXContent = () => {
               </Card>
 
               {/* Role 2 */}
-              <Card className="border-l-4 border-l-primary overflow-hidden">
+              <Card className="border-l-gradient overflow-hidden">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <span className="text-4xl font-bold text-primary/30">02</span>
@@ -161,7 +161,7 @@ const DroneUXContent = () => {
               </Card>
 
               {/* Role 3 */}
-              <Card className="border-l-4 border-l-primary overflow-hidden">
+              <Card className="border-l-gradient overflow-hidden">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <span className="text-4xl font-bold text-primary/30">03</span>
@@ -187,7 +187,7 @@ const DroneUXContent = () => {
               </Card>
 
               {/* Role 4 */}
-              <Card className="border-l-4 border-l-primary overflow-hidden">
+              <Card className="border-l-gradient overflow-hidden">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <span className="text-4xl font-bold text-primary/30">04</span>
@@ -209,7 +209,7 @@ const DroneUXContent = () => {
               </Card>
 
               {/* Role 5 */}
-              <Card className="border-l-4 border-l-primary overflow-hidden">
+              <Card className="border-l-gradient overflow-hidden">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <span className="text-4xl font-bold text-primary/30">05</span>
@@ -525,7 +525,7 @@ const DroneUXContent = () => {
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                   每個角色關心的點不同，我在其中扮演：
                 </p>
-                <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6">
+                <div className="bg-primary/5 border-l-gradient rounded-r-lg p-6">
                   <p className="text-xl text-foreground font-medium">
                     「用任務情境與畫面，把不同語言接起來的人。」
                   </p>
@@ -617,7 +617,7 @@ const DroneUXContent = () => {
                 這個專案讓我更確定：
               </p>
 
-              <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6">
+              <div className="bg-primary/5 border-l-gradient rounded-r-lg p-6">
                 <p className="text-xl text-foreground font-medium leading-relaxed">
                   在高門檻、資訊不透明的產業裡，UX 不一定能一開始就「定義所有細節」，但可以設計出一套<mark className="bg-primary/30 text-foreground px-2 py-1 rounded">讓團隊逐步靠近正確方向的結構與語言</mark>：讓工程、業務、高層和合作夥伴都有共同的畫面可以討論，並在真正走到展場與市場的那一刻，驗證自己做的選擇是不是站得住腳
                 </p>

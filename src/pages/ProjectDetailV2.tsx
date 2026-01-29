@@ -699,7 +699,7 @@ const ProjectDetailV2 = () => {
                     </li>
                   </ul>
 
-                  <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6 my-8">
+                  <div className="bg-primary/5 border-l-gradient rounded-r-lg p-6 my-8">
                     <p className="text-xl text-foreground font-medium">
                       但沒有人真的說得清楚：對使用者來說，AI PC 在日常工作裡到底能幫上什麼忙？
                     </p>
@@ -770,7 +770,7 @@ const ProjectDetailV2 = () => {
                 </p>
 
                 <div className="space-y-6">
-                  <Card className="border-l-4 border-l-primary overflow-hidden">
+                  <Card className="border-l-gradient overflow-hidden">
                     <CardContent className="p-8">
                       <div className="flex items-start gap-4">
                         <span className="text-4xl font-bold text-primary/30">01</span>
@@ -796,7 +796,7 @@ const ProjectDetailV2 = () => {
                     </CardContent>
                   </Card>
 
-                  <Card className="border-l-4 border-l-primary overflow-hidden">
+                  <Card className="border-l-gradient overflow-hidden">
                     <CardContent className="p-8">
                       <div className="flex items-start gap-4">
                         <span className="text-4xl font-bold text-primary/30">02</span>
@@ -817,7 +817,7 @@ const ProjectDetailV2 = () => {
                     </CardContent>
                   </Card>
 
-                  <Card className="border-l-4 border-l-primary overflow-hidden">
+                  <Card className="border-l-gradient overflow-hidden">
                     <CardContent className="p-8">
                       <div className="flex items-start gap-4">
                         <span className="text-4xl font-bold text-primary/30">03</span>
@@ -1193,7 +1193,7 @@ const ProjectDetailV2 = () => {
                   <p className="leading-relaxed">
                     這個專案讓我再次確認：
                   </p>
-                  <div className="bg-background border-l-4 border-l-primary rounded-r-lg p-6">
+                  <div className="bg-background border-l-gradient rounded-r-lg p-6">
                     <p className="text-xl text-foreground font-medium leading-relaxed">
                       當 UX 能同時滿足不同利害關係人的需求：幫 PM 串出提案故事、幫決策者看見風險與機會、幫 ID / ME 用情境思考新技術的價值：設計就不再只是輸出畫面，而是參與產品策略與投資判斷的一部分
                     </p>
@@ -1219,7 +1219,7 @@ const ProjectDetailV2 = () => {
                 />
 
                 {/* 個人職涯願景 */}
-                <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6 mt-4">
+                <div className="bg-primary/5 border-l-gradient rounded-r-lg p-6 mt-4">
                   <p className="text-xl text-foreground font-medium leading-relaxed">
                     對未來的 Senior / Staff 職位，我希望持續扮演這樣的角色：讓模糊的未來變得可以對話、可以決策，也可以一步步被實現
                   </p>

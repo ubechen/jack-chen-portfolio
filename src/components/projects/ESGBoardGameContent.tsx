@@ -44,7 +44,7 @@ const ESGBoardGameContent = () => {
                 </div>
               </div>
 
-              <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6 my-8">
+              <div className="bg-primary/5 border-l-gradient rounded-r-lg p-6 my-8">
                 <h3 className="text-lg font-semibold mb-3 text-foreground">前期進度</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   ESG 辦公室已與<mark className="bg-primary/20 text-foreground px-1 rounded">臺科大迷你教育遊戲研究團隊</mark>合作，完成初版遊戲規則與機制、基本的遊戲流程雛形
@@ -141,7 +141,7 @@ const ESGBoardGameContent = () => {
 
             <div className="space-y-6">
               {/* Role 1 */}
-              <Card className="border-l-4 border-l-primary overflow-hidden">
+              <Card className="border-l-gradient overflow-hidden">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <span className="text-4xl font-bold text-primary/30">01</span>
@@ -167,7 +167,7 @@ const ESGBoardGameContent = () => {
               </Card>
 
               {/* Role 2 */}
-              <Card className="border-l-4 border-l-primary overflow-hidden">
+              <Card className="border-l-gradient overflow-hidden">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <span className="text-4xl font-bold text-primary/30">02</span>
@@ -193,7 +193,7 @@ const ESGBoardGameContent = () => {
               </Card>
 
               {/* Role 3 */}
-              <Card className="border-l-4 border-l-primary overflow-hidden">
+              <Card className="border-l-gradient overflow-hidden">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <span className="text-4xl font-bold text-primary/30">03</span>
@@ -350,7 +350,7 @@ const ESGBoardGameContent = () => {
                     </li>
                   </ul>
 
-                  <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6">
+                  <div className="bg-primary/5 border-l-gradient rounded-r-lg p-6">
                     <p className="text-lg text-foreground font-medium">
                       AI 圖像不是為了省事，而是讓團隊能把心力放在更重要的體驗與內容決策上
                     </p>
@@ -445,7 +445,7 @@ const ESGBoardGameContent = () => {
                   </ul>
                 </div>
 
-                <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6">
+                <div className="bg-primary/5 border-l-gradient rounded-r-lg p-6">
                   <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">我的做法是</p>
                   <ul className="space-y-2 text-foreground">
                     <li className="flex gap-3">
@@ -500,7 +500,7 @@ const ESGBoardGameContent = () => {
                   </div>
                 </div>
 
-                <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6 mb-6">
+                <div className="bg-primary/5 border-l-gradient rounded-r-lg p-6 mb-6">
                   <p className="text-lg text-foreground font-medium">
                     如果沒有清楚的節奏，很容易每一次討論都「從頭開始」
                   </p>
@@ -593,7 +593,7 @@ const ESGBoardGameContent = () => {
                 </ul>
               </div>
 
-              <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6">
+              <div className="bg-primary/5 border-l-gradient rounded-r-lg p-6">
                 <p className="text-lg text-foreground leading-relaxed">
                   而最讓我印象深刻的是：這款桌遊後來不只用在招募與內訓，也被帶到供應鏈協力夥伴大會，由公司總經理暨執行長在台上向供應鏈廠商介紹，並作為伴手禮之一。這代表它不只是「做得漂亮」，而是成為公司對外溝通永續作為的一種語言與載體
                 </p>

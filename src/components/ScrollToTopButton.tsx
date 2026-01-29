@@ -89,8 +89,8 @@ const ScrollToTopButton = () => {
         </svg>
 
         {/* 中央按鈕 */}
-        <div className="absolute inset-1 rounded-full bg-primary 
-                        group-hover:bg-primary/90 transition-colors
+        <div className="absolute inset-1 rounded-full bg-gradient-to-b from-[hsl(var(--primary))] to-[hsl(var(--primary-end))] 
+                        group-hover:brightness-110 transition-all
                         flex items-center justify-center shadow-lg">
           <ArrowUp className="h-5 w-5 text-primary-foreground" />
         </div>

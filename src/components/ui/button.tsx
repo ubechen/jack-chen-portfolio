@@ -16,8 +16,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground border border-transparent",
         contactLink: "relative overflow-hidden border border-border bg-background text-foreground before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-muted before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "relative overflow-hidden bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--primary-end))] text-primary-foreground transition-all duration-300 hover:brightness-110 hover:saturate-125 active:brightness-90",
-        heroOutline: "relative overflow-hidden border border-input bg-background text-foreground before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-primary before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100 hover:text-primary-foreground hover:border-primary active:bg-[hsl(var(--primary-pressed))]",
+        hero: "relative overflow-hidden bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--primary-end))] text-primary-foreground before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-gradient-to-r before:from-[hsl(var(--primary-hover))] before:to-[hsl(240_56%_70%)] before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100 active:brightness-90",
+        heroOutline: "relative overflow-hidden border border-input bg-background text-foreground before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-gradient-to-r before:from-[hsl(var(--primary))] before:to-[hsl(var(--primary-end))] before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100 hover:text-primary-foreground hover:border-primary active:brightness-90",
       },
       size: {
         default: "h-10 px-4 py-2",

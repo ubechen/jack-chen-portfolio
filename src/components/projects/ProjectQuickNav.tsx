@@ -74,7 +74,7 @@ export const DesktopQuickNav = ({ sections, activeSection, isVisible }: ProjectQ
         <div className="relative">
           {/* Dynamic highlight - uses actual button positions */}
           <div 
-            className="absolute left-0 right-0 bg-primary/5 border-l-2 border-l-primary transition-all duration-150 ease-out"
+            className="absolute left-0 right-0 bg-primary/5 border-l-gradient transition-all duration-150 ease-out"
             style={{ 
               top: `${highlightStyle.top}px`,
               height: `${highlightStyle.height}px`

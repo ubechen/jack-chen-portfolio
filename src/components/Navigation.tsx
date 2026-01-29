@@ -174,7 +174,7 @@ const Navigation = () => {
               <span 
                 className="relative"
                 style={{
-                  backgroundImage: 'linear-gradient(to right, hsl(var(--foreground)) 33.33%, hsl(var(--primary)) 33.33%, hsl(var(--primary)) 66.66%, hsl(var(--foreground)) 66.66%)',
+                  backgroundImage: 'linear-gradient(to right, hsl(var(--foreground)) 33.33%, hsl(var(--primary)) 33.33%, hsl(var(--primary-end)) 66.66%, hsl(var(--foreground)) 66.66%)',
                   backgroundSize: '300% 100%',
                   backgroundPosition: '100% 0',
                   WebkitBackgroundClip: 'text',
