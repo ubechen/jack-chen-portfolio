@@ -264,7 +264,7 @@ const HeroInteractive = () => {
                       className={cn(
                         "w-2 h-2 rounded-full transition-all duration-300",
                         selectedIndex === index
-                          ? "bg-primary w-6"
+                          ? "bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--primary-end))] w-6"
                           : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                       )}
                     />

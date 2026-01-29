@@ -50,7 +50,7 @@ const KeyDecisions = ({ decisions }: KeyDecisionsProps) => {
                 </ul>
               </div>
 
-              <div className="bg-primary/5 p-4 rounded-lg border-l-4 border-l-primary">
+              <div className="bg-primary/5 p-4 rounded-lg border-l-4 border-l-gradient">
                 <h4 className="text-sm font-semibold text-primary mb-2">決策</h4>
                 <p className="text-foreground">{decision.decision}</p>
               </div>

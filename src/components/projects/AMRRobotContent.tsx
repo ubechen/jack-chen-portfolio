@@ -60,7 +60,7 @@ const AMRRobotContent = () => {
                 figcaption="2021 年新事業發展背景"
               />
 
-              <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6 my-8">
+              <div className="bg-primary/5 border-l-gradient rounded-r-lg p-6 my-8">
                 <p className="text-xl text-foreground font-medium">
                   在這樣的目標下，不只是機器人本體，「整體服務流程體驗」變得關鍵
                 </p>
@@ -122,7 +122,7 @@ const AMRRobotContent = () => {
 
             <div className="space-y-6">
               {/* Role 1 */}
-              <Card className="border-l-4 border-l-primary overflow-hidden">
+              <Card className="border-l-gradient overflow-hidden">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <span className="text-4xl font-bold text-primary/30">01</span>
@@ -144,7 +144,7 @@ const AMRRobotContent = () => {
               </Card>
 
               {/* Role 2 */}
-              <Card className="border-l-4 border-l-primary overflow-hidden">
+              <Card className="border-l-gradient overflow-hidden">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <span className="text-4xl font-bold text-primary/30">02</span>
@@ -166,7 +166,7 @@ const AMRRobotContent = () => {
               </Card>
 
               {/* Role 3 */}
-              <Card className="border-l-4 border-l-primary overflow-hidden">
+              <Card className="border-l-gradient overflow-hidden">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <span className="text-4xl font-bold text-primary/30">03</span>
@@ -289,7 +289,7 @@ const AMRRobotContent = () => {
                         </div>
                       </div>
 
-                      <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6">
+                      <div className="bg-primary/5 border-l-gradient rounded-r-lg p-6">
                         <p className="text-lg text-foreground font-medium">
                           設計後台 IA、操作流程與畫面，讓它不是只給工程看的控制台，而是場域營運人員也能輕易掌握的介面
                         </p>
@@ -450,7 +450,7 @@ const AMRRobotContent = () => {
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                   每個人關注的角度不同，我在其中扮演的是：
                 </p>
-                <div className="bg-primary/5 border-l-4 border-l-primary rounded-r-lg p-6 mb-4">
+                <div className="bg-primary/5 border-l-gradient rounded-r-lg p-6 mb-4">
                   <p className="text-xl text-foreground font-medium">
                     把需求、限制與機會，整理成「可被看見、可被討論的畫面」的人
                   </p>
@@ -524,7 +524,7 @@ const AMRRobotContent = () => {
                 </li>
               </ul>
 
-              <div className="bg-background border-l-4 border-l-primary rounded-r-lg p-6 mt-8">
+              <div className="bg-background border-l-gradient rounded-r-lg p-6 mt-8">
                 <p className="text-xl text-foreground font-medium leading-relaxed">
                   對我來說，AMR Robot 是一場長期的「全方位體驗實戰」：從產品、系統到品牌，從會議室一路走到賣場、飯店和醫院，也讓我在之後面對更複雜題目時，更有底氣說自己能陪團隊一起撐住
                 </p>
