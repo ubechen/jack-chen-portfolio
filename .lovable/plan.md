@@ -1,117 +1,190 @@
 
 
-## 藍色按鈕與色塊漸層設計
+## 藍色漸層色全站套用計畫
 
-### 一、漸層色規格
+### 一、需要修改的項目總覽
 
-| 位置 | 顏色 | HSL 值 |
-|------|------|--------|
-| 左側（起點） | 深藍色 | `217 100% 37%`（現有 primary） |
-| 右側（終點） | 帶紫深藍色 | `240 80% 45%`（偏紫調） |
-
-漸層方向：**從左到右**（`to right` / `90deg`）
+| 項目 | 目前樣式 | 修改後樣式 | 漸層方向 |
+|------|----------|------------|----------|
+| 1. `--primary-end` 變數 | `240 80% 45%` | `#6a6ad6`（HSL 240 56% 63%） | — |
+| 2. `hero` 按鈕 | 漸層 + brightness hover | 漸層 + 色塊滑入動畫 | 左到右 |
+| 3. `heroOutline` 按鈕 hover | 純色 `bg-primary` | 漸層色塊滑入 | 左到右 |
+| 4. Jack Chen hover | 純色 `hsl(var(--primary))` | 漸層色文字 | 左到右 |
+| 5. Back to top 按鈕 | 純色 `bg-primary` | 漸層 + hover 維持原效果 | **上到下** |
+| 6. Carousel 指示器 | 純色 `bg-primary` | 漸層 | 左到右 |
+| 7. 內頁藍色左側線 | 純色 `border-l-primary` | 漸層 | **上到下** |
+| 8. SVG 進度條 | 純色 stroke | 漸層 stroke | — |
 
 ---
 
-### 二、實作範圍（首頁試作）
+### 二、涵蓋頁面
 
-#### A) CSS 變數定義（`src/index.css`）
+- `/`（首頁）
+- `/about`
+- `/resume`
+- `/project/*`（4 個專案內頁）
+- `/404`
 
-新增漸層相關變數：
+由於 `hero`、`heroOutline` 按鈕已在這些頁面使用，且 CSS 變數與元件改動是全域的，全站自動套用。
+
+---
+
+### 三、各項目技術實作細節
+
+#### 1. 修改 `--primary-end` 顏色（src/index.css）
 
 ```css
-:root {
-  /* 現有 primary 維持不變 */
-  --primary: 217 100% 37%;
-  
-  /* 新增：漸層終點色（帶紫深藍） */
-  --primary-end: 240 80% 45%;
-  
-  /* 新增：完整漸層 */
-  --primary-gradient: linear-gradient(
-    to right,
-    hsl(var(--primary)),
-    hsl(var(--primary-end))
-  );
+/* 現有 */
+--primary-end: 240 80% 45%;
+
+/* 改為（#6a6ad6 轉 HSL） */
+--primary-end: 240 56% 63%;
+```
+
+同時修改 `:root` 與 `.dark` 區塊。
+
+---
+
+#### 2. `hero` 按鈕：恢復滑入動畫（src/components/ui/button.tsx）
+
+將 `hover:brightness-110 hover:saturate-125` 改回 `before:` 動畫，並讓 hover 時的 `before:` 使用漸層：
+
+```tsx
+hero: "relative overflow-hidden bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--primary-end))] text-primary-foreground before:content-[''] before:absolute before:inset-0 before:origin-right before:scale-x-0 before:bg-gradient-to-r before:from-[hsl(var(--primary-hover))] before:to-[hsl(var(--primary-end)/0.85)] before:transition-transform before:duration-300 before:ease-out hover:before:origin-left hover:before:scale-x-100 active:brightness-90"
+```
+
+---
+
+#### 3. `heroOutline` 按鈕 hover 改漸層（src/components/ui/button.tsx）
+
+將 `before:bg-primary` 改為漸層：
+
+```tsx
+heroOutline: "... before:bg-gradient-to-r before:from-[hsl(var(--primary))] before:to-[hsl(var(--primary-end))] ..."
+```
+
+---
+
+#### 4. Jack Chen hover 改漸層（src/components/Navigation.tsx）
+
+修改 span 的 backgroundImage，將中段的 `hsl(var(--primary))` 改為漸層兩色：
+
+```tsx
+backgroundImage: `linear-gradient(to right, 
+  hsl(var(--foreground)) 33.33%, 
+  hsl(var(--primary)) 33.33%, 
+  hsl(var(--primary-end)) 66.66%, 
+  hsl(var(--foreground)) 66.66%)`
+```
+
+---
+
+#### 5. Back to top 按鈕改上到下漸層（src/components/ScrollToTopButton.tsx）
+
+將中央按鈕：
+
+```tsx
+// 現有
+<div className="... bg-primary group-hover:bg-primary/90 ...">
+
+// 改為
+<div className="... bg-gradient-to-b from-[hsl(var(--primary))] to-[hsl(var(--primary-end))] group-hover:brightness-110 ...">
+```
+
+SVG 進度條維持純色（技術限制：CSS 漸層無法直接套用於 SVG stroke，需用 linearGradient defs，可選擇是否實作）。
+
+---
+
+#### 6. Carousel 指示器改漸層（src/components/HeroInteractive.tsx）
+
+將 active 指示器：
+
+```tsx
+// 現有
+selectedIndex === index ? "bg-primary w-6" : ...
+
+// 改為
+selectedIndex === index ? "bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--primary-end))] w-6" : ...
+```
+
+---
+
+#### 7. 內頁藍色左側線改漸層（多個檔案）
+
+`border-l-primary` 無法直接用漸層，需改為 `before:` 偽元素實作。
+
+**方案：建立共用 utility class**
+
+在 `src/index.css` 新增：
+
+```css
+@layer utilities {
+  .border-l-gradient {
+    @apply relative;
+    border-left-width: 0 !important;
+  }
+  .border-l-gradient::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--primary)),
+      hsl(var(--primary-end))
+    );
+    border-radius: 0 4px 4px 0;
+  }
 }
 ```
 
-#### B) Button 元件（`src/components/ui/button.tsx`）
+**套用位置：**
 
-修改 `hero` variant，將純色改為漸層：
+| 檔案 | 出現次數 |
+|------|----------|
+| `ESGBoardGameContent.tsx` | 10 處 |
+| `DroneUXContent.tsx` | 多處 |
+| `AMRRobotContent.tsx` | 多處 |
+| `ProjectQuickNav.tsx` | 1 處（桌面版 active 狀態） |
+| `KeyDecisions.tsx` | 1 處 |
 
-```tsx
-// 修改前
-hero: "relative overflow-hidden bg-primary text-primary-foreground ..."
-
-// 修改後
-hero: "relative overflow-hidden bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--primary-end))] text-primary-foreground ..."
-```
-
-Hover 效果調整：
-- 保留現有的 `before:` pseudo-element 動畫
-- 或改用 `brightness` / `saturate` filter 增強互動感
-
-#### C) 首頁其他藍色元素（可選）
-
-| 元件 | 位置 | 現有樣式 | 漸層調整 |
-|------|------|----------|----------|
-| Carousel 指示器 | `HeroInteractive.tsx` 第 266 行 | `bg-primary` | `bg-gradient-to-r ...` |
-| Scroll to top 按鈕 | `ScrollToTopButton.tsx` 第 92 行 | `bg-primary` | `bg-gradient-to-r ...` |
+將 `border-l-4 border-l-primary` 替換為 `border-l-gradient`。
 
 ---
 
-### 三、視覺預覽
+### 四、修改檔案清單
+
+| 檔案 | 修改內容 |
+|------|----------|
+| `src/index.css` | 更新 `--primary-end`、新增 `.border-l-gradient` utility |
+| `src/components/ui/button.tsx` | `hero` / `heroOutline` 漸層與動畫 |
+| `src/components/Navigation.tsx` | Jack Chen hover 漸層 |
+| `src/components/ScrollToTopButton.tsx` | 按鈕漸層（上到下） |
+| `src/components/HeroInteractive.tsx` | Carousel 指示器漸層 |
+| `src/components/projects/ESGBoardGameContent.tsx` | 藍線改 `border-l-gradient` |
+| `src/components/projects/DroneUXContent.tsx` | 藍線改 `border-l-gradient` |
+| `src/components/projects/AMRRobotContent.tsx` | 藍線改 `border-l-gradient` |
+| `src/components/projects/ProjectQuickNav.tsx` | active 狀態藍線改漸層 |
+| `src/components/KeyDecisions.tsx` | 決策卡片藍線改漸層 |
+
+---
+
+### 五、視覺預覽
 
 ```text
+漸層色（左到右 / 上到下）
 ┌─────────────────────────────┐
-│  View Projects              │
-│  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  │
-│  深藍 ────────────→ 帶紫藍  │
-│  #0048ba          #4D4DCC   │
+│  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │
+│  #0048ba ────────→ #6a6ad6  │
+│  深藍           帶紫淺藍    │
 └─────────────────────────────┘
 ```
 
 ---
 
-### 四、技術細節
+### 六、Hover 效果保留原則
 
-#### 修改檔案清單
-
-| 檔案 | 行數 | 變更內容 |
-|------|------|----------|
-| `src/index.css` | 第 20-24 行 | 新增 `--primary-end` 與 `--primary-gradient` 變數 |
-| `src/components/ui/button.tsx` | 第 19 行 | 修改 `hero` variant 為漸層背景 |
-
-#### Hover 狀態處理
-
-漸層按鈕的 hover 效果有兩種選擇：
-
-1. **亮度變化**：hover 時加 `brightness-110` 或 `saturate-125`
-2. **滑入覆蓋**：維持現有 `before:` 動畫，但改用漸層 hover 色
-
-建議先用方案 1（亮度），視覺效果較平滑。
-
----
-
-### 五、確認後全站套用範圍
-
-若首頁試作確認 OK，後續套用到：
-
-| 位置 | 元件/樣式 |
-|------|-----------|
-| `default` button variant | 全站預設按鈕 |
-| `heroOutline` hover 狀態 | Outline 按鈕 hover 時填滿漸層 |
-| `bg-primary` 色塊 | 專案頁 highlight 區塊 |
-| `border-l-primary` | 左側強調線（可選擇是否改漸層） |
-
----
-
-### 六、實作順序
-
-1. 在 `src/index.css` 新增 `--primary-end` 變數
-2. 修改 `button.tsx` 的 `hero` variant 為漸層
-3. 調整 hover 效果（亮度或 filter）
-4. 在首頁測試視覺效果
-5. 確認後再擴展到其他元件
+所有元件的 hover 動態效果（色塊滑入、scale、透明度變化）維持不變，只把純色改為漸層色。
 
