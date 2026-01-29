@@ -1,9 +1,10 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import HeroAnimatedBackgroundResponsive from "./HeroAnimatedBackgroundResponsive";
 import heroAiPc from "@/assets/bg_index_hero_aipc.webp";
 import heroDrone from "@/assets/bg_index_hero_drone.webp";
@@ -61,7 +62,14 @@ const heroStates: HeroState[] = [
 
 const HeroInteractive = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const autoplayPlugin = useRef(
+    Autoplay({
+      delay: 5000,
+      stopOnInteraction: false,
+      stopOnMouseEnter: false,
+    })
+  );
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplayPlugin.current]);
 
   const activeState = heroStates[selectedIndex];
 
