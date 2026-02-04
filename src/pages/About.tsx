@@ -201,7 +201,7 @@ const About = () => {
       {/* Section 3: 我怎麼在「決策前段」工作 - 情境引言 + 3 欄卡片 */}
       <ScrollReveal delay={100}>
         <section className="py-16 px-6 bg-primary/10 shadow-sm">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">
               我怎麼在「決策前段」工作
             </h2>
