@@ -47,7 +47,7 @@ const workflowSteps = [
     description: "經常協助 PM 組成提案骨架（問題、機會、方案、路線），整理功能優先序與風險評估，提供不同方案的假設，讓高層、客戶、內部團隊都能用自己熟悉的語言理解「我們為什麼要這樣做」、「為什麼不做另一個」"
   },
   {
-    title: "用 AI 工具加速，但不取代思考",
+    title: "用 AI 工具加速，不取代思考",
     description: "我會用 AI 協助整理訪談逐字稿和問卷開放式回答，也用生成式影像、影片做概念視覺提案，讓討論更具體。育嬰留停期間，我持續探索 AI 工具和 UX 之間的進化，考取了 iPAS AI 應用規劃師初級、與資策會生成式 AI 能力認證"
   }
 ];
@@ -181,10 +181,7 @@ const About = () => {
             {/* CES 2022 獨立段落 */}
             <div className="bg-primary/10 rounded-lg p-6 mb-8">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                過去我參與的雙螢幕電競/創作者筆電概念設計，讓緯創概念機在 <strong className="text-foreground">CES 2022</strong> 與國際知名品牌並列展出
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-                也有不少中途被迫停止的專案。不過這些失敗經驗讓我更清楚什麼樣的設計能存活，什麼樣的提案會在商業現實面前遇到挑戰
+                我曾參與過雙螢幕電競/創作者筆電概念設計，讓緯創筆電概念機在 CES 展與國際知名品牌並列展出。也有不少中途被迫停止的專案，不過這些失敗經驗讓我更清楚什麼樣的設計能存活、哪些在商業現實面前會遇到挑戰
               </p>
             </div>
             
@@ -258,16 +255,10 @@ const About = () => {
             
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                多數時候，我是那個安靜觀察的人。我會先把不同角色的顧慮聽完、拼成一張完整的圖，再幫大家一起縮小不確定性
+                多數時候，我是那個安靜觀察的人。我會先把不同角色的顧慮聽完、拼成一張完整的圖，再幫大家一起縮小不確定性，我傾向穩穩地往前推，而不是把團隊拉去做很前衛、但落不了地的東西
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                我傾向穩穩地往前推，而不是把團隊拉去做很前衛、但落不了地的東西
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                如果用人格類型來形容偏向 <strong className="text-foreground">ISFJ 型</strong>：重視信任感和長期合作關係，默默把該顧的細節顧好，願意撐住專案的底線
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                但當需要有人站出來時，我也能切換到台前：主持工作坊、對外 pitch、跟客戶簡報
+                如果用人格類型來形容偏向 <strong className="text-foreground">ISFJ 型</strong>：重視信任感和長期合作關係，默默把該顧的細節顧好，願意撐住專案的底線。但當需要有人站出來時，我也能切換到台前：主持工作坊、對外 pitch、跟客戶簡報
               </p>
             </div>
           </div>
