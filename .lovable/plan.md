@@ -1,91 +1,82 @@
 
 
-## 專案內頁電腦版章節導覽高亮條位置修正
+## 將 About V2 設為主頁，舊版改存為 V1
 
-### 一、問題根本原因
+### 一、變更概述
 
-高亮條使用了 `border-l-gradient` 類別，而這個類別在 `src/index.css` 中定義時包含：
+| 目前狀態 | 變更後 |
+|---------|-------|
+| `About.tsx` → `/about` | `AboutV1.tsx` → `/about-v1` |
+| `AboutV2.tsx` → `/about-v2` | `About.tsx` → `/about` |
 
-```css
-.border-l-gradient {
-  @apply relative;  /* ← 這就是問題！*/
-  border-left-width: 0 !important;
-}
-```
+所有選單和按鈕連結維持指向 `/about`，使用者訪問時會看到新版內容。
 
-由於 CSS 規則的層疊順序，**`@apply relative` 覆蓋了行內的 `absolute` 類別**，導致：
-- 高亮條變成 `position: relative` 而非 `position: absolute`
-- `position: relative` 的元素仍會佔據文檔流空間
-- 高亮條把整個按鈕列表往下推擠
+---
 
-### 二、解決方案
+### 二、檔案異動清單
 
-有兩種修正方式：
+| 檔案 | 動作 | 說明 |
+|------|------|------|
+| `src/pages/About.tsx` | 重新命名為 `AboutV1.tsx` | 舊版暫存備份 |
+| `src/pages/AboutV2.tsx` | 重新命名為 `About.tsx` | 新版成為主頁 |
+| `src/routes.tsx` | 修改 | 更新路由對應 |
 
-**方案 A（推薦）：在高亮條上使用 `!important` 覆蓋 relative**
+---
 
-在 `ProjectQuickNav.tsx` 的高亮條加上 `style` 強制設定 `position: absolute`：
+### 三、路由設定變更
 
-```tsx
-<div 
-  className="absolute left-0 right-0 bg-primary/5 border-l-gradient transition-all duration-150 ease-out"
-  style={{ 
-    position: 'absolute',  // 強制覆蓋 relative
-    top: `${highlightStyle.top}px`,
-    height: `${highlightStyle.height}px`
-  }}
-/>
-```
-
-**方案 B：修改 CSS 類別定義**
-
-在 `src/index.css` 中，移除 `.border-l-gradient` 的 `@apply relative`，改為只在需要的元素上手動添加：
-
-```css
-.border-l-gradient {
-  /* 移除 @apply relative; */
-  border-left-width: 0 !important;
-}
-```
-
-但這可能影響其他使用此類別的地方。
-
-### 三、建議採用方案 A
-
-因為：
-- 不影響其他使用 `border-l-gradient` 的元素
-- 只需修改 `ProjectQuickNav.tsx` 一個檔案
-- 使用行內 style 可以確保優先級最高
-
-### 四、修改內容
-
-#### 檔案：`src/components/projects/ProjectQuickNav.tsx`
-
-修改第 83-91 行的高亮條：
+修改 `src/routes.tsx`：
 
 ```tsx
-{highlightStyle.height > 0 && (
-  <div 
-    className="absolute left-0 right-0 bg-primary/5 border-l-gradient transition-all duration-150 ease-out"
-    style={{ 
-      position: 'absolute',  // 新增：強制覆蓋 border-l-gradient 的 relative
-      top: `${highlightStyle.top}px`,
-      height: `${highlightStyle.height}px`
-    }}
-  />
-)}
+// 變更前
+const About = lazy(() => import("./pages/About"));
+const AboutV2 = lazy(() => import("./pages/AboutV2"));
+
+// 變更後
+const About = lazy(() => import("./pages/About"));       // 原 AboutV2
+const AboutV1 = lazy(() => import("./pages/AboutV1"));   // 原 About
+
+// 路由設定
+{
+  path: "about",
+  element: withSuspense(About),      // 新版內容
+},
+{
+  path: "about-v1",
+  element: withSuspense(AboutV1),    // 舊版備份
+},
 ```
 
-### 五、預期效果
+---
 
-| 修正前 | 修正後 |
-|--------|--------|
-| 高亮條佔據文檔流空間，把按鈕往下推 | 高亮條完全脫離文檔流，不影響按鈕位置 |
-| 按鈕與高亮條位置錯開 | 高亮條精準對齊 active 按鈕 |
+### 四、頁面內容調整
 
-### 六、修改檔案清單
+#### `About.tsx`（原 `AboutV2.tsx`）
 
-| 檔案 | 修改內容 |
-|------|----------|
-| `src/components/projects/ProjectQuickNav.tsx` | 高亮條加上 `style={{ position: 'absolute' }}` 強制覆蓋 |
+- 元件名稱從 `AboutV2` 改為 `About`
+- canonical URL 改為 `https://taiyun.design/about`
+- 移除 `noindex,nofollow`，改為標準 SEO 設定
+
+#### `AboutV1.tsx`（原 `About.tsx`）
+
+- 元件名稱從 `About` 改為 `AboutV1`
+- canonical URL 改為 `https://taiyun.design/about-v1`
+- 加入 `noindex,nofollow` 避免搜尋引擎收錄
+
+---
+
+### 五、存取路徑對照
+
+| 網址 | 內容 |
+|------|------|
+| `/about` | 新版（6 區塊結構、Grid 卡片排版） |
+| `/about-v1` | 舊版（備份，不公開索引） |
+
+---
+
+### 六、影響範圍
+
+- **無影響**：所有選單、按鈕、內部連結仍指向 `/about`，使用者自動看到新版
+- **無影響**：SSG 靜態生成會自動包含兩個路徑
+- **SEO**：舊版設為 noindex，新版為正式公開頁面
 
