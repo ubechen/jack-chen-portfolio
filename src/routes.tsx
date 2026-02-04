@@ -4,8 +4,8 @@ import App from "./App";
 
 // Lazy load all pages for code splitting
 const Index = lazy(() => import("./pages/Index"));
-const About = lazy(() => import("./pages/About"));
-const AboutV2 = lazy(() => import("./pages/AboutV2"));
+const About = lazy(() => import("./pages/About"));       // 新版 V2 內容
+const AboutV1 = lazy(() => import("./pages/AboutV1"));   // 舊版備份
 const Resume = lazy(() => import("./pages/Resume"));
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -37,11 +37,11 @@ export const routes: RouteRecord[] = [
       },
       {
         path: "about",
-        element: withSuspense(About),
+        element: withSuspense(About),      // 新版內容
       },
       {
-        path: "about-v2",
-        element: withSuspense(AboutV2),
+        path: "about-v1",
+        element: withSuspense(AboutV1),    // 舊版備份
       },
       {
         path: "resume",
