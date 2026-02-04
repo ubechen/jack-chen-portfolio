@@ -39,7 +39,7 @@ const productTypes = [
 // 工作流程資料
 const workflowSteps = [
   {
-    title: "在決策前段幫團隊想清楚",
+    title: "幫團隊把問題想清楚",
     description: "當專案剛開始，我會先釐清：這個問題值不值得花資源解決？解決後對誰有價值？我們怎麼知道做對了？透過訪談、問卷分析、工作坊等方法，把「老闆說想做」或「客戶要求」這種模糊的需求，拆解成可以評估、可以選擇的選項"
   },
   {
@@ -48,7 +48,7 @@ const workflowSteps = [
   },
   {
     title: "用 AI 工具加速，但不取代思考",
-    description: "我會用 AI 協助整理訪談逐字稿和問卷開放式回答，也用生成式影像、影片做概念視覺提案，讓討論更具體。育嬰留停期間，我持續探索 AI 工具和 UX 之間的進化，考取了 iPAS AI 應用規劃師初級與資策會生成式 AI 能力認證"
+    description: "我會用 AI 協助整理訪談逐字稿和問卷開放式回答，也用生成式影像、影片做概念視覺提案，讓討論更具體。育嬰留停期間，我持續探索 AI 工具和 UX 之間的進化，考取了 iPAS AI 應用規劃師初級、與資策會生成式 AI 能力認證"
   }
 ];
 
@@ -198,13 +198,37 @@ const About = () => {
         </section>
       </ScrollReveal>
 
-      {/* Section 3: 我的工作流程 - 3 欄卡片 */}
+      {/* Section 3: 我怎麼在「決策前段」工作 - 情境引言 + 3 欄卡片 */}
       <ScrollReveal delay={100}>
         <section className="py-16 px-6 bg-primary/10 shadow-sm">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">
-              我的工作流程
+              我怎麼在「決策前段」工作
             </h2>
+            
+            {/* 情境引言 */}
+            <div className="mb-10 space-y-4">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                在科技製造業的場景，我常被丟到這種題目：
+              </p>
+              <div className="space-y-2 pl-4 border-l-2 border-primary/30">
+                <p className="text-lg text-muted-foreground italic">
+                  「我們也要做 AI PC，但下一代要做什麼？」
+                </p>
+                <p className="text-lg text-muted-foreground italic">
+                  「這個新硬體技術有前景，能發展什麼應用？」
+                </p>
+                <p className="text-lg text-muted-foreground italic">
+                  「老闆想要更前瞻的機器人，還不清楚要什麼」
+                </p>
+              </div>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                我習慣先把題目拆開，對齊「為什麼做」和「怎麼判斷有價值」
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                再用研究和設計幫團隊縮小不確定性，找到可以執行的方向
+              </p>
+            </div>
             
             {/* 3 Column Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
