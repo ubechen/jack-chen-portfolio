@@ -209,15 +209,15 @@ const IndexV2 = () => {
                 size="lg"
                 variant="hero"
                 onClick={() => scrollToSection("#projects")}
-                className="text-base font-medium"
+                className="text-base font-medium min-w-[140px]"
               >
                 <span className="relative z-10">精選案例</span>
               </Button>
-              <Link to="/resume">
+              <Link to="/resume" className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   variant="heroOutline"
-                  className="text-base font-medium"
+                  className="text-base font-medium min-w-[140px] w-full"
                 >
                   <span className="relative z-10">履歷表</span>
                 </Button>
@@ -248,7 +248,7 @@ const IndexV2 = () => {
                   size="lg"
                   variant="hero"
                   onClick={() => scrollToSection("#projects")}
-                  className="text-base font-medium"
+                  className="text-base font-medium min-w-[140px]"
                 >
                   <span className="relative z-10">精選案例</span>
                 </Button>
@@ -256,7 +256,7 @@ const IndexV2 = () => {
                   <Button
                     size="lg"
                     variant="heroOutline"
-                    className="text-base font-medium"
+                    className="text-base font-medium min-w-[140px]"
                   >
                     <span className="relative z-10">履歷表</span>
                   </Button>
@@ -401,11 +401,8 @@ const IndexV2 = () => {
               </div>
               {/* 文字內容 */}
               <div className="flex-1 text-left">
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  過去在科技製造業主要開發系統型和複雜產品，經常參與專案的早期階段，當需求很模糊、方向還沒定的時候
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed mt-4 mb-8">
-                  我的角色通常不是衝最快的執行者，而是幫團隊少走叉路、避免做錯關鍵決定的人
+                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                  過去我在科技製造業擔任 Product / UX 設計師，主要開發系統型和複雜產品，經常參與專案的早期階段，當需求很模糊、方向還沒定的時候。我的角色通常不是衝最快的執行者，而是幫團隊少走叉路、避免做錯關鍵決定的人
                 </p>
                 <Button
                   variant="heroOutline"
