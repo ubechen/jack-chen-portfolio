@@ -1,110 +1,169 @@
 
 
-## 建立 Index V2 首頁改版測試頁
+## 優化 Index V2 首頁 - 方案 A 水平時間軸
 
 ### 變更概述
 
-建立獨立的 `/index-v2` 路由，**更新 Hero 區域文案**並**保留專案輪播**，在 Hero 之後新增三個新區塊（不顯示 Section 編號）。
+1. **「我是誰」區塊**：加入 About 標題 + How I Work 按鈕（維持與 V1 一致的樣式）
+2. **「我帶來的價值」卡片**：為每個項目加入 list 圓點符號
+3. **「我的經歷」**：改為水平時間軸風格，與「我帶來的價值」做出視覺區隔
 
 ---
 
-### Hero 區域調整
+### 變更詳情
 
-| 項目 | 現行 | 新版 |
-|------|------|------|
-| 標題 | 把模糊變明確的 Product / UX 設計夥伴 | 保持不變 |
-| 副標 | 1 行敘述 | 改為 3 行分開 |
-| CTA | View Projects / View Resume | 精選案例 / 履歷表 |
+#### 1. 「我是誰」區塊加入標題與按鈕
 
-**新版副標題（3 行）：**
-- 我是 Jack，8+ 年複雜產品設計經驗
-- 專注在決策前段，幫團隊把問題想清楚
-- 用研究和故事，讓方向可以被討論與執行
+**現行 V2（第 375-400 行）：**
+- 無區塊標題
+- 無 How I Work 按鈕
 
----
+**修改後：**
+- 加入 `About` 標題（置中，與 V1 一致）
+- 在文字內容下方加入 How I Work 按鈕
 
-### 新版結構（區塊名稱僅供識別，不顯示於畫面）
+**按鈕規格（完全比照 V1 AboutPreview.tsx）：**
 
-```text
-├── Hero
-│   ├── 標題 + 3 行副標
-│   ├── CTA: 精選案例 / 履歷表
-│   └── 專案輪播（保留）
-│
-├── 我是誰（無標題，直接呈現內容）
-│   └── 人物圖片 + 2 段文字
-│
-├── 我的經歷
-│   └── 區塊標題「我的經歷」+ 3 欄卡片
-│
-├── 我帶來的價值
-│   └── 區塊標題「我帶來的價值」+ 3 欄卡片 + CTA
-│
-├── Projects（保留）
-└── Contact（保留）
+```tsx
+<Button
+  variant="heroOutline"
+  size="lg"
+  onClick={() => navigate("/about")}
+  className="text-lg"
+>
+  <span className="relative z-10 flex items-center">
+    How I Work
+    <ArrowRight className="ml-2 h-5 w-5" />
+  </span>
+</Button>
 ```
 
 ---
 
-### 各區塊內容
+#### 2. 「我帶來的價值」卡片加入 list 圓點符號
 
-#### 我是誰（不顯示區塊標題）
+**現行（第 447-455 行）：**
 
-| 項目 | 內容 |
-|------|------|
-| 佈局 | 圖片 + 文字（桌面左右、手機上下堆疊） |
-| 圖片 | 圓形人物照 |
-| 文字 | 2 段說明 |
+```tsx
+<li className="text-muted-foreground text-sm leading-relaxed">
+  {item}
+</li>
+```
 
-**文案：**
-- 過去在科技製造業主要開發系統型和複雜產品，經常參與專案的早期階段，當需求很模糊、方向還沒定的時候
-- 我的角色通常不是衝最快的執行者，而是幫團隊少走叉路、避免做錯關鍵決定的人
+**修改後：**
 
----
-
-#### 我的經歷（顯示區塊標題）
-
-| 卡片 | 標題 | 內容 |
-|------|------|------|
-| 1 | 8+ 年系統產品經驗 | B2B2C、B2B、B2C 都做過，從 0 到 1 有落地、也有失敗 |
-| 2 | 研究轉化為影響力 | 未來產品功能、情境流程優先序，支援國際提案，讓 UX 成為策略夥伴 |
-| 3 | 概念走到市場 | 緯創概念筆電、無人機於國際展出，復健產品跨域推廣 |
+```tsx
+<li className="text-muted-foreground text-sm leading-relaxed flex items-start gap-2">
+  <span className="text-primary mt-1 text-xs">●</span>
+  <span>{item}</span>
+</li>
+```
 
 ---
 
-#### 我帶來的價值（顯示區塊標題）
+#### 3. 「我的經歷」改為水平時間軸風格
 
-| 卡片 | 標題 | 內容 |
-|------|------|------|
-| 1 | UX 專業能力 | User Research：訪談、問卷、工作坊；資訊架構與流程設計；Wireframe、Prototype 到 GUI 交付；易用性測試與迭代優化 |
-| 2 | 決策前段的角色 | 對 PM：提案故事骨架、功能優先序；對工程/硬體：情境轉流程、考慮技術範圍；對決策者：複雜問題翻譯成可理解的選項 |
-| 3 | 我帶來的專案影響 | 降低不確定性：先對齊目標再開始設計；促進跨部門合作：在不同角色之間搭橋；從全局思考：平衡各方需求展現設計價值 |
+**設計概念：**
 
-**CTA 按鈕：** How I Work → /about
+```text
+桌面版 (>=1024px)：
+
+    ┌─────────────┐       ┌─────────────┐       ┌─────────────┐
+    │  8+ 年      │       │  研究轉化    │       │  概念走到    │
+    │  系統產品   │       │  為影響力    │       │  市場        │
+    │  經驗       │       │             │       │             │
+    └──────┬──────┘       └──────┬──────┘       └──────┬──────┘
+           │                     │                     │
+    ───────●─────────────────────●─────────────────────●───────
+```
+
+**手機版 (<1024px)：**
+- 垂直時間軸，左側連接線，右側卡片內容
+
+**程式碼結構：**
+
+```tsx
+{/* 桌面版水平時間軸 */}
+<div className="hidden lg:block">
+  <div className="grid grid-cols-3 gap-8 relative">
+    {/* 連接線 */}
+    <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-border -translate-y-1/2" />
+    
+    {experienceCards.map((card, index) => (
+      <div key={index} className="relative">
+        {/* 卡片內容 */}
+        <div className="bg-card border rounded-xl p-6 relative z-10">
+          <h3 className="text-lg font-semibold mb-3">{card.title}</h3>
+          <p className="text-muted-foreground whitespace-pre-line">
+            {card.content}
+          </p>
+        </div>
+        {/* 連接點 */}
+        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background z-20" />
+      </div>
+    ))}
+  </div>
+  {/* 時間軸線 */}
+  <div className="mt-4 h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+</div>
+
+{/* 手機版垂直時間軸 */}
+<div className="lg:hidden relative pl-8">
+  {/* 垂直連接線 */}
+  <div className="absolute left-3 top-0 bottom-0 w-0.5 bg-border" />
+  
+  <div className="space-y-8">
+    {experienceCards.map((card, index) => (
+      <div key={index} className="relative">
+        {/* 連接點 */}
+        <div className="absolute -left-5 top-6 w-4 h-4 rounded-full bg-primary border-4 border-background" />
+        {/* 卡片 */}
+        <div className="bg-card border rounded-xl p-6">
+          <h3 className="text-lg font-semibold mb-3">{card.title}</h3>
+          <p className="text-muted-foreground whitespace-pre-line">
+            {card.content}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+```
 
 ---
 
-### RWD 響應式設計
+### 視覺對照
 
-| 區塊 | 手機 (<768px) | 桌面 (>=1024px) |
-|------|---------------|-----------------|
-| Hero | 標題+副標居中堆疊 | 左右兩欄（文字+輪播） |
-| 我是誰 | 圖片置中 + 文字堆疊 | 圖片左側 + 文字右側 |
-| 我的經歷 | 單欄堆疊 | 3 欄並排 |
-| 我帶來的價值 | 單欄堆疊 | 3 欄並排 |
+| 區塊 | 現行 V2 | 修改後 |
+|------|---------|--------|
+| 我是誰 | 無標題、無按鈕 | About 標題 + How I Work 按鈕 |
+| 我的經歷 | 3 欄卡片 Grid | 水平/垂直時間軸 |
+| 我帶來的價值 | 純文字 list | 加入圓點符號 list |
 
 ---
 
-### 修改檔案清單
+### RWD 時間軸設計
+
+| 斷點 | 我的經歷呈現方式 |
+|------|------------------|
+| < 1024px (手機/平板) | 垂直時間軸（左側連接線 + 右側卡片） |
+| >= 1024px (桌面) | 水平時間軸（上方卡片 + 下方連接線與圓點） |
+
+---
+
+### 修改檔案
 
 | 檔案 | 動作 | 內容 |
 |------|------|------|
-| `src/pages/IndexV2.tsx` | 新增 | 完整新版首頁（Hero 含輪播 + 3 個新區塊） |
-| `src/routes.tsx` | 修改 | 新增 `/index-v2` 路由 |
+| `src/pages/IndexV2.tsx` | 修改 | (1) 我是誰區塊加入 About 標題與 How I Work 按鈕 (2) 我的經歷改為水平時間軸 (3) 我帶來的價值 list 加入圓點符號 |
 
 ---
 
-### 測試方式
+### 測試重點
 
-前往 `/index-v2` 查看新版首頁，與原版 `/` 對照比較。導航選單連結維持指向原版 `/`。
+1. 前往 `/index-v2` 確認：
+   - About 標題與 How I Work 按鈕顯示正確
+   - How I Work 按鈕樣式與 V1 一致（漸層邊框、hover 效果）
+   - 時間軸桌面版水平呈現、手機版垂直呈現
+   - 價值卡片 list 有圓點符號
 
