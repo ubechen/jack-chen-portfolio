@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState, useRef } from "react";
 import { Head } from "vite-react-ssg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
@@ -113,6 +113,7 @@ const valueCards = [
 ];
 
 const IndexV2 = () => {
+  const navigate = useNavigate();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const autoplayPlugin = useRef(
     Autoplay({
@@ -376,23 +377,47 @@ const IndexV2 = () => {
       <ScrollReveal>
         <section id="about-me" className="py-16 md:py-24 px-6 bg-background">
           <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-              {/* 圓形人物照 */}
-              <div className="flex-shrink-0">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground text-center">About</h2>
+            
+            {/* 手機版動畫圖片 - 標題下方置中 */}
+            <div className="md:hidden flex justify-center mb-6">
+              <div className="w-24 aspect-square rounded-full overflow-hidden shadow-md">
+                <img 
+                  src={JackAbout} 
+                  alt="Jack" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            
+            <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
+              {/* 圓形人物照 - 手機版隱藏 */}
+              <div className="hidden md:block flex-shrink-0">
                 <img
                   src={JackAbout}
                   alt="Jack Chen"
-                  className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover shadow-lg"
+                  className="w-48 lg:w-56 xl:w-64 aspect-square rounded-full object-cover"
                 />
               </div>
               {/* 文字內容 */}
-              <div className="space-y-4 text-center md:text-left">
+              <div className="flex-1 text-left">
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   過去在科技製造業主要開發系統型和複雜產品，經常參與專案的早期階段，當需求很模糊、方向還沒定的時候
                 </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed mt-4 mb-8">
                   我的角色通常不是衝最快的執行者，而是幫團隊少走叉路、避免做錯關鍵決定的人
                 </p>
+                <Button
+                  variant="heroOutline"
+                  size="lg"
+                  onClick={() => navigate("/about")}
+                  className="text-lg"
+                >
+                  <span className="relative z-10 flex items-center">
+                    How I Work
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </span>
+                </Button>
               </div>
             </div>
           </div>
@@ -406,22 +431,58 @@ const IndexV2 = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-foreground">
               我的經歷
             </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {experienceCards.map((card, index) => (
-                <Card
-                  key={index}
-                  className="bg-card border-border hover:shadow-md transition-shadow"
-                >
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-foreground mb-3">
-                      {card.title}
-                    </h3>
-                    <p className="text-muted-foreground whitespace-pre-line leading-relaxed">
-                      {card.content}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+            
+            {/* 桌面版水平時間軸 */}
+            <div className="hidden lg:block">
+              <div className="relative">
+                {/* 卡片區域 */}
+                <div className="grid grid-cols-3 gap-8 pb-12">
+                  {experienceCards.map((card, index) => (
+                    <div key={index} className="relative">
+                      <Card className="bg-card border-border hover:shadow-md transition-shadow h-full">
+                        <CardContent className="p-6">
+                          <h3 className="text-lg font-semibold text-foreground mb-3">
+                            {card.title}
+                          </h3>
+                          <p className="text-muted-foreground whitespace-pre-line leading-relaxed">
+                            {card.content}
+                          </p>
+                        </CardContent>
+                      </Card>
+                      {/* 連接點 */}
+                      <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background z-10" />
+                    </div>
+                  ))}
+                </div>
+                {/* 時間軸連接線 */}
+                <div className="absolute bottom-4 left-[16.67%] right-[16.67%] h-0.5 bg-gradient-to-r from-primary/30 via-primary to-primary/30" />
+              </div>
+            </div>
+
+            {/* 手機版垂直時間軸 */}
+            <div className="lg:hidden relative pl-8">
+              {/* 垂直連接線 */}
+              <div className="absolute left-[7px] top-4 bottom-4 w-0.5 bg-gradient-to-b from-primary/30 via-primary to-primary/30" />
+              
+              <div className="space-y-8">
+                {experienceCards.map((card, index) => (
+                  <div key={index} className="relative">
+                    {/* 連接點 */}
+                    <div className="absolute -left-8 top-6 w-4 h-4 rounded-full bg-primary border-4 border-background z-10" />
+                    {/* 卡片 */}
+                    <Card className="bg-card border-border hover:shadow-md transition-shadow">
+                      <CardContent className="p-6">
+                        <h3 className="text-lg font-semibold text-foreground mb-3">
+                          {card.title}
+                        </h3>
+                        <p className="text-muted-foreground whitespace-pre-line leading-relaxed">
+                          {card.content}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -448,24 +509,16 @@ const IndexV2 = () => {
                       {card.items.map((item, itemIndex) => (
                         <li
                           key={itemIndex}
-                          className="text-muted-foreground text-sm leading-relaxed"
+                          className="text-muted-foreground text-sm leading-relaxed flex items-start gap-2"
                         >
-                          {item}
+                          <span className="text-primary mt-1 text-xs">●</span>
+                          <span>{item}</span>
                         </li>
                       ))}
                     </ul>
                   </CardContent>
                 </Card>
               ))}
-            </div>
-            {/* CTA Button */}
-            <div className="text-center">
-              <Link to="/about">
-                <Button size="lg" variant="outline" className="group">
-                  How I Work
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
             </div>
           </div>
         </section>
