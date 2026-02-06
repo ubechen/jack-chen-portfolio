@@ -3,8 +3,8 @@ import type { RouteRecord } from "vite-react-ssg";
 import App from "./App";
 
 // Lazy load all pages for code splitting
-const Index = lazy(() => import("./pages/Index"));
-const IndexV2 = lazy(() => import("./pages/IndexV2"));   // 首頁改版測試
+const Index = lazy(() => import("./pages/Index"));       // 正式版（原 IndexV2）
+const IndexV1 = lazy(() => import("./pages/IndexV1"));   // 舊版備份
 const About = lazy(() => import("./pages/About"));       // 新版 V2 內容
 const AboutV1 = lazy(() => import("./pages/AboutV1"));   // 舊版備份
 const Resume = lazy(() => import("./pages/Resume"));
@@ -41,8 +41,8 @@ export const routes: RouteRecord[] = [
         element: withSuspense(About),      // 新版內容
       },
       {
-        path: "index-v2",
-        element: withSuspense(IndexV2),    // 首頁改版測試
+        path: "index-v1",
+        element: withSuspense(IndexV1),    // 舊版備份
       },
       {
         path: "about-v1",
