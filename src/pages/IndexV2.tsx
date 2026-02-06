@@ -70,16 +70,25 @@ const heroStates: HeroState[] = [
 // 經歷卡片資料
 const experienceCards = [
   {
-    title: "8+ 年系統產品經驗",
-    content: "B2B2C、B2B、B2C 都做過\n從 0 到 1 有落地、也有失敗",
+    title: "8+ 年複雜系統產品經驗",
+    items: [
+      "做過 B2B2C、B2B、B2C 類型",
+      "經歷 0 到 1 有落地、也有失敗過",
+    ],
   },
   {
     title: "研究轉化為影響力",
-    content: "未來產品功能、情境流程優先序\n支援國際提案，讓 UX 成為策略夥伴",
+    items: [
+      "制定未來產品功能、情境流程優先排序",
+      "支援客戶提案，提升 UX 為策略夥伴",
+    ],
   },
   {
     title: "概念走到市場",
-    content: "緯創概念筆電、無人機於國際展出\n復健產品跨域推廣",
+    items: [
+      "國際展出緯創概念筆電、無人機",
+      "跨域推廣運動復健產品",
+    ],
   },
 ];
 
@@ -88,10 +97,10 @@ const valueCards = [
   {
     title: "UX 專業能力",
     items: [
-      "User Research：訪談、問卷、工作坊",
+      "使用者研究：訪談、問卷、工作坊",
       "資訊架構與流程設計",
       "Wireframe、Prototype 到 GUI 交付",
-      "易用性測試與迭代優化",
+      "設計系統、易用性測試與迭代優化",
     ],
   },
   {
@@ -197,9 +206,9 @@ const IndexV2 = () => {
                 Product / UX 設計夥伴
               </h1>
               <div className="space-y-2 text-base md:text-lg text-muted-foreground/80">
-                <p>我是 Jack，8+ 年複雜產品設計經驗</p>
+                <p>我是 Jack 在科技業 8+年系統產品設計經驗</p>
                 <p>專注在決策前段，幫團隊把問題想清楚</p>
-                <p>用研究和故事，讓方向可以被討論與執行</p>
+                <p>提出方向並能被討論執行與落地</p>
               </div>
             </div>
 
@@ -236,9 +245,9 @@ const IndexV2 = () => {
                   Product / UX 設計夥伴
                 </h1>
                 <div className="space-y-2 text-base md:text-lg text-muted-foreground/80">
-                  <p>我是 Jack，8+ 年複雜產品設計經驗</p>
+                  <p>我是 Jack 在科技業 8+年系統產品設計經驗</p>
                   <p>專注在決策前段，幫團隊把問題想清楚</p>
-                  <p>用研究和故事，讓方向可以被討論與執行</p>
+                  <p>提出方向並能被討論執行與落地</p>
                 </div>
               </div>
 
@@ -402,7 +411,7 @@ const IndexV2 = () => {
               {/* 文字內容 */}
               <div className="flex-1 text-left">
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  過去我在科技製造業擔任 Product / UX 設計師，主要開發系統型和複雜產品，經常參與專案的早期階段，當需求很模糊、方向還沒定的時候。我的角色通常不是衝最快的執行者，而是幫團隊少走叉路、避免做錯關鍵決定的人
+                  身為 Product / UX 設計師，經常參與從 0 到 1 階段的跨領域專案，如新型態創新筆電、服務型機器人、無人機地面控制站、醫療監測後台、智慧咖啡秤等。當前期需求方向還沒定案，我扮演的角色協助把問題釐清、縮小選項，讓決策可以更有脈絡地前進，幫助團隊少走叉路，也關注使用者體驗細節，面向團隊會對齊目標和成效
                 </p>
                 <Button
                   variant="heroOutline"
@@ -441,9 +450,14 @@ const IndexV2 = () => {
                           <h3 className="text-lg font-semibold text-foreground mb-3">
                             {card.title}
                           </h3>
-                          <p className="text-muted-foreground whitespace-pre-line leading-relaxed">
-                            {card.content}
-                          </p>
+                          <ul className="space-y-2">
+                            {card.items.map((item, itemIndex) => (
+                              <li key={itemIndex} className="text-muted-foreground text-sm leading-relaxed flex items-start gap-2">
+                                <span className="text-primary mt-1 text-xs">●</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </CardContent>
                       </Card>
                       {/* 連接點 */}
@@ -472,9 +486,14 @@ const IndexV2 = () => {
                         <h3 className="text-lg font-semibold text-foreground mb-3">
                           {card.title}
                         </h3>
-                        <p className="text-muted-foreground whitespace-pre-line leading-relaxed">
-                          {card.content}
-                        </p>
+                        <ul className="space-y-2">
+                          {card.items.map((item, itemIndex) => (
+                            <li key={itemIndex} className="text-muted-foreground text-sm leading-relaxed flex items-start gap-2">
+                              <span className="text-primary mt-1 text-xs">●</span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </CardContent>
                     </Card>
                   </div>

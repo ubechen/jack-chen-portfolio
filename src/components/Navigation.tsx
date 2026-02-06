@@ -9,7 +9,7 @@ const Navigation = () => {
   const [expandedMobile, setExpandedMobile] = useState<string | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  const isHomePage = location.pathname === "/" || location.pathname === "/index-v2";
   const isAboutPage = location.pathname === "/about";
   const isProjectPage = location.pathname.startsWith("/project/");
 
