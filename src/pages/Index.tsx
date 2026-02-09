@@ -128,6 +128,11 @@ const tooltipMessages = [
   "再按一次試試？",
   "嘿嘿 你好奇心很重喔",
   "我是 Jack，很高興認識你！",
+  "你已經按了好幾次了吧 😏",
+  "這裡沒有彩蛋啦...才怪",
+  "好啦好啦 我投降 🙌",
+  "認真說，謝謝你來看我的作品集 ❤️",
+  "最後一句了...還是再按按看？",
 ];
 
 const Index = () => {
@@ -135,10 +140,12 @@ const Index = () => {
   const [isJiggling, setIsJiggling] = useState(false);
   const [tooltipText, setTooltipText] = useState("哈囉 你發現我了！");
   const [showTooltip, setShowTooltip] = useState(false);
+  const clickCountRef = useRef(0);
 
   const handlePortraitClick = () => {
-    const randomMsg = tooltipMessages[Math.floor(Math.random() * tooltipMessages.length)];
-    setTooltipText(randomMsg);
+    clickCountRef.current += 1;
+    const msg = tooltipMessages[clickCountRef.current % tooltipMessages.length];
+    setTooltipText(msg);
     setIsJiggling(true);
     setShowTooltip(true);
     setTimeout(() => setIsJiggling(false), 600);
