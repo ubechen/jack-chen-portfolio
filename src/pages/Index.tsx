@@ -234,7 +234,7 @@ const Index = () => {
                 Product / UX 設計夥伴
               </h1>
               <div className="space-y-2 text-base md:text-lg text-muted-foreground/80">
-                <p>我是 Jack 在科技業 8+年系統產品設計經驗</p>
+                <p>我是 Jack 在科技業 8+年系統產品設計的經驗</p>
                 <p>專注在決策前段，幫團隊把問題想清楚</p>
                 <p>提出方向並能被討論執行與落地</p>
               </div>
@@ -273,7 +273,7 @@ const Index = () => {
                   Product / UX 設計夥伴
                 </h1>
                 <div className="space-y-2 text-base md:text-lg text-muted-foreground/80">
-                  <p>我是 Jack 在科技業 8+年系統產品設計經驗</p>
+                  <p>我是 Jack 在科技業 8+年系統產品設計的經驗</p>
                   <p>專注在決策前段，幫團隊把問題想清楚</p>
                   <p>提出方向並能被討論執行與落地</p>
                 </div>
