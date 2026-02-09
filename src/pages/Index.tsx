@@ -134,12 +134,15 @@ const Index = () => {
   const navigate = useNavigate();
   const [isJiggling, setIsJiggling] = useState(false);
   const [tooltipText, setTooltipText] = useState("哈囉 你發現我了！");
+  const [showTooltip, setShowTooltip] = useState(false);
 
   const handlePortraitClick = () => {
     const randomMsg = tooltipMessages[Math.floor(Math.random() * tooltipMessages.length)];
     setTooltipText(randomMsg);
     setIsJiggling(true);
+    setShowTooltip(true);
     setTimeout(() => setIsJiggling(false), 600);
+    setTimeout(() => setShowTooltip(false), 2000);
   };
   const [selectedIndex, setSelectedIndex] = useState(0);
   const autoplayPlugin = useRef(
@@ -408,8 +411,8 @@ const Index = () => {
             
             {/* 手機版動畫圖片 - 標題下方置中 */}
             <div className="md:hidden flex justify-center mb-6">
-              <TooltipProvider>
-                <Tooltip>
+              <TooltipProvider delayDuration={200}>
+                <Tooltip open={showTooltip} onOpenChange={setShowTooltip}>
                   <TooltipTrigger asChild>
                     <div
                       className={cn("w-24 aspect-square rounded-full overflow-hidden shadow-md cursor-pointer", isJiggling && "animate-jelly")}
@@ -430,8 +433,8 @@ const Index = () => {
             <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
               {/* 圓形人物照 - 手機版隱藏 */}
               <div className="hidden md:block flex-shrink-0">
-                <TooltipProvider>
-                  <Tooltip>
+                <TooltipProvider delayDuration={200}>
+                  <Tooltip open={showTooltip} onOpenChange={setShowTooltip}>
                     <TooltipTrigger asChild>
                       <img
                         src={JackAbout}
