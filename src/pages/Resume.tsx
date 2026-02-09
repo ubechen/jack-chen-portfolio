@@ -218,10 +218,6 @@ const Resume = () => {
               <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-6">
                 Jack Chen｜Product / UX 設計師（B2B & 系統產品）
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                擁有 10 年以上產品與使用者體驗設計經驗，橫跨 B2B／B2B2C、複雜系統與軟硬體整合（創新筆電、服務型機器人、無人機、ESG 專案等），擅長在高不確定題目裡用研究與故事協助團隊釐清方向，讓產品決策更有依據
-              </p>
-              
               {/* Meta Bar */}
               <div className="flex flex-wrap gap-4 md:gap-6 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1.5">
@@ -285,7 +281,7 @@ const Resume = () => {
                 Profile｜個人簡介
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                我是陳泰運 Jack，一位<strong>擅長將複雜需求與新技術轉化為可落地體驗</strong>的 Product / UX 設計師。累積<strong>10+ 年設計實務經驗</strong>，其中<strong>8 年在緯創</strong>參與多端與系統型產品，橫跨<strong>創新筆電、服務型機器人、無人機、醫療復健與 ESG</strong>專案。我習慣<strong>先把題目問清楚、對齊目標與成功指標</strong>，再用<strong>研究、流程設計與驗證降低不確定性</strong>，推進<strong>跨部門共識</strong>，將方向落實為<strong>可上線、可驗證、能帶來成效</strong>的產品體驗。下一步希望在<strong>不設限產業<span className="whitespace-nowrap">（B2B/B2C 皆可）</span></strong>的前提下，加入重視協作與落地的團隊，做出同時<strong>改善使用者體驗</strong>、也能<strong>帶動產品目標與成效</strong>的設計
+                8+ 年 Product/UX 設計師，經驗涵蓋 B2B/B2B2C 產品。於緯創擔任創新筆電、服務型機器人、無人機、ESG 等專案核心設計角色。擅長在高不確定性中用研究釐清方向、推動跨部門共識，將複雜需求轉化為可落地體驗。不只產出設計，更協助團隊做出有依據的決策、達成商業目標
               </p>
             </section>
           </ScrollReveal>
