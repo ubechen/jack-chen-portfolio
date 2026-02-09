@@ -12,6 +12,7 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import ScrollReveal from "@/components/ScrollReveal";
 import HeroAnimatedBackgroundResponsive from "@/components/HeroAnimatedBackgroundResponsive";
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "@/components/ui/tooltip";
 import JackAbout from "@/assets/Jack_about.webp";
 import heroAiPc from "@/assets/bg_index_hero_aipc.webp";
 import heroDrone from "@/assets/bg_index_hero_drone.webp";
@@ -390,23 +391,37 @@ const Index = () => {
             
             {/* 手機版動畫圖片 - 標題下方置中 */}
             <div className="md:hidden flex justify-center mb-6">
-              <div className="w-24 aspect-square rounded-full overflow-hidden shadow-md">
-                <img 
-                  src={JackAbout} 
-                  alt="Jack" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <div className="w-24 aspect-square rounded-full overflow-hidden shadow-md cursor-pointer">
+                      <img 
+                        src={JackAbout} 
+                        alt="Jack" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>哈囉 你發現我了！</TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             </div>
             
             <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
               {/* 圓形人物照 - 手機版隱藏 */}
               <div className="hidden md:block flex-shrink-0">
-                <img
-                  src={JackAbout}
-                  alt="Jack Chen"
-                  className="w-48 lg:w-56 xl:w-64 aspect-square rounded-full object-cover"
-                />
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <img
+                        src={JackAbout}
+                        alt="Jack Chen"
+                        className="w-48 lg:w-56 xl:w-64 aspect-square rounded-full object-cover cursor-pointer"
+                      />
+                    </TooltipTrigger>
+                    <TooltipContent>哈囉 你發現我了！</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </div>
               {/* 文字內容 */}
               <div className="flex-1 text-left">
