@@ -122,8 +122,25 @@ const valueCards = [
   },
 ];
 
+const tooltipMessages = [
+  "哈囉 你發現我了！",
+  "別戳我啦 😆",
+  "再按一次試試？",
+  "嘿嘿 你好奇心很重喔",
+  "我是 Jack，很高興認識你！",
+];
+
 const Index = () => {
   const navigate = useNavigate();
+  const [isJiggling, setIsJiggling] = useState(false);
+  const [tooltipText, setTooltipText] = useState("哈囉 你發現我了！");
+
+  const handlePortraitClick = () => {
+    const randomMsg = tooltipMessages[Math.floor(Math.random() * tooltipMessages.length)];
+    setTooltipText(randomMsg);
+    setIsJiggling(true);
+    setTimeout(() => setIsJiggling(false), 600);
+  };
   const [selectedIndex, setSelectedIndex] = useState(0);
   const autoplayPlugin = useRef(
     Autoplay({
@@ -394,7 +411,10 @@ const Index = () => {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <div className="w-24 aspect-square rounded-full overflow-hidden shadow-md cursor-pointer">
+                    <div
+                      className={cn("w-24 aspect-square rounded-full overflow-hidden shadow-md cursor-pointer", isJiggling && "animate-jelly")}
+                      onClick={handlePortraitClick}
+                    >
                       <img 
                         src={JackAbout} 
                         alt="Jack" 
@@ -402,7 +422,7 @@ const Index = () => {
                       />
                     </div>
                   </TooltipTrigger>
-                  <TooltipContent>哈囉 你發現我了！</TooltipContent>
+                  <TooltipContent>{tooltipText}</TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             </div>
@@ -416,10 +436,11 @@ const Index = () => {
                       <img
                         src={JackAbout}
                         alt="Jack Chen"
-                        className="w-48 lg:w-56 xl:w-64 aspect-square rounded-full object-cover cursor-pointer"
+                        className={cn("w-48 lg:w-56 xl:w-64 aspect-square rounded-full object-cover cursor-pointer", isJiggling && "animate-jelly")}
+                        onClick={handlePortraitClick}
                       />
                     </TooltipTrigger>
-                    <TooltipContent>哈囉 你發現我了！</TooltipContent>
+                    <TooltipContent>{tooltipText}</TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
               </div>

@@ -172,6 +172,13 @@ export default {
           "0%": { opacity: "1" },
           "100%": { opacity: "0" }
         },
+        "jelly": {
+          "0%": { transform: "scale(1)" },
+          "30%": { transform: "scale(0.9, 1.1)" },
+          "50%": { transform: "scale(1.1, 0.9)" },
+          "70%": { transform: "scale(0.95, 1.05)" },
+          "100%": { transform: "scale(1)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -190,6 +197,7 @@ export default {
         "zoom-scale-out": "zoom-scale-out 0.2s ease-out forwards",
         "zoom-fade-in": "zoom-fade-in 0.2s ease-out forwards",
         "zoom-fade-out": "zoom-fade-out 0.2s ease-out forwards",
+        "jelly": "jelly 0.6s ease",
       },
     },
   },
