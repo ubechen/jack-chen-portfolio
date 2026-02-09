@@ -135,13 +135,10 @@ const About = () => {
             style={{ animationDelay: '200ms', animationFillMode: 'both' }}
           >
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
-              我是 Jack，Product / UX 設計師，過去 8 年在科技製造業打滾，擅長在高不確定性和跨部門協作中，把模糊題目整理成可以執行的方向。經手專案大多為系統型和複雜產品，如 AI PC、創新筆電、服務型機器人、無人機、醫療復健產品等
-            </p>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
-              經常參與從 0 到 1 階段的專案，當前期需求方向還沒定案，我扮演的角色在協助把問題釐清、縮小選項，讓決策可以更有脈絡地前進
+              我在科技製造業待了 8+ 年，做過創新型筆電、服務型機器人、無人機、醫療設備等複雜系統。<br /><br />多數專案都是新領域，剛開始都很模糊，大家不確定該往哪走
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
-              我通常不是衝最快的執行者，而是幫團隊少走冤枉路、避免做錯關鍵決定的人，對產品而言關注使用者體驗價值，同時對團隊也會對齊目標和成效
+              我的角色是幫團隊把問題問清楚、把選項收斂到可以執行的程度，用研究讓決策有依據而不是憑感覺。這樣做能讓大家少繞路、少做白工，也降低專案方向大改的風險
             </p>
           </div>
           
