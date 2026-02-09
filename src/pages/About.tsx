@@ -135,7 +135,7 @@ const About = () => {
             style={{ animationDelay: '200ms', animationFillMode: 'both' }}
           >
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
-              我在科技製造業待了 8+ 年，做過創新型筆電、服務型機器人、無人機、醫療設備等複雜系統。<br /><br />多數專案都是新領域，剛開始都很模糊，大家不確定該往哪走
+              我在科技製造業待了 8+ 年，做過創新型筆電、服務型機器人、無人機、醫療設備等複雜系統。多數專案都是新領域，剛開始都很模糊，大家不確定該往哪走
             </p>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
               我的角色是幫團隊把問題問清楚、把選項收斂到可以執行的程度，用研究讓決策有依據而不是憑感覺。這樣做能讓大家少繞路、少做白工，也降低專案方向大改的風險
