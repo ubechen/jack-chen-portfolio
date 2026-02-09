@@ -386,7 +386,7 @@ const Index = () => {
       <ScrollReveal>
         <section id="about-me" className="py-16 md:py-24 px-6 bg-background">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground text-center">About</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-foreground text-center">關於 Jack</h2>
             
             {/* 手機版動畫圖片 - 標題下方置中 */}
             <div className="md:hidden flex justify-center mb-6">
@@ -410,8 +410,11 @@ const Index = () => {
               </div>
               {/* 文字內容 */}
               <div className="flex-1 text-left">
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  身為 Product / UX 設計師，經常參與從 0 到 1 階段的跨領域專案，如新型態創新筆電、服務型機器人、無人機地面控制站、醫療監測後台、智慧咖啡秤等。當前期需求方向還沒定案，我扮演的角色協助把問題釐清、縮小選項，讓決策可以更有脈絡地前進，幫助團隊少走叉路，也關注使用者體驗細節，面向團隊會對齊目標和成效
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+                  8+ 年 Product/UX 設計師，經驗涵蓋 B2B/B2B2C 產品。於緯創擔任創新筆電、服務型機器人、無人機、ESG 等專案核心設計角色，也參與智慧咖啡秤、醫療監測後台等從 0 到 1 的跨領域專案
+                </p>
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8">
+                  擅長在高不確定性的前期階段把問題釐清、縮小選項，用研究推動跨部門共識，讓決策更有脈絡地前進，幫助團隊少走叉路。不只關注使用者體驗細節，更協助團隊做出有依據的決策、達成商業目標
                 </p>
                 <Button
                   variant="heroOutline"
