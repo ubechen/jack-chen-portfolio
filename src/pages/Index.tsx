@@ -131,7 +131,7 @@ const tooltipMessages = [
   "你已經按了好幾次了吧 😏",
   "這裡沒有彩蛋啦...才怪",
   "好啦好啦 我投降 🙌",
-  "認真說，謝謝你來看我的作品集 ❤️",
+  "謝謝你來看我的作品集 ❤️",
   "最後一句了...還是再按按看？",
 ];
 
@@ -149,7 +149,7 @@ const Index = () => {
     setIsJiggling(true);
     setShowTooltip(true);
     setTimeout(() => setIsJiggling(false), 600);
-    setTimeout(() => setShowTooltip(false), 2000);
+    setTimeout(() => setShowTooltip(false), 3500);
   };
   const [selectedIndex, setSelectedIndex] = useState(0);
   const autoplayPlugin = useRef(
@@ -419,7 +419,7 @@ const Index = () => {
             {/* 手機版動畫圖片 - 標題下方置中 */}
             <div className="md:hidden flex justify-center mb-6">
               <TooltipProvider delayDuration={200}>
-                <Tooltip open={showTooltip} onOpenChange={setShowTooltip}>
+                <Tooltip open={showTooltip}>
                   <TooltipTrigger asChild>
                     <div
                       className={cn("w-24 aspect-square rounded-full overflow-hidden shadow-md cursor-pointer", isJiggling && "animate-jelly")}
@@ -441,7 +441,7 @@ const Index = () => {
               {/* 圓形人物照 - 手機版隱藏 */}
               <div className="hidden md:block flex-shrink-0">
                 <TooltipProvider delayDuration={200}>
-                  <Tooltip open={showTooltip} onOpenChange={setShowTooltip}>
+                  <Tooltip open={showTooltip}>
                     <TooltipTrigger asChild>
                       <img
                         src={JackAbout}
