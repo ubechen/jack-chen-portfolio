@@ -96,7 +96,7 @@ const About = () => {
       <section className="pt-32 pb-16 px-6 bg-background">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-8 text-foreground animate-fade-in">
-            About & How I Work
+            How I Work
           </h1>
           
           {/* Profile Image with Mask */}
