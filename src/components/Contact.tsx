@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 
 const MediumIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
@@ -39,6 +39,14 @@ const Contact = () => {
               <span className="relative z-10 flex items-center">
                 <MediumIcon />
                 <span className="ml-2">Medium</span>
+              </span>
+            </Button>
+          </a>
+          <a href="https://github.com/ubechen" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" variant="contactLink" className="text-lg w-full">
+              <span className="relative z-10 flex items-center">
+                <Github className="mr-2 h-5 w-5" />
+                GitHub
               </span>
             </Button>
           </a>
