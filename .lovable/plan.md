@@ -1,39 +1,30 @@
-
-
-## 在 Let's Work Together 區域新增 GitHub 按鈕
+## 將 About 頁人格類型從 ISFJ 改為 INFJ（提倡者）
 
 ### 變更內容
 
-在 `src/components/Contact.tsx` 的 Medium 按鈕後方新增一個 GitHub 按鈕，連結至 `https://github.com/ubechen`。
+根據 16personalities 文章，將 `src/pages/About.tsx` 中兩處 ISFJ 相關文案改為 INFJ（提倡者），小幅調整並融入文章關鍵特質。
 
-### 技術細節
+### 修改細節
 
-- **檔案**：`src/components/Contact.tsx`
-- **Icon**：lucide-react 已內建 `Github` icon，直接 import 使用
-- **按鈕結構**：完全比照 Medium 按鈕格式（`<a>` 包 `<Button variant="contactLink">`）
-- **新增位置**：第 44 行（Medium 按鈕 `</a>` 之後）
+**1. 個人特質卡片（第 59-60 行）**
 
-新增的程式碼：
+| 欄位 | 舊文案 | 新文案 |
+|------|--------|--------|
+| title | 個性偏 ISFJ 型 | 個性偏 INFJ 型（提倡者） |
+| description | 守護者喜歡安靜觀察與內省，注重細節並且樂於助人 | 提倡者喜歡安靜觀察與內省，對複雜系統和人性有敏銳直覺，注重細節並樂於助人 |
 
-```tsx
-<a href="https://github.com/ubechen" target="_blank" rel="noopener noreferrer">
-  <Button size="lg" variant="contactLink" className="text-lg w-full">
-    <span className="relative z-10 flex items-center">
-      <Github className="mr-2 h-5 w-5" />
-      GitHub
-    </span>
-  </Button>
-</a>
-```
+**2. 工作風格段落（第 258-260 行）**
 
-Import 行加入 `Github`：
-```tsx
-import { Mail, Linkedin, Github } from "lucide-react";
-```
+- 舊：「如果用人格類型來形容偏向 **ISFJ 型**：重視信任感和長期合作關係，默默把該顧的細節顧好，願意撐住專案的底線。但當需要有人站出來時，我也能切換到台前：主持工作坊、對外 pitch、跟客戶簡報」
+- 新：「如果用人格類型來形容偏向 **INFJ 型（提倡者）**：重視信任感和長期合作關係，對複雜系統與人性有敏銳直覺，默默把該顧的細節顧好，願意撐住專案的底線。但當需要有人站出來時，我也能切換到台前：主持工作坊、對外 pitch、跟客戶簡報」
 
 ### 修改檔案
 
 | 檔案 | 變更 |
 |------|------|
-| `src/components/Contact.tsx` | import 加入 Github；Medium 按鈕後新增 GitHub 按鈕 |
+| `src/pages/About.tsx` | 兩處 ISFJ 改為 INFJ（提倡者），小幅融入文章關鍵詞 |
 
+### 不變動的部分
+
+- `src/pages/AboutV1.tsx`（封存舊版，維持 ISFJ 不動）
+- 其他頁面與元件

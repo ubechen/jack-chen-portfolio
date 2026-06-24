@@ -56,8 +56,8 @@ const workflowSteps = [
 const personalTraits = [
   {
     emoji: "🧩",
-    title: "個性偏 ISFJ 型",
-    description: "守護者喜歡安靜觀察與內省，注重細節並且樂於助人"
+    title: "個性偏 INFJ 型（提倡者）",
+    description: "提倡者喜歡安靜觀察與內省，對複雜系統和人性有敏銳直覺，注重細節並樂於助人"
   },
   {
     emoji: "👶",
@@ -255,7 +255,7 @@ const About = () => {
                 多數時候，我是那個安靜觀察的人。我會先把不同角色的顧慮聽完、拼成一張完整的圖，再幫大家一起縮小不確定性，我傾向穩穩地往前推，而不是把團隊拉去做很前衛、但落不了地的東西
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                如果用人格類型來形容偏向 <strong className="text-foreground">ISFJ 型</strong>：重視信任感和長期合作關係，默默把該顧的細節顧好，願意撐住專案的底線。但當需要有人站出來時，我也能切換到台前：主持工作坊、對外 pitch、跟客戶簡報
+                如果用人格類型來形容偏向 <strong className="text-foreground">INFJ 型（提倡者）</strong>：重視信任感和長期合作關係，對複雜系統與人性有敏銳直覺，默默把該顧的細節顧好，願意撐住專案的底線。但當需要有人站出來時，我也能切換到台前：主持工作坊、對外 pitch、跟客戶簡報
               </p>
             </div>
           </div>
