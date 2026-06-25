@@ -38,6 +38,15 @@ const ZoomableImage = ({ src, alt, className, figcaption }: ZoomableImageProps) 
     return () => window.removeEventListener("zoomable-close-all", handleCloseAll);
   }, [isZoomed]);
 
+  // Handle images already cached/complete before hydration (SSG): onLoad won't fire
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img && img.complete && img.naturalWidth > 0) {
+      setCanZoom(img.naturalWidth > img.clientWidth || img.naturalHeight > img.clientHeight);
+      setIsLoaded(true);
+    }
+  }, []);
+
   // Recheck canZoom on window resize
   useEffect(() => {
     const checkCanZoom = () => {

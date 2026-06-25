@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 interface ImageWithSkeletonProps {
@@ -10,6 +10,15 @@ interface ImageWithSkeletonProps {
 
 const ImageWithSkeleton = ({ src, alt, className, skeletonClassName }: ImageWithSkeletonProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  // Handle images already cached/complete before hydration (SSG): onLoad won't fire
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img && img.complete && img.naturalWidth > 0) {
+      setIsLoaded(true);
+    }
+  }, []);
 
   return (
     <div className="relative w-full h-full">
@@ -23,6 +32,7 @@ const ImageWithSkeleton = ({ src, alt, className, skeletonClassName }: ImageWith
       />
       {/* Actual image */}
       <img
+        ref={imgRef}
         src={src}
         alt={alt}
         onLoad={() => setIsLoaded(true)}
