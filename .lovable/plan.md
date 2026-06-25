@@ -1,30 +1,29 @@
-## 將 About 頁人格類型從 ISFJ 改為 INFJ（提倡者）
+## 修正 About 頁工作場景拼貼圖「有時看不見」的問題
 
-### 變更內容
+### 問題根因
+`src/components/ZoomableImage.tsx` 的圖片初始為 `opacity-0`，要等 `onLoad` 事件觸發後（`isLoaded=true`）才顯示。但本站使用 `vite-react-ssg` 輸出靜態 HTML，若圖片已在瀏覽器快取中，會在 React hydration 掛上 `onLoad` 監聽**之前**就載入完成，導致 `onLoad` 永不觸發、圖片永遠停留在 `opacity-0`（看不見）。
 
-根據 16personalities 文章，將 `src/pages/About.tsx` 中兩處 ISFJ 相關文案改為 INFJ（提倡者），小幅調整並融入文章關鍵特質。
+### 修正方式
+在 `ZoomableImage` 元件掛載後，主動檢查圖片是否「已經載入完成」，若是就立即視為已載入（補觸發既有的載入邏輯）。
 
-### 修改細節
+具體：新增一個 mount 時的 `useEffect`，檢查 `imgRef.current?.complete && naturalWidth > 0`，若成立則執行與 `handleLoad` 相同的處理（設定 `canZoom` 與 `isLoaded=true`）。這是 SSR/SSG + 延遲顯示圖片的標準修法，不改動既有縮放、骨架動畫等行為。
 
-**1. 個人特質卡片（第 59-60 行）**
+```text
+mount 後：
+  若 imgRef.current 已 complete 且有尺寸
+    → setCanZoom(...)、setIsLoaded(true)   （等同 onLoad 已發生）
+```
 
-| 欄位 | 舊文案 | 新文案 |
-|------|--------|--------|
-| title | 個性偏 ISFJ 型 | 個性偏 INFJ 型（提倡者） |
-| description | 守護者喜歡安靜觀察與內省，注重細節並且樂於助人 | 提倡者喜歡安靜觀察與內省，對複雜系統和人性有敏銳直覺，注重細節並樂於助人 |
-
-**2. 工作風格段落（第 258-260 行）**
-
-- 舊：「如果用人格類型來形容偏向 **ISFJ 型**：重視信任感和長期合作關係，默默把該顧的細節顧好，願意撐住專案的底線。但當需要有人站出來時，我也能切換到台前：主持工作坊、對外 pitch、跟客戶簡報」
-- 新：「如果用人格類型來形容偏向 **INFJ 型（提倡者）**：重視信任感和長期合作關係，對複雜系統與人性有敏銳直覺，默默把該顧的細節顧好，願意撐住專案的底線。但當需要有人站出來時，我也能切換到台前：主持工作坊、對外 pitch、跟客戶簡報」
+### 連帶檢查
+`src/components/ImageWithSkeleton.tsx` 有完全相同的 `opacity-0` → onLoad 模式，雖然 About 頁未使用，但其他頁面（如專案頁）可能受影響。一併以相同方式修正，避免同類圖片在快取情境下消失。
 
 ### 修改檔案
-
 | 檔案 | 變更 |
 |------|------|
-| `src/pages/About.tsx` | 兩處 ISFJ 改為 INFJ（提倡者），小幅融入文章關鍵詞 |
+| `src/components/ZoomableImage.tsx` | 新增 mount 時檢查 `img.complete` 的 effect，補觸發載入狀態 |
+| `src/components/ImageWithSkeleton.tsx` | 改用 ref + mount 檢查 `img.complete`，補觸發 `isLoaded` |
 
-### 不變動的部分
-
-- `src/pages/AboutV1.tsx`（封存舊版，維持 ISFJ 不動）
-- 其他頁面與元件
+### 驗證
+1. 本機 / 預覽以「已快取」狀態重新整理 `/about`，確認拼貼圖穩定顯示
+2. 確認點擊放大、骨架 shimmer 動畫等原有互動不受影響
+3. 修正後需在 Publish 對話框點 Update（並等 taiyun.design 重新部署）才會反映到正式站
